@@ -1,0 +1,187 @@
+@import url("./styles/header.css");
+@import url("./styles/hero.css");
+@import url("./styles/catalog.css");
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope/Manrope-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope/Manrope-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope/MManrope-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope/Manrope-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope/Manrope-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --background: #F2F2F2;
+  --text: #000000;
+  --text-desc: #3C3C3C;
+  --text-gray: #959595;
+  --text-gray-c5: #C5C5C5;
+  --text-gray-e8: #E8E8E8;
+  --text-h: #6E6E6E;
+  --white: #FFFFFF;
+  --btn: #4C4C4C;
+  --btn-h: #D0D0D0;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  background: var(--background);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1480px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.btn-main {
+  border-radius: 37px;
+  background: var(--text);
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 16px 25px;
+  font-size: 16px;
+}
+
+.btn-cat {
+  border-radius: 37px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--text);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  font-size: 12px;
+  width: 134px;
+}
+
+.btn-main:hover {
+  background: var(--btn);
+}
+
+.headline {
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 120%;
+}
+
+.headline-h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+}
+
+.content {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 139%;
+}
+
+.sectionTop {
+  margin-top: 120px;
+}
+
+
+@media (max-width: 1100px) {
+  .hero__content>h1 {
+    font-size: 40px;
+  }
+
+  .content {
+    font-size: 16px;
+  }
+
+  .headline-h2 {
+    font-size: 18px;
+  }
+
+  .headline {
+    font-size: 40px;
+  }
+
+  .sectionTop {
+    margin-top: 100px;
+  }
+}
+
+
+@media (max-width: 425px) {
+  .btn-main {
+    font-size: 14px;
+  }
+
+  .hero__content>h1 {
+    font-size: 32px;
+  }
+
+  .hero__content>p {
+    font-size: 12px;
+  }
+
+  .headline-h2 {
+    font-size: 14px;
+  }
+
+  .headline {
+    font-size: 32px;
+  }
+
+  .sectionTop {
+    margin-top: 78px;
+  }
+}

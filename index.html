@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Limaudio</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="/"><img src="./src/assets/logo.svg" alt="логотип" /></a>
+
+        <div class="header__menu">
+          <ul>
+            <li>Каталог</li>
+            <li>Готовые решения</li>
+            <li>Подбор акустики</li>
+            <li>Шоурум</li>
+            <li>О KEF</li>
+            <li>Контакты</li>
+          </ul>
+
+          <div class="header__contact">
+            <svg
+              width="29"
+              height="29"
+              viewBox="0 0 29 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.83222 12.5506C8.15222 17.11 11.89 20.8478 16.4494 23.1678L19.9939 19.6233C20.445 19.1722 21.0733 19.0433 21.6372 19.2206C23.4417 19.8167 25.375 20.1389 27.3889 20.1389C27.8162 20.1389 28.226 20.3086 28.5281 20.6108C28.8303 20.9129 29 21.3227 29 21.75V27.3889C29 27.8162 28.8303 28.226 28.5281 28.5281C28.226 28.8303 27.8162 29 27.3889 29C20.1249 29 13.1584 26.1144 8.02202 20.978C2.88561 15.8416 0 8.8751 0 1.61111C0 1.18382 0.169742 0.774025 0.471883 0.471883C0.774025 0.169742 1.18382 0 1.61111 0H7.25C7.67729 0 8.08709 0.169742 8.38923 0.471883C8.69137 0.774025 8.86111 1.18382 8.86111 1.61111C8.86111 3.625 9.18333 5.55833 9.77944 7.36278C9.95667 7.92667 9.82778 8.555 9.37667 9.00611L5.83222 12.5506Z"
+                fill="black"
+              />
+            </svg>
+            <div>
+              <a href="tel:88000000000">8 (800) 000-00-00</a>
+              <span>Получить консультацию</span>
+            </div>
+          </div>
+
+          <button class="header__menu-basket" aria-label="Корзина">
+            <svg
+              width="39"
+              height="32"
+              viewBox="0 0 39 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M38.137 5.14471C37.5922 4.30429 36.7035 3.80969 35.7143 3.80969H14.3462C13.5058 3.80969 12.7639 4.20576 12.2693 4.84914C11.7747 5.49251 11.5776 6.33293 11.7747 7.12508L14.1492 16.5729C14.4467 17.8094 15.5827 18.7 16.8694 18.7H31.8058C32.9438 18.7 33.933 18.0567 34.3773 17.0192L38.3341 7.9196C38.7785 7.02507 38.6799 5.98563 38.137 5.14521L38.137 5.14471Z"
+                fill="black"
+              />
+              <path
+                d="M4.10556 1.98032C5.34205 1.98032 6.42977 2.82074 6.77559 4.00896L10.7324 18.9958C11.2772 21.0727 13.1551 22.5082 15.2823 22.5082H34.8189C35.3637 22.5082 35.8081 22.0638 35.8081 21.519C35.8081 20.9742 35.3637 20.5298 34.8189 20.5298L15.2823 20.5279C14.0458 20.5279 12.9581 19.6875 12.6122 18.4992L8.65546 3.51243C8.11061 1.43552 6.23272 0 4.10556 0H0.989195C0.444346 0 0 0.444366 0 0.989195C0 1.53402 0.444366 1.97839 0.989195 1.97839L4.10556 1.98032Z"
+                fill="black"
+              />
+              <path
+                d="M18.6506 24.7451C20.1576 26.2502 20.1576 28.6942 18.6506 30.201C17.1455 31.7061 14.7015 31.7061 13.1966 30.201C11.6897 28.694 11.6897 26.25 13.1966 24.7451C14.7017 23.2381 17.1457 23.2381 18.6506 24.7451Z"
+                fill="black"
+              />
+              <path
+                d="M36.3501 26.8319C36.6921 28.9358 35.2644 30.9161 33.1604 31.2581C31.0564 31.6001 29.0761 30.1723 28.7341 28.0683C28.3922 25.9644 29.8219 23.9841 31.9239 23.6421C34.0279 23.3001 36.0101 24.7298 36.3501 26.8319Z"
+                fill="black"
+              />
+            </svg>
+          </button>
+
+          <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
+            <span></span> <span></span> <span></span>
+          </button>
+        </div>
+
+        <div class="mobile-menu-overlay" id="mobileOverlay">
+          <ul class="mobile-menu" id="mobileMenu">
+            <li>Каталог</li>
+            <li>Готовые решения</li>
+            <li>Подбор акустики</li>
+            <li>Шоурум</li>
+            <li>О KEF</li>
+            <li>Контакты</li>
+          </ul>
+
+          <button class="btn-main">Получить консультацию</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <img src="./src/images/hero-min.webp" alt="hero" />
+        <div class="hero__content">
+          <h2 class="headline">Акустика KEF</h2>
+          <h3>
+            звучит по-настоящему только в одном случае — когда ее правильно
+            подобрали под ваше помещение.
+          </h3>
+          <p class="content">
+            LIMAUDIO — официальный дилер KEF в России. Покупка техники — это
+            только 50% успеха. Остальные 50% — акустический расчёт под ваше
+            помещение, профессиональная настройка после установки и пожизненное
+            персональное сопровождение одним инженером.
+          </p>
+
+          <button class="btn-main">Подобрать акустику</button>
+        </div>
+      </section>
+
+      <section class="catalog sectionTop">
+        <h2 class="headline">Каталог акустики KEF</h2>
+
+        <div class="catalog__assortment">
+          <div class="assortment1 assortment-card">
+            <div>
+              <h2 class="headline-h2">
+                Полочная <br />
+                акустика
+              </h2>
+              <button class="btn-cat">В категорию</button>
+            </div>
+            <div class="catalog__img">
+              <img src="./src/images/acoustics.webp" alt="Полочная акустика" />
+            </div>
+          </div>
+          <div class="assortment2 assortment-card">
+            <div>
+              <h2 class="headline-h2">
+                Беспроводные<br />
+                системы
+              </h2>
+              <button class="btn-cat">В категорию</button>
+            </div>
+            <div class="catalog__img">
+              <img
+                src="./src/images/kef_ls_xii.webp"
+                alt=" Беспроводные системы"
+              />
+            </div>
+          </div>
+          <div class="assortment3 assortment-card-tr">
+            <div>
+              <div class="catalog__img">
+                <img src="./src/images/kef_q750.webp" alt="Полочная акустика" />
+              </div>
+
+              <h2 class="headline-h2">Напольная <br />акустика</h2>
+              <button class="btn-cat">В категорию</button>
+            </div>
+          </div>
+          <div class="assortment4 assortment-card assortment-card-last">
+            <div>
+              <h2 class="headline-h2">Сабвуферы</h2>
+              <button class="btn-cat">В категорию</button>
+            </div>
+            <div class="catalog__img">
+              <img src="./src/images/kef_kc_62.webp" alt=" Сабвуферы" />
+            </div>
+          </div>
+          <div class="assortment5 assortment-card">
+            <div>
+              <h2 class="headline-h2">
+                Встраиваемая <br />
+                акустика
+              </h2>
+              <button class="btn-cat">В категорию</button>
+            </div>
+            <div class="catalog__img">
+              <img
+                src="./src/images/kef_ci3160.webp"
+                alt="Встраиваемая акустика"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
