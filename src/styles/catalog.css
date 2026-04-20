@@ -1,7 +1,6 @@
 .catalog__assortment {
     display: grid;
     grid-template-columns: 527px 527px 346px;
-    grid-template-rows: 1fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     margin-top: 20px;
@@ -32,6 +31,7 @@
     background-image: url(./../images/mask.webp);
     background-repeat: no-repeat;
     justify-content: space-between;
+    display: flex;
 }
 
 .assortment-card {
@@ -48,7 +48,8 @@
 }
 
 .assortment-card-tr {
-    display: flex;
+    padding-bottom: 40px;
+    flex-direction: column;
 }
 
 .assortment-card-tr>div {
@@ -56,7 +57,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 40px 0;
+    align-items: center;
+}
+
+.assortment-card-tr>div>h2 {
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 
@@ -70,11 +76,51 @@
     height: auto;
 }
 
+.catalog__img-big {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+}
 
 @media (max-width: 1500px) {
     .catalog__assortment {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .assortment-card {
+        flex-direction: column-reverse;
+        height: auto;
+        align-items: center;
+    }
+
+    .assortment-card>div {
+        align-items: center;
+        width: 100%;
+    }
+
+    .assortment-card-last {
+        flex-direction: column-reverse;
+    }
+
+    .assortment-card>div>h2 {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .assortment-card-tr {
+        padding-bottom: 20px;
+    }
+
+    .catalog__img-big>img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .catalog__assortment {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
     }
 
     .assortment1 {
@@ -100,9 +146,34 @@
     .assortment-card {
         background-color: var(--text-gray-e8);
         flex-direction: column-reverse;
+        height: auto;
+        align-items: center;
     }
 
     .assortment-card-last {
         flex-direction: row
+    }
+
+    .catalog__img-big>img {
+        width: 100%;
+    }
+
+    .assortment-card-last>div>img {
+        width: 70%;
+    }
+
+    .assortment5>div>img {
+        width: 130% !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .assortment-card {
+        padding: 15px 15px 15px 15px;
+    }
+
+    .assortment3>div>img {
+        width: 70% !important;
+        margin: 0 auto;
     }
 }

@@ -107,7 +107,7 @@ button {
   text-transform: uppercase;
   padding: 12px 20px;
   font-size: 12px;
-  width: 134px;
+  max-width: 134px;
 }
 
 .btn-main:hover {
@@ -183,5 +183,45 @@ button {
 
   .sectionTop {
     margin-top: 78px;
+  }
+
+  .btn-cat {
+    padding: 8px 10px;
+    width: 100%;
+  }
+
+  .assortment-card>div {
+    align-items: flex-start;
+  }
+
+  .assortment-card>div>h2 {
+    margin: 6px 0;
+    text-align: left;
+  }
+
+  .assortment-card-tr>div {
+    align-items: self-start;
+  }
+
+  .assortment-card-tr>div>h2 {
+    text-align: start;
+    margin-bottom: 6px;
+  }
+
+  .assortment5>div>img {
+    width: 100% !important;
+  }
+
+  .assortment-card-last>div>img {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+
+
+@media (max-width: 330px) {
+  .btn-cat {
+    padding: 8px 4px;
   }
 }
