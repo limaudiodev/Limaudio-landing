@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/styles/swiper-bundle.min.css" />
     <title>Limaudio</title>
   </head>
   <body>
@@ -174,7 +175,697 @@
           </div>
         </div>
       </section>
+
+      <section class="proposal sectionTop">
+        <h2 class="headline">Лучшие предложения</h2>
+
+        <div class="proposal__sort">
+          <div class="proposal__controls" role="group" aria-label="Сортировка">
+            <button type="button" data-sort="pop" aria-pressed="false">
+              Популярные
+            </button>
+            <button type="button" data-sort="new" aria-pressed="true">
+              Новинки
+            </button>
+            <button type="button" data-sort="hit" aria-pressed="false">
+              Хиты
+            </button>
+            <button type="button" data-sort="stereo" aria-pressed="false">
+              Для стерео
+            </button>
+            <button type="button" data-sort="kino" aria-pressed="false">
+              Для кино
+            </button>
+          </div>
+
+          <div
+            class="proposal__tabs"
+            role="group"
+            aria-label="Сортировка по сериям"
+          >
+            <button type="button" data-sort="pop" aria-pressed="false">
+              LS Series
+            </button>
+            <button type="button" data-sort="new" aria-pressed="true">
+              Q Series
+            </button>
+            <button type="button" data-sort="hit" aria-pressed="false">
+              R Series
+            </button>
+            <button type="button" data-sort="stereo" aria-pressed="false">
+              Reference
+            </button>
+            <button type="button" data-sort="kino" aria-pressed="false">
+              Ci Series
+            </button>
+          </div>
+        </div>
+
+        <div class="proposal__cards">
+          <div class="proposal__card">
+            <div class="swiper proposalSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+              </div>
+              <div class="custom-scrollbar-wrapper">
+                <div class="custom-scrollbar"></div>
+              </div>
+            </div>
+            <div class="proposal__content">
+              <div class="content16">KEF Q Concerto Meta</div>
+              <div class="content12 proposal__star">
+                <div class="stars-container" id="starsContainer"></div>
+                <div>(10 отзывов)</div>
+              </div>
+              <p class="content14">Полочная акустическая система</p>
+              <div class="content14 proposal__color">
+                Цвет
+                <div class="proposal__color" role="group" aria-label="цвет">
+                  <button type="button" data-sort="gray" aria-pressed="false">
+                    <img src="./src/images/proposal/gray.webp" alt="серый" />
+                  </button>
+                  <button type="button" data-sort="white" aria-pressed="true">
+                    <img src="./src/images/proposal/white.webp" alt="белый" />
+                  </button>
+                  <button type="button" data-sort="black" aria-pressed="false">
+                    <img src="./src/images/proposal/black.webp" alt="чёрный" />
+                  </button>
+                </div>
+              </div>
+              <div class="proposal__price">
+                <span class="content"
+                  >175 000 р. <span class="content14">185 000 р.</span></span
+                ><button>
+                  <svg
+                    width="24"
+                    height="20"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.6933 3.19629C23.3549 2.6742 22.8028 2.36694 22.1883 2.36694H8.9139C8.39181 2.36694 7.93093 2.61299 7.62367 3.01267C7.31642 3.41235 7.19401 3.93444 7.31642 4.42654L8.79149 10.2957C8.97633 11.0639 9.68204 11.6172 10.4814 11.6172H19.7602C20.4672 11.6172 21.0817 11.2175 21.3577 10.573L23.8158 4.92012C24.0918 4.36441 24.0306 3.71869 23.6933 3.1966L23.6933 3.19629Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M2.55047 1.23022C3.31861 1.23022 3.99433 1.75231 4.20916 2.49046L6.66721 11.8006C7.00568 13.0909 8.17227 13.9826 9.49372 13.9826H21.6303C21.9688 13.9826 22.2448 13.7066 22.2448 13.3681C22.2448 13.0296 21.9688 12.7536 21.6303 12.7536L9.49372 12.7524C8.72558 12.7524 8.04986 12.2303 7.83502 11.4922L5.37698 2.18201C5.0385 0.89178 3.87192 0 2.55047 0H0.614512C0.276039 0 0 0.276051 0 0.614512C0 0.952973 0.276051 1.22902 0.614512 1.22902L2.55047 1.23022Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M11.5863 15.3728C12.5225 16.3078 12.5225 17.826 11.5863 18.7621C10.6514 19.6971 9.13308 19.6971 8.19823 18.7621C7.26205 17.8259 7.26205 16.3077 8.19823 15.3728C9.13321 14.4366 10.6515 14.4366 11.5863 15.3728Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M22.5791 16.6687C22.7915 17.9757 21.9045 19.206 20.5975 19.4184C19.2905 19.6308 18.0602 18.7439 17.8478 17.4369C17.6354 16.1298 18.5235 14.8996 19.8294 14.6872C21.1364 14.4747 22.3678 15.3629 22.5791 16.6687Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="proposal__card">
+            <div class="swiper proposalSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+              </div>
+              <div class="custom-scrollbar-wrapper">
+                <div class="custom-scrollbar"></div>
+              </div>
+            </div>
+            <div class="proposal__content">
+              <div class="content16">KEF Q Concerto Meta</div>
+              <div class="content12 proposal__star">
+                <div class="stars-container" id="starsContainer"></div>
+                <div>(10 отзывов)</div>
+              </div>
+              <p class="content14">Полочная акустическая система</p>
+              <div class="content14 proposal__color">
+                Цвет
+                <div class="proposal__color" role="group" aria-label="цвет">
+                  <button type="button" data-sort="gray" aria-pressed="false">
+                    <img src="./src/images/proposal/gray.webp" alt="серый" />
+                  </button>
+                  <button type="button" data-sort="white" aria-pressed="true">
+                    <img src="./src/images/proposal/white.webp" alt="белый" />
+                  </button>
+                  <button type="button" data-sort="black" aria-pressed="false">
+                    <img src="./src/images/proposal/black.webp" alt="чёрный" />
+                  </button>
+                </div>
+              </div>
+              <div class="proposal__price">
+                <span class="content"
+                  >175 000 р. <span class="content14">185 000 р.</span></span
+                ><button>
+                  <svg
+                    width="24"
+                    height="20"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.6933 3.19629C23.3549 2.6742 22.8028 2.36694 22.1883 2.36694H8.9139C8.39181 2.36694 7.93093 2.61299 7.62367 3.01267C7.31642 3.41235 7.19401 3.93444 7.31642 4.42654L8.79149 10.2957C8.97633 11.0639 9.68204 11.6172 10.4814 11.6172H19.7602C20.4672 11.6172 21.0817 11.2175 21.3577 10.573L23.8158 4.92012C24.0918 4.36441 24.0306 3.71869 23.6933 3.1966L23.6933 3.19629Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M2.55047 1.23022C3.31861 1.23022 3.99433 1.75231 4.20916 2.49046L6.66721 11.8006C7.00568 13.0909 8.17227 13.9826 9.49372 13.9826H21.6303C21.9688 13.9826 22.2448 13.7066 22.2448 13.3681C22.2448 13.0296 21.9688 12.7536 21.6303 12.7536L9.49372 12.7524C8.72558 12.7524 8.04986 12.2303 7.83502 11.4922L5.37698 2.18201C5.0385 0.89178 3.87192 0 2.55047 0H0.614512C0.276039 0 0 0.276051 0 0.614512C0 0.952973 0.276051 1.22902 0.614512 1.22902L2.55047 1.23022Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M11.5863 15.3728C12.5225 16.3078 12.5225 17.826 11.5863 18.7621C10.6514 19.6971 9.13308 19.6971 8.19823 18.7621C7.26205 17.8259 7.26205 16.3077 8.19823 15.3728C9.13321 14.4366 10.6515 14.4366 11.5863 15.3728Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M22.5791 16.6687C22.7915 17.9757 21.9045 19.206 20.5975 19.4184C19.2905 19.6308 18.0602 18.7439 17.8478 17.4369C17.6354 16.1298 18.5235 14.8996 19.8294 14.6872C21.1364 14.4747 22.3678 15.3629 22.5791 16.6687Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="proposal__card">
+            <div class="swiper proposalSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+              </div>
+              <div class="custom-scrollbar-wrapper">
+                <div class="custom-scrollbar"></div>
+              </div>
+            </div>
+            <div class="proposal__content">
+              <div class="content16">KEF Q Concerto Meta</div>
+              <div class="content12 proposal__star">
+                <div class="stars-container" id="starsContainer"></div>
+                <div>(10 отзывов)</div>
+              </div>
+              <p class="content14">Полочная акустическая система</p>
+              <div class="content14 proposal__color">
+                Цвет
+                <div class="proposal__color" role="group" aria-label="цвет">
+                  <button type="button" data-sort="gray" aria-pressed="false">
+                    <img src="./src/images/proposal/gray.webp" alt="серый" />
+                  </button>
+                  <button type="button" data-sort="white" aria-pressed="true">
+                    <img src="./src/images/proposal/white.webp" alt="белый" />
+                  </button>
+                  <button type="button" data-sort="black" aria-pressed="false">
+                    <img src="./src/images/proposal/black.webp" alt="чёрный" />
+                  </button>
+                </div>
+              </div>
+              <div class="proposal__price">
+                <span class="content"
+                  >175 000 р. <span class="content14">185 000 р.</span></span
+                ><button>
+                  <svg
+                    width="24"
+                    height="20"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.6933 3.19629C23.3549 2.6742 22.8028 2.36694 22.1883 2.36694H8.9139C8.39181 2.36694 7.93093 2.61299 7.62367 3.01267C7.31642 3.41235 7.19401 3.93444 7.31642 4.42654L8.79149 10.2957C8.97633 11.0639 9.68204 11.6172 10.4814 11.6172H19.7602C20.4672 11.6172 21.0817 11.2175 21.3577 10.573L23.8158 4.92012C24.0918 4.36441 24.0306 3.71869 23.6933 3.1966L23.6933 3.19629Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M2.55047 1.23022C3.31861 1.23022 3.99433 1.75231 4.20916 2.49046L6.66721 11.8006C7.00568 13.0909 8.17227 13.9826 9.49372 13.9826H21.6303C21.9688 13.9826 22.2448 13.7066 22.2448 13.3681C22.2448 13.0296 21.9688 12.7536 21.6303 12.7536L9.49372 12.7524C8.72558 12.7524 8.04986 12.2303 7.83502 11.4922L5.37698 2.18201C5.0385 0.89178 3.87192 0 2.55047 0H0.614512C0.276039 0 0 0.276051 0 0.614512C0 0.952973 0.276051 1.22902 0.614512 1.22902L2.55047 1.23022Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M11.5863 15.3728C12.5225 16.3078 12.5225 17.826 11.5863 18.7621C10.6514 19.6971 9.13308 19.6971 8.19823 18.7621C7.26205 17.8259 7.26205 16.3077 8.19823 15.3728C9.13321 14.4366 10.6515 14.4366 11.5863 15.3728Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M22.5791 16.6687C22.7915 17.9757 21.9045 19.206 20.5975 19.4184C19.2905 19.6308 18.0602 18.7439 17.8478 17.4369C17.6354 16.1298 18.5235 14.8996 19.8294 14.6872C21.1364 14.4747 22.3678 15.3629 22.5791 16.6687Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="proposal__card">
+            <div class="swiper proposalSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+              </div>
+              <div class="custom-scrollbar-wrapper">
+                <div class="custom-scrollbar"></div>
+              </div>
+            </div>
+            <div class="proposal__content">
+              <div class="content16">KEF Q Concerto Meta</div>
+              <div class="content12 proposal__star">
+                <div class="stars-container" id="starsContainer"></div>
+                <div>(10 отзывов)</div>
+              </div>
+              <p class="content14">Полочная акустическая система</p>
+              <div class="content14 proposal__color">
+                Цвет
+                <div class="proposal__color" role="group" aria-label="цвет">
+                  <button type="button" data-sort="gray" aria-pressed="false">
+                    <img src="./src/images/proposal/gray.webp" alt="серый" />
+                  </button>
+                  <button type="button" data-sort="white" aria-pressed="true">
+                    <img src="./src/images/proposal/white.webp" alt="белый" />
+                  </button>
+                  <button type="button" data-sort="black" aria-pressed="false">
+                    <img src="./src/images/proposal/black.webp" alt="чёрный" />
+                  </button>
+                </div>
+              </div>
+              <div class="proposal__price">
+                <span class="content"
+                  >175 000 р. <span class="content14">185 000 р.</span></span
+                ><button>
+                  <svg
+                    width="24"
+                    height="20"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.6933 3.19629C23.3549 2.6742 22.8028 2.36694 22.1883 2.36694H8.9139C8.39181 2.36694 7.93093 2.61299 7.62367 3.01267C7.31642 3.41235 7.19401 3.93444 7.31642 4.42654L8.79149 10.2957C8.97633 11.0639 9.68204 11.6172 10.4814 11.6172H19.7602C20.4672 11.6172 21.0817 11.2175 21.3577 10.573L23.8158 4.92012C24.0918 4.36441 24.0306 3.71869 23.6933 3.1966L23.6933 3.19629Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M2.55047 1.23022C3.31861 1.23022 3.99433 1.75231 4.20916 2.49046L6.66721 11.8006C7.00568 13.0909 8.17227 13.9826 9.49372 13.9826H21.6303C21.9688 13.9826 22.2448 13.7066 22.2448 13.3681C22.2448 13.0296 21.9688 12.7536 21.6303 12.7536L9.49372 12.7524C8.72558 12.7524 8.04986 12.2303 7.83502 11.4922L5.37698 2.18201C5.0385 0.89178 3.87192 0 2.55047 0H0.614512C0.276039 0 0 0.276051 0 0.614512C0 0.952973 0.276051 1.22902 0.614512 1.22902L2.55047 1.23022Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M11.5863 15.3728C12.5225 16.3078 12.5225 17.826 11.5863 18.7621C10.6514 19.6971 9.13308 19.6971 8.19823 18.7621C7.26205 17.8259 7.26205 16.3077 8.19823 15.3728C9.13321 14.4366 10.6515 14.4366 11.5863 15.3728Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M22.5791 16.6687C22.7915 17.9757 21.9045 19.206 20.5975 19.4184C19.2905 19.6308 18.0602 18.7439 17.8478 17.4369C17.6354 16.1298 18.5235 14.8996 19.8294 14.6872C21.1364 14.4747 22.3678 15.3629 22.5791 16.6687Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="proposal__card">
+            <div class="swiper proposalSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+              </div>
+              <div class="custom-scrollbar-wrapper">
+                <div class="custom-scrollbar"></div>
+              </div>
+            </div>
+            <div class="proposal__content">
+              <div class="content16">KEF Q Concerto Meta</div>
+              <div class="content12 proposal__star">
+                <div class="stars-container" id="starsContainer"></div>
+                <div>(10 отзывов)</div>
+              </div>
+              <p class="content14">Полочная акустическая система</p>
+              <div class="content14 proposal__color">
+                Цвет
+                <div class="proposal__color" role="group" aria-label="цвет">
+                  <button type="button" data-sort="gray" aria-pressed="false">
+                    <img src="./src/images/proposal/gray.webp" alt="серый" />
+                  </button>
+                  <button type="button" data-sort="white" aria-pressed="true">
+                    <img src="./src/images/proposal/white.webp" alt="белый" />
+                  </button>
+                  <button type="button" data-sort="black" aria-pressed="false">
+                    <img src="./src/images/proposal/black.webp" alt="чёрный" />
+                  </button>
+                </div>
+              </div>
+              <div class="proposal__price">
+                <span class="content"
+                  >175 000 р. <span class="content14">185 000 р.</span></span
+                ><button>
+                  <svg
+                    width="24"
+                    height="20"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.6933 3.19629C23.3549 2.6742 22.8028 2.36694 22.1883 2.36694H8.9139C8.39181 2.36694 7.93093 2.61299 7.62367 3.01267C7.31642 3.41235 7.19401 3.93444 7.31642 4.42654L8.79149 10.2957C8.97633 11.0639 9.68204 11.6172 10.4814 11.6172H19.7602C20.4672 11.6172 21.0817 11.2175 21.3577 10.573L23.8158 4.92012C24.0918 4.36441 24.0306 3.71869 23.6933 3.1966L23.6933 3.19629Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M2.55047 1.23022C3.31861 1.23022 3.99433 1.75231 4.20916 2.49046L6.66721 11.8006C7.00568 13.0909 8.17227 13.9826 9.49372 13.9826H21.6303C21.9688 13.9826 22.2448 13.7066 22.2448 13.3681C22.2448 13.0296 21.9688 12.7536 21.6303 12.7536L9.49372 12.7524C8.72558 12.7524 8.04986 12.2303 7.83502 11.4922L5.37698 2.18201C5.0385 0.89178 3.87192 0 2.55047 0H0.614512C0.276039 0 0 0.276051 0 0.614512C0 0.952973 0.276051 1.22902 0.614512 1.22902L2.55047 1.23022Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M11.5863 15.3728C12.5225 16.3078 12.5225 17.826 11.5863 18.7621C10.6514 19.6971 9.13308 19.6971 8.19823 18.7621C7.26205 17.8259 7.26205 16.3077 8.19823 15.3728C9.13321 14.4366 10.6515 14.4366 11.5863 15.3728Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M22.5791 16.6687C22.7915 17.9757 21.9045 19.206 20.5975 19.4184C19.2905 19.6308 18.0602 18.7439 17.8478 17.4369C17.6354 16.1298 18.5235 14.8996 19.8294 14.6872C21.1364 14.4747 22.3678 15.3629 22.5791 16.6687Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="proposal__card">
+            <div class="swiper proposalSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+              </div>
+              <div class="custom-scrollbar-wrapper">
+                <div class="custom-scrollbar"></div>
+              </div>
+            </div>
+            <div class="proposal__content">
+              <div class="content16">KEF Q Concerto Meta</div>
+              <div class="content12 proposal__star">
+                <div class="stars-container" id="starsContainer"></div>
+                <div>(10 отзывов)</div>
+              </div>
+              <p class="content14">Полочная акустическая система</p>
+              <div class="content14 proposal__color">
+                Цвет
+                <div class="proposal__color" role="group" aria-label="цвет">
+                  <button type="button" data-sort="gray" aria-pressed="false">
+                    <img src="./src/images/proposal/gray.webp" alt="серый" />
+                  </button>
+                  <button type="button" data-sort="white" aria-pressed="true">
+                    <img src="./src/images/proposal/white.webp" alt="белый" />
+                  </button>
+                  <button type="button" data-sort="black" aria-pressed="false">
+                    <img src="./src/images/proposal/black.webp" alt="чёрный" />
+                  </button>
+                </div>
+              </div>
+              <div class="proposal__price">
+                <span class="content"
+                  >175 000 р. <span class="content14">185 000 р.</span></span
+                ><button>
+                  <svg
+                    width="24"
+                    height="20"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.6933 3.19629C23.3549 2.6742 22.8028 2.36694 22.1883 2.36694H8.9139C8.39181 2.36694 7.93093 2.61299 7.62367 3.01267C7.31642 3.41235 7.19401 3.93444 7.31642 4.42654L8.79149 10.2957C8.97633 11.0639 9.68204 11.6172 10.4814 11.6172H19.7602C20.4672 11.6172 21.0817 11.2175 21.3577 10.573L23.8158 4.92012C24.0918 4.36441 24.0306 3.71869 23.6933 3.1966L23.6933 3.19629Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M2.55047 1.23022C3.31861 1.23022 3.99433 1.75231 4.20916 2.49046L6.66721 11.8006C7.00568 13.0909 8.17227 13.9826 9.49372 13.9826H21.6303C21.9688 13.9826 22.2448 13.7066 22.2448 13.3681C22.2448 13.0296 21.9688 12.7536 21.6303 12.7536L9.49372 12.7524C8.72558 12.7524 8.04986 12.2303 7.83502 11.4922L5.37698 2.18201C5.0385 0.89178 3.87192 0 2.55047 0H0.614512C0.276039 0 0 0.276051 0 0.614512C0 0.952973 0.276051 1.22902 0.614512 1.22902L2.55047 1.23022Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M11.5863 15.3728C12.5225 16.3078 12.5225 17.826 11.5863 18.7621C10.6514 19.6971 9.13308 19.6971 8.19823 18.7621C7.26205 17.8259 7.26205 16.3077 8.19823 15.3728C9.13321 14.4366 10.6515 14.4366 11.5863 15.3728Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M22.5791 16.6687C22.7915 17.9757 21.9045 19.206 20.5975 19.4184C19.2905 19.6308 18.0602 18.7439 17.8478 17.4369C17.6354 16.1298 18.5235 14.8996 19.8294 14.6872C21.1364 14.4747 22.3678 15.3629 22.5791 16.6687Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="proposal__card">
+            <div class="swiper proposalSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+              </div>
+              <div class="custom-scrollbar-wrapper">
+                <div class="custom-scrollbar"></div>
+              </div>
+            </div>
+            <div class="proposal__content">
+              <div class="content16">KEF Q Concerto Meta</div>
+              <div class="content12 proposal__star">
+                <div class="stars-container" id="starsContainer"></div>
+                <div>(10 отзывов)</div>
+              </div>
+              <p class="content14">Полочная акустическая система</p>
+              <div class="content14 proposal__color">
+                Цвет
+                <div class="proposal__color" role="group" aria-label="цвет">
+                  <button type="button" data-sort="gray" aria-pressed="false">
+                    <img src="./src/images/proposal/gray.webp" alt="серый" />
+                  </button>
+                  <button type="button" data-sort="white" aria-pressed="true">
+                    <img src="./src/images/proposal/white.webp" alt="белый" />
+                  </button>
+                  <button type="button" data-sort="black" aria-pressed="false">
+                    <img src="./src/images/proposal/black.webp" alt="чёрный" />
+                  </button>
+                </div>
+              </div>
+              <div class="proposal__price">
+                <span class="content"
+                  >175 000 р. <span class="content14">185 000 р.</span></span
+                ><button>
+                  <svg
+                    width="24"
+                    height="20"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.6933 3.19629C23.3549 2.6742 22.8028 2.36694 22.1883 2.36694H8.9139C8.39181 2.36694 7.93093 2.61299 7.62367 3.01267C7.31642 3.41235 7.19401 3.93444 7.31642 4.42654L8.79149 10.2957C8.97633 11.0639 9.68204 11.6172 10.4814 11.6172H19.7602C20.4672 11.6172 21.0817 11.2175 21.3577 10.573L23.8158 4.92012C24.0918 4.36441 24.0306 3.71869 23.6933 3.1966L23.6933 3.19629Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M2.55047 1.23022C3.31861 1.23022 3.99433 1.75231 4.20916 2.49046L6.66721 11.8006C7.00568 13.0909 8.17227 13.9826 9.49372 13.9826H21.6303C21.9688 13.9826 22.2448 13.7066 22.2448 13.3681C22.2448 13.0296 21.9688 12.7536 21.6303 12.7536L9.49372 12.7524C8.72558 12.7524 8.04986 12.2303 7.83502 11.4922L5.37698 2.18201C5.0385 0.89178 3.87192 0 2.55047 0H0.614512C0.276039 0 0 0.276051 0 0.614512C0 0.952973 0.276051 1.22902 0.614512 1.22902L2.55047 1.23022Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M11.5863 15.3728C12.5225 16.3078 12.5225 17.826 11.5863 18.7621C10.6514 19.6971 9.13308 19.6971 8.19823 18.7621C7.26205 17.8259 7.26205 16.3077 8.19823 15.3728C9.13321 14.4366 10.6515 14.4366 11.5863 15.3728Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M22.5791 16.6687C22.7915 17.9757 21.9045 19.206 20.5975 19.4184C19.2905 19.6308 18.0602 18.7439 17.8478 17.4369C17.6354 16.1298 18.5235 14.8996 19.8294 14.6872C21.1364 14.4747 22.3678 15.3629 22.5791 16.6687Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="proposal__card">
+            <div class="swiper proposalSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    alt="KEF Q Concerto Meta"
+                  />
+                </div>
+              </div>
+              <div class="custom-scrollbar-wrapper">
+                <div class="custom-scrollbar"></div>
+              </div>
+            </div>
+            <div class="proposal__content">
+              <div class="content16">KEF Q Concerto Meta</div>
+              <div class="content12 proposal__star">
+                <div class="stars-container" id="starsContainer"></div>
+                <div>(10 отзывов)</div>
+              </div>
+              <p class="content14">Полочная акустическая система</p>
+              <div class="content14 proposal__color">
+                Цвет
+                <div class="proposal__color" role="group" aria-label="цвет">
+                  <button type="button" data-sort="gray" aria-pressed="false">
+                    <img src="./src/images/proposal/gray.webp" alt="серый" />
+                  </button>
+                  <button type="button" data-sort="white" aria-pressed="true">
+                    <img src="./src/images/proposal/white.webp" alt="белый" />
+                  </button>
+                  <button type="button" data-sort="black" aria-pressed="false">
+                    <img src="./src/images/proposal/black.webp" alt="чёрный" />
+                  </button>
+                </div>
+              </div>
+              <div class="proposal__price">
+                <span class="content"
+                  >175 000 р. <span class="content14">185 000 р.</span></span
+                ><button>
+                  <svg
+                    width="24"
+                    height="20"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.6933 3.19629C23.3549 2.6742 22.8028 2.36694 22.1883 2.36694H8.9139C8.39181 2.36694 7.93093 2.61299 7.62367 3.01267C7.31642 3.41235 7.19401 3.93444 7.31642 4.42654L8.79149 10.2957C8.97633 11.0639 9.68204 11.6172 10.4814 11.6172H19.7602C20.4672 11.6172 21.0817 11.2175 21.3577 10.573L23.8158 4.92012C24.0918 4.36441 24.0306 3.71869 23.6933 3.1966L23.6933 3.19629Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M2.55047 1.23022C3.31861 1.23022 3.99433 1.75231 4.20916 2.49046L6.66721 11.8006C7.00568 13.0909 8.17227 13.9826 9.49372 13.9826H21.6303C21.9688 13.9826 22.2448 13.7066 22.2448 13.3681C22.2448 13.0296 21.9688 12.7536 21.6303 12.7536L9.49372 12.7524C8.72558 12.7524 8.04986 12.2303 7.83502 11.4922L5.37698 2.18201C5.0385 0.89178 3.87192 0 2.55047 0H0.614512C0.276039 0 0 0.276051 0 0.614512C0 0.952973 0.276051 1.22902 0.614512 1.22902L2.55047 1.23022Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M11.5863 15.3728C12.5225 16.3078 12.5225 17.826 11.5863 18.7621C10.6514 19.6971 9.13308 19.6971 8.19823 18.7621C7.26205 17.8259 7.26205 16.3077 8.19823 15.3728C9.13321 14.4366 10.6515 14.4366 11.5863 15.3728Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M22.5791 16.6687C22.7915 17.9757 21.9045 19.206 20.5975 19.4184C19.2905 19.6308 18.0602 18.7439 17.8478 17.4369C17.6354 16.1298 18.5235 14.8996 19.8294 14.6872C21.1364 14.4747 22.3678 15.3629 22.5791 16.6687Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="proposal__show content16">ПОКАЗАТЬ ЕЩЁ</button>
+      </section>
+
+      <section class="solutions sectionTop">
+        <h2 class="headline">Готовые решения KEF</h2>
+      </section>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/swiper-bundle.min.js"></script>
+    <script src="./src/js/slider.js"></script>
+    <script src="./src/js/star.js"></script>
   </body>
 </html>

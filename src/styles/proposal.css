@@ -1,0 +1,271 @@
+.proposal__sort {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0 20px 0;
+    align-items: self-end;
+}
+
+.proposal__controls {
+    display: flex;
+    gap: 5px;
+}
+
+.proposal__controls button {
+    background: var(--white);
+    color: var(--text);
+    padding: 9px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid var(--white);
+}
+
+
+.proposal__controls button[aria-pressed="true"] {
+    border: 1px solid var(--text);
+}
+
+
+.proposal__controls button:hover {
+    border: 1px solid #C5C5C5
+}
+
+
+.proposal__tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.proposal__tabs button {
+    color: var(--text-gray);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 0;
+    border: none;
+}
+
+
+.proposal__tabs button[aria-pressed="true"] {
+    color: var(--text);
+    border-bottom: 1px solid var(--text);
+}
+
+
+.proposal__tabs button:hover {
+    color: var(--text);
+}
+
+.proposalSwiper>div>div img {
+    display: block;
+    width: 269px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.proposal__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+.proposal__card {
+    max-width: 345px;
+    border-radius: 5px;
+    background: var(--white);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.proposal__content .content {
+    font-weight: 700;
+}
+
+.proposal__price>.content>.content14 {
+    text-decoration: line-through;
+}
+
+.proposal__price>button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+    padding: 0;
+}
+
+.proposal__color {
+    display: flex;
+    gap: 10px;
+}
+
+.proposal__color button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #EEEEEE;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proposal__color button img {
+    width: 32px;
+    height: 32px;
+}
+
+.proposal__color button[aria-pressed="true"] {
+    border: 1px solid var(--text);
+}
+
+.proposal__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -10px;
+}
+
+.proposal__price>button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.proposal__price>button:hover {
+    background-color: (--text);
+}
+
+.proposal__content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 27px;
+}
+
+.proposal__color {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+
+.custom-dots-scrollbar {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+
+.custom-scrollbar-wrapper {
+    width: 100%;
+    margin-top: 0px;
+    overflow-x: auto;
+}
+
+.custom-scrollbar {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    min-width: max-content;
+}
+
+
+.custom-scrollbar .tick {
+    flex: 1;
+    height: 1px;
+    background: #78909C;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.custom-scrollbar .tick.active {
+    background: var(--text);
+}
+
+/* звёзды */
+.stars-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.star {
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
+    color: #D9D9D9;
+    transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1), filter 0.1s;
+    display: inline-block;
+}
+
+
+.star.selected {
+    color: var(--text);
+}
+
+.proposal__star {
+    display: flex;
+    gap: 5px;
+}
+
+.proposal__show {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 65px;
+    font-weight: 700 !important;
+    background-color: var(--white);
+    padding: 20px 0;
+}
+
+
+@media (max-width: 1140px) {
+    .proposal__sort {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .proposal__controls {
+        flex-wrap: wrap;
+    }
+
+    .proposal__tabs {
+        overflow: scroll;
+        width: 100%;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .proposal__tabs::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .proposal__tabs button {
+        font-size: 10px;
+    }
+
+    .proposal__controls button {
+        font-size: 12px;
+    }
+}
