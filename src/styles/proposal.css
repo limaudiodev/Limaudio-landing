@@ -6,58 +6,6 @@
     align-items: self-end;
 }
 
-.proposal__controls {
-    display: flex;
-    gap: 5px;
-}
-
-.proposal__controls button {
-    background: var(--white);
-    color: var(--text);
-    padding: 9px 20px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 1px solid var(--white);
-}
-
-
-.proposal__controls button[aria-pressed="true"] {
-    border: 1px solid var(--text);
-}
-
-
-.proposal__controls button:hover {
-    border: 1px solid #C5C5C5
-}
-
-
-.proposal__tabs {
-    display: flex;
-    gap: 10px;
-}
-
-.proposal__tabs button {
-    color: var(--text-gray);
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    white-space: nowrap;
-    padding: 0;
-    border: none;
-}
-
-
-.proposal__tabs button[aria-pressed="true"] {
-    color: var(--text);
-    border-bottom: 1px solid var(--text);
-}
-
-
-.proposal__tabs button:hover {
-    color: var(--text);
-}
 
 .proposalSwiper>div>div img {
     display: block;
