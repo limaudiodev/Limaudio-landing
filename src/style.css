@@ -5,6 +5,7 @@
 @import url("./styles/solutions.css");
 @import url("./styles/systems.css");
 @import url("./styles/accompany.css");
+@import url("./styles/consultation.css");
 
 @font-face {
   font-family: 'Manrope';
@@ -78,6 +79,13 @@ p {
 .container {
   max-width: 1480px;
   padding: 0 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.container2 {
+  max-width: 1480px;
+  padding: 0 0 0 20px;
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -161,6 +169,7 @@ button {
 
 .sectionTop {
   margin-top: 120px;
+  margin-bottom: 0;
 }
 
 .swiper {
@@ -328,9 +337,6 @@ button {
   .controls__tabs button {
     font-size: 10px;
   }
-
-
-
 }
 
 @media (max-width: 330px) {
