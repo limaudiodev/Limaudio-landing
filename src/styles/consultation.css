@@ -1,0 +1,53 @@
+.consultation {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.consultation>div {
+    width: 50%;
+}
+
+.consultation__content {
+    padding-right: 100px;
+}
+
+.consultation__content>h2 {
+    margin-top: 40px;
+    max-width: 575px;
+}
+
+.consultation__content>h4 {
+    margin: 30px 0 15px 0;
+}
+
+.consultation__images {
+    width: 100%;
+}
+
+
+.consultation__quote {
+    position: relative;
+    padding: 0px 0 0 30px;
+    margin-top: 30px;
+}
+
+.consultation__quote::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #000;
+}
+
+.consultation__quote>div {
+    display: flex;
+    gap: 10px;
+}
+
+.consultation__name {
+    font-weight: 600;
+    font-size: 20px;
+}

@@ -142,6 +142,7 @@ button {
   font-weight: 400;
   font-size: 18px;
   line-height: 139%;
+  color: var(--text-desc);
 }
 
 .content16 {
@@ -166,10 +167,8 @@ button {
   color: var(--text-desc);
 }
 
-
 .sectionTop {
-  margin-top: 120px;
-  margin-bottom: 0;
+  margin: 120px 0;
 }
 
 .swiper {
