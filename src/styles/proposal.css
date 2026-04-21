@@ -186,6 +186,11 @@
     padding: 20px 0;
 }
 
+.proposal-body {
+    top: 550px;
+    left: -250px;
+}
+
 @media (max-width: 1500px) {
     .proposal__cards {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -279,7 +284,10 @@
         display: flex;
         flex-direction: column-reverse;
         margin-bottom: 10px;
+    }
 
+    .proposal-body {
+        display: none;
     }
 }
 
