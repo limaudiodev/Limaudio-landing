@@ -16,13 +16,11 @@
 
 .proposal__cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
     gap: 10px;
 }
 
 .proposal__card {
-    max-width: 345px;
     border-radius: 5px;
     background: var(--white);
     padding: 20px;
@@ -43,6 +41,10 @@
     border: 1px solid var(--text);
     border-radius: 5px;
     padding: 0;
+}
+
+.proposal__price>button>span {
+    display: none;
 }
 
 .proposal__color {
@@ -184,6 +186,12 @@
     padding: 20px 0;
 }
 
+@media (max-width: 1500px) {
+    .proposal__cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
 
 @media (max-width: 1140px) {
     .proposal__sort {
@@ -208,12 +216,82 @@
     }
 }
 
+
+
+
 @media (max-width: 425px) {
+    .proposal__cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .star {
+        font-size: 9px;
+    }
+
+    .proposalSwiper>div>div img {
+        width: 100%;
+    }
+
     .proposal__tabs button {
         font-size: 10px;
     }
 
     .proposal__controls button {
         font-size: 12px;
+    }
+
+    .proposal__price {
+        flex-direction: column;
+        margin-top: 0px;
+    }
+
+    .proposal__price>button {
+        width: 100%;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 37px;
+    }
+
+    .proposal__price>button>span {
+        display: flex;
+    }
+
+    .proposal__color {
+        display: none;
+    }
+
+    .proposal__content {
+        margin: 0;
+    }
+
+    .proposal__price {
+        align-items: flex-start;
+
+    }
+
+    .proposal__price>button>svg {
+        width: 14px;
+        height: auto;
+    }
+
+    .proposal__content .content {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 10px;
+
+    }
+}
+
+
+@media (max-width: 360px) {
+    .proposalSwiper>div>div img {
+        width: 98px;
+    }
+}
+
+@media (max-width: 350px) {
+    .proposalSwiper>div>div img {
+        width: 100%;
     }
 }
