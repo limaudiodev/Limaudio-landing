@@ -38,6 +38,10 @@
     background-color: var(--text-gray-e8);
 }
 
+.accompany-gray>p {
+    color: var(--text-desc);
+}
+
 .accompany__card>img {
     display: block;
     width: 100%;
