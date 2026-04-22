@@ -26,6 +26,7 @@
 .hero__content>p {
     width: 553px;
     margin-top: 22px;
+    color: var(--text-desc8);
 }
 
 .hero__content>button {
@@ -63,6 +64,11 @@
         background-color: var(--text-gray-e8);
     }
 
+    .hero__content>h1 {
+        font-size: 40px;
+    }
+
+
     .hero__content>h3 {
         display: none;
     }
@@ -77,8 +83,12 @@
         border-radius: 8px 8px 0 0px;
     }
 
+    .hero__content>h1 {
+        font-size: 32px;
+    }
+
     .hero__content>p {
-        margin-top: 16px;
+        font-size: 12px;
     }
 
     .hero__content>button {
