@@ -1156,8 +1156,8 @@
       <div class="consultation sectionTop">
         <div class="consultation__content">
           <h2 class="headline">
-            Консультацию <br /><span
-              >по подбору проводит главный инженер KEF LIMAUDIO</span
+            Консультацию <br />по подбору<span>
+              проводит главный инженер KEF LIMAUDIO</span
             >
           </h2>
           <h4 class="headline-h2">Короткий бэкграунд:</h4>
@@ -1168,7 +1168,7 @@
             проектов, включая строительство частных high-end кинозалов
           </p>
 
-          <div class="consultation__quote content">
+          <blockquote class="consultation__quote content">
             Из-за высокой занятости в строительстве частных high-end кинозалов и
             сложных интеграционных проектах я лично консультирую только
             ограниченное количество клиентов в месяц. <br /><br />
@@ -1194,7 +1194,7 @@
                 <span class="content14">Главный инженер LIMAUDIO</span>
               </div>
             </div>
-          </div>
+          </blockquote>
         </div>
         <div class="consultation__images">
           <img src="./src/images/engineer.webp" alt="инженер" />
@@ -1202,46 +1202,48 @@
       </div>
     </div>
 
-    <script src="./src/js/swiper-bundle.min.js"></script>
-    <script src="./src/js/main.js"></script>
-    <script src="./src/js/slider.js"></script>
-    <script src="./src/js/star.js"></script>
-
-    <script>
-      var solutionSwiper = new Swiper(".solutionSlider", {
-        navigation: {
-          nextEl: ".solution-next",
-          prevEl: ".solution-prev",
-        },
-      });
-    </script>
-
-    <script>
-      var accompanySwiper = new Swiper(".accompanySwiper", {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        navigation: {
-          nextEl: ".accompany-next",
-          prevEl: ".accompany-prev",
-        },
-        breakpoints: {
-          320: {
-            slidesPerView: 1.13,
-          },
-          425: {
-            slidesPerView: 1.5,
-          },
-          600: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-          1280: {
-            slidesPerView: 4,
-          },
-        },
-      });
-    </script>
+    <div class="container2"><div class="showroom"></div></div>
   </body>
+
+  <script src="./src/js/swiper-bundle.min.js"></script>
+  <script src="./src/js/main.js"></script>
+  <script src="./src/js/slider.js"></script>
+  <script src="./src/js/star.js"></script>
+
+  <script>
+    var solutionSwiper = new Swiper(".solutionSlider", {
+      navigation: {
+        nextEl: ".solution-next",
+        prevEl: ".solution-prev",
+      },
+    });
+  </script>
+
+  <script>
+    var accompanySwiper = new Swiper(".accompanySwiper", {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: ".accompany-next",
+        prevEl: ".accompany-prev",
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1.13,
+        },
+        425: {
+          slidesPerView: 1.5,
+        },
+        600: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1280: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  </script>
 </html>

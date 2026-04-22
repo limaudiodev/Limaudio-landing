@@ -6,6 +6,7 @@
 @import url("./styles/systems.css");
 @import url("./styles/accompany.css");
 @import url("./styles/consultation.css");
+@import url("./styles/showroom.css");
 
 @font-face {
   font-family: 'Manrope';
@@ -168,7 +169,7 @@ button {
 }
 
 .sectionTop {
-  margin: 120px 0;
+  margin-top: 120px;
 }
 
 .swiper {
@@ -239,7 +240,9 @@ button {
   z-index: -1;
 }
 
-
+blockquote {
+  margin: 0;
+}
 
 
 @media (max-width: 1100px) {

@@ -129,10 +129,6 @@
 }
 
 @media (max-width: 900px) {
-    .sectionTop {
-        margin-bottom: 60px;
-    }
-
     .solution__slider {
         flex-direction: column;
         gap: 20px;

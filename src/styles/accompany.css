@@ -22,10 +22,16 @@
 }
 
 
+
 .accompany-black {
     background-color: #121416;
     color: var(--white)
 }
+
+.accompany-black>p {
+    color: var(--white)
+}
+
 
 .accompany-gray {
     color: var(--text-desc);
@@ -36,7 +42,6 @@
     display: block;
     width: 100%;
 }
-
 
 .accompany-nav {
     margin-top: 20px;
