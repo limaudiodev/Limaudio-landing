@@ -92,7 +92,12 @@ p {
 }
 
 ul {
-  list-style: none;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  padding-left: 0px;
 }
 
 button {
@@ -244,6 +249,7 @@ blockquote {
 }
 
 
+
 @media (max-width: 1100px) {
 
   .content {
@@ -281,7 +287,7 @@ blockquote {
   }
 
   .headline {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .sectionTop {
@@ -291,33 +297,6 @@ blockquote {
   .btn-cat {
     padding: 8px 10px;
     width: 100%;
-  }
-
-  .assortment-card>div {
-    align-items: flex-start;
-  }
-
-  .assortment-card>div>h2 {
-    margin: 6px 0;
-    text-align: left;
-  }
-
-  .assortment-card-tr>div {
-    align-items: self-start;
-  }
-
-  .assortment-card-tr>div>h2 {
-    text-align: start;
-    margin-bottom: 6px;
-  }
-
-  .assortment5>div>img {
-    width: 100% !important;
-  }
-
-  .assortment-card-last>div>img {
-    margin-right: 0;
-    margin-left: auto;
   }
 
   .controls-btn button {
