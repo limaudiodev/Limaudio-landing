@@ -1618,7 +1618,64 @@
       </div>
     </div>
 
-    <div class="consultation-form">fgfdg</div>
+    <div class="consultation-form">
+      <div class="consultation-form__block">
+        <div class="consultation-form__first">
+          <h2 class="headline">Получить консультацию</h2>
+          <p class="content">
+            Если у вас нестандартная задача, задайте вопрос напрямую
+          </p>
+
+          <form class="consultation-form__form">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Имя"
+              required
+              autocomplete="name"
+            />
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              placeholder="Телефон"
+              required
+              autocomplete="tel"
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Ваш вопрос"
+              required
+            ></textarea>
+
+            <div class="consent-group">
+              <label class="custom-checkbox">
+                <input
+                  type="checkbox"
+                  id="consentCheckbox"
+                  name="personalDataConsent"
+                  value="yes"
+                />
+                <span class="checkmark"></span>
+                <span class="consent-text">
+                  Даю согласие на
+                  <a href="#" id="policyLink">обработку персональных данных</a>
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-main">Задать вопрос</button>
+          </form>
+        </div>
+        <div class="consultation-form__last">
+          <img src="./src/images/kef_reference_5.webp" alt="kef reference 5" />
+        </div>
+      </div>
+    </div>
+
+    <footer></footer>
   </body>
 
   <script src="./src/js/swiper-bundle.min.js"></script>

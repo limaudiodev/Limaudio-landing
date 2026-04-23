@@ -9,6 +9,7 @@
 @import url("./styles/showroom.css");
 @import url("./styles/questions.css");
 @import url("./styles/consultationForm.css");
+@import url("./styles/footer.css");
 
 @font-face {
   font-family: 'Manrope';
@@ -250,7 +251,27 @@ blockquote {
   margin: 0;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 400;
+}
 
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 400;
+}
 
 @media (max-width: 1100px) {
 

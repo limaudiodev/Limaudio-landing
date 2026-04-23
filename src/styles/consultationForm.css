@@ -1,6 +1,221 @@
+.consultation-form__block {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1480px;
+    padding: 0 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+}
+
+.consultation-form__first>p {
+    margin: 16px 0 28px 0;
+}
+
+.consultation-form__form>button {
+    background: var(--white);
+    color: var(--text);
+    margin-top: 0px;
+}
+
+.consultation-form__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 587px;
+}
+
+.consultation-form__form>input,
+textarea {
+    border-radius: 5px;
+    background: #2F3338;
+    border: none;
+    padding-left: 20px;
+}
+
+.consultation-form__form>input {
+    height: 58px;
+}
+
+
+.consultation-form__form>textarea {
+    height: 116px;
+    padding: 20px 0 0 20px;
+    box-sizing: border-box;
+}
+
+.consent-text>a {
+    color: var(--white);
+}
+
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .checkmark {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: var(--white);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    position: relative;
+}
+
+
+.custom-checkbox input:checked~.checkmark {
+    background-color: var(--text);
+    border: 1px solid var(--white);
+}
+
+
+.custom-checkbox input:checked~.checkmark::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--white);
+    border-radius: 2px;
+}
+
+.custom-checkbox input:focus-visible~.checkmark {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+
+.consultation-form__last {
+    display: flex;
+    align-items: center;
+}
+
+.consultation-form__last>img {
+    max-width: 885px;
+    margin: -50px 78px 0 0;
+}
+
+
 .consultation-form {
     background: #1C1F23;
     width: 100%;
-    padding-top: 170px;
+    padding-top: 205px;
     margin-top: 140px;
+}
+
+.consultation-form {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.consultation-form::before {
+    content: '';
+    position: absolute;
+    bottom: -74px;
+    left: 47%;
+    width: 982px;
+    height: 962px;
+    background-image: url(/src/images/const-bg.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+@media (max-width: 1440px) {
+    .consultation-form__last>img {
+        margin: -50px 0 0 0;
+    }
+}
+
+
+@media (max-width: 1280px) {
+    .consultation-form::before {
+        bottom: -75px;
+        left: 44%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .consultation-form::before {
+        bottom: -131px;
+        left: 30%;
+    }
+}
+
+
+
+
+@media (max-width: 1000px) {
+    .consultation-form__last>img {
+        width: 80%;
+        margin: -50px 0 0 auto;
+    }
+
+
+    .consultation-form::before {
+        bottom: -175px;
+        left: 33%;
+        background-size: 80%;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .consultation-form {
+        padding-top: 50px;
+        margin-top: 50px;
+        background-position: auto auto;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .consultation-form__block {
+        display: flex;
+        justify-content: right;
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+    .consultation-form::before {
+        width: 500px;
+        height: 500px;
+        bottom: -56px;
+        left: auto;
+        right: auto;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .consultation-form__last>img {
+        width: 200px;
+        margin: 30px auto 0 auto;
+    }
+
 }
