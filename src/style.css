@@ -7,6 +7,8 @@
 @import url("./styles/accompany.css");
 @import url("./styles/consultation.css");
 @import url("./styles/showroom.css");
+@import url("./styles/questions.css");
+@import url("./styles/consultationForm.css");
 
 @font-face {
   font-family: 'Manrope';
@@ -312,5 +314,10 @@ blockquote {
 @media (max-width: 330px) {
   .btn-cat {
     padding: 8px 4px;
+  }
+
+  .btn-main {
+    font-size: 13px;
+
   }
 }

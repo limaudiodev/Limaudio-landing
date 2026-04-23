@@ -123,9 +123,17 @@
 }
 
 
-.showroom__content>h2,
-p,
-ul {
+.showroom__content>h2 {
+    color: var(--white);
+
+}
+
+.showroom__content>p {
+    color: var(--white);
+
+}
+
+.showroom__content>ul {
     color: var(--white);
 
 }
