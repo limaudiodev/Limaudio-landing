@@ -2,7 +2,7 @@
     background: #1C1F23;
     width: 100%;
     padding-top: 170px;
-    margin-top: 140px;
+    margin-top: 152px;
 }
 
 .showroom__bg1 {
@@ -25,6 +25,17 @@
     padding: 140px 0 80px 0;
 }
 
+.showroom__bg3 {
+    position: relative;
+    background-image: url('../images/showroom/showroom-backround2.webp');
+    background-repeat: no-repeat;
+    background-position: 0% 157%;
+    max-width: 100%;
+    margin: 7px auto 0 auto;
+    padding: 40px 0 188px 0;
+}
+
+
 .showroom__block {
     display: flex;
     justify-content: space-between;
@@ -37,7 +48,7 @@
 .showroom2 {
     background: #1C1F23;
     width: 100%;
-    padding: 50px 0;
+    padding: 5px 0 0 0;
 }
 
 
@@ -376,6 +387,11 @@
         background-position: 230% -9%;
     }
 
+    .showroom__bg3 {
+        padding: 40px 0 60px 0;
+        background-position: 0% 0%;
+    }
+
     .showroom__img2 {
         width: 100%;
         display: flex;
@@ -451,5 +467,9 @@
         background-position: 227% -1%;
     }
 
+    .showroom__bg3 {
+        background-position: 0% 1%;
+        background-size: 57%;
+    }
 
 }

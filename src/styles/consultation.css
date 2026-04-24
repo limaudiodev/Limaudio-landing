@@ -2,14 +2,15 @@
     display: flex;
     margin-top: 10px;
     gap: 10px;
+    margin-top: 110px;
 }
 
-.consultation>div {
-    width: 50%;
-}
+
 
 .consultation__content {
-    padding-right: 100px;
+    width: calc(100% - 709px);
+    padding-right: 115px;
+    box-sizing: border-box;
 }
 
 .consultation__content>h2 {
@@ -25,6 +26,10 @@
     color: var(--text-desc);
 }
 
+
+.consultation__images {
+    width: 709px;
+}
 
 .consultation__images>img {
     width: 100%;
@@ -59,7 +64,17 @@
 
 
 
+@media (max-width: 1440px) {
+    .consultation__content {
+        padding-right: 50px;
+    }
+}
+
 @media (max-width: 1280px) {
+    .consultation {
+        justify-content: space-between;
+    }
+
     .consultation__content>h2 {
         margin-top: 0px;
     }
@@ -70,10 +85,15 @@
 
     .consultation__content {
         padding-right: 0px;
+        width: 47%;
     }
 
     .consultation__quote {
         margin-top: 10px;
+    }
+
+    .consultation__images {
+        width: 50%;
     }
 }
 
@@ -110,6 +130,7 @@
 @media (max-width: 768px) {
     .consultation {
         flex-direction: column;
+        margin-top: 60px;
     }
 
     .consultation__quote {
