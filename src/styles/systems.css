@@ -26,17 +26,6 @@
     color: #E5E5E5;
 }
 
-.system__content>button {
-    background: var(--white);
-    color: var(--text);
-}
-
-
-.system__content>button:hover {
-    background: var(--btn);
-    color: var(--white);
-}
-
 .system__img {
     margin: 66px 183px 0 0;
 }

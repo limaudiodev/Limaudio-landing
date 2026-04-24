@@ -110,30 +110,61 @@ button {
   background: none;
 }
 
-.btn-main {
+.btn {
   border-radius: 37px;
-  background: var(--text);
-  color: var(--white);
   font-weight: 700;
   text-transform: uppercase;
   padding: 18px 25px;
   font-size: 16px;
 }
 
-.btn-cat {
-  border-radius: 37px;
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--text);
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 12px 20px;
-  font-size: 12px;
-  max-width: 134px;
+.btn-main {
+  background: var(--text);
+  color: var(--white);
 }
 
 .btn-main:hover {
   background: var(--btn-h);
+}
+
+.btn-white-bg-black {
+  background: var(--white);
+  color: var(--text);
+}
+
+.btn-white-bg-black:hover {
+  background: var(--btn-h);
+}
+
+
+.btn-black {
+  background: var(--text);
+  color: var(--white);
+}
+
+.btn-black:hover {
+  background: var(--btn);
+}
+
+
+.btn-black-bg-black {
+  background: var(--text);
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.btn-black-bg-black:hover {
+  background: var(--btn-h);
+}
+
+
+.btn-cat {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--text);
+  padding: 12px 20px;
+  font-size: 12px;
+  max-width: 134px;
 }
 
 .headline {
