@@ -212,6 +212,17 @@
     border: 1px solid var(--white);
 }
 
+
+.showroom__btns>button:first-child:hover {
+    background: var(--btn-h);
+}
+
+.showroom__btns>button:last-child:hover {
+    border: 1px solid var(--btn);
+    background: var(--btn);
+    color: var(--white);
+}
+
 .showroom__btns>button {
     padding: 18px 22px;
 }

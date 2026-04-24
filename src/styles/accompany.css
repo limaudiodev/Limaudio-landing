@@ -10,36 +10,27 @@
 .accompany__card {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
-.accompany__content {
-    padding: 23px 20px 35px 20px;
-    height: 216px;
+.accompany__card:hover .accompany__content {
+    color: var(--white);
+    background-color: var(--text);
 }
-
-.accompany__content>h4 {
-    margin: 0px 0 10px 0;
-}
-
-
 
 .accompany-black {
     background-color: #121416;
     color: var(--white)
 }
 
-.accompany-black>p {
-    color: var(--white)
-}
-
-
-.accompany-gray {
-    color: var(--text-desc);
+.accompany__content {
+    padding: 23px 20px 35px 20px;
+    height: 216px;
     background-color: var(--text-gray-e8);
 }
 
-.accompany-gray>p {
-    color: var(--text-desc);
+.accompany__content>h4 {
+    margin: 0px 0 10px 0;
 }
 
 .accompany__card>img {

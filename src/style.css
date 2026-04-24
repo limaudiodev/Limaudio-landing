@@ -132,7 +132,7 @@ button {
 }
 
 .btn-main:hover {
-  background: var(--btn);
+  background: var(--btn-h);
 }
 
 .headline {

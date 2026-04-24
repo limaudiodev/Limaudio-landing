@@ -43,6 +43,17 @@
     padding: 0;
 }
 
+.proposal__price>button:hover {
+    border-radius: 5px;
+    background: var(--text);
+    padding: 0;
+}
+
+.proposal__price>button:hover>svg>path {
+    fill: var(--white);
+}
+
+
 .proposal__price>button>span {
     display: none;
 }

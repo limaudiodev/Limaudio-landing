@@ -34,6 +34,10 @@
 }
 
 
+.hero__content>button:hover {
+    background: var(--btn);
+}
+
 @media (max-width: 1280px) {
     .hero {
         background-position: 97% center;

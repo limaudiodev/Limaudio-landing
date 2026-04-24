@@ -18,7 +18,7 @@ header {
 
 .header__menu>ul {
     font-weight: 500;
-    text-decoration: none;
+    list-style: none;
     display: flex;
     font-size: 14px;
     padding: 0;
