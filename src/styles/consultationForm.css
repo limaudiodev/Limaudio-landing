@@ -1,3 +1,7 @@
+.consultation-form-block-bg {
+    background: url(./../images/consultation-form-bg.webp)
+}
+
 .consultation-form__block {
     display: flex;
     justify-content: space-between;
@@ -116,18 +120,13 @@ textarea {
 
 
 .consultation-form {
-    background: #1C1F23;
     width: 100%;
     padding-top: 205px;
+    padding-bottom: 40px;
     margin-top: 140px;
-}
-
-.consultation-form {
     position: relative;
-    width: 100%;
     overflow: hidden;
 }
-
 
 .consultation-form::before {
     content: '';

@@ -1618,64 +1618,177 @@
       </div>
     </div>
 
-    <div class="consultation-form">
-      <div class="consultation-form__block">
-        <div class="consultation-form__first">
-          <h2 class="headline">Получить консультацию</h2>
-          <p class="content">
-            Если у вас нестандартная задача, задайте вопрос напрямую
-          </p>
+    <div class="consultation-form-block-bg">
+      <div class="consultation-form">
+        <div class="consultation-form__block">
+          <div class="consultation-form__first">
+            <h2 class="headline">Получить консультацию</h2>
+            <p class="content">
+              Если у вас нестандартная задача, задайте вопрос напрямую
+            </p>
 
-          <form class="consultation-form__form">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Имя"
-              required
-              autocomplete="name"
+            <form class="consultation-form__form">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Имя"
+                required
+                autocomplete="name"
+              />
+              <input
+                type="tel"
+                id="tel"
+                name="tel"
+                placeholder="Телефон"
+                required
+                autocomplete="tel"
+              />
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Ваш вопрос"
+                required
+              ></textarea>
+
+              <div class="consent-group">
+                <label class="custom-checkbox">
+                  <input
+                    type="checkbox"
+                    id="consentCheckbox"
+                    name="personalDataConsent"
+                    value="yes"
+                  />
+                  <span class="checkmark"></span>
+                  <span class="consent-text">
+                    Даю согласие на
+                    <a href="#" id="policyLink"
+                      >обработку персональных данных</a
+                    >
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn-main">Задать вопрос</button>
+            </form>
+          </div>
+          <div class="consultation-form__last">
+            <img
+              src="./src/images/kef_reference_5.webp"
+              alt="kef reference 5"
             />
-            <input
-              type="tel"
-              id="tel"
-              name="tel"
-              placeholder="Телефон"
-              required
-              autocomplete="tel"
-            />
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Ваш вопрос"
-              required
-            ></textarea>
-
-            <div class="consent-group">
-              <label class="custom-checkbox">
-                <input
-                  type="checkbox"
-                  id="consentCheckbox"
-                  name="personalDataConsent"
-                  value="yes"
-                />
-                <span class="checkmark"></span>
-                <span class="consent-text">
-                  Даю согласие на
-                  <a href="#" id="policyLink">обработку персональных данных</a>
-                </span>
-              </label>
-            </div>
-
-            <button type="submit" class="btn-main">Задать вопрос</button>
-          </form>
-        </div>
-        <div class="consultation-form__last">
-          <img src="./src/images/kef_reference_5.webp" alt="kef reference 5" />
+          </div>
         </div>
       </div>
     </div>
 
-    <footer></footer>
+    <footer>
+      <div class="container2">
+        <div class="footer">
+          <div class="footer__logo">
+            <div class="footer__logos">
+              <div>
+                <a href="#"
+                  ><img
+                    src="./src/assets/logo-white.svg"
+                    alt="логотип limaudio"
+                /></a>
+                <img src="./src/assets/kef.svg" alt="kef" /> by LIMAUDIO
+              </div>
+            </div>
+            <div class="content14 footer-diller">
+              Официальный дилер KEF в России
+            </div>
+            <p class="content14">
+              Подбор, настройка и сопровождение акустических систем KEF для
+              жилых интерьеров, ТВ-гостиных, стереосистем и домашних
+              кинотеатров.
+            </p>
+          </div>
+          <div class="foorter__group">
+            <div class="footer__nav footer-nav-block">
+              <p class="content">Навигация</p>
+              <ul class="content14 footer-ul-style">
+                <li>Каталог</li>
+                <li>Готовые решения</li>
+                <li>Подбор акустики</li>
+                <li>Шоурум</li>
+                <li>О KEF</li>
+                <li>Контакты</li>
+              </ul>
+            </div>
+            <div class="footer__contacts footer-nav-block">
+              <p class="content">Контакты</p>
+              <ul class="content14 footer-ul-style">
+                <li>
+                  <svg
+                    width="19"
+                    height="19"
+                    viewBox="0 0 19 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.82111 8.22278C5.34111 11.21 7.79 13.6589 10.7772 15.1789L13.0994 12.8567C13.395 12.5611 13.8067 12.4767 14.1761 12.5928C15.3583 12.9833 16.625 13.1944 17.9444 13.1944C18.2244 13.1944 18.4929 13.3057 18.6908 13.5036C18.8888 13.7016 19 13.97 19 14.25V17.9444C19 18.2244 18.8888 18.4929 18.6908 18.6908C18.4929 18.8888 18.2244 19 17.9444 19C13.1853 19 8.62104 17.1094 5.25581 13.7442C1.89057 10.379 0 5.81472 0 1.05556C0 0.775605 0.11121 0.50712 0.309165 0.309165C0.50712 0.11121 0.775605 0 1.05556 0H4.75C5.02995 0 5.29844 0.11121 5.49639 0.309165C5.69435 0.50712 5.80556 0.775605 5.80556 1.05556C5.80556 2.375 6.01667 3.64167 6.40722 4.82389C6.52333 5.19333 6.43889 5.605 6.14333 5.90056L3.82111 8.22278Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <a href="tel:88000000000">8 (800) 000-00-00</a>
+                </li>
+                <li>
+                  <button class="btn-main fc-btn">Получить консультацию</button>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__social footer-nav-block">
+              <p class="content">Telegram-канал LIMAUDIO</p>
+              <ul class="content14 footer-ul-style">
+                <li>
+                  Разборы систем, инженерные детали,<br />
+                  новости шоурума и новые решения.
+                </li>
+                <li>
+                  <a
+                    href="https://t.me/sad"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="text-decoration: none"
+                  >
+                    <button class="btn-main fc-btn">
+                      <svg
+                        width="19"
+                        height="16"
+                        viewBox="0 0 19 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.78047 14.209L7.06047 9.97905L14.7405 3.05905C15.0805 2.74905 14.6705 2.59905 14.2205 2.86905L4.74047 8.85905L0.640471 7.55905C-0.239529 7.30905 -0.249529 6.69905 0.840471 6.25905L16.8105 0.0990496C17.5405 -0.23095 18.2405 0.27905 17.9605 1.39905L15.2405 14.209C15.0505 15.119 14.5005 15.3391 13.7405 14.9191L9.60047 11.859L7.61047 13.789C7.38047 14.019 7.19047 14.209 6.78047 14.209Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span>Перейти в Telegram</span>
+                    </button></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer-hr" />
+
+        <div class="footer__footer">
+          <div class="content14">© LIMAUDIO, 2026</div>
+          <div>
+            <a class="content14" href="/">Политика конфиденциальности</a>
+            <a class="content14" href="/"
+              >Согласие на обработку персональных данных</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 
   <script src="./src/js/swiper-bundle.min.js"></script>
