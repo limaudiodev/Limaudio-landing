@@ -29,7 +29,7 @@
 
 @font-face {
   font-family: 'Manrope';
-  src: url('/fonts/manrope/MManrope-SemiBold.ttf') format('truetype');
+  src: url('/fonts/manrope/Manrope-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -52,6 +52,7 @@
 }
 
 
+
 :root {
   --background: #F2F2F2;
   --text: #000000;
@@ -69,7 +70,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-family: 'Manrope', sans-serif;
   background: var(--background);
 }
 

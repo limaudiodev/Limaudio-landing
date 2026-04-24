@@ -135,7 +135,7 @@ textarea {
     left: 47%;
     width: 982px;
     height: 962px;
-    background-image: url(/src/images/const-bg.webp);
+    background-image: url(./../../src/images/const-bg.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
