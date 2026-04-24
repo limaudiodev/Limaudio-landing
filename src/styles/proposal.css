@@ -271,6 +271,7 @@
 
     .proposal__price>button>span {
         display: flex;
+        color: var(--text);
     }
 
     .proposal__color {

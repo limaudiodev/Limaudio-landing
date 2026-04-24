@@ -172,10 +172,10 @@ header {
 
     .mobile-menu-overlay {
         position: fixed;
-        top: 90px;
+        top: 75px;
         left: 0;
         width: 100%;
-        height: calc(100% - 90px);
+        height: calc(100% - 75px);
         background-color: var(--background);
         backdrop-filter: blur(3px);
         visibility: hidden;
