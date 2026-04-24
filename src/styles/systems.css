@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     max-width: 1480px;
-    padding: 40px 20px 86px 0;
+    padding: 40px 20px 86px 20px;
     box-sizing: border-box;
     margin: 0 auto;
 }
