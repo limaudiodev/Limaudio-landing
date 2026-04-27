@@ -1,6 +1,7 @@
 .systems {
     background-image: url(./../images/system-bg.webp);
     margin-top: 140px;
+    background-repeat: round;
 }
 
 .systems>div {
