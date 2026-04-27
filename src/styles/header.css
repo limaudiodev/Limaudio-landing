@@ -40,6 +40,7 @@ header {
 
 .header__contact {
     display: flex;
+    gap: 10px;
     margin-left: 48px;
 }
 
@@ -120,13 +121,23 @@ header {
     }
 }
 
-@media (max-width: 910px) {
+@media (max-width: 920px) {
     .header__menu>ul {
         display: none;
     }
 
     .header__contact>div {
         display: none;
+    }
+
+    .header__contact>a {
+        display: flex;
+    }
+
+    .header__contact>a>svg {
+        width: 18px;
+        height: 18px;
+        align-items: center;
     }
 
     .burger-btn {
