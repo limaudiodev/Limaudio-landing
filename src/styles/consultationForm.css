@@ -31,13 +31,6 @@
     max-width: 587px;
 }
 
-.consultation-form__form>input,
-textarea {
-    border-radius: 5px;
-    background: #2F3338;
-    border: none;
-    padding-left: 20px;
-}
 
 .consultation-form__form>input {
     height: 58px;
@@ -77,6 +70,7 @@ textarea {
     width: 25px;
     height: 25px;
     background-color: var(--white);
+    border: 1px solid transparent;
     border-radius: 3px;
     transition: all 0.2s ease;
     flex-shrink: 0;

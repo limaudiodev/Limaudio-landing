@@ -283,27 +283,59 @@ blockquote {
   margin: 0;
 }
 
-input::placeholder,
-textarea::placeholder {
+input,
+textarea {
+  border-radius: 5px;
+  background: #2F3338;
+  border: none;
+  padding-left: 20px;
   color: var(--white);
   font-size: 16px;
   font-weight: 400;
 }
 
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: var(--white);
+input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+input::-moz-placeholder {
   font-size: 16px;
   font-weight: 400;
   opacity: 1;
 }
 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: var(--white);
+input:-ms-input-placeholder {
   font-size: 16px;
   font-weight: 400;
 }
+
+.custom-textarea::-webkit-input-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.custom-textarea:-moz-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.custom-textarea::-moz-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.custom-textarea:-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.custom-textarea::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
 
 @media (max-width: 1100px) {
 
