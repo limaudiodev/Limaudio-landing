@@ -98,12 +98,15 @@
     box-sizing: border-box;
 }
 
-.solutions-body {
-    top: 110px;
-    right: -250px;
-    overflow: hidden;
+
+.solutions-body-min {
+    display: none;
 }
 
+.solutions-body {
+    bottom: -238px;
+    right: 0px;
+}
 
 @media (max-width: 1280px) {
     .solution__slider {
@@ -156,7 +159,19 @@
         margin: 0 auto;
         width: fit-content;
     }
+
+    .solutions-body-min {
+        display: block;
+        bottom: 560px;
+        right: 0;
+    }
+
+
+    .solutions-body {
+        display: none;
+    }
 }
+
 
 @media (max-width: 425px) {
     .solution__slider {

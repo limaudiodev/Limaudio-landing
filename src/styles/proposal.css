@@ -202,6 +202,7 @@
     left: -250px;
 }
 
+
 @media (max-width: 1500px) {
     .proposal__cards {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

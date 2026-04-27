@@ -66,6 +66,12 @@
     box-sizing: border-box;
 }
 
+.accompany-body {
+    top: -715px;
+    left: 0px;
+}
+
+
 @media (max-width: 768px) {
     .accompany {
         margin-top: 60px;
@@ -80,5 +86,9 @@
     .accompany__content {
         padding: 23px 20px 35px 20px;
         height: 216px;
+    }
+
+    .accompany-body {
+        display: none;
     }
 }
