@@ -161,32 +161,7 @@
 }
 
 /* звёзды */
-.stars-container {
-    display: flex;
-    flex-wrap: wrap;
-}
 
-.star {
-    font-size: 15px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    line-height: 1;
-    color: #D9D9D9;
-    transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1), filter 0.1s;
-    display: inline-block;
-}
-
-
-.star.selected {
-    color: var(--text);
-}
-
-.proposal__star {
-    display: flex;
-    gap: 5px;
-}
 
 .proposal__show {
     width: 100%;

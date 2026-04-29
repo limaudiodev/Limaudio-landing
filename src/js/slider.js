@@ -23,7 +23,7 @@ for (let i = 0; i < slidesCount; i++) {
 swiper.on("slideChange", function () {
   const activeIndex = swiper.activeIndex;
   document
-    .querySelectorAll(".custom-scrollbar .tick")
+    .querySelectorAll(".custom-scrollbar .dots")
     .forEach((tick, index) => {
       if (index === activeIndex) {
         tick.classList.add("active");
