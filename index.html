@@ -159,6 +159,8 @@
                 </div>
               </div>
             </div>
+
+            <div class="custom-pagination"></div>
           </div>
           <div class="product__desc">
             <h3 class="headline-h3">
@@ -306,6 +308,39 @@
             </div>
           </div>
         </div>
+
+        <div class="product__block product-top">
+          <div class="product__room">
+            <h3 class="headline-h3">Чистота и глубина звучания</h3>
+            <p class="content16">
+              KEF Q750 создаёт широкую, точно выстроенную сцену с чёткой
+              локализацией каждого инструмента. Звук ощущается масштабно и
+              объёмно, при этом остаётся собранным и контролируемым — особенно в
+              нижнем диапазоне, где бас глубокий, но аккуратный. Акустика легко
+              передаёт динамику и нюансы записи, вовлекая в прослушивание без
+              утомления. Комфорт сохраняется как на тихом фоне, так и на высокой
+              громкости — музыка звучит естественно и живо в любом режиме.
+            </p>
+          </div>
+          <div class="product__img">
+            <img src="./src/images/productPage/room.webp" alt="компана" />
+          </div>
+        </div>
+
+        <div class="product__specifications">
+          <h3 class="headline-h3">Технический паспорт</h3>
+
+          <div class="list-container">
+            <div class="list-content" id="listContent"></div>
+            <button
+              class="show-more-btn content14"
+              id="showMoreBtn"
+              style="display: none"
+            >
+              все характеристики
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
@@ -316,17 +351,139 @@
 
   <script>
     var swiper = new Swiper(".productSwiper", {
-      direction: "vertical",
-      spaceBetween: 10,
-      slidesPerView: 4,
-      freeMode: true,
-      watchSlidesProgress: true,
+      breakpoints: {
+        320: {
+          direction: "horizontal",
+          spaceBetween: 10,
+          slidesPerView: 4,
+          freeMode: true,
+          watchSlidesProgress: true,
+        },
+
+        1024: {
+          direction: "vertical",
+          spaceBetween: 10,
+          slidesPerView: 4,
+          freeMode: true,
+          watchSlidesProgress: true,
+        },
+      },
+      on: {
+        breakpoint: function (swiper, breakpointParams) {
+          setTimeout(() => {
+            swiper.update();
+          }, 100);
+        },
+      },
     });
     var swiper2 = new Swiper(".productSwiperMax", {
       spaceBetween: 10,
+      pagination: {
+        el: ".custom-pagination",
+        type: "bullets",
+        clickable: true,
+        bulletClass: "pagination-dot",
+        bulletActiveClass: "active",
+        renderBullet: function (index, className) {
+          return `<div class="${className}"></div>`;
+        },
+      },
+      breakpoints: {
+        0: {
+          pagination: {
+            el: ".custom-pagination",
+            type: "bullets",
+            clickable: true,
+          },
+        },
+        769: {
+          pagination: false,
+        },
+      },
       thumbs: {
         swiper: swiper,
       },
     });
+  </script>
+
+  <script>
+    /*тех характеристики */
+    class DynamicList {
+      constructor(containerId, items) {
+        this.container = document.getElementById(containerId);
+        this.items = items;
+        this.isExpanded = false;
+        this.init();
+      }
+
+      init() {
+        this.renderList();
+        const showMoreBtn = document.getElementById("showMoreBtn");
+        if (showMoreBtn) {
+          showMoreBtn.addEventListener("click", () => this.toggleList());
+        }
+      }
+
+      createItemHTML(itemData) {
+        return `
+      <div class="list-item">
+        <div class="item-content">
+          <div class="text-block block-label content16">${itemData.label}</div>
+          <div class="text-block block-value content16">${itemData.value}</div>
+        </div>
+      </div>
+    `;
+      }
+
+      renderList() {
+        const listContent = document.getElementById("listContent");
+
+        const displayItems = this.isExpanded
+          ? this.items
+          : this.items.slice(0, 8);
+
+        const itemsHTML = displayItems
+          .map((item) => this.createItemHTML(item))
+          .join("");
+
+        const finalHTML =
+          displayItems.length % 2 !== 0
+            ? itemsHTML + '<div class="list-item placeholder"></div>'
+            : itemsHTML;
+
+        listContent.innerHTML = finalHTML;
+
+        const showMoreBtn = document.getElementById("showMoreBtn");
+
+        if (this.items.length > 8) {
+          showMoreBtn.style.display = this.isExpanded ? "none" : "block";
+        } else {
+          showMoreBtn.style.display = "none";
+        }
+      }
+
+      toggleList() {
+        this.isExpanded = !this.isExpanded;
+        this.renderList();
+      }
+    }
+
+    const sampleItems = [
+      { label: "Рекомендуемая площадь", value: "20–40 м²" },
+      { label: "Сопротивление", value: "8 Ом (мин. 3.7 Ом)" },
+      { label: "Макс. звуковое давление", value: "~110 дБ" },
+      { label: "Чувствительность", value: "88 дБ (2.83 В / 1 м)" },
+      { label: "Диапазон частот", value: "48 Гц – 28 кГц (±3 дБ)" },
+
+      { label: "Габариты и вес", value: "973 × 210 × 310 мм, ~17.2 кг " },
+      {
+        label: "Конструкция",
+        value: "2.5-полосная, фазоинвертор (задний порт), Uni-Q драйвер",
+      },
+      { label: "Сопротивление", value: "8 Ом (мин. 3.7 Ом)" },
+      { label: "Сопротивление", value: "8 Ом (мин. 3.7 Ом)" },
+    ];
+
+    new DynamicList("listContent", sampleItems);
   </script>
 </html>

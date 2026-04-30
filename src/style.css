@@ -120,6 +120,10 @@ button {
   text-transform: uppercase;
   padding: 18px 25px;
   font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .btn-main {
@@ -383,6 +387,10 @@ input:-ms-input-placeholder {
     font-size: 18px;
   }
 
+  .headline-h3 {
+    font-size: 30px;
+  }
+
   .headline {
     font-size: 40px;
   }
@@ -404,13 +412,16 @@ input:-ms-input-placeholder {
     padding: 16px 22px;
   }
 
+  .headline {
+    font-size: 24px;
+  }
 
   .headline-h2 {
     font-size: 14px;
   }
 
-  .headline {
-    font-size: 24px;
+  .headline-h3 {
+    font-size: 22px;
   }
 
   .sectionTop {
