@@ -83,22 +83,6 @@
     z-index: 10;
 }
 
-.solution-prev,
-.solution-next {
-    width: 36px;
-    height: 36px;
-    background: transparent;
-    border: 1px solid var(--text);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: var(--text);
-    box-sizing: border-box;
-}
-
-
 .solutions-body-min {
     display: none;
 }

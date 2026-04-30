@@ -377,6 +377,28 @@ input:-ms-input-placeholder {
   gap: 5px;
 }
 
+.sliderBtn {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.sliderBtn_white {
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.sliderBtn_black {
+  border: 1px solid var(--text);
+  color: var(--text);
+}
+
 @media (max-width: 1100px) {
 
   .content {
