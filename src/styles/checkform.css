@@ -1,6 +1,6 @@
 .checkform {
     margin-top: 125px;
-    background: url(/src/images/consultation-form-bg.webp);
+    background: url(../images/consultation-form-bg.webp);
     color: var(--white);
     display: flex;
 }
