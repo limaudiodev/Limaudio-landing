@@ -350,6 +350,10 @@ input:-ms-input-placeholder {
   font-weight: 400;
 }
 
+.consent-group {
+  text-align: justify;
+}
+
 .stars-container {
   display: flex;
   flex-wrap: wrap;

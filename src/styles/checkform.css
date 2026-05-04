@@ -1,1 +1,27 @@
-.checkform {}
+.checkform {
+    margin-top: 125px;
+    background: url(/src/images/consultation-form-bg.webp);
+    color: var(--white);
+    display: flex;
+}
+
+.checkform__block {
+    max-width: 876px;
+    padding: 145px 20px 145px 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.checkform__block>p {
+    margin: 17px 0 35px 0;
+}
+
+.checkform__block>.consultation-form__form {
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .checkform__block {
+        padding: 60px 20px 60px 20px;
+    }
+}
