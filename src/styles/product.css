@@ -383,6 +383,7 @@
     color: var(--text) !important;
     font-weight: 800;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .reviews__empty {
