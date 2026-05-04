@@ -359,6 +359,7 @@ input:-ms-input-placeholder {
 .custom-file-upload {
   display: inline-block;
   padding: 12px 24px;
+  border-radius: 5px;
   cursor: pointer;
   background-color: #2F3338;
   color: var(--white);
@@ -367,6 +368,12 @@ input:-ms-input-placeholder {
   font-size: 16px;
   text-align: center;
   transition: background-color 0.3s ease;
+  border: 1px solid transparent;
+  border-image: repeating-linear-gradient(45deg,
+      #A8A8A8 0px,
+      #A8A8A8 5px,
+      transparent 5px,
+      transparent 10px) 10;
 }
 
 .custom-file-upload>div {
@@ -385,6 +392,7 @@ input:-ms-input-placeholder {
   display: flex;
   align-items: center;
   gap: 10px;
+
 }
 
 
