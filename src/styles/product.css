@@ -68,6 +68,7 @@
 }
 
 .product__desc>.dottet {
+    display: block;
     text-decoration: underline dotted;
     text-transform: uppercase;
     margin: 26px 0 14px 0;
@@ -356,15 +357,39 @@
     border-radius: 5px;
 }
 
+.review-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0 0 15px 0;
+}
+
+.review-text.expanded {
+    -webkit-line-clamp: none;
+    overflow: visible;
+}
+
 .reviews_headSlider>svg {
     width: 24px;
     height: 24px;
+}
+
+
+
+.reviews_expanded {
+    margin-top: 10px;
+    border-bottom: 1px dotted var(--text);
+    color: var(--text) !important;
+    font-weight: 800;
+    text-decoration: none;
 }
 
 .reviews__empty {
     margin-top: 20px;
     display: flex;
 }
+
 
 .reviews__empty>button {
     margin: 0 auto;

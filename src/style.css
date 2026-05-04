@@ -72,6 +72,10 @@
 }
 
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -153,6 +157,7 @@ button {
 
 .btn-black:hover {
   background: var(--btn);
+  color: var(--white);
 }
 
 
@@ -164,6 +169,11 @@ button {
 
 .btn-black-bg-black:hover {
   background: var(--btn-h);
+  color: var(--text);
+}
+
+.btn-black-bg-black:hover>svg>path {
+  fill: var(--text);
 }
 
 
@@ -174,6 +184,12 @@ button {
   padding: 12px 20px;
   font-size: 12px;
   max-width: 134px;
+}
+
+.btn-cat:hover {
+  background: var(--text);
+  color: var(--white);
+  border: 1px solid var(--text);
 }
 
 .headline {
@@ -257,6 +273,8 @@ button {
 .controls-btn button:hover {
   border: 1px solid #C5C5C5
 }
+
+
 
 
 .controls__tabs {
