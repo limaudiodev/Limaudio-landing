@@ -26,12 +26,10 @@
 
 
 .why__block>.paragraph {
-    border-radius: 24px;
     padding: 24px 42px;
 }
 
 .why__block>div>img {
-    border-radius: 24px;
     width: 368px;
 }
 
@@ -49,20 +47,18 @@
         margin-top: 60px;
     }
 
-    .why__block>div>img {
-        border-radius: 16px;
-    }
-
-    .why__block>.paragraph {
-        border-radius: 16px;
-    }
-
     .why>h3 {
         font-size: 40px;
         margin: 30px 0 15px 0;
     }
 }
 
+@media (max-width:550px) {
+    .why>h3 {
+        font-size: 32px;
+    }
+
+}
 
 @media (max-width:425px) {
     .why__block>div>img {
@@ -73,10 +69,6 @@
         width: 100%;
     }
 
-    .why>h3 {
-        font-size: 32px;
-        margin: 15px 0 15px 0;
-    }
 
     .why__block>.paragraph {
         padding: 10px 10px;

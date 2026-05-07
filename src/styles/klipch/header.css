@@ -1,7 +1,6 @@
 .header {
     background: var(--background);
     padding: 13px 56px;
-    border-radius: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,7 +15,6 @@
     text-decoration: none;
     color: var(--text);
     border: 1px solid var(--text);
-    border-radius: 24px;
     padding: 16px 24px;
 }
 
@@ -79,10 +77,6 @@
 }
 
 @media (max-width: 1024px) {
-    .header {
-        border-radius: 20px;
-    }
-
     .burger-btn {
         display: flex;
     }

@@ -39,6 +39,7 @@
     --gray76: #767676;
     --grayE7: #E7E7E7;
     --grayD8: #D8D8D8;
+    --background-blur: #FFFFFF1A;
 }
 
 
@@ -146,6 +147,19 @@ p {
 }
 
 
+.borderRadius32 {
+    border-radius: 32px;
+}
+
+.borderRadius24 {
+    border-radius: 24px;
+}
+
+.blur-block {
+    backdrop-filter: blur(40px);
+    background: var(--background-blur);
+}
+
 @media (max-width: 1024px) {
     .headlineH3 {
         font-size: 28px;
@@ -163,6 +177,11 @@ p {
         font-size: 18px;
     }
 
+    .paragraph400 {
+        font-size: 18px;
+
+    }
+
     .paragraph {
         font-size: 20px;
     }
@@ -171,6 +190,13 @@ p {
         font-size: 40px;
     }
 
+    .borderRadius32 {
+        border-radius: 20px;
+    }
+
+    .borderRadius24 {
+        border-radius: 16px;
+    }
 }
 
 
@@ -195,6 +221,11 @@ p {
         font-size: 16px;
     }
 
+    .paragraph400 {
+        font-size: 16px;
+
+    }
+
     .header__tel {
         padding: 10px 10px;
     }
@@ -203,6 +234,9 @@ p {
         font-size: 20px;
     }
 
+    .borderRadius32 {
+        border-radius: 24px;
+    }
 
 }
 
