@@ -26,12 +26,31 @@
     line-height: 120%;
 }
 
-.content__block>h2 {
+.block-h2 {
     font-weight: 600;
     font-size: 64px;
     line-height: 120%;
     margin: 25px 0 30px 0;
 }
+
+.block-h2 span {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    padding: 0px 10px;
+}
+
+.block-h2 span::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: rotate(359deg);
+    z-index: -1;
+    border-radius: 16px;
+}
+
 
 .hero__btns {
     display: flex;
@@ -167,6 +186,11 @@
         top: 20px;
         left: 20px;
     }
+
+    .block-h2 span::before {
+        border-radius: 10px;
+    }
+
 }
 
 @media (max-width: 360px) {

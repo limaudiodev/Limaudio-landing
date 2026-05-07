@@ -1,5 +1,7 @@
 @import url("./header.css");
 @import url("./hero.css");
+@import url("./why.css");
+@import url("./choice.css");
 @import url("./footer.css");
 
 @font-face {
@@ -97,6 +99,12 @@ p {
     line-height: 140%;
 }
 
+.paragraph32 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
 .btn {
     font-size: 24px;
     font-weight: 500;
@@ -143,6 +151,10 @@ p {
         font-size: 28px;
     }
 
+    .paragraph32 {
+        font-size: 28px;
+    }
+
     .content {
         font-size: 18px;
     }
@@ -155,11 +167,23 @@ p {
         font-size: 20px;
     }
 
+    .headlineH2 {
+        font-size: 40px;
+    }
+
 }
 
 
 @media (max-width: 768px) {
     .headlineH3 {
+        font-size: 24px;
+    }
+
+    .headlineH2 {
+        font-size: 36px;
+    }
+
+    .paragraph32 {
         font-size: 24px;
     }
 
@@ -178,9 +202,24 @@ p {
     .btn {
         font-size: 20px;
     }
+
+
 }
 
 @media (max-width:425px) {
+
+    .headlineH3 {
+        font-size: 20px;
+    }
+
+    .paragraph32 {
+        font-size: 20px;
+    }
+
+    .headlineH2 {
+        font-size: 30px;
+    }
+
     .btn {
         font-size: 18px;
     }
