@@ -1,0 +1,152 @@
+@import url("./header.css");
+@import url("./hero.css");
+@import url("./footer.css");
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    --background: #F5F5F5;
+    --text: #181818;
+    --white: #FFFFFF;
+    --blue: #308BFD;
+    --black: #131313;
+    --gray: #989898;
+    --gray76: #767676;
+    --grayE7: #E7E7E7;
+    --grayD8: #D8D8D8;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+.container {
+    max-width: 1480px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.content {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.headline {
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+
+.headlineH2 {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+
+.headlineH3 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.paragraph {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.btn {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 140%;
+    border-radius: 24px;
+    padding: 32px 48px;
+}
+
+
+.paragraph400 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.paragraph500 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+
+@media (max-width: 1024px) {
+    .headlineH3 {
+        font-size: 28px;
+    }
+
+    .content {
+        font-size: 18px;
+    }
+
+    .paragraph500 {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .headlineH3 {
+        font-size: 24px;
+    }
+
+    .content {
+        font-size: 16px;
+    }
+
+    .paragraph500 {
+        font-size: 16px;
+    }
+
+    .header__tel {
+        padding: 10px 10px;
+    }
+}
