@@ -5,7 +5,6 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/styles/klipch/style.css" />
-    <link rel="stylesheet" href="./src/styles/swiper-bundle.min.css" />
 
     <title>Klipsch</title>
   </head>
@@ -35,40 +34,60 @@
           <span></span>
         </button>
       </header>
+
+      <div class="hero">
+        <div class="hero__content">
+          <div class="content__block">
+            <h3>LIMAUDIO аудиосистемы для музыки и кино под ключ</h3>
+            <h2>
+              Профессиональный <span>подбор акустики</span> Klipsch под ваши
+              задачи
+            </h2>
+            <p class="paragraph">
+              Звук Klipsch яркий и масштабный, но результат зависит от
+              помещения, электроники и задач, мы поможем подобрать идеальное
+              сочетание
+            </p>
+          </div>
+          <div class="hero__btns">
+            <button class="btn btn-blue">Подобрать систему </button>
+            <button class="btn btn-black">Обсудить проект</button>
+          </div>
+        </div>
+        <div class="hero__img">
+          <img src="./src/images/Klipsch/hero-Klipsch.webp" alt="Комната" />
+          <div class="hero__img-label content">
+            Идеальный подбор под интерьер
+          </div>
+        </div>
+      </div>
     </div>
     <footer></footer>
   </body>
-  <script src="./src/js/swiper-bundle.min.js"></script>
 
   <script>
-    // Ждём полной загрузки DOM
+    /*header *************/
     document.addEventListener("DOMContentLoaded", function () {
-      // Находим элементы
       const burgerBtn = document.querySelector(".burger-btn");
       const menu = document.querySelector(".content");
 
-      // Создаём оверлей (тёмный фон)
       const overlay = document.createElement("div");
       overlay.classList.add("overlay");
       document.body.appendChild(overlay);
-
-      // Функция открытия меню
       function openMenu() {
         menu.classList.add("open");
         burgerBtn.classList.add("active");
         overlay.classList.add("active");
-        document.body.style.overflow = "hidden"; // Блокируем скролл страницы
+        document.body.style.overflow = "hidden";
       }
 
-      // Функция закрытия меню
       function closeMenu() {
         menu.classList.remove("open");
         burgerBtn.classList.remove("active");
         overlay.classList.remove("active");
-        document.body.style.overflow = ""; // Возвращаем скролл
+        document.body.style.overflow = "";
       }
 
-      // Функция переключения меню
       function toggleMenu() {
         if (menu.classList.contains("open")) {
           closeMenu();
@@ -77,20 +96,15 @@
         }
       }
 
-      // Обработчик клика по бургеру
       burgerBtn.addEventListener("click", toggleMenu);
 
-      // Закрытие по клику на оверлей
       overlay.addEventListener("click", closeMenu);
 
-      // Закрытие при нажатии клавиши Escape
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && menu.classList.contains("open")) {
           closeMenu();
         }
       });
-
-      // Закрытие при клике на пункт меню (опционально)
       const menuItems = document.querySelectorAll(".content li");
       menuItems.forEach(function (item) {
         item.addEventListener("click", function () {
@@ -98,12 +112,13 @@
         });
       });
 
-      // При изменении размера окна, если меню открыто и ширина становится больше 1024px
       window.addEventListener("resize", function () {
         if (window.innerWidth > 1024 && menu.classList.contains("open")) {
           closeMenu();
         }
       });
     });
+
+    /*******************************/
   </script>
 </html>

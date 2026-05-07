@@ -70,6 +70,7 @@ p {
     line-height: 120%;
 }
 
+
 .headline {
     font-size: 56px;
     font-weight: 600;
@@ -101,7 +102,26 @@ p {
     font-weight: 500;
     line-height: 140%;
     border-radius: 24px;
-    padding: 32px 48px;
+}
+
+
+.btn-blue {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+}
+
+.btn-black {
+    background: var(--text);
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+
+.btn-tr {
+    background: transparent;
+    color: var(--text);
+    border: none;
 }
 
 
@@ -130,6 +150,11 @@ p {
     .paragraph500 {
         font-size: 18px;
     }
+
+    .paragraph {
+        font-size: 20px;
+    }
+
 }
 
 
@@ -148,5 +173,15 @@ p {
 
     .header__tel {
         padding: 10px 10px;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:425px) {
+    .btn {
+        font-size: 18px;
     }
 }
