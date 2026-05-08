@@ -4,6 +4,7 @@
 @import url("./choice.css");
 @import url("./tasks.css");
 @import url("./approach.css");
+@import url("./project.css");
 @import url("./footer.css");
 
 @font-face {
@@ -37,6 +38,7 @@
     --white: #FFFFFF;
     --blue: #308BFD;
     --black: #131313;
+    --black22: #222222;
     --gray: #989898;
     --gray76: #767676;
     --grayE7: #E7E7E7;
@@ -166,6 +168,26 @@ p {
     margin-top: 140px;
 }
 
+
+.turn {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    padding: 0px 10px;
+}
+
+.turn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: rotate(359deg);
+    z-index: -1;
+    border-radius: 16px;
+    backdrop-filter: blur(40px);
+}
+
 @media (max-width: 1024px) {
     .headlineH3 {
         font-size: 28px;
@@ -199,25 +221,22 @@ p {
     .borderRadius32 {
         border-radius: 20px;
     }
-
-    .borderRadius24 {
-        border-radius: 16px;
-    }
 }
 
 
 @media (max-width: 768px) {
-    .blockTop {
-        margin-top: 60px;
+    .headline {
+        font-size: 30px;
+    }
+
+    .headlineH2 {
+        font-size: 28px;
     }
 
     .headlineH3 {
         font-size: 24px;
     }
 
-    .headlineH2 {
-        font-size: 30px;
-    }
 
     .paragraph {
         font-size: 18px;
@@ -244,6 +263,10 @@ p {
         padding: 10px 10px;
     }
 
+    .blockTop {
+        margin-top: 60px;
+    }
+
     .btn {
         font-size: 20px;
     }
@@ -255,8 +278,12 @@ p {
 }
 
 @media (max-width:425px) {
-    .blockTop {
-        margin-top: 30px;
+    .headline {
+        font-size: 24px;
+    }
+
+    .headlineH2 {
+        font-size: 24px;
     }
 
     .headlineH3 {
@@ -264,7 +291,7 @@ p {
     }
 
     .paragraph32 {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .paragraph {
@@ -275,7 +302,15 @@ p {
         font-size: 20px;
     }
 
+    .blockTop {
+        margin-top: 30px;
+    }
+
     .btn {
         font-size: 16px;
+    }
+
+    .turn::before {
+        border-radius: 10px;
     }
 }

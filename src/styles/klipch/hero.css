@@ -32,26 +32,6 @@
     margin: 25px 0 30px 0;
 }
 
-.block-h2 span {
-    position: relative;
-    display: inline-block;
-    isolation: isolate;
-    padding: 0px 10px;
-}
-
-.block-h2 span::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transform: rotate(359deg);
-    z-index: -1;
-    border-radius: 16px;
-    backdrop-filter: blur(40px);
-}
-
-
 .hero__btns {
     display: flex;
     gap: 20px;
@@ -147,7 +127,7 @@
     }
 
     .hero__btns>button {
-        padding: 10px 20px;
+        padding: 15px 20px;
         border-radius: 16px;
     }
 }
@@ -180,11 +160,6 @@
         top: 20px;
         left: 20px;
     }
-
-    .block-h2 span::before {
-        border-radius: 10px;
-    }
-
 }
 
 @media (max-width: 360px) {

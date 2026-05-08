@@ -1,0 +1,108 @@
+.approach {
+    background: var(--black);
+    padding: 50px 0;
+}
+
+.approach>div>h2 {
+    color: var(--background);
+    text-align: center;
+}
+
+.approach>div>p {
+    color: var(--background);
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+.approach__block {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.approach__block>div {
+    width: calc(100% / 3 - 20px);
+    background: var(--black22);
+    box-sizing: border-box;
+    padding: 30px;
+    height: 380px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.approach__content>h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.approach__btns {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.approach__btns>button {
+    padding: 28px 58px;
+}
+
+@media (max-width: 1280px) {
+    .approach__block>div {
+        height: 280px;
+    }
+
+    .approach__btns>button {
+        padding: 20px 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .approach {
+        padding: 30px 0;
+    }
+
+    .approach__block>div>svg {
+        width: 32px;
+    }
+
+    .approach__block>div {
+        height: 250px;
+        padding: 20px;
+    }
+
+    .approach__btns>button {
+        padding: 15px 20px;
+        border-radius: 16px;
+    }
+
+    .approach>div>p {
+        margin-top: 30px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .approach__block {
+        flex-direction: column;
+    }
+
+    .approach__block>div {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .approach__btns {
+        flex-direction: column;
+    }
+
+    .approach__block>div {
+        height: 184px;
+    }
+}
