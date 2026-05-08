@@ -1,6 +1,6 @@
 .approach {
     background: var(--black);
-    padding: 50px 0;
+    padding: 70px 0 58px 0;
 }
 
 .approach>div>h2 {
@@ -11,7 +11,7 @@
 .approach>div>p {
     color: var(--background);
     text-align: center;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 
@@ -19,14 +19,14 @@
     margin-top: 50px;
     display: flex;
     flex-wrap: nowrap;
-    gap: 20px;
+    justify-content: space-between;
 }
 
 .approach__block>div {
     width: calc(100% / 3 - 20px);
     background: var(--black22);
     box-sizing: border-box;
-    padding: 30px;
+    padding: 30px 30px 35px 30px;
     height: 380px;
     color: var(--white);
     display: flex;
@@ -36,11 +36,11 @@
 
 .approach__content>h3 {
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .approach__btns {
-    margin-top: 40px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -89,6 +89,7 @@
 @media (max-width: 600px) {
     .approach__block {
         flex-direction: column;
+        gap: 20px;
     }
 
     .approach__block>div {
@@ -100,6 +101,8 @@
 @media (max-width: 550px) {
     .approach__btns {
         flex-direction: column;
+        margin-top: 20px;
+        gap: 10px;
     }
 
     .approach__block>div {

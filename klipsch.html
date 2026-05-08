@@ -463,7 +463,41 @@
     </div>
 
     <div class="container">
-      <div class="project"></div>
+      <div class="project blockTop">
+        <div class="project__contact">
+          <h3 class="headlineH2">Обсудим ваш проект</h3>
+          <p class="paragraph">
+            Оставьте заявку на первичный анализ вашего помещения. Мы подскажем,
+            какая конфигурация Klipsch раскроет свой потенциал в ваших условиях
+          </p>
+
+          <form class="project__form">
+            <input type="text" placeholder="Имя" />
+            <input type="tel" placeholder="Телефон" />
+
+            <div>
+              Нажимая кнопку "Получить консультацию инженера", я подтверждаю,
+              что ознакомлен и согласен с условиями политики обработки
+              персональных данных 
+            </div>
+            <button class="btn btn-blue">Получить консультацию</button>
+          </form>
+        </div>
+
+        <div class="project__img">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="./src/images/Klipsch/project-min.webp"
+            />
+            <img
+              class="borderRadius24 project__image"
+              src="./src/images/Klipsch/project.webp"
+              alt="проект комнаты"
+            />
+          </picture>
+        </div>
+      </div>
     </div>
     <footer></footer>
   </body>

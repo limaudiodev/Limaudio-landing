@@ -34,6 +34,7 @@
 
 :root {
     --background: #F5F5F5;
+    --backgroundAB: #ABABAB;
     --text: #181818;
     --white: #FFFFFF;
     --blue: #308BFD;
@@ -188,6 +189,18 @@ p {
     backdrop-filter: blur(40px);
 }
 
+input {
+    border-radius: 16px;
+    height: 90px;
+    background: var(--background);
+    border: none;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--backgroundAB);
+    box-sizing: border-box;
+}
+
 @media (max-width: 1024px) {
     .headlineH3 {
         font-size: 28px;
@@ -275,6 +288,11 @@ p {
         border-radius: 24px;
     }
 
+    input {
+        height: 70px;
+        font-size: 20px;
+        font-size: 16px;
+    }
 }
 
 @media (max-width:425px) {
