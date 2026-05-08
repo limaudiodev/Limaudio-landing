@@ -1,5 +1,4 @@
 .choice {
-    margin-top: 145px;
     background: url(./../../../src/images/Klipsch/choice.webp);
     background-size: cover;
     background-repeat: no-repeat;
@@ -211,7 +210,6 @@
 
 @media (max-width: 768px) {
     .choice {
-        margin-top: 60px;
         padding: 30px 0;
     }
 
@@ -236,7 +234,6 @@
     .choice__text {
         margin: 28px 0 70px 0;
     }
-
 
     .choice__text>p {
         font-size: 16px;

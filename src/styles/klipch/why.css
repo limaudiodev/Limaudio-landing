@@ -1,5 +1,4 @@
 .why {
-    margin-top: 140px;
     text-align: center;
 }
 
@@ -43,10 +42,6 @@
 
 
 @media (max-width:768px) {
-    .why {
-        margin-top: 60px;
-    }
-
     .why>h3 {
         font-size: 40px;
         margin: 30px 0 15px 0;
@@ -68,11 +63,5 @@
 
     .why__block>.paragraph {
         padding: 10px 10px;
-    }
-}
-
-@media (max-width: 425px) {
-    .why {
-        margin-top: 30px;
     }
 }

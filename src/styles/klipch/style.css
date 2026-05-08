@@ -3,6 +3,7 @@
 @import url("./why.css");
 @import url("./choice.css");
 @import url("./tasks.css");
+@import url("./approach.css");
 @import url("./footer.css");
 
 @font-face {
@@ -161,6 +162,10 @@ p {
     background: var(--background-blur);
 }
 
+.blockTop {
+    margin-top: 140px;
+}
+
 @media (max-width: 1024px) {
     .headlineH3 {
         font-size: 28px;
@@ -202,12 +207,20 @@ p {
 
 
 @media (max-width: 768px) {
+    .blockTop {
+        margin-top: 60px;
+    }
+
     .headlineH3 {
         font-size: 24px;
     }
 
     .headlineH2 {
         font-size: 30px;
+    }
+
+    .paragraph {
+        font-size: 18px;
     }
 
     .paragraph32 {
@@ -242,13 +255,20 @@ p {
 }
 
 @media (max-width:425px) {
+    .blockTop {
+        margin-top: 30px;
+    }
 
     .headlineH3 {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .paragraph32 {
         font-size: 20px;
+    }
+
+    .paragraph {
+        font-size: 16px;
     }
 
     .headlineH2 {
