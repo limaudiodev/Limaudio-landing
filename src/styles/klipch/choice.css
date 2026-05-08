@@ -2,6 +2,7 @@
     margin-top: 145px;
     background: url(./../../../src/images/Klipsch/choice.webp);
     background-size: cover;
+    background-repeat: no-repeat;
     padding: 60px 0;
 }
 
@@ -52,15 +53,42 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 1;
 }
 
 
 .choice_last {
     width: 32%;
     display: flex;
+    gap: 10px;
+    z-index: 1;
+}
+
+.choice-prev,
+.choice-next {
+    display: none;
+}
+
+
+.choice-btn-min {
+    display: none;
+}
+
+@media (max-width: 1440px) {
+    .choice {
+        background-position: right -100px center;
+    }
 }
 
 @media (max-width: 1024px) {
+    .choice {
+        background-position: right -300px center;
+    }
+
+    .choice__card {
+        position: relative;
+    }
+
     .choice__text>p {
         font-size: 32px;
     }
@@ -78,12 +106,20 @@
         justify-content: space-between;
     }
 
+    .choice-prev {
+        right: 40px;
+    }
+
+    .choice-next {
+        right: 5px;
+    }
+
 }
 
 
 @media (max-width: 900px) {
     .choice__text {
-        margin: 30px 0 25px 0;
+        margin: 30px 0 90px 0;
         gap: 10px;
         display: flex;
         flex-direction: column;
@@ -99,14 +135,117 @@
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+    .choice__block {
+        padding: 0 0 0 20px;
+    }
+
+    .choice__text {
+        padding-right: 20px;
+    }
+
+    .choice__card {
+        display: block;
+        width: 100%;
+        overflow: visible;
+        position: relative;
+        overflow: hidden;
+    }
+
     .choice__text>p {
-        font-size: 28px;
+        width: 100%;
     }
 
     .choice_first {
-        max-width: 190px;
+        width: 270px !important;
+        max-width: 270px;
+        height: 180px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .choice_last {
+        width: 270px !important;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 30px;
+        height: 30px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .choice-prev,
+    .choice-next {
+        position: absolute;
+        top: -60px;
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: none;
+    }
+
+    .choice-prev {
+        right: 20px;
+    }
+
+    .choice-next {
+        right: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .choice {
+        margin-top: 60px;
+        padding: 30px 0;
+    }
+
+    .choice>p {
+        font-size: 28px;
+        width: 100%;
+    }
+
+    .choice__text>button {
+        display: none;
+    }
+
+    .choice-btn-min {
+        display: block;
+        margin-top: 20px;
+        padding: 19px 25px;
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 425px) {
+    .choice__text {
+        margin: 28px 0 70px 0;
     }
 
 
+    .choice__text>p {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 370px) {
+    .choice {
+        background: url(./../../../src/images/Klipsch/choice-min.webp);
+    }
 }

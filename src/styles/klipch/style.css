@@ -2,6 +2,7 @@
 @import url("./hero.css");
 @import url("./why.css");
 @import url("./choice.css");
+@import url("./tasks.css");
 @import url("./footer.css");
 
 @font-face {
@@ -206,7 +207,7 @@ p {
     }
 
     .headlineH2 {
-        font-size: 36px;
+        font-size: 30px;
     }
 
     .paragraph32 {
@@ -251,10 +252,10 @@ p {
     }
 
     .headlineH2 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .btn {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
