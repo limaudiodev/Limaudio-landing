@@ -58,7 +58,7 @@
             </p>
           </div>
           <div class="hero__btns">
-            <button class="btn btn-blue open-modal-btn">
+            <button class="btn btn-blue open-kvis-btn">
               Подобрать систему
             </button>
             <button class="btn btn-black open-modal-btn">
@@ -585,6 +585,70 @@
         </form>
       </div>
     </div>
+
+    <!--Окно квиза-->
+    <div id="kvis" class="modalKvis">
+      <div class="kvis-content borderRadius24">
+        <div class="social-links-top hidden-block" id="socialLinksBlock">
+          <a href="tel:+74951234567" class="social-link phone">Позвонить</a>
+          <a
+            href="https://t.me/example"
+            target="_blank"
+            class="social-link telegram"
+            >Telegram</a
+          >
+          <a
+            href="https://wa.me/74951234567"
+            target="_blank"
+            class="social-link whatsapp"
+          >
+            WhatsApp</a
+          >
+        </div>
+        <div class="modal-header">
+          <div class="count"></div>
+          <h2 class="headlineH2"></h2>
+          <p class="paragraph"></p>
+          <span class="closeKvis">
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="50" height="50" rx="25" fill="#E7E7E7" />
+              <path
+                d="M34 34L25 25M25 25L16 16M25 25L34.0001 16M25 25L16 34.0001"
+                stroke="#181818"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </div>
+        <div class="quiz-scroll-area">
+          <div id="quizDynamicBody" class="quiz-body">
+            <!-- динамический контент квиза -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок вывода JSON после завершения -->
+    <div id="jsonResultArea" class="result-block hidden">
+      <div class="result-header">
+        <h4>📋 Результат квиза (JSON)</h4>
+        <button class="copy-json-btn" id="copyJsonFinalBtn">
+          Копировать JSON
+        </button>
+      </div>
+      <pre id="jsonPrettyView">{}</pre>
+      <p style="font-size: 0.75rem; margin-top: 10px; color: #475569">
+        Вы выбрали несколько вариантов в вопросах. Данные сформированы.
+      </p>
+    </div>
   </body>
   <script src="./src/js/swiper-bundle.min.js"></script>
   <script>
@@ -733,5 +797,387 @@
 
       closeModal();
     });
+
+    /*******Квиз*********/
+    const QUESTIONS_SET = [
+      {
+        id: 1,
+        text: "Для чего в первую очередь нужна система?",
+        desc: "Это определяет общую архитектуру системы: стерео, ТВ-решение или полноценный домашний кинотеатр",
+        options: [
+          "Музыка — стерео / Hi-Fi / High-End",
+          "Фильмы и сериалы",
+          "Домашний кинотеатр и игры",
+          "Универсальная система: музыка + кино",
+          "ТВ-гостиная с качественным звуком",
+          "Нужна помощь, пока не определился",
+        ],
+      },
+      {
+        id: 2,
+        text: "Где будет жить звук?",
+        desc: "Тип помещения напрямую влияет на подбор акустики, расстановку и итоговый характер звучания",
+        options: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Firebase"],
+      },
+      {
+        id: 3,
+        text: "Какова примерная площадь зоны, где должна работать система?",
+        desc: "Это влияет на масштаб системы, требуемый запас по динамике и формат акустики",
+        options: ["Scrum", "Kanban", "Waterfall", "Lean", "XP"],
+      },
+      {
+        id: 4,
+        text: "На каком этапе вы сейчас находитесь?",
+        desc: "Это помогает понять, насколько свободно можно спроектировать систему и нужно ли учитывать уже принятые решения",
+        options: ["AWS", "Google Cloud", "Azure", "DigitalOcean", "Heroku"],
+      },
+      {
+        id: 5,
+        text: "Куда отправить варианты сборки Klipsch под ваши задачи и помещение?",
+        desc: "Мы учтем параметры помещения, задачу системы и ваши приоритеты — и подготовим рекомендацию по конфигурации на базе Klipsch",
+        options: [
+          "GitHub Actions",
+          "GitLab CI",
+          "Jenkins",
+          "CircleCI",
+          "TeamCity",
+        ],
+      },
+    ];
+    let userSelections = [];
+    let activeQuestionIndex = 0;
+    let currentSelectedSet = new Set();
+    let isQuizLive = false;
+    let quizFinished = false;
+
+    let contactData = {
+      name: "",
+      phone: "",
+      email: "",
+    };
+
+    const kvisModal = document.getElementById("kvis");
+    const headlineEl = document.querySelector("#kvis .headlineH2");
+    const paragraphDesc = document.querySelector("#kvis .paragraph");
+    const count = document.querySelector("#kvis .count");
+    const quizBodyContainer = document.getElementById("quizDynamicBody");
+    const socialLinksBlock = document.getElementById("socialLinksBlock");
+
+    function showMessageToast(text) {
+      const toast = document.createElement("div");
+      toast.className = "toast-msg";
+      toast.innerText = text;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 2000);
+    }
+
+    function getStoredAnswersForQuestion(idx) {
+      const qid = QUESTIONS_SET[idx].id;
+      const found = userSelections.find((item) => item.questionId === qid);
+      return found ? [...found.selectedAnswers] : [];
+    }
+
+    function persistCurrentAnswers() {
+      const currentQ = QUESTIONS_SET[activeQuestionIndex];
+      const selectedArray = Array.from(currentSelectedSet);
+      const existingIdx = userSelections.findIndex(
+        (item) => item.questionId === currentQ.id,
+      );
+      const record = {
+        questionId: currentQ.id,
+        questionText: currentQ.text,
+        selectedAnswers: selectedArray,
+      };
+      if (existingIdx !== -1) {
+        userSelections[existingIdx] = record;
+      } else {
+        userSelections.push(record);
+      }
+    }
+
+    function isContactFormValid() {
+      return (
+        contactData.name.trim() !== "" &&
+        contactData.phone.trim() !== "" &&
+        contactData.email.trim() !== ""
+      );
+    }
+
+    function renderActiveQuestion() {
+      if (!isQuizLive) return;
+
+      const question = QUESTIONS_SET[activeQuestionIndex];
+      if (!question) return;
+
+      const isLastQuestion = activeQuestionIndex === QUESTIONS_SET.length - 1;
+
+      if (isLastQuestion) {
+        socialLinksBlock.classList.remove("hidden-block");
+        count.innerText = "";
+      } else {
+        socialLinksBlock.classList.add("hidden-block");
+        count.innerText = `${activeQuestionIndex + 1} / ${QUESTIONS_SET.length}`;
+      }
+
+      paragraphDesc.innerText = question.desc;
+
+      const storedSelections = getStoredAnswersForQuestion(activeQuestionIndex);
+      currentSelectedSet.clear();
+      storedSelections.forEach((ans) => currentSelectedSet.add(ans));
+
+      let optionsHtml = `<div class="options-list" id="optionsListWrap">`;
+      question.options.forEach((opt) => {
+        const isChecked = currentSelectedSet.has(opt);
+        const selectedClass = isChecked ? "selected" : "";
+        optionsHtml += `
+                    <div class="option-item ${selectedClass}" data-opt-value="${escapeHtml(opt)}">
+                        <span class="option-checkbox"></span>
+                        <span>${escapeHtml(opt)}</span>
+                    </div>
+                `;
+      });
+      optionsHtml += `</div>`;
+
+      const questionTextHtml = "";
+
+      let contactFormHtml = "";
+      if (isLastQuestion) {
+        contactFormHtml = `
+                    <div>
+                        <div class="contact-form-row">
+                              <input type="text" id="contactName" placeholder="Иван Иванов" value="${escapeHtml(contactData.name)}">
+                             <input type="tel" id="contactPhone" placeholder="+7 (999) 123-45-67" value="${escapeHtml(contactData.phone)}">
+                             <input type="email" id="contactEmail" placeholder="ivan@example.com" value="${escapeHtml(contactData.email)}">
+                        </div>
+                    </div>
+                `;
+      }
+
+      if (isLastQuestion) {
+        socialLinksBlock.classList.remove("hidden-block");
+        headlineEl.innerText = question.text;
+      } else {
+        socialLinksBlock.classList.add("hidden-block");
+        headlineEl.innerText = question.text;
+      }
+
+      const buttonText = isLastQuestion ? "Завершить подбор" : "Далее";
+      const isDisabled = isLastQuestion
+        ? !isContactFormValid()
+        : currentSelectedSet.size === 0;
+
+      const buttonsHtml = `
+                <div class="modal-footer">
+                    <button class="nav-btn btn-blue btn" id="quizNextBtn" ${isDisabled ? "disabled" : ""}>${buttonText}</button>
+                </div>
+            `;
+
+      const fullInner =
+        questionTextHtml + optionsHtml + contactFormHtml + buttonsHtml;
+      quizBodyContainer.innerHTML = fullInner;
+
+      const optionDivs = document.querySelectorAll(
+        "#optionsListWrap .option-item",
+      );
+      optionDivs.forEach((div) => {
+        const optTextElem = div.querySelector("span:last-child");
+        const optionText = optTextElem ? optTextElem.innerText : "";
+        div.addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (currentSelectedSet.has(optionText)) {
+            currentSelectedSet.delete(optionText);
+            div.classList.remove("selected");
+          } else {
+            currentSelectedSet.add(optionText);
+            div.classList.add("selected");
+          }
+          if (isLastQuestion) {
+            const nextBtn = document.getElementById("quizNextBtn");
+            if (nextBtn) {
+              nextBtn.disabled = !isContactFormValid();
+            }
+          } else {
+            const nextBtn = document.getElementById("quizNextBtn");
+            if (nextBtn) {
+              nextBtn.disabled = currentSelectedSet.size === 0;
+            }
+          }
+        });
+      });
+
+      if (isLastQuestion) {
+        const nameInput = document.getElementById("contactName");
+        const phoneInput = document.getElementById("contactPhone");
+        const emailInput = document.getElementById("contactEmail");
+
+        const updateContactData = () => {
+          if (nameInput) contactData.name = nameInput.value;
+          if (phoneInput) contactData.phone = phoneInput.value;
+          if (emailInput) contactData.email = emailInput.value;
+
+          const nextBtn = document.getElementById("quizNextBtn");
+          if (nextBtn) {
+            nextBtn.disabled = !isContactFormValid();
+          }
+        };
+
+        if (nameInput) nameInput.addEventListener("input", updateContactData);
+        if (phoneInput) phoneInput.addEventListener("input", updateContactData);
+        if (emailInput) emailInput.addEventListener("input", updateContactData);
+      }
+
+      const nextBtn = document.getElementById("quizNextBtn");
+      if (nextBtn) {
+        const newNextBtn = nextBtn.cloneNode(true);
+        nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+        newNextBtn.addEventListener("click", () => {
+          if (!isQuizLive) return;
+
+          if (isLastQuestion) {
+            if (!isContactFormValid()) {
+              showMessageToast("Пожалуйста, заполните все контактные данные");
+              return;
+            }
+            persistCurrentAnswers();
+            completeQuizAndShowJson();
+          } else {
+            if (currentSelectedSet.size === 0) {
+              showMessageToast("Пожалуйста, выберите хотя бы один вариант");
+              return;
+            }
+            persistCurrentAnswers();
+            activeQuestionIndex++;
+            renderActiveQuestion();
+          }
+        });
+      }
+    }
+
+    function completeQuizAndShowJson() {
+      for (let i = 0; i < QUESTIONS_SET.length; i++) {
+        const q = QUESTIONS_SET[i];
+        const exists = userSelections.some(
+          (entry) => entry.questionId === q.id,
+        );
+        if (!exists) {
+          userSelections.push({
+            questionId: q.id,
+            questionText: q.text,
+            selectedAnswers: [],
+          });
+        }
+      }
+      userSelections.sort((a, b) => a.questionId - b.questionId);
+
+      const finalResult = {
+        quizName: "Подбор системы (мультивыбор)",
+        generatedAt: new Date().toISOString(),
+        totalQuestions: QUESTIONS_SET.length,
+        contactInfo: {
+          name: contactData.name,
+          phone: contactData.phone,
+          email: contactData.email,
+        },
+        answers: userSelections.map((ans) => ({
+          questionId: ans.questionId,
+          question: ans.questionText,
+          selectedOptions: ans.selectedAnswers,
+          optionsCount: ans.selectedAnswers.length,
+        })),
+      };
+      console.log(JSON.stringify(finalResult, null, 2));
+
+      closeKvisModal();
+      isQuizLive = false;
+      quizFinished = true;
+      contactData = { name: "", phone: "", email: "" };
+    }
+
+    function openKvisModal() {
+      if (!isQuizLive && !quizFinished) {
+        resetQuizAndStart();
+      } else if (quizFinished) {
+        resetQuizAndStart();
+      } else if (isQuizLive) {
+        kvisModal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+        return;
+      }
+      kvisModal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+      isQuizLive = true;
+      quizFinished = false;
+      renderActiveQuestion();
+    }
+
+    function resetQuizAndStart() {
+      userSelections = [];
+      activeQuestionIndex = 0;
+      currentSelectedSet.clear();
+      contactData = { name: "", phone: "", email: "" };
+      isQuizLive = true;
+      quizFinished = false;
+      socialLinksBlock.classList.add("hidden-block");
+      headlineEl.innerText = `Вопрос 1 из ${QUESTIONS_SET.length}`;
+    }
+
+    function closeKvisModal() {
+      kvisModal.style.display = "none";
+      document.body.style.overflow = "";
+      if (isQuizLive && !quizFinished) {
+        isQuizLive = false;
+        quizFinished = false;
+        userSelections = [];
+        activeQuestionIndex = 0;
+        currentSelectedSet.clear();
+        contactData = { name: "", phone: "", email: "" };
+        socialLinksBlock.classList.add("hidden-block");
+      }
+    }
+
+    const openButtons = document.querySelectorAll(".open-kvis-btn");
+    const closeButtonModal = document.querySelector(".closeKvis");
+
+    function initEventListeners() {
+      openButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          openKvisModal();
+        });
+      });
+
+      if (closeButtonModal) {
+        closeButtonModal.addEventListener("click", closeKvisModal);
+      }
+
+      window.addEventListener("click", (event) => {
+        if (event.target === kvisModal) {
+          closeKvisModal();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && kvisModal.style.display === "flex") {
+          closeKvisModal();
+        }
+      });
+    }
+
+    function escapeHtml(str) {
+      if (!str) return "";
+      return str.replace(/[&<>]/g, function (m) {
+        if (m === "&") return "&amp;";
+        if (m === "<") return "&lt;";
+        if (m === ">") return "&gt;";
+        return m;
+      });
+    }
+
+    kvisModal.style.display = "none";
+    initEventListeners();
+    isQuizLive = false;
+    quizFinished = false;
+    socialLinksBlock.classList.add("hidden-block");
+    headlineEl.innerText = `Вопрос 1 из ${QUESTIONS_SET.length}`;
   </script>
 </html>
