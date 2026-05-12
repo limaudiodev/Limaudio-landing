@@ -325,10 +325,15 @@ input {
     }
 
     .btn {
-        font-size: 16px;
+        font-size: 14px;
+        border-radius: 16px;
     }
 
     .turn::before {
         border-radius: 10px;
+    }
+
+    .content {
+        font-size: 14px;
     }
 }
