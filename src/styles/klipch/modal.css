@@ -1,0 +1,105 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000078;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-header>h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+.modal-content {
+    background-color: var(--white);
+    margin: 10% auto;
+    padding: 40px 40px 40px 40px;
+    width: 90%;
+    max-width: 691px;
+    animation: slideDown 0.3s ease;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.modal-form {
+    margin-top: 20px;
+}
+
+.modal-form>input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.modal-form>div {
+    color: var(--backgroundAB);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.modal-form>button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 28px 0;
+}
+
+
+
+@media (max-width: 425px) {
+    .close>svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .modal-content {
+        padding: 20px 20px 20px 20px;
+    }
+
+    .modal-form>input {
+        margin-bottom: 10px;
+    }
+
+    .modal-form>div {
+        font-size: 14px;
+    }
+
+    .modal-form>button {
+        font-size: 16px;
+        padding: 19px 0;
+    }
+}

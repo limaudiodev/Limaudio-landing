@@ -26,6 +26,7 @@
             <a class="header__tel paragraph500" href="tel:+79999999999"
               >+7 (999) 999-99-99</a
             >
+            <button class="btn btn-blue">Обсудить проект</button>
           </li>
         </ul>
 
@@ -57,8 +58,12 @@
             </p>
           </div>
           <div class="hero__btns">
-            <button class="btn btn-blue">Подобрать систему</button>
-            <button class="btn btn-black">Обсудить проект</button>
+            <button class="btn btn-blue open-modal-btn">
+              Подобрать систему
+            </button>
+            <button class="btn btn-black open-modal-btn">
+              Обсудить проект
+            </button>
           </div>
         </div>
         <div class="hero__img">
@@ -530,6 +535,56 @@
         </div>
       </div>
     </footer>
+
+    <!------------------- Модальное окно----------------->
+    <div id="projectModal" class="modal">
+      <div class="modal-content borderRadius24">
+        <div class="modal-header">
+          <h2 class="headlineH2">Оставьте заявку!</h2>
+          <p class="paragraph">
+            Наш менеджер свяжется с вами в ближайшее время
+          </p>
+          <span class="close"
+            ><svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="50" height="50" rx="25" fill="#E7E7E7" />
+              <path
+                d="M34 34L25 25M25 25L16 16M25 25L34.0001 16M25 25L16 34.0001"
+                stroke="#181818"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </div>
+
+        <form id="projectForm" class="modal-form">
+          <input type="text" id="name" name="name" placeholder="Имя" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Телефон"
+            required
+          />
+
+          <div>
+            Нажимая кнопку "Получить консультацию инженера", я подтверждаю, что
+            ознакомлен и согласен с условиями политики обработки персональных
+            данных 
+          </div>
+          <button type="submit" class="btn btn-blue">
+            Получить консультацию
+          </button>
+        </form>
+      </div>
+    </div>
   </body>
   <script src="./src/js/swiper-bundle.min.js"></script>
   <script>
@@ -541,6 +596,7 @@
       const overlay = document.createElement("div");
       overlay.classList.add("overlay");
       document.body.appendChild(overlay);
+
       function openMenu() {
         menu.classList.add("open");
         burgerBtn.classList.add("active");
@@ -564,23 +620,14 @@
       }
 
       burgerBtn.addEventListener("click", toggleMenu);
-
       overlay.addEventListener("click", closeMenu);
 
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && menu.classList.contains("open")) {
-          closeMenu();
-        }
-      });
-      const menuItems = document.querySelectorAll(".content li");
-      menuItems.forEach(function (item) {
-        item.addEventListener("click", function () {
-          closeMenu();
-        });
-      });
-
-      window.addEventListener("resize", function () {
-        if (window.innerWidth > 1024 && menu.classList.contains("open")) {
+      document.body.addEventListener("click", function (e) {
+        if (
+          menu.classList.contains("open") &&
+          !menu.contains(e.target) &&
+          !burgerBtn.contains(e.target)
+        ) {
           closeMenu();
         }
       });
@@ -637,6 +684,54 @@
     window.addEventListener("resize", () => {
       clearTimeout(window.resizeTimer);
       window.resizeTimer = setTimeout(initSwiper, 250);
+    });
+
+    /*******Модальное окно*********/
+    const modal = document.getElementById("projectModal");
+    const closeBtn = document.querySelector(".close");
+    const openModalBtns = document.querySelectorAll(".open-modal-btn");
+    const form = document.getElementById("projectForm");
+
+    function openModal() {
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+
+    openModalBtns.forEach((btn) => {
+      btn.addEventListener("click", openModal);
+    });
+
+    closeBtn.addEventListener("click", closeModal);
+
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.style.display === "block") {
+        closeModal();
+      }
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      console.log("Отправленные данные:", { name, email, message });
+
+      form.reset();
+
+      closeModal();
     });
   </script>
 </html>
