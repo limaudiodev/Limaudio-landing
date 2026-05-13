@@ -1,0 +1,13 @@
+.scenario {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.scenario__content {
+    width: 50%;
+}
+
+.scenario__img {
+    width: 50%;
+}
