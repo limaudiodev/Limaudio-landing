@@ -78,7 +78,7 @@
     padding: 28px 0;
 }
 
-.result-modal {
+.result-modal>.modal-content {
     height: 351px;
 }
 
@@ -92,6 +92,18 @@
     padding: 28px 10px;
 }
 
+
+@media (max-width: 1024px) {
+    .result-modal>.modal-content {
+        height: 306px;
+    }
+}
+
+@media (max-width: 768px) {
+    .result-modal>.modal-content {
+        height: 282px;
+    }
+}
 
 @media (max-width: 425px) {
     .close>svg {
@@ -114,5 +126,13 @@
     .modal-form>button {
         font-size: 16px;
         padding: 19px 0;
+    }
+
+    .result-modal>.modal-content {
+        height: 230px;
+    }
+
+    .result-close-btn {
+        padding: 20px 10px;
     }
 }
