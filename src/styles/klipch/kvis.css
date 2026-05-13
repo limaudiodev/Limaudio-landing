@@ -39,6 +39,41 @@
     border-radius: 64px;
 }
 
+.contact-select {
+    width: calc(100% / 3);
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid rgba(167, 167, 167, 1);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #464646;
+}
+
+input::placeholder {
+    color: var(--white);
+}
+
+
+input:-ms-input-placeholder {
+    color: var(--white);
+}
+
+input::-ms-input-placeholder {
+    color: var(--white);
+}
+
+
+input::-moz-placeholder {
+    color: var(--white);
+}
+
+input::-webkit-input-placeholder {
+    color: var(--white);
+}
 
 @keyframes slideDown {
     from {
@@ -166,6 +201,7 @@
 
 .contact-form-row>input {
     width: calc(100% / 3);
+    color: var(--white);
     height: 80px;
     padding: 27px;
     box-sizing: border-box;
@@ -181,6 +217,8 @@
     height: 88%;
     margin-top: 20px;
 }
+
+
 
 
 @media (max-width: 768px) {

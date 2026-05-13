@@ -688,7 +688,7 @@
     <!--Окно после отправки-->
 
     <div id="resultModal" class="result-modal modal" style="display: none">
-      <div class="modal-content borderRadius24">
+      <div class="modal-content borderRadius24 mc">
         <h2 class="headlineH2">Спасибо за заявку!</h2>
         <p class="paragraph">Наш менеджер свяжется с вами в ближайшее время</p>
 
@@ -952,7 +952,38 @@
       return (
         contactData.name.trim() !== "" &&
         contactData.phone.trim() !== "" &&
-        contactData.email.trim() !== ""
+        contactData.type.trim() !== ""
+      );
+    }
+    function getStoredAnswersForQuestion(idx) {
+      const qid = QUESTIONS_SET[idx].id;
+      const found = userSelections.find((item) => item.questionId === qid);
+      return found ? [...found.selectedAnswers] : [];
+    }
+
+    function persistCurrentAnswers() {
+      const currentQ = QUESTIONS_SET[activeQuestionIndex];
+      const selectedArray = Array.from(currentSelectedSet);
+      const existingIdx = userSelections.findIndex(
+        (item) => item.questionId === currentQ.id,
+      );
+      const record = {
+        questionId: currentQ.id,
+        questionText: currentQ.text,
+        selectedAnswers: selectedArray,
+      };
+      if (existingIdx !== -1) {
+        userSelections[existingIdx] = record;
+      } else {
+        userSelections.push(record);
+      }
+    }
+
+    function isContactFormValid() {
+      return (
+        contactData.name.trim() !== "" &&
+        contactData.phone.trim() !== "" &&
+        contactData.communicationMethod !== ""
       );
     }
 
@@ -967,7 +998,7 @@
       if (isLastQuestion) {
         socialLinksBlock.classList.remove("hidden-block");
         count.innerText = "";
-        if (countBlock) countBlock.remove(); // Добавьте проверку
+        if (countBlock) countBlock.remove();
       } else {
         socialLinksBlock.classList.add("hidden-block");
         count.innerText = `${activeQuestionIndex + 1}/${QUESTIONS_SET.length}`;
@@ -999,7 +1030,12 @@
         <div class="contact-form-row">
           <input type="text" id="contactName" placeholder="Имя" value="${escapeHtml(contactData.name)}">
           <input type="tel" id="contactPhone" placeholder="Телефон" value="${escapeHtml(contactData.phone)}">
-          <input type="email" id="contactEmail" placeholder="способ связи" value="${escapeHtml(contactData.email)}">
+          <select id="contactMethod" class="contact-select">
+            <option value="звонок" ${contactData.communicationMethod === "звонок" ? "selected" : ""}>Звонок</option>
+            <option value="telegram" ${contactData.communicationMethod === "telegram" ? "selected" : ""}>Telegram</option>
+            <option value="max" ${contactData.communicationMethod === "max" ? "selected" : ""}>Max</option>
+
+          </select>
         </div>
         <div class="content14">Нажимая кнопку "Получить предварительный выбор", я подтверждаю, что ознакомлен и согласен с условиями политики обработки персональных данных</div>
       </div>
@@ -1069,12 +1105,13 @@
       if (isLastQuestion) {
         const nameInput = document.getElementById("contactName");
         const phoneInput = document.getElementById("contactPhone");
-        const emailInput = document.getElementById("contactEmail");
+        const methodSelect = document.getElementById("contactMethod");
 
         const updateContactData = () => {
           if (nameInput) contactData.name = nameInput.value;
           if (phoneInput) contactData.phone = phoneInput.value;
-          if (emailInput) contactData.email = emailInput.value;
+          if (methodSelect)
+            contactData.communicationMethod = methodSelect.value;
 
           const nextBtn = document.getElementById("quizNextBtn");
           if (nextBtn) {
@@ -1084,7 +1121,8 @@
 
         if (nameInput) nameInput.addEventListener("input", updateContactData);
         if (phoneInput) phoneInput.addEventListener("input", updateContactData);
-        if (emailInput) emailInput.addEventListener("input", updateContactData);
+        if (methodSelect)
+          methodSelect.addEventListener("change", updateContactData);
       }
 
       const nextBtn = document.getElementById("quizNextBtn");
@@ -1134,7 +1172,7 @@
         contactInfo: {
           name: contactData.name,
           phone: contactData.phone,
-          email: contactData.email,
+          communicationMethod: contactData.communicationMethod,
         },
         answers: userSelections.map((ans) => ({
           questionId: ans.questionId,
@@ -1150,7 +1188,12 @@
       closeKvisModal();
       isQuizLive = false;
       quizFinished = true;
-      contactData = { name: "", phone: "", email: "" };
+      contactData = {
+        name: "",
+        phone: "",
+        email: "",
+        communicationMethod: "звонок",
+      };
     }
 
     function showResultModal(resultData) {
@@ -1174,7 +1217,6 @@
         if (e.target === modal) closeResultModal();
       };
 
-      // Закрытие по Escape
       document.addEventListener("keydown", function onEsc(e) {
         if (e.key === "Escape" && modal.style.display === "flex") {
           closeResultModal();
@@ -1212,7 +1254,11 @@
       userSelections = [];
       activeQuestionIndex = 0;
       currentSelectedSet.clear();
-      contactData = { name: "", phone: "", email: "" };
+      contactData = {
+        name: "",
+        phone: "",
+        communicationMethod: "звонок",
+      };
       isQuizLive = true;
       quizFinished = false;
       socialLinksBlock.classList.add("hidden-block");
@@ -1228,7 +1274,11 @@
         userSelections = [];
         activeQuestionIndex = 0;
         currentSelectedSet.clear();
-        contactData = { name: "", phone: "", email: "" };
+        contactData = {
+          name: "",
+          phone: "",
+          communicationMethod: "звонок",
+        };
         socialLinksBlock.classList.add("hidden-block");
       }
     }

@@ -89,7 +89,9 @@
     padding: 28px 10px;
 }
 
-
+.mc {
+    margin: 10% auto auto auto !important;
+}
 
 @media (max-width: 425px) {
     .close>svg {
