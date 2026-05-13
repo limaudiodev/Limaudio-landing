@@ -40,6 +40,12 @@
     width: auto;
 }
 
+.header__menu>li>a {
+    color: var(--text);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .header__menu button {
     display: none;
 }

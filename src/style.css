@@ -13,6 +13,8 @@
 @import url("./styles/footer.css");
 @import url("./styles/breadcrumbs.css");
 @import url("./styles/product.css");
+@import url("./styles/scenario.css");
+
 
 @font-face {
   font-family: 'Manrope';
@@ -59,11 +61,13 @@
 :root {
   --background: #F2F2F2;
   --text: #000000;
+
   --text-desc: #3C3C3C;
   --text-gray: #959595;
   --text-gray-c5: #C5C5C5;
   --text-gray-e8: #E8E8E8;
   --text-gray-38: #2F3338;
+  --text-gray-7E: #7E7E7E;
   --text-h: #6E6E6E;
   --white: #FFFFFF;
   --btn: #4C4C4C;

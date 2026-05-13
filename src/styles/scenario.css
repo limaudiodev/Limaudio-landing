@@ -1,0 +1,44 @@
+.scenario {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.scenario__headline {
+    width: 40%;
+}
+
+.scenario__img {
+    width: 700px;
+}
+
+
+.scenario__img>img {
+    width: 100%;
+}
+
+.scenario__label {
+    display: flex;
+    gap: 10px;
+}
+
+.scenario__label>div {
+    background: rgba(242, 242, 242, 1);
+    padding: 8px 25px;
+    border-radius: 37px;
+
+}
+
+.scenario__logo {
+    display: flex;
+    gap: 10px;
+}
+
+.scenario__description>div {
+    font-weight: 400;
+}
+
+.scenario__description>div>span {
+    color: var(--text-gray-7E)
+}

@@ -8,7 +8,6 @@
 @import url("./footer.css");
 @import url("./modal.css");
 @import url("./kvis.css");
-@import url("./scenario.css");
 
 @font-face {
     font-family: 'Inter';
@@ -144,15 +143,13 @@ p {
 }
 
 .btn-black:hover {
-    background: rgba(26, 99, 190, 1);
+    background: var(--gray);
 }
 
 .btn-black:disabled:hover {
     background: rgba(216, 216, 216, 1);
     cursor: not-allowed;
 }
-
-
 
 .btn-tr {
     background: transparent;
