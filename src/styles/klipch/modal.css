@@ -78,6 +78,19 @@
     padding: 28px 0;
 }
 
+.result-modal {
+    height: 351px;
+}
+
+.result-modal>.modal-content>p {
+    margin: 30px 0 30px 0;
+}
+
+
+.result-close-btn {
+    width: 100%;
+    padding: 28px 10px;
+}
 
 
 @media (max-width: 425px) {

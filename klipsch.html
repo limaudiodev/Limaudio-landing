@@ -588,25 +588,74 @@
 
     <!--Окно квиза-->
     <div id="kvis" class="modalKvis">
-      <div class="kvis-content borderRadius24">
+      <div class="kvis-content">
         <div class="social-links-top hidden-block" id="socialLinksBlock">
-          <a href="tel:+74951234567" class="social-link phone">Позвонить</a>
+          <a href="tel:+74951234567" class="social-link phone">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_29_564)">
+                <path
+                  d="M21.334 4C24.8917 4.00037 28.301 7.01129 27.3008 10.9414C25.2608 18.9545 18.9554 25.2595 10.9424 27.2998C7.01184 28.3004 4 24.8911 4 21.333V20C4.00017 18.4977 5.20182 17.4055 6.5332 17.2734C7.64741 17.163 8.71643 16.9005 9.71875 16.5068C10.1505 16.3374 10.6347 16.4059 11 16.6768L11.1494 16.8057L12.4834 18.1387C14.8518 16.8132 16.8144 14.85 18.1396 12.4814L16.8057 11.1484C16.4307 10.7734 16.3139 10.2114 16.5078 9.71777C16.9014 8.71555 17.164 7.6463 17.2744 6.53223C17.4068 5.20113 18.498 4.00017 20 4H21.334Z"
+                  fill="#181818"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_29_564">
+                  <rect width="32" height="32" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            Звонок</a
+          >
           <a
             href="https://t.me/example"
             target="_blank"
             class="social-link telegram"
-            >Telegram</a
+            ><svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26.7829 5.33365C26.9659 5.3303 27.3751 5.37889 27.6397 5.60913C27.8624 5.80364 27.9232 6.06614 27.9526 6.25036C27.982 6.43489 28.0184 6.85492 27.9893 7.18327C27.6567 10.9316 26.2179 20.0275 25.4858 24.2257C25.176 26.0021 24.5657 26.5981 23.9751 26.6564C22.6923 26.7824 21.7173 25.7453 20.4746 24.8716C18.5301 23.5043 17.4309 22.6525 15.5432 21.3182C13.3619 19.7761 14.7768 18.9278 16.0202 17.5425C16.3548 17.1712 21.9907 11.6721 22.1083 11.1649C22.122 11.1023 22.1361 10.8668 22.0069 10.7436C21.878 10.6207 21.6869 10.6639 21.5494 10.6973C21.3543 10.7448 18.2455 12.948 12.2261 17.3064C11.3446 17.9556 10.546 18.2719 9.83057 18.2555C9.0415 18.2372 7.52315 17.7762 6.39478 17.3828C5.0114 16.9005 3.91085 16.6459 4.0057 15.8272C4.05559 15.4004 4.60436 14.9631 5.65022 14.5169C12.0925 11.5063 16.3892 9.52199 18.5387 8.56296C24.676 5.82484 25.9517 5.34936 26.7829 5.33365Z"
+                fill="#181818"
+              />
+            </svg>
+            Telegram</a
           >
           <a
             href="https://wa.me/74951234567"
             target="_blank"
-            class="social-link whatsapp"
-          >
-            WhatsApp</a
+            class="social-link max"
+            ><svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16.2363 26.9372C14.0773 26.9372 13.074 26.6207 11.33 25.3544C10.2268 26.7789 6.73353 27.8922 6.58118 25.9875C6.58118 24.5578 6.26599 23.3496 5.90878 22.0306C5.48329 20.4056 5 18.596 5 15.9739C5 9.71138 10.1165 5 16.1786 5C22.2459 5 26.9999 9.94353 26.9999 16.0319C27.0203 22.0262 22.2046 26.9052 16.2363 26.9372ZM16.3257 10.4131C13.3734 10.2601 11.0726 12.3124 10.563 15.5307C10.1428 18.1951 10.8887 21.4397 11.5243 21.6086C11.829 21.6824 12.596 21.0599 13.074 20.5798C13.8644 21.1282 14.7849 21.4576 15.7426 21.5347C18.8016 21.6825 21.4154 19.3435 21.6208 16.2746C21.7403 13.1992 19.3851 10.5944 16.3257 10.4184V10.4131Z"
+                fill="#181818"
+              />
+            </svg>
+
+            MAX</a
           >
         </div>
-        <div class="modal-header">
-          <div class="count"></div>
+        <div class="modal-header-kvis">
+          <div class="count-block">
+            <div class="count"></div>
+          </div>
           <h2 class="headlineH2"></h2>
           <p class="paragraph"></p>
           <span class="closeKvis">
@@ -636,18 +685,15 @@
       </div>
     </div>
 
-    <!-- Блок вывода JSON после завершения -->
-    <div id="jsonResultArea" class="result-block hidden">
-      <div class="result-header">
-        <h4>📋 Результат квиза (JSON)</h4>
-        <button class="copy-json-btn" id="copyJsonFinalBtn">
-          Копировать JSON
-        </button>
+    <!--Окно после отправки-->
+
+    <div id="resultModal" class="result-modal modal" style="display: none">
+      <div class="modal-content borderRadius24">
+        <h2 class="headlineH2">Спасибо за заявку!</h2>
+        <p class="paragraph">Наш менеджер свяжется с вами в ближайшее время</p>
+
+        <button class="btn btn-blue result-close-btn">Закрыть</button>
       </div>
-      <pre id="jsonPrettyView">{}</pre>
-      <p style="font-size: 0.75rem; margin-top: 10px; color: #475569">
-        Вы выбрали несколько вариантов в вопросах. Данные сформированы.
-      </p>
     </div>
   </body>
   <script src="./src/js/swiper-bundle.min.js"></script>
@@ -817,31 +863,44 @@
         id: 2,
         text: "Где будет жить звук?",
         desc: "Тип помещения напрямую влияет на подбор акустики, расстановку и итоговый характер звучания",
-        options: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Firebase"],
+        options: [
+          "Отдельная гостиная или кабинет",
+          "Открытая гостиная, объединенная с кухней / столовой",
+          "Специально выделенная комната",
+          "Небольшая жилая комната",
+          "Сложное пространство: второй свет, панорамные окна, нестандартная геометрия",
+          "Свой вариант",
+        ],
       },
       {
         id: 3,
         text: "Какова примерная площадь зоны, где должна работать система?",
         desc: "Это влияет на масштаб системы, требуемый запас по динамике и формат акустики",
-        options: ["Scrum", "Kanban", "Waterfall", "Lean", "XP"],
+        options: [
+          "До 15 м²",
+          "До 15-30 м²",
+          "До 30-50 м²",
+          "Более 50 м²",
+          "Точно не знаю",
+        ],
       },
       {
         id: 4,
         text: "На каком этапе вы сейчас находитесь?",
         desc: "Это помогает понять, насколько свободно можно спроектировать систему и нужно ли учитывать уже принятые решения",
-        options: ["AWS", "Google Cloud", "Azure", "DigitalOcean", "Heroku"],
+        options: [
+          "Только изучаю варианты",
+          "Выбираю систему перед покупкой",
+          "Идет ремонт / строительство",
+          "Помещение уже готово",
+          "Часть оборудования уже куплена",
+        ],
       },
       {
         id: 5,
         text: "Куда отправить варианты сборки Klipsch под ваши задачи и помещение?",
         desc: "Мы учтем параметры помещения, задачу системы и ваши приоритеты — и подготовим рекомендацию по конфигурации на базе Klipsch",
-        options: [
-          "GitHub Actions",
-          "GitLab CI",
-          "Jenkins",
-          "CircleCI",
-          "TeamCity",
-        ],
+        options: [],
       },
     ];
     let userSelections = [];
@@ -862,14 +921,8 @@
     const count = document.querySelector("#kvis .count");
     const quizBodyContainer = document.getElementById("quizDynamicBody");
     const socialLinksBlock = document.getElementById("socialLinksBlock");
-
-    function showMessageToast(text) {
-      const toast = document.createElement("div");
-      toast.className = "toast-msg";
-      toast.innerText = text;
-      document.body.appendChild(toast);
-      setTimeout(() => toast.remove(), 2000);
-    }
+    const countBlock = document.querySelector(".count-block");
+    const modalFooter = document.querySelector(".modal-footer");
 
     function getStoredAnswersForQuestion(idx) {
       const qid = QUESTIONS_SET[idx].id;
@@ -914,9 +967,10 @@
       if (isLastQuestion) {
         socialLinksBlock.classList.remove("hidden-block");
         count.innerText = "";
+        if (countBlock) countBlock.remove(); // Добавьте проверку
       } else {
         socialLinksBlock.classList.add("hidden-block");
-        count.innerText = `${activeQuestionIndex + 1} / ${QUESTIONS_SET.length}`;
+        count.innerText = `${activeQuestionIndex + 1}/${QUESTIONS_SET.length}`;
       }
 
       paragraphDesc.innerText = question.desc;
@@ -930,27 +984,26 @@
         const isChecked = currentSelectedSet.has(opt);
         const selectedClass = isChecked ? "selected" : "";
         optionsHtml += `
-                    <div class="option-item ${selectedClass}" data-opt-value="${escapeHtml(opt)}">
-                        <span class="option-checkbox"></span>
-                        <span>${escapeHtml(opt)}</span>
-                    </div>
-                `;
+      <div class="option-item ${selectedClass}" data-opt-value="${escapeHtml(opt)}">
+        <span class="option-checkbox"></span>
+        <span>${escapeHtml(opt)}</span>
+      </div>
+    `;
       });
       optionsHtml += `</div>`;
-
-      const questionTextHtml = "";
 
       let contactFormHtml = "";
       if (isLastQuestion) {
         contactFormHtml = `
-                    <div>
-                        <div class="contact-form-row">
-                              <input type="text" id="contactName" placeholder="Иван Иванов" value="${escapeHtml(contactData.name)}">
-                             <input type="tel" id="contactPhone" placeholder="+7 (999) 123-45-67" value="${escapeHtml(contactData.phone)}">
-                             <input type="email" id="contactEmail" placeholder="ivan@example.com" value="${escapeHtml(contactData.email)}">
-                        </div>
-                    </div>
-                `;
+      <div class="contact-form">
+        <div class="contact-form-row">
+          <input type="text" id="contactName" placeholder="Имя" value="${escapeHtml(contactData.name)}">
+          <input type="tel" id="contactPhone" placeholder="Телефон" value="${escapeHtml(contactData.phone)}">
+          <input type="email" id="contactEmail" placeholder="способ связи" value="${escapeHtml(contactData.email)}">
+        </div>
+        <div class="content14">Нажимая кнопку "Получить предварительный выбор", я подтверждаю, что ознакомлен и согласен с условиями политики обработки персональных данных</div>
+      </div>
+    `;
       }
 
       if (isLastQuestion) {
@@ -961,20 +1014,28 @@
         headlineEl.innerText = question.text;
       }
 
-      const buttonText = isLastQuestion ? "Завершить подбор" : "Далее";
+      const buttonText = isLastQuestion
+        ? "Получить предварительный выбор"
+        : "Далее";
       const isDisabled = isLastQuestion
         ? !isContactFormValid()
         : currentSelectedSet.size === 0;
 
       const buttonsHtml = `
-                <div class="modal-footer">
-                    <button class="nav-btn btn-blue btn" id="quizNextBtn" ${isDisabled ? "disabled" : ""}>${buttonText}</button>
-                </div>
-            `;
+    <div class="modal-footer">
+      <button class="nav-btn btn-blue btn" id="quizNextBtn" ${isDisabled ? "disabled" : ""}>${buttonText}</button>
+    </div>
+  `;
 
-      const fullInner =
-        questionTextHtml + optionsHtml + contactFormHtml + buttonsHtml;
+      const fullInner = optionsHtml + contactFormHtml + buttonsHtml;
       quizBodyContainer.innerHTML = fullInner;
+
+      if (isLastQuestion) {
+        const optionsList = document.querySelector(".options-list");
+        if (optionsList) {
+          optionsList.style.margin = "10px 0 0 0";
+        }
+      }
 
       const optionDivs = document.querySelectorAll(
         "#optionsListWrap .option-item",
@@ -1035,14 +1096,12 @@
 
           if (isLastQuestion) {
             if (!isContactFormValid()) {
-              showMessageToast("Пожалуйста, заполните все контактные данные");
               return;
             }
             persistCurrentAnswers();
             completeQuizAndShowJson();
           } else {
             if (currentSelectedSet.size === 0) {
-              showMessageToast("Пожалуйста, выберите хотя бы один вариант");
               return;
             }
             persistCurrentAnswers();
@@ -1052,7 +1111,6 @@
         });
       }
     }
-
     function completeQuizAndShowJson() {
       for (let i = 0; i < QUESTIONS_SET.length; i++) {
         const q = QUESTIONS_SET[i];
@@ -1085,12 +1143,52 @@
           optionsCount: ans.selectedAnswers.length,
         })),
       };
+
       console.log(JSON.stringify(finalResult, null, 2));
+      showResultModal(finalResult);
 
       closeKvisModal();
       isQuizLive = false;
       quizFinished = true;
       contactData = { name: "", phone: "", email: "" };
+    }
+
+    function showResultModal(resultData) {
+      const modal = document.getElementById("resultModal");
+      if (!modal) return;
+
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+
+      const closeBtn = modal.querySelector(".close-result-modal");
+      if (closeBtn) {
+        closeBtn.onclick = () => closeResultModal();
+      }
+
+      const closeActionBtn = modal.querySelector(".result-close-btn");
+      if (closeActionBtn) {
+        closeActionBtn.onclick = () => closeResultModal();
+      }
+
+      modal.onclick = (e) => {
+        if (e.target === modal) closeResultModal();
+      };
+
+      // Закрытие по Escape
+      document.addEventListener("keydown", function onEsc(e) {
+        if (e.key === "Escape" && modal.style.display === "flex") {
+          closeResultModal();
+          document.removeEventListener("keydown", onEsc);
+        }
+      });
+    }
+
+    function closeResultModal() {
+      const modal = document.getElementById("resultModal");
+      if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      }
     }
 
     function openKvisModal() {

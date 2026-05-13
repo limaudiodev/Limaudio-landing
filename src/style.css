@@ -247,7 +247,6 @@ button {
   width: 100%;
 }
 
-
 .controls-btn {
   display: flex;
   flex-wrap: wrap;
@@ -269,13 +268,9 @@ button {
   border: 1px solid var(--text);
 }
 
-
 .controls-btn button:hover {
   border: 1px solid #C5C5C5
 }
-
-
-
 
 .controls__tabs {
   display: flex;
@@ -293,12 +288,10 @@ button {
   border: none;
 }
 
-
 .controls__tabs button[aria-pressed="true"] {
   color: var(--text);
   border-bottom: 1px solid var(--text);
 }
-
 
 .controls__tabs button:hover {
   color: var(--text);
@@ -374,7 +367,6 @@ input:-ms-input-placeholder {
   text-align: justify;
 }
 
-
 .custom-file-upload {
   display: inline-block;
   padding: 12px 24px;
@@ -411,9 +403,7 @@ input:-ms-input-placeholder {
   display: flex;
   align-items: center;
   gap: 10px;
-
 }
-
 
 .stars-container {
   display: flex;
@@ -431,7 +421,6 @@ input:-ms-input-placeholder {
   transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1), filter 0.1s;
   display: inline-block;
 }
-
 
 .star.selected {
   color: var(--text);
@@ -489,9 +478,7 @@ input:-ms-input-placeholder {
   .sectionTop {
     margin-top: 100px;
   }
-
 }
-
 
 @media (max-width: 425px) {
   .btn-main {

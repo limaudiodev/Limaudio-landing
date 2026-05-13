@@ -20,16 +20,23 @@
     }
 }
 
+.modal-header-kvis {
+    color: var(--white) !important;
+}
+
 .kvis-content {
     background: #464646;
     backdrop-filter: blur(120px);
-    margin: 10% auto;
-    padding: 40px 40px 40px 40px;
+    webkit-backdrop-filter: blur(120px);
+    margin: 50px auto auto auto;
+    padding: 60px 66px 65px 60px;
     width: 90%;
     max-width: 1196px;
     animation: slideDown 0.3s ease;
     box-sizing: border-box;
     position: relative;
+    min-height: 761px;
+    border-radius: 64px;
 }
 
 
@@ -48,25 +55,24 @@
 
 .closeKvis {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 35px;
+    right: 33px;
 }
 
 .options-list {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin: 18px 0 28px;
+    margin: 40px 0 28px;
 }
 
 .option-item {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
     background: rgba(118, 118, 118, 1);
     border-radius: 40px;
-    padding: 16px 24px;
+    padding: 18px 20px;
     cursor: pointer;
     transition: all 0.2s ease;
     color: var(--white);
@@ -78,22 +84,30 @@
 
 }
 
-.modal-footer {
+.quiz-body {
     display: flex;
-    justify-content: end;
+    flex-direction: column;
 }
 
-.modal-header {
-    color: var(--white);
+.modal-footer {
+    height: 30px;
 }
+
 
 .nav-btn {
     padding: 22px 34px;
-
+    position: absolute;
+    bottom: 65px;
+    right: 65px;
 }
 
 .nav-btn:disabled {
     background: rgba(216, 216, 216, 1);
+}
+
+.nav-blue:disabled:hover {
+    background: rgba(216, 216, 216, 1);
+    cursor: not-allowed;
 }
 
 .contact-form-row {
@@ -102,4 +116,174 @@
 
 .hidden-block {
     display: none !important;
+}
+
+.count-block {
+    color: var(--text);
+    padding: 15px 20px;
+    box-sizing: border-box;
+    background: var(--white);
+    width: 87px;
+    border-radius: 34px;
+    font-size: 32px;
+    font-weight: 500;
+    display: flex;
+}
+
+.count-block>.count {
+    margin: 0 auto;
+}
+
+.social-links-top {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-links-top>a {
+    background: var(--white);
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 34px;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.modal-header-kvis>h2 {
+    margin: 50px 0 30px 0;
+}
+
+.contact-form-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contact-form-row>input {
+    width: calc(100% / 3);
+    height: 80px;
+    padding: 27px;
+    box-sizing: border-box;
+    border: 1px solid rgba(167, 167, 167, 1);
+    background-color: #464646;
+}
+
+.contact-form>.content14 {
+    color: var(--white);
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    height: 88%;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .kvis-content {
+        padding: 20px;
+        border-radius: 32px;
+        min-height: 461px;
+    }
+
+    .closeKvis {
+        top: 20px;
+        right: 20px;
+    }
+
+    .closeKvis>svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .count-block {
+        padding: 8px 12px;
+        width: 60px;
+        border-radius: 24px;
+        font-size: 24px;
+    }
+
+    .modal-header-kvis>h2 {
+        margin: 15px 0 10px 0;
+    }
+
+    .options-list {
+        margin: 20px 0 0px;
+    }
+
+    .option-item {
+        border-radius: 30px;
+        padding: 10px 10px;
+    }
+
+    .nav-btn {
+        padding: 15px 20px;
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .contact-form-row {
+        justify-content: start;
+        flex-direction: column;
+    }
+
+    .contact-form-row>input {
+        width: 100%;
+        height: 70px;
+    }
+
+    .social-links-top>a {
+        padding: 10px 15px;
+        border-radius: 34px;
+        font-size: 20px;
+    }
+
+    .social-links-top>a>svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .contact-form>.content14 {
+        height: 50%;
+
+    }
+}
+
+@media (max-width: 550px) {
+    .social-links-top>a {
+        padding: 3px 10px;
+        font-size: 12px;
+    }
+
+    .kvis-content {
+        padding: 20px;
+    }
+
+    .count-block {
+        font-size: 16px;
+    }
+
+    .contact-form>.content14 {
+        font-size: 12px;
+    }
+
+    .nav-btn {
+        padding: 20px 7px;
+        bottom: 20px;
+        right: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .option-item {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .modal-footer {
+        height: 80px;
+    }
 }

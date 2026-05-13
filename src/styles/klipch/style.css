@@ -131,7 +131,10 @@ p {
     background: rgba(26, 99, 190, 1);
 }
 
-
+.btn-blue:disabled:hover {
+    background: rgba(216, 216, 216, 1);
+    cursor: not-allowed;
+}
 
 .btn-black {
     background: var(--text);
@@ -141,6 +144,11 @@ p {
 
 .btn-black:hover {
     background: rgba(26, 99, 190, 1);
+}
+
+.btn-black:disabled:hover {
+    background: rgba(216, 216, 216, 1);
+    cursor: not-allowed;
 }
 
 
@@ -213,6 +221,8 @@ input {
     color: var(--backgroundAB);
     box-sizing: border-box;
 }
+
+
 
 @media (max-width: 1024px) {
     .headlineH3 {
