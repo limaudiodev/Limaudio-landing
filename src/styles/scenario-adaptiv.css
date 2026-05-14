@@ -1,0 +1,59 @@
+.scenario-adaptiv {
+    margin-top: 130px;
+    display: flex;
+    gap: 65px;
+}
+
+
+.scenario-adaptiv>img {
+    width: 46.25%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.scenario-adaptiv>div {
+    max-width: 587px;
+}
+
+.scenario-adaptiv>div>h2 {
+    margin: 105px 0 15px 0;
+}
+
+
+@media (max-width: 1440px) {
+    .scenario-adaptiv {
+        gap: 30px;
+    }
+
+    .scenario-adaptiv>div>h2 {
+        margin: 30px 0 15px 0;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .scenario-adaptiv {
+        gap: 15px;
+    }
+
+    .scenario-adaptiv>div>h2 {
+        margin: 0 0 10px 0;
+    }
+
+}
+
+@media (max-width: 850px) {
+    .scenario-adaptiv {
+        margin-top: 60px;
+        flex-direction: column-reverse;
+    }
+
+    .scenario-adaptiv>img {
+        width: 100%;
+    }
+
+    .scenario-adaptiv>div {
+        max-width: 100%;
+    }
+}

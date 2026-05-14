@@ -14,6 +14,8 @@
 @import url("./styles/breadcrumbs.css");
 @import url("./styles/product.css");
 @import url("./styles/scenario.css");
+@import url("./styles/scenario-adaptiv.css");
+
 
 
 @font-face {
@@ -308,6 +310,11 @@ button {
 .body-rel img {
   position: absolute;
   z-index: -1;
+}
+
+.scenario-body {
+  top: -460px;
+  right: 0;
 }
 
 blockquote {
