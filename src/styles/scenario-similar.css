@@ -1,0 +1,37 @@
+.scenario-slide-similar>img {
+    height: 351px;
+    object-fit: cover;
+}
+
+.scenario-similar-block {
+    background: var(--white);
+    padding: 15px 15px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.scenario-similar-block>h4 {
+    color: var(--text) !important;
+    margin: 0;
+}
+
+.scenario-similar-block>p {
+    color: var(--text) !important;
+}
+
+.scenario-similar-block>div {
+    color: var(--text) !important;
+}
+
+.similar-price {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 120%;
+}
+
+@media (max-width: 768px) {
+    .scenario-slide-similar>img {
+        height: 241px;
+    }
+}
