@@ -189,6 +189,9 @@
 }
 
 
+
+
+
 @media (max-width: 1280px) {
     .basket-my {
         width: 74.5%;
@@ -254,7 +257,10 @@
         margin: 0 0 15px 0;
     }
 
-
+    .reviews__empty>.s {
+        margin: 50px auto 0 auto;
+        height: 54px;
+    }
 }
 
 
