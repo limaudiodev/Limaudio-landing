@@ -1,0 +1,107 @@
+.basket-my>a {
+    text-decoration: none;
+}
+
+.basket-desc {
+    padding: 25px 50px 50px 50px !important;
+}
+
+.basketInputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+.checkbox-basket {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.basketCheckbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-basket+.checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background-color: var(--white);
+    border: 2px solid var(--text);
+    border-radius: 50%;
+    transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    flex-shrink: 0;
+}
+
+.checkbox-basket:focus-visible+.checkmark {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+    border-color: var(--text);
+}
+
+
+.checkbox-basket:checked+.checkmark {
+    background-color: var(--white);
+    border-color: var(--text);
+    position: relative;
+}
+
+.checkbox-basket:checked+.checkmark::after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--text);
+    border-radius: 50%;
+}
+
+
+.basketForm-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.basketForm-group>input {
+    display: flex;
+    flex-direction: column;
+    background: var(--background);
+    width: 100%;
+    height: 58px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: var(--text);
+    border-radius: 5px;
+}
+
+.basketForm-group>input::placeholder {
+    color: var(--text);
+}
+
+.basket__delivery {
+    margin-top: 50px;
+}
+
+.basket__delivery>h3 {
+    margin-bottom: 22px;
+}
+
+#basketForm>button {
+    margin: 56px 0 20px 0;
+    padding: 20px 70px;
+}
+
+
+#basketForm>.content14 {
+    max-width: 575px;
+}

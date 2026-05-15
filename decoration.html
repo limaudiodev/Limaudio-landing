@@ -113,8 +113,160 @@
       </nav>
 
       <div class="basket">
-        <div class="basket-my">
+        <div class="basket-my basket-desc">
+          <a href="#" class="content14">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H16V7Z"
+                fill="#3C3C3C"
+              />
+            </svg>
+
+            Назад
+          </a>
           <h3 class="headline-h3">Оформление заказа</h3>
+
+          <div>
+            <form id="basketForm" action="#" method="post">
+              <div class="basketInputs">
+                <div class="basketForm-group">
+                  <label for="name" class="content14">Имя *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Имя"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="basketForm-group">
+                  <label for="familie" class="content14">Фамилия *</label>
+                  <input
+                    type="text"
+                    id="familie"
+                    name="familie"
+                    placeholder="Фамилия"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="basketForm-group">
+                  <label for="tel" class="content14">Телефон *</label>
+                  <input
+                    type="text"
+                    id="tel"
+                    name="tel"
+                    placeholder="Телефон"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="basketForm-group">
+                  <label for="email" class="content14">E-mail</label>
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="E-mail"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+
+              <div class="basket__delivery">
+                <h3 class="headline-h2">Способ получения</h3>
+                <label class="basketCheckbox-wrapper" id="checkboxLabel1">
+                  <input
+                    type="checkbox"
+                    id="pickupCheckbox"
+                    name="pickupCheckbox"
+                    class="checkbox-basket"
+                    value="pickup"
+                  />
+                  <span class="checkmark"></span>
+                  <span class="checkbox-text">Самовывоз из шоурума</span>
+                </label>
+
+                <label class="basketCheckbox-wrapper" id="checkboxLabel2">
+                  <input
+                    type="checkbox"
+                    id="deliveryCheckbox"
+                    name="deliveryCheckbox"
+                    class="checkbox-basket"
+                    value="delivery"
+                  />
+                  <span class="checkmark"></span>
+                  <span class="checkbox-text">Доставка по адресу</span>
+                </label>
+
+                <div class="basketForm-group" id="addressBlock">
+                  <label for="address" class="content14">Адрес</label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder="Адрес"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+
+              <div class="basket__delivery">
+                <h3 class="headline-h2">Выбор способа оплаты</h3>
+                <label class="basketCheckbox-wrapper" id="checkboxLabel3">
+                  <input
+                    type="checkbox"
+                    id="cardPayCheckbox"
+                    name="paymentMethod"
+                    class="checkbox-basket"
+                    value="card"
+                  />
+                  <span class="checkmark"></span>
+                  <span class="checkbox-text">Оплата картой на сайте</span>
+                </label>
+
+                <label class="basketCheckbox-wrapper" id="checkboxLabel4">
+                  <input
+                    type="checkbox"
+                    id="legalPayCheckbox"
+                    name="paymentMethod"
+                    class="checkbox-basket"
+                    value="legal"
+                  />
+                  <span class="checkmark"></span>
+                  <span class="checkbox-text"
+                    >Безналичный расчет (Счет для Юр. Лиц)</span
+                  >
+                </label>
+
+                <label class="basketCheckbox-wrapper" id="checkboxLabel5">
+                  <input
+                    type="checkbox"
+                    id="installmentCheckbox"
+                    name="paymentMethod"
+                    class="checkbox-basket"
+                    value="installment"
+                  />
+                  <span class="checkmark"></span>
+                  <span class="checkbox-text">Оформить рассрочку</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-black">
+                Оформить заказ
+              </button>
+
+              <div class="content14">
+                Нажимая кнопку, вы соглашаетесь с условиями обработки
+                персональных данных. Менеджер свяжется с вами для подтверждения
+                сроков доставки.
+              </div>
+            </form>
+          </div>
         </div>
         <div class="basket__total">
           <div class="basket__goods">
@@ -145,7 +297,6 @@
               <input type="text" name="promo" placeholder="Промокод" />
             </div>
             <button class="btn btn-black">Перейти к оформлению</button>
-            <button class="btn">Купить в 1 клик</button>
           </div>
         </div>
       </div>
@@ -261,4 +412,154 @@
     </footer>
   </body>
   <script src="./src/js/main.js"></script>
+
+  <script>
+    /*верхние чекбоксы*/
+    const pickupCheckbox = document.getElementById("pickupCheckbox");
+    const deliveryCheckbox = document.getElementById("deliveryCheckbox");
+    const addressBlock = document.getElementById("addressBlock");
+
+    function handlePickupChange() {
+      if (pickupCheckbox.checked) {
+        deliveryCheckbox.checked = false;
+        addressBlock.style.display = "none";
+      } else if (!pickupCheckbox.checked && !deliveryCheckbox.checked) {
+        addressBlock.style.display = "none";
+      }
+    }
+
+    function handleDeliveryChange() {
+      if (deliveryCheckbox.checked) {
+        pickupCheckbox.checked = false;
+        addressBlock.style.display = "block";
+      } else if (!pickupCheckbox.checked && !deliveryCheckbox.checked) {
+        addressBlock.style.display = "none";
+      }
+    }
+
+    pickupCheckbox.addEventListener("change", handlePickupChange);
+    deliveryCheckbox.addEventListener("change", handleDeliveryChange);
+
+    addressBlock.style.display = "none";
+
+    /*нижние чекбоксы*/
+    const cardPay = document.getElementById("cardPayCheckbox");
+    const legalPay = document.getElementById("legalPayCheckbox");
+    const installment = document.getElementById("installmentCheckbox");
+
+    const paymentCheckboxes = [cardPay, legalPay, installment];
+
+    function handlePaymentChange(selectedCheckbox) {
+      if (selectedCheckbox.checked) {
+        paymentCheckboxes.forEach((checkbox) => {
+          if (checkbox !== selectedCheckbox) {
+            checkbox.checked = false;
+          }
+        });
+      }
+    }
+
+    cardPay.addEventListener("change", () => handlePaymentChange(cardPay));
+    legalPay.addEventListener("change", () => handlePaymentChange(legalPay));
+    installment.addEventListener("change", () =>
+      handlePaymentChange(installment),
+    );
+
+    /*отправка формы*/
+
+    function collectFormData() {
+      const formData = {
+        name: document.getElementById("name")?.value || "",
+        familie: document.getElementById("familie")?.value || "",
+        tel: document.getElementById("tel")?.value || "",
+        email: document.getElementById("email")?.value || "",
+        address: document.getElementById("address")?.value || "",
+
+        deliveryMethod: null,
+
+        paymentMethod: null,
+      };
+
+      const pickupCheckbox = document.getElementById("pickupCheckbox");
+      const deliveryCheckbox = document.getElementById("deliveryCheckbox");
+
+      if (pickupCheckbox?.checked) {
+        formData.deliveryMethod = "pickup";
+        formData.deliveryMethodText = "Самовывоз из шоурума";
+      } else if (deliveryCheckbox?.checked) {
+        formData.deliveryMethod = "delivery";
+        formData.deliveryMethodText = "Доставка по адресу";
+      }
+
+      const cardPay = document.getElementById("cardPayCheckbox");
+      const legalPay = document.getElementById("legalPayCheckbox");
+      const installment = document.getElementById("installmentCheckbox");
+
+      if (cardPay?.checked) {
+        formData.paymentMethod = "card";
+        formData.paymentMethodText = "Оплата картой на сайте";
+      } else if (legalPay?.checked) {
+        formData.paymentMethod = "legal";
+        formData.paymentMethodText = "Безналичный расчет (Счет для Юр. Лиц)";
+      } else if (installment?.checked) {
+        formData.paymentMethod = "installment";
+        formData.paymentMethodText = "Оформить рассрочку";
+      }
+
+      return formData;
+    }
+
+    function validateForm(formData) {
+      const errors = [];
+
+      if (!formData.name) errors.push("Имя");
+      if (!formData.familie) errors.push("Фамилия");
+      if (!formData.tel) errors.push("Телефон");
+      if (!formData.deliveryMethod) errors.push("Способ получения");
+      if (!formData.paymentMethod) errors.push("Способ оплаты");
+
+      if (formData.deliveryMethod === "delivery" && !formData.address) {
+        errors.push("Адрес доставки");
+      }
+
+      return errors;
+    }
+
+    function logFormData() {
+      const formData = collectFormData();
+
+      const validationErrors = validateForm(formData);
+
+      console.log(formData);
+      return formData;
+    }
+    function getFormDataForServer() {
+      const formData = collectFormData();
+      const serverData = new FormData();
+
+      serverData.append("name", formData.name);
+      serverData.append("familie", formData.familie);
+      serverData.append("tel", formData.tel);
+      serverData.append("email", formData.email);
+      serverData.append("deliveryMethod", formData.deliveryMethod || "");
+      serverData.append("paymentMethod", formData.paymentMethod || "");
+
+      if (formData.address) {
+        serverData.append("address", formData.address);
+      }
+
+      return serverData;
+    }
+
+    const form = document.getElementById("basketForm");
+
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const collectedData = logFormData();
+        getFormDataForServer();
+      });
+    }
+  </script>
 </html>

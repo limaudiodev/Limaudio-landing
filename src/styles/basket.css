@@ -182,13 +182,11 @@
     margin: 15px 0;
 }
 
-.basket__goods>button:last-child {
+.basket__goods>.btn-last {
     background: transparent;
     border: 1px solid var(--text);
     width: 100%;
 }
-
-
 
 
 
