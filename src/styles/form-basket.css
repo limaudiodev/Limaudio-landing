@@ -105,3 +105,40 @@
 #basketForm>.content14 {
     max-width: 575px;
 }
+
+
+
+@media (max-width: 1280px) {
+    .basket-desc {
+        padding: 20px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .basket-desc {
+        padding: 30px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .basketInputs {
+        gap: 10px;
+    }
+
+    .basketForm-group>input {
+        height: 51px;
+    }
+}
+
+@media (max-width: 600px) {
+    .basketInputs {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    #basketForm>button {
+        margin: 20px 0 20px 0;
+        padding: 20px 10px;
+        width: 100%;
+    }
+}
