@@ -127,6 +127,7 @@
     width: 24%;
     padding: 30px;
     box-sizing: border-box;
+    align-self: flex-start;
 }
 
 .basket__totalPrice>div {
