@@ -118,6 +118,10 @@
     .basket-desc {
         padding: 30px !important;
     }
+
+    .basket-my>h3 {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -140,5 +144,11 @@
         margin: 20px 0 20px 0;
         padding: 20px 10px;
         width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .basket-desc {
+        padding: 20px !important;
     }
 }
