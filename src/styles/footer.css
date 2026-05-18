@@ -21,9 +21,11 @@ footer {
     align-items: center
 }
 
-.footer__logos>div>img {
-    margin: 0 4px 0 28px;
+.footer__logos>div>a>img {
+    width: 193px;
 }
+
+
 
 .footer__logos>div {
     display: flex;
