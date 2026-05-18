@@ -26,10 +26,22 @@
     gap: 37px;
 }
 
+.basket__goods-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.basket__goods-list>li {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
 .basket__img {
     width: 109px;
     height: 109px;
-
 }
 
 .basket__img>img {
@@ -175,12 +187,6 @@
 
 .basket__input>input::placeholder {
     color: var(--text);
-}
-
-.basket__goods>.btn-black {
-    padding: 18px 10px !important;
-    width: 100%;
-    margin: 15px 0;
 }
 
 .basket__goods>.btn-last {

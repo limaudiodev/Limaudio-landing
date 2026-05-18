@@ -25,6 +25,12 @@ footer {
     margin: 0 4px 0 28px;
 }
 
+.footer__logos>div {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
 .footer-diller {
     margin: 36px 0 18px 0;
     color: var(--white) !important;

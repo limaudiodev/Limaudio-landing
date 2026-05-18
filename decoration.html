@@ -274,8 +274,21 @@
           <div class="basket__goods">
             <div>
               <div class="content14">Товары:</div>
-              <div class="content14">185 000 р.</div>
             </div>
+            <ul class="basket__goods-list">
+              <li class="content14">
+                <div>товар 1</div>
+                <div>100 000 р.</div>
+              </li>
+              <li class="content14">
+                <div>товар 2</div>
+                <div>100 000 р.</div>
+              </li>
+              <li class="content14">
+                <div>товар 3</div>
+                <div>120 000 р.</div>
+              </li>
+            </ul>
             <div>
               <div class="content14">Скидка:</div>
               <div class="content14">185 000 р.</div>
@@ -298,7 +311,6 @@
 
               <input type="text" name="promo" placeholder="Промокод" />
             </div>
-            <button class="btn btn-black">Перейти к оформлению</button>
           </div>
         </div>
       </div>
@@ -314,7 +326,9 @@
                     src="./src/assets/logo-white.svg"
                     alt="логотип limaudio"
                 /></a>
-                <img src="./src/assets/kef.svg" alt="kef" /> by LIMAUDIO
+                <div>
+                  <img src="./src/assets/kef.svg" alt="kef" /> by LIMAUDIO
+                </div>
               </div>
             </div>
             <div class="content14 footer-diller">
@@ -354,7 +368,9 @@
                       fill="white"
                     />
                   </svg>
-                  <a href="tel:88000000000">8 (800) 000-00-00</a>
+                  <a class="content" href="tel:88000000000"
+                    >8 (800) 000-00-00</a
+                  >
                 </li>
                 <li>
                   <button class="btn btn-black-bg-black fc-btn">
