@@ -31,6 +31,10 @@ footer {
     gap: 10px;
 }
 
+.footer__kef {
+    margin-bottom: 4px;
+}
+
 .footer-diller {
     margin: 36px 0 18px 0;
     color: var(--white) !important;
@@ -61,6 +65,7 @@ footer {
 
 .footer-ul-style>li>a {
     color: var(--white);
+    font-size: 22px;
     text-decoration: none
 }
 
@@ -141,6 +146,11 @@ footer {
 .footer__footer>div>a {
     color: var(--white);
     text-decoration: none
+}
+
+.footer__agree>a {
+    color: var(--text-desc);
+    text-decoration: none;
 }
 
 
@@ -239,6 +249,10 @@ footer {
 
     .footer-ul-style {
         margin: 10px 0;
+    }
+
+    .footer-ul-style>li>a {
+        font-size: 20px;
     }
 
     .footer__contacts>ul {
