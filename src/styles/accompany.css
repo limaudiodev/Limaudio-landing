@@ -51,8 +51,8 @@
 }
 
 
-.accompany-prev,
-.accompany-next {
+.accompany-rev,
+.accompany-ext {
     width: 36px;
     height: 36px;
     background: transparent;

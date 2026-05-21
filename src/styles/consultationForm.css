@@ -5,10 +5,6 @@
 .consultation-form__block {
     display: flex;
     justify-content: space-between;
-    max-width: 1480px;
-    padding: 0 20px;
-    margin: 0 auto;
-    box-sizing: border-box;
     color: var(--white);
     position: relative;
     z-index: 1;
