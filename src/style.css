@@ -485,6 +485,9 @@ input:-ms-input-placeholder {
 }
 
 
+.form-mt {
+  margin-top: 140px;
+}
 
 @media (max-width: 1100px) {
 
@@ -517,7 +520,22 @@ input:-ms-input-placeholder {
   .footer-mt {
     margin-top: 60px;
   }
+
+  .form-mt {
+    margin-top: 50px;
+  }
+
+  .inner-wrapper {
+    max-width: 1480px;
+    padding: 0px 20px 40px 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
 }
+
+
+
+
 
 @media (max-width: 425px) {
   .btn-main {

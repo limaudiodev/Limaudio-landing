@@ -32,16 +32,20 @@
     padding: 23px 20px 35px 20px;
     height: 216px;
     background-color: var(--text-gray-e8);
+    border-radius: 0px 0px 5px 5px;
 }
 
 .accompany__content>h4 {
     margin: 0px 0 10px 0;
 }
 
+
 .accompany__card>img {
     display: block;
     width: 100%;
+    border-radius: 5px 5px 0 0;
 }
+
 
 .accompany-nav {
     margin-top: 20px;

@@ -113,7 +113,6 @@
     width: 100%;
     padding-top: 205px;
     padding-bottom: 40px;
-    margin-top: 140px;
     position: relative;
     overflow: hidden;
 }
@@ -171,17 +170,18 @@
 }
 
 
-
-
 @media (max-width: 768px) {
     .consultation-form {
         padding-top: 50px;
-        margin-top: 50px;
         background-position: auto auto;
         max-width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .consultation-form__form {
+        max-width: 100%;
     }
 
     .consultation-form__block {
