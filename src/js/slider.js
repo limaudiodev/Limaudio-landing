@@ -21,7 +21,7 @@ function initProposalSwipers() {
 
     const swiper = new Swiper(`.${uniqueClass}`, {
       scrollbar: {
-        el: swiperContainer.querySelector(".proposal-scrollbar"),
+        el: swiperContainer.querySelector(".custom-scrollbar"),
         draggable: true,
       },
       autoplay: autoplayConfig,
