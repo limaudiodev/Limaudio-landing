@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="stylesheet" href="./src/styles/swiper-bundle.min.css" />
@@ -499,7 +499,7 @@
                   <div class="proposal__content">
                     <div class="content16">KEF Q Concerto Meta</div>
                     <div class="content12 proposal__star">
-                      <div class="stars-container" id="starsContainer"></div>
+                      <div class="stars-container"></div>
                       <div>(10 отзывов)</div>
                     </div>
                     <p class="content14">Полочная акустическая система</p>
@@ -643,7 +643,7 @@
                   <div class="proposal__content">
                     <div class="content16">KEF Q Concerto Meta</div>
                     <div class="content12 proposal__star">
-                      <div class="stars-container" id="starsContainer"></div>
+                      <div class="stars-container"></div>
                       <div>(10 отзывов)</div>
                     </div>
                     <p class="content14">Полочная акустическая система</p>
@@ -787,7 +787,7 @@
                   <div class="proposal__content">
                     <div class="content16">KEF Q Concerto Meta</div>
                     <div class="content12 proposal__star">
-                      <div class="stars-container" id="starsContainer"></div>
+                      <div class="stars-container"></div>
                       <div>(10 отзывов)</div>
                     </div>
                     <p class="content14">Полочная акустическая система</p>
@@ -931,7 +931,7 @@
                   <div class="proposal__content">
                     <div class="content16">KEF Q Concerto Meta</div>
                     <div class="content12 proposal__star">
-                      <div class="stars-container" id="starsContainer"></div>
+                      <div class="stars-container"></div>
                       <div>(10 отзывов)</div>
                     </div>
                     <p class="content14">Полочная акустическая система</p>
@@ -1075,7 +1075,7 @@
                   <div class="proposal__content">
                     <div class="content16">KEF Q Concerto Meta</div>
                     <div class="content12 proposal__star">
-                      <div class="stars-container" id="starsContainer"></div>
+                      <div class="stars-container"></div>
                       <div>(10 отзывов)</div>
                     </div>
                     <p class="content14">Полочная акустическая система</p>
@@ -1283,96 +1283,97 @@
         </div>
       </div>
     </footer>
-  </body>
 
-  <script src="./src/js/swiper-bundle.min.js"></script>
-  <script src="./src/js/main.js"></script>
-  <script src="./src/js/slider.js"></script>
+    <script src="./src/js/swiper-bundle.min.js"></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/star.js"></script>
+    <script src="./src/js/slider.js"></script>
 
-  <script>
-    document.querySelectorAll(".counter-group").forEach((counterGroup) => {
-      const decrementBtn = counterGroup.querySelector(
-        ".counter-btn:first-child",
-      );
-      const incrementBtn = counterGroup.querySelector(
-        ".counter-btn:last-child",
-      );
-      const counterValueEl = counterGroup.querySelector(".counter-value");
+    <script>
+      document.querySelectorAll(".counter-group").forEach((counterGroup) => {
+        const decrementBtn = counterGroup.querySelector(
+          ".counter-btn:first-child",
+        );
+        const incrementBtn = counterGroup.querySelector(
+          ".counter-btn:last-child",
+        );
+        const counterValueEl = counterGroup.querySelector(".counter-value");
 
-      let count = 0;
+        let count = 0;
 
-      function updateCounterDisplay(newValue) {
-        counterValueEl.textContent = newValue;
-
-        counterValueEl.classList.remove("value-pop");
-        void counterValueEl.offsetWidth;
-        counterValueEl.classList.add("value-pop");
-
-        counterValueEl.style.color = "#0f172a";
-      }
-
-      function increment() {
-        count = count + 1;
-        updateCounterDisplay(count);
-      }
-
-      function decrement() {
-        if (count > 0) {
-          count = count - 1;
-          updateCounterDisplay(count);
-        } else {
-          const btn = decrementBtn;
-          btn.style.transform = "scale(0.94)";
-          setTimeout(() => {
-            btn.style.transform = "";
-          }, 120);
+        function updateCounterDisplay(newValue) {
+          counterValueEl.textContent = newValue;
 
           counterValueEl.classList.remove("value-pop");
           void counterValueEl.offsetWidth;
-          counterValueEl.style.transform = "scale(1.02)";
-          setTimeout(() => {
-            counterValueEl.style.transform = "";
-          }, 150);
+          counterValueEl.classList.add("value-pop");
 
-          counterValueEl.style.color = "#94a3b8";
-          setTimeout(() => {
-            counterValueEl.style.color = "#0f172a";
-          }, 150);
+          counterValueEl.style.color = "#0f172a";
         }
-      }
 
-      incrementBtn.addEventListener("click", increment);
-      decrementBtn.addEventListener("click", decrement);
+        function increment() {
+          count = count + 1;
+          updateCounterDisplay(count);
+        }
 
-      updateCounterDisplay(count);
-    });
-  </script>
+        function decrement() {
+          if (count > 0) {
+            count = count - 1;
+            updateCounterDisplay(count);
+          } else {
+            const btn = decrementBtn;
+            btn.style.transform = "scale(0.94)";
+            setTimeout(() => {
+              btn.style.transform = "";
+            }, 120);
 
-  <script>
-    const swiper5 = new Swiper(".recommendSlider", {
-      slidesPerView: 4,
-      spaceBetween: 20,
-      loop: true,
+            counterValueEl.classList.remove("value-pop");
+            void counterValueEl.offsetWidth;
+            counterValueEl.style.transform = "scale(1.02)";
+            setTimeout(() => {
+              counterValueEl.style.transform = "";
+            }, 150);
 
-      navigation: {
-        nextEl: ".reviews-next",
-        prevEl: ".reviews-prev",
-      },
+            counterValueEl.style.color = "#94a3b8";
+            setTimeout(() => {
+              counterValueEl.style.color = "#0f172a";
+            }, 150);
+          }
+        }
 
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
+        incrementBtn.addEventListener("click", increment);
+        decrementBtn.addEventListener("click", decrement);
+
+        updateCounterDisplay(count);
+      });
+    </script>
+
+    <script>
+      const swiper5 = new Swiper(".recommendSlider", {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        loop: true,
+
+        navigation: {
+          nextEl: ".reviews-next",
+          prevEl: ".reviews-prev",
         },
-        768: {
-          slidesPerView: 2,
+
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 2.5,
+          },
+          1280: {
+            slidesPerView: 4,
+          },
         },
-        1024: {
-          slidesPerView: 2.5,
-        },
-        1280: {
-          slidesPerView: 4,
-        },
-      },
-    });
-  </script>
+      });
+    </script>
+  </body>
 </html>

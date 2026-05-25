@@ -106,7 +106,7 @@
 }
 
 .proposal__price>button:hover {
-    background-color: (--text);
+    background-color: var(--text);
 }
 
 .proposal__content {

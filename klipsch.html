@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/styles/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./src/styles/klipch/style.css" />
@@ -47,10 +47,10 @@
         <div class="hero__content borderRadius32">
           <div class="content__block">
             <h3>LIMAUDIO аудиосистемы для музыки и кино под ключ</h3>
-            <h2 class="block-h2">
+            <h1 class="block-h2">
               Профессиональный
               <span class="turn">подбор акустики</span> Klipsch под ваши задачи
-            </h2>
+            </h1>
             <p class="paragraph">
               Звук Klipsch яркий и масштабный, но результат зависит от
               помещения, электроники и задач, мы поможем подобрать идеальное
@@ -695,337 +695,338 @@
         <button class="btn btn-blue result-close-btn">Закрыть</button>
       </div>
     </div>
-  </body>
-  <script src="./src/js/swiper-bundle.min.js"></script>
-  <script>
-    /*header *************/
-    document.addEventListener("DOMContentLoaded", function () {
-      const burgerBtn = document.querySelector(".burger-btn");
-      const menu = document.querySelector(".content");
 
-      const overlay = document.createElement("div");
-      overlay.classList.add("overlay");
-      document.body.appendChild(overlay);
+    <script src="./src/js/swiper-bundle.min.js"></script>
+    <script>
+      /*header *************/
+      document.addEventListener("DOMContentLoaded", function () {
+        const burgerBtn = document.querySelector(".burger-btn");
+        const menu = document.querySelector(".content");
 
-      function openMenu() {
-        menu.classList.add("open");
-        burgerBtn.classList.add("active");
-        overlay.classList.add("active");
+        const overlay = document.createElement("div");
+        overlay.classList.add("overlay");
+        document.body.appendChild(overlay);
+
+        function openMenu() {
+          menu.classList.add("open");
+          burgerBtn.classList.add("active");
+          overlay.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeMenu() {
+          menu.classList.remove("open");
+          burgerBtn.classList.remove("active");
+          overlay.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+
+        function toggleMenu() {
+          if (menu.classList.contains("open")) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        }
+
+        burgerBtn.addEventListener("click", toggleMenu);
+        overlay.addEventListener("click", closeMenu);
+
+        document.body.addEventListener("click", function (e) {
+          if (
+            menu.classList.contains("open") &&
+            !menu.contains(e.target) &&
+            !burgerBtn.contains(e.target)
+          ) {
+            closeMenu();
+          }
+        });
+      });
+
+      /*********слайдер**********************/
+      function initSwiper() {
+        const card = document.querySelector(".choice__card");
+
+        if (window.innerWidth <= 800) {
+          if (!card.classList.contains("swiper")) {
+            card.classList.add("swiper");
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "swiper-wrapper";
+
+            const slides = card.querySelectorAll(".choice_first, .choice_last");
+            slides.forEach((slide) => {
+              slide.classList.add("swiper-slide");
+              wrapper.appendChild(slide);
+            });
+
+            card.insertBefore(wrapper, card.firstChild);
+
+            new Swiper(card, {
+              loop: true,
+              slidesPerView: "auto",
+              spaceBetween: 15,
+              navigation: {
+                nextEl: ".choice-next",
+                prevEl: ".choice-prev",
+              },
+            });
+          }
+        } else {
+          if (card.classList.contains("swiper")) {
+            const wrapper = card.querySelector(".swiper-wrapper");
+            if (wrapper) {
+              const slides = wrapper.querySelectorAll(".swiper-slide");
+              slides.forEach((slide) => {
+                slide.classList.remove("swiper-slide");
+                card.insertBefore(slide, wrapper);
+              });
+              wrapper.remove();
+            }
+            card.classList.remove("swiper");
+            if (card.swiper) card.swiper.destroy(true, true);
+          }
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", initSwiper);
+
+      window.addEventListener("resize", () => {
+        clearTimeout(window.resizeTimer);
+        window.resizeTimer = setTimeout(initSwiper, 250);
+      });
+
+      /*******Модальное окно*********/
+      const modal = document.getElementById("projectModal");
+      const closeBtn = document.querySelector(".close");
+      const openModalBtns = document.querySelectorAll(".open-modal-btn");
+      const form = document.getElementById("projectForm");
+
+      function openModal() {
+        modal.style.display = "block";
         document.body.style.overflow = "hidden";
       }
 
-      function closeMenu() {
-        menu.classList.remove("open");
-        burgerBtn.classList.remove("active");
-        overlay.classList.remove("active");
+      function closeModal() {
+        modal.style.display = "none";
         document.body.style.overflow = "";
       }
 
-      function toggleMenu() {
-        if (menu.classList.contains("open")) {
-          closeMenu();
-        } else {
-          openMenu();
-        }
-      }
+      openModalBtns.forEach((btn) => {
+        btn.addEventListener("click", openModal);
+      });
 
-      burgerBtn.addEventListener("click", toggleMenu);
-      overlay.addEventListener("click", closeMenu);
+      closeBtn.addEventListener("click", closeModal);
 
-      document.body.addEventListener("click", function (e) {
-        if (
-          menu.classList.contains("open") &&
-          !menu.contains(e.target) &&
-          !burgerBtn.contains(e.target)
-        ) {
-          closeMenu();
+      window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal();
         }
       });
-    });
 
-    /*********слайдер**********************/
-    function initSwiper() {
-      const card = document.querySelector(".choice__card");
-
-      if (window.innerWidth <= 800) {
-        if (!card.classList.contains("swiper")) {
-          card.classList.add("swiper");
-
-          const wrapper = document.createElement("div");
-          wrapper.className = "swiper-wrapper";
-
-          const slides = card.querySelectorAll(".choice_first, .choice_last");
-          slides.forEach((slide) => {
-            slide.classList.add("swiper-slide");
-            wrapper.appendChild(slide);
-          });
-
-          card.insertBefore(wrapper, card.firstChild);
-
-          new Swiper(card, {
-            loop: true,
-            slidesPerView: "auto",
-            spaceBetween: 15,
-            navigation: {
-              nextEl: ".choice-next",
-              prevEl: ".choice-prev",
-            },
-          });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.style.display === "block") {
+          closeModal();
         }
-      } else {
-        if (card.classList.contains("swiper")) {
-          const wrapper = card.querySelector(".swiper-wrapper");
-          if (wrapper) {
-            const slides = wrapper.querySelectorAll(".swiper-slide");
-            slides.forEach((slide) => {
-              slide.classList.remove("swiper-slide");
-              card.insertBefore(slide, wrapper);
-            });
-            wrapper.remove();
-          }
-          card.classList.remove("swiper");
-          if (card.swiper) card.swiper.destroy(true, true);
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        console.log("Отправленные данные:", { name, email, message });
+
+        form.reset();
+
+        closeModal();
+      });
+
+      /*******Квиз*********/
+      const QUESTIONS_SET = [
+        {
+          id: 1,
+          text: "Для чего в первую очередь нужна система?",
+          desc: "Это определяет общую архитектуру системы: стерео, ТВ-решение или полноценный домашний кинотеатр",
+          options: [
+            "Музыка — стерео / Hi-Fi / High-End",
+            "Фильмы и сериалы",
+            "Домашний кинотеатр и игры",
+            "Универсальная система: музыка + кино",
+            "ТВ-гостиная с качественным звуком",
+            "Нужна помощь, пока не определился",
+          ],
+        },
+        {
+          id: 2,
+          text: "Где будет жить звук?",
+          desc: "Тип помещения напрямую влияет на подбор акустики, расстановку и итоговый характер звучания",
+          options: [
+            "Отдельная гостиная или кабинет",
+            "Открытая гостиная, объединенная с кухней / столовой",
+            "Специально выделенная комната",
+            "Небольшая жилая комната",
+            "Сложное пространство: второй свет, панорамные окна, нестандартная геометрия",
+            "Свой вариант",
+          ],
+        },
+        {
+          id: 3,
+          text: "Какова примерная площадь зоны, где должна работать система?",
+          desc: "Это влияет на масштаб системы, требуемый запас по динамике и формат акустики",
+          options: [
+            "До 15 м²",
+            "До 15-30 м²",
+            "До 30-50 м²",
+            "Более 50 м²",
+            "Точно не знаю",
+          ],
+        },
+        {
+          id: 4,
+          text: "На каком этапе вы сейчас находитесь?",
+          desc: "Это помогает понять, насколько свободно можно спроектировать систему и нужно ли учитывать уже принятые решения",
+          options: [
+            "Только изучаю варианты",
+            "Выбираю систему перед покупкой",
+            "Идет ремонт / строительство",
+            "Помещение уже готово",
+            "Часть оборудования уже куплена",
+          ],
+        },
+        {
+          id: 5,
+          text: "Куда отправить варианты сборки Klipsch под ваши задачи и помещение?",
+          desc: "Мы учтем параметры помещения, задачу системы и ваши приоритеты — и подготовим рекомендацию по конфигурации на базе Klipsch",
+          options: [],
+        },
+      ];
+      let userSelections = [];
+      let activeQuestionIndex = 0;
+      let currentSelectedSet = new Set();
+      let isQuizLive = false;
+      let quizFinished = false;
+
+      let contactData = {
+        name: "",
+        phone: "",
+        email: "",
+      };
+
+      const kvisModal = document.getElementById("kvis");
+      const headlineEl = document.querySelector("#kvis .headlineH2");
+      const paragraphDesc = document.querySelector("#kvis .paragraph");
+      const count = document.querySelector("#kvis .count");
+      const quizBodyContainer = document.getElementById("quizDynamicBody");
+      const socialLinksBlock = document.getElementById("socialLinksBlock");
+      const countBlock = document.querySelector(".count-block");
+      const modalFooter = document.querySelector(".modal-footer");
+
+      function getStoredAnswersForQuestion(idx) {
+        const qid = QUESTIONS_SET[idx].id;
+        const found = userSelections.find((item) => item.questionId === qid);
+        return found ? [...found.selectedAnswers] : [];
+      }
+
+      function persistCurrentAnswers() {
+        const currentQ = QUESTIONS_SET[activeQuestionIndex];
+        const selectedArray = Array.from(currentSelectedSet);
+        const existingIdx = userSelections.findIndex(
+          (item) => item.questionId === currentQ.id,
+        );
+        const record = {
+          questionId: currentQ.id,
+          questionText: currentQ.text,
+          selectedAnswers: selectedArray,
+        };
+        if (existingIdx !== -1) {
+          userSelections[existingIdx] = record;
+        } else {
+          userSelections.push(record);
         }
       }
-    }
 
-    document.addEventListener("DOMContentLoaded", initSwiper);
-
-    window.addEventListener("resize", () => {
-      clearTimeout(window.resizeTimer);
-      window.resizeTimer = setTimeout(initSwiper, 250);
-    });
-
-    /*******Модальное окно*********/
-    const modal = document.getElementById("projectModal");
-    const closeBtn = document.querySelector(".close");
-    const openModalBtns = document.querySelectorAll(".open-modal-btn");
-    const form = document.getElementById("projectForm");
-
-    function openModal() {
-      modal.style.display = "block";
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeModal() {
-      modal.style.display = "none";
-      document.body.style.overflow = "";
-    }
-
-    openModalBtns.forEach((btn) => {
-      btn.addEventListener("click", openModal);
-    });
-
-    closeBtn.addEventListener("click", closeModal);
-
-    window.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        closeModal();
+      function isContactFormValid() {
+        return (
+          contactData.name.trim() !== "" &&
+          contactData.phone.trim() !== "" &&
+          contactData.type.trim() !== ""
+        );
       }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && modal.style.display === "block") {
-        closeModal();
-      }
-    });
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-
-      console.log("Отправленные данные:", { name, email, message });
-
-      form.reset();
-
-      closeModal();
-    });
-
-    /*******Квиз*********/
-    const QUESTIONS_SET = [
-      {
-        id: 1,
-        text: "Для чего в первую очередь нужна система?",
-        desc: "Это определяет общую архитектуру системы: стерео, ТВ-решение или полноценный домашний кинотеатр",
-        options: [
-          "Музыка — стерео / Hi-Fi / High-End",
-          "Фильмы и сериалы",
-          "Домашний кинотеатр и игры",
-          "Универсальная система: музыка + кино",
-          "ТВ-гостиная с качественным звуком",
-          "Нужна помощь, пока не определился",
-        ],
-      },
-      {
-        id: 2,
-        text: "Где будет жить звук?",
-        desc: "Тип помещения напрямую влияет на подбор акустики, расстановку и итоговый характер звучания",
-        options: [
-          "Отдельная гостиная или кабинет",
-          "Открытая гостиная, объединенная с кухней / столовой",
-          "Специально выделенная комната",
-          "Небольшая жилая комната",
-          "Сложное пространство: второй свет, панорамные окна, нестандартная геометрия",
-          "Свой вариант",
-        ],
-      },
-      {
-        id: 3,
-        text: "Какова примерная площадь зоны, где должна работать система?",
-        desc: "Это влияет на масштаб системы, требуемый запас по динамике и формат акустики",
-        options: [
-          "До 15 м²",
-          "До 15-30 м²",
-          "До 30-50 м²",
-          "Более 50 м²",
-          "Точно не знаю",
-        ],
-      },
-      {
-        id: 4,
-        text: "На каком этапе вы сейчас находитесь?",
-        desc: "Это помогает понять, насколько свободно можно спроектировать систему и нужно ли учитывать уже принятые решения",
-        options: [
-          "Только изучаю варианты",
-          "Выбираю систему перед покупкой",
-          "Идет ремонт / строительство",
-          "Помещение уже готово",
-          "Часть оборудования уже куплена",
-        ],
-      },
-      {
-        id: 5,
-        text: "Куда отправить варианты сборки Klipsch под ваши задачи и помещение?",
-        desc: "Мы учтем параметры помещения, задачу системы и ваши приоритеты — и подготовим рекомендацию по конфигурации на базе Klipsch",
-        options: [],
-      },
-    ];
-    let userSelections = [];
-    let activeQuestionIndex = 0;
-    let currentSelectedSet = new Set();
-    let isQuizLive = false;
-    let quizFinished = false;
-
-    let contactData = {
-      name: "",
-      phone: "",
-      email: "",
-    };
-
-    const kvisModal = document.getElementById("kvis");
-    const headlineEl = document.querySelector("#kvis .headlineH2");
-    const paragraphDesc = document.querySelector("#kvis .paragraph");
-    const count = document.querySelector("#kvis .count");
-    const quizBodyContainer = document.getElementById("quizDynamicBody");
-    const socialLinksBlock = document.getElementById("socialLinksBlock");
-    const countBlock = document.querySelector(".count-block");
-    const modalFooter = document.querySelector(".modal-footer");
-
-    function getStoredAnswersForQuestion(idx) {
-      const qid = QUESTIONS_SET[idx].id;
-      const found = userSelections.find((item) => item.questionId === qid);
-      return found ? [...found.selectedAnswers] : [];
-    }
-
-    function persistCurrentAnswers() {
-      const currentQ = QUESTIONS_SET[activeQuestionIndex];
-      const selectedArray = Array.from(currentSelectedSet);
-      const existingIdx = userSelections.findIndex(
-        (item) => item.questionId === currentQ.id,
-      );
-      const record = {
-        questionId: currentQ.id,
-        questionText: currentQ.text,
-        selectedAnswers: selectedArray,
-      };
-      if (existingIdx !== -1) {
-        userSelections[existingIdx] = record;
-      } else {
-        userSelections.push(record);
-      }
-    }
-
-    function isContactFormValid() {
-      return (
-        contactData.name.trim() !== "" &&
-        contactData.phone.trim() !== "" &&
-        contactData.type.trim() !== ""
-      );
-    }
-    function getStoredAnswersForQuestion(idx) {
-      const qid = QUESTIONS_SET[idx].id;
-      const found = userSelections.find((item) => item.questionId === qid);
-      return found ? [...found.selectedAnswers] : [];
-    }
-
-    function persistCurrentAnswers() {
-      const currentQ = QUESTIONS_SET[activeQuestionIndex];
-      const selectedArray = Array.from(currentSelectedSet);
-      const existingIdx = userSelections.findIndex(
-        (item) => item.questionId === currentQ.id,
-      );
-      const record = {
-        questionId: currentQ.id,
-        questionText: currentQ.text,
-        selectedAnswers: selectedArray,
-      };
-      if (existingIdx !== -1) {
-        userSelections[existingIdx] = record;
-      } else {
-        userSelections.push(record);
-      }
-    }
-
-    function isContactFormValid() {
-      return (
-        contactData.name.trim() !== "" &&
-        contactData.phone.trim() !== "" &&
-        contactData.communicationMethod !== ""
-      );
-    }
-
-    function renderActiveQuestion() {
-      if (!isQuizLive) return;
-
-      const question = QUESTIONS_SET[activeQuestionIndex];
-      if (!question) return;
-
-      const isLastQuestion = activeQuestionIndex === QUESTIONS_SET.length - 1;
-
-      if (isLastQuestion) {
-        socialLinksBlock.classList.remove("hidden-block");
-        count.innerText = "";
-        if (countBlock) countBlock.remove();
-      } else {
-        socialLinksBlock.classList.add("hidden-block");
-        count.innerText = `${activeQuestionIndex + 1}/${QUESTIONS_SET.length}`;
+      function getStoredAnswersForQuestion(idx) {
+        const qid = QUESTIONS_SET[idx].id;
+        const found = userSelections.find((item) => item.questionId === qid);
+        return found ? [...found.selectedAnswers] : [];
       }
 
-      paragraphDesc.innerText = question.desc;
+      function persistCurrentAnswers() {
+        const currentQ = QUESTIONS_SET[activeQuestionIndex];
+        const selectedArray = Array.from(currentSelectedSet);
+        const existingIdx = userSelections.findIndex(
+          (item) => item.questionId === currentQ.id,
+        );
+        const record = {
+          questionId: currentQ.id,
+          questionText: currentQ.text,
+          selectedAnswers: selectedArray,
+        };
+        if (existingIdx !== -1) {
+          userSelections[existingIdx] = record;
+        } else {
+          userSelections.push(record);
+        }
+      }
 
-      const storedSelections = getStoredAnswersForQuestion(activeQuestionIndex);
-      currentSelectedSet.clear();
-      storedSelections.forEach((ans) => currentSelectedSet.add(ans));
+      function isContactFormValid() {
+        return (
+          contactData.name.trim() !== "" &&
+          contactData.phone.trim() !== "" &&
+          contactData.communicationMethod !== ""
+        );
+      }
 
-      let optionsHtml = `<div class="options-list" id="optionsListWrap">`;
-      question.options.forEach((opt) => {
-        const isChecked = currentSelectedSet.has(opt);
-        const selectedClass = isChecked ? "selected" : "";
-        optionsHtml += `
+      function renderActiveQuestion() {
+        if (!isQuizLive) return;
+
+        const question = QUESTIONS_SET[activeQuestionIndex];
+        if (!question) return;
+
+        const isLastQuestion = activeQuestionIndex === QUESTIONS_SET.length - 1;
+
+        if (isLastQuestion) {
+          socialLinksBlock.classList.remove("hidden-block");
+          count.innerText = "";
+          if (countBlock) countBlock.remove();
+        } else {
+          socialLinksBlock.classList.add("hidden-block");
+          count.innerText = `${activeQuestionIndex + 1}/${QUESTIONS_SET.length}`;
+        }
+
+        paragraphDesc.innerText = question.desc;
+
+        const storedSelections =
+          getStoredAnswersForQuestion(activeQuestionIndex);
+        currentSelectedSet.clear();
+        storedSelections.forEach((ans) => currentSelectedSet.add(ans));
+
+        let optionsHtml = `<div class="options-list" id="optionsListWrap">`;
+        question.options.forEach((opt) => {
+          const isChecked = currentSelectedSet.has(opt);
+          const selectedClass = isChecked ? "selected" : "";
+          optionsHtml += `
       <div class="option-item ${selectedClass}" data-opt-value="${escapeHtml(opt)}">
         <span class="option-checkbox"></span>
         <span>${escapeHtml(opt)}</span>
       </div>
     `;
-      });
-      optionsHtml += `</div>`;
+        });
+        optionsHtml += `</div>`;
 
-      let contactFormHtml = "";
-      if (isLastQuestion) {
-        contactFormHtml = `
+        let contactFormHtml = "";
+        if (isLastQuestion) {
+          contactFormHtml = `
       <div class="contact-form">
         <div class="contact-form-row">
           <input type="text" id="contactName" placeholder="Имя" value="${escapeHtml(contactData.name)}">
@@ -1040,237 +1041,218 @@
         <div class="content14">Нажимая кнопку "Получить предварительный выбор", я подтверждаю, что ознакомлен и согласен с условиями политики обработки персональных данных</div>
       </div>
     `;
-      }
+        }
 
-      if (isLastQuestion) {
-        socialLinksBlock.classList.remove("hidden-block");
-        headlineEl.innerText = question.text;
-      } else {
-        socialLinksBlock.classList.add("hidden-block");
-        headlineEl.innerText = question.text;
-      }
+        if (isLastQuestion) {
+          socialLinksBlock.classList.remove("hidden-block");
+          headlineEl.innerText = question.text;
+        } else {
+          socialLinksBlock.classList.add("hidden-block");
+          headlineEl.innerText = question.text;
+        }
 
-      const buttonText = isLastQuestion
-        ? "Получить предварительный выбор"
-        : "Далее";
-      const isDisabled = isLastQuestion
-        ? !isContactFormValid()
-        : currentSelectedSet.size === 0;
+        const buttonText = isLastQuestion
+          ? "Получить предварительный выбор"
+          : "Далее";
+        const isDisabled = isLastQuestion
+          ? !isContactFormValid()
+          : currentSelectedSet.size === 0;
 
-      const buttonsHtml = `
+        const buttonsHtml = `
     <div class="modal-footer">
       <button class="nav-btn btn-blue btn" id="quizNextBtn" ${isDisabled ? "disabled" : ""}>${buttonText}</button>
     </div>
   `;
 
-      const fullInner = optionsHtml + contactFormHtml + buttonsHtml;
-      quizBodyContainer.innerHTML = fullInner;
+        const fullInner = optionsHtml + contactFormHtml + buttonsHtml;
+        quizBodyContainer.innerHTML = fullInner;
 
-      if (isLastQuestion) {
-        const optionsList = document.querySelector(".options-list");
-        if (optionsList) {
-          optionsList.style.margin = "10px 0 0 0";
-        }
-      }
-
-      const optionDivs = document.querySelectorAll(
-        "#optionsListWrap .option-item",
-      );
-      optionDivs.forEach((div) => {
-        const optTextElem = div.querySelector("span:last-child");
-        const optionText = optTextElem ? optTextElem.innerText : "";
-        div.addEventListener("click", (e) => {
-          e.stopPropagation();
-          if (currentSelectedSet.has(optionText)) {
-            currentSelectedSet.delete(optionText);
-            div.classList.remove("selected");
-          } else {
-            currentSelectedSet.add(optionText);
-            div.classList.add("selected");
+        if (isLastQuestion) {
+          const optionsList = document.querySelector(".options-list");
+          if (optionsList) {
+            optionsList.style.margin = "10px 0 0 0";
           }
-          if (isLastQuestion) {
+        }
+
+        const optionDivs = document.querySelectorAll(
+          "#optionsListWrap .option-item",
+        );
+        optionDivs.forEach((div) => {
+          const optTextElem = div.querySelector("span:last-child");
+          const optionText = optTextElem ? optTextElem.innerText : "";
+          div.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (currentSelectedSet.has(optionText)) {
+              currentSelectedSet.delete(optionText);
+              div.classList.remove("selected");
+            } else {
+              currentSelectedSet.add(optionText);
+              div.classList.add("selected");
+            }
+            if (isLastQuestion) {
+              const nextBtn = document.getElementById("quizNextBtn");
+              if (nextBtn) {
+                nextBtn.disabled = !isContactFormValid();
+              }
+            } else {
+              const nextBtn = document.getElementById("quizNextBtn");
+              if (nextBtn) {
+                nextBtn.disabled = currentSelectedSet.size === 0;
+              }
+            }
+          });
+        });
+
+        if (isLastQuestion) {
+          const nameInput = document.getElementById("contactName");
+          const phoneInput = document.getElementById("contactPhone");
+          const methodSelect = document.getElementById("contactMethod");
+
+          const updateContactData = () => {
+            if (nameInput) contactData.name = nameInput.value;
+            if (phoneInput) contactData.phone = phoneInput.value;
+            if (methodSelect)
+              contactData.communicationMethod = methodSelect.value;
+
             const nextBtn = document.getElementById("quizNextBtn");
             if (nextBtn) {
               nextBtn.disabled = !isContactFormValid();
             }
-          } else {
-            const nextBtn = document.getElementById("quizNextBtn");
-            if (nextBtn) {
-              nextBtn.disabled = currentSelectedSet.size === 0;
-            }
-          }
-        });
-      });
+          };
 
-      if (isLastQuestion) {
-        const nameInput = document.getElementById("contactName");
-        const phoneInput = document.getElementById("contactPhone");
-        const methodSelect = document.getElementById("contactMethod");
-
-        const updateContactData = () => {
-          if (nameInput) contactData.name = nameInput.value;
-          if (phoneInput) contactData.phone = phoneInput.value;
+          if (nameInput) nameInput.addEventListener("input", updateContactData);
+          if (phoneInput)
+            phoneInput.addEventListener("input", updateContactData);
           if (methodSelect)
-            contactData.communicationMethod = methodSelect.value;
+            methodSelect.addEventListener("change", updateContactData);
+        }
 
-          const nextBtn = document.getElementById("quizNextBtn");
-          if (nextBtn) {
-            nextBtn.disabled = !isContactFormValid();
-          }
-        };
+        const nextBtn = document.getElementById("quizNextBtn");
+        if (nextBtn) {
+          const newNextBtn = nextBtn.cloneNode(true);
+          nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+          newNextBtn.addEventListener("click", () => {
+            if (!isQuizLive) return;
 
-        if (nameInput) nameInput.addEventListener("input", updateContactData);
-        if (phoneInput) phoneInput.addEventListener("input", updateContactData);
-        if (methodSelect)
-          methodSelect.addEventListener("change", updateContactData);
-      }
-
-      const nextBtn = document.getElementById("quizNextBtn");
-      if (nextBtn) {
-        const newNextBtn = nextBtn.cloneNode(true);
-        nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
-        newNextBtn.addEventListener("click", () => {
-          if (!isQuizLive) return;
-
-          if (isLastQuestion) {
-            if (!isContactFormValid()) {
-              return;
+            if (isLastQuestion) {
+              if (!isContactFormValid()) {
+                return;
+              }
+              persistCurrentAnswers();
+              completeQuizAndShowJson();
+            } else {
+              if (currentSelectedSet.size === 0) {
+                return;
+              }
+              persistCurrentAnswers();
+              activeQuestionIndex++;
+              renderActiveQuestion();
             }
-            persistCurrentAnswers();
-            completeQuizAndShowJson();
-          } else {
-            if (currentSelectedSet.size === 0) {
-              return;
-            }
-            persistCurrentAnswers();
-            activeQuestionIndex++;
-            renderActiveQuestion();
-          }
-        });
-      }
-    }
-    function completeQuizAndShowJson() {
-      for (let i = 0; i < QUESTIONS_SET.length; i++) {
-        const q = QUESTIONS_SET[i];
-        const exists = userSelections.some(
-          (entry) => entry.questionId === q.id,
-        );
-        if (!exists) {
-          userSelections.push({
-            questionId: q.id,
-            questionText: q.text,
-            selectedAnswers: [],
           });
         }
       }
-      userSelections.sort((a, b) => a.questionId - b.questionId);
-
-      const finalResult = {
-        quizName: "Подбор системы (мультивыбор)",
-        generatedAt: new Date().toISOString(),
-        totalQuestions: QUESTIONS_SET.length,
-        contactInfo: {
-          name: contactData.name,
-          phone: contactData.phone,
-          communicationMethod: contactData.communicationMethod,
-        },
-        answers: userSelections.map((ans) => ({
-          questionId: ans.questionId,
-          question: ans.questionText,
-          selectedOptions: ans.selectedAnswers,
-          optionsCount: ans.selectedAnswers.length,
-        })),
-      };
-
-      console.log(JSON.stringify(finalResult, null, 2));
-      showResultModal(finalResult);
-
-      closeKvisModal();
-      isQuizLive = false;
-      quizFinished = true;
-      contactData = {
-        name: "",
-        phone: "",
-        email: "",
-        communicationMethod: "звонок",
-      };
-    }
-
-    function showResultModal(resultData) {
-      const modal = document.getElementById("resultModal");
-      if (!modal) return;
-
-      modal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-
-      const closeBtn = modal.querySelector(".close-result-modal");
-      if (closeBtn) {
-        closeBtn.onclick = () => closeResultModal();
-      }
-
-      const closeActionBtn = modal.querySelector(".result-close-btn");
-      if (closeActionBtn) {
-        closeActionBtn.onclick = () => closeResultModal();
-      }
-
-      modal.onclick = (e) => {
-        if (e.target === modal) closeResultModal();
-      };
-
-      document.addEventListener("keydown", function onEsc(e) {
-        if (e.key === "Escape" && modal.style.display === "flex") {
-          closeResultModal();
-          document.removeEventListener("keydown", onEsc);
+      function completeQuizAndShowJson() {
+        for (let i = 0; i < QUESTIONS_SET.length; i++) {
+          const q = QUESTIONS_SET[i];
+          const exists = userSelections.some(
+            (entry) => entry.questionId === q.id,
+          );
+          if (!exists) {
+            userSelections.push({
+              questionId: q.id,
+              questionText: q.text,
+              selectedAnswers: [],
+            });
+          }
         }
-      });
-    }
+        userSelections.sort((a, b) => a.questionId - b.questionId);
 
-    function closeResultModal() {
-      const modal = document.getElementById("resultModal");
-      if (modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "";
+        const finalResult = {
+          quizName: "Подбор системы (мультивыбор)",
+          generatedAt: new Date().toISOString(),
+          totalQuestions: QUESTIONS_SET.length,
+          contactInfo: {
+            name: contactData.name,
+            phone: contactData.phone,
+            communicationMethod: contactData.communicationMethod,
+          },
+          answers: userSelections.map((ans) => ({
+            questionId: ans.questionId,
+            question: ans.questionText,
+            selectedOptions: ans.selectedAnswers,
+            optionsCount: ans.selectedAnswers.length,
+          })),
+        };
+
+        console.log(JSON.stringify(finalResult, null, 2));
+        showResultModal(finalResult);
+
+        closeKvisModal();
+        isQuizLive = false;
+        quizFinished = true;
+        contactData = {
+          name: "",
+          phone: "",
+          email: "",
+          communicationMethod: "звонок",
+        };
       }
-    }
 
-    function openKvisModal() {
-      if (!isQuizLive && !quizFinished) {
-        resetQuizAndStart();
-      } else if (quizFinished) {
-        resetQuizAndStart();
-      } else if (isQuizLive) {
+      function showResultModal(resultData) {
+        const modal = document.getElementById("resultModal");
+        if (!modal) return;
+
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+
+        const closeBtn = modal.querySelector(".close-result-modal");
+        if (closeBtn) {
+          closeBtn.onclick = () => closeResultModal();
+        }
+
+        const closeActionBtn = modal.querySelector(".result-close-btn");
+        if (closeActionBtn) {
+          closeActionBtn.onclick = () => closeResultModal();
+        }
+
+        modal.onclick = (e) => {
+          if (e.target === modal) closeResultModal();
+        };
+
+        document.addEventListener("keydown", function onEsc(e) {
+          if (e.key === "Escape" && modal.style.display === "flex") {
+            closeResultModal();
+            document.removeEventListener("keydown", onEsc);
+          }
+        });
+      }
+
+      function closeResultModal() {
+        const modal = document.getElementById("resultModal");
+        if (modal) {
+          modal.style.display = "none";
+          document.body.style.overflow = "";
+        }
+      }
+
+      function openKvisModal() {
+        if (!isQuizLive && !quizFinished) {
+          resetQuizAndStart();
+        } else if (quizFinished) {
+          resetQuizAndStart();
+        } else if (isQuizLive) {
+          kvisModal.style.display = "flex";
+          document.body.style.overflow = "hidden";
+          return;
+        }
         kvisModal.style.display = "flex";
         document.body.style.overflow = "hidden";
-        return;
-      }
-      kvisModal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-      isQuizLive = true;
-      quizFinished = false;
-      renderActiveQuestion();
-    }
-
-    function resetQuizAndStart() {
-      userSelections = [];
-      activeQuestionIndex = 0;
-      currentSelectedSet.clear();
-      contactData = {
-        name: "",
-        phone: "",
-        communicationMethod: "звонок",
-      };
-      isQuizLive = true;
-      quizFinished = false;
-      socialLinksBlock.classList.add("hidden-block");
-      headlineEl.innerText = `Вопрос 1 из ${QUESTIONS_SET.length}`;
-    }
-
-    function closeKvisModal() {
-      kvisModal.style.display = "none";
-      document.body.style.overflow = "";
-      if (isQuizLive && !quizFinished) {
-        isQuizLive = false;
+        isQuizLive = true;
         quizFinished = false;
+        renderActiveQuestion();
+      }
+
+      function resetQuizAndStart() {
         userSelections = [];
         activeQuestionIndex = 0;
         currentSelectedSet.clear();
@@ -1279,53 +1261,74 @@
           phone: "",
           communicationMethod: "звонок",
         };
+        isQuizLive = true;
+        quizFinished = false;
         socialLinksBlock.classList.add("hidden-block");
+        headlineEl.innerText = `Вопрос 1 из ${QUESTIONS_SET.length}`;
       }
-    }
 
-    const openButtons = document.querySelectorAll(".open-kvis-btn");
-    const closeButtonModal = document.querySelector(".closeKvis");
+      function closeKvisModal() {
+        kvisModal.style.display = "none";
+        document.body.style.overflow = "";
+        if (isQuizLive && !quizFinished) {
+          isQuizLive = false;
+          quizFinished = false;
+          userSelections = [];
+          activeQuestionIndex = 0;
+          currentSelectedSet.clear();
+          contactData = {
+            name: "",
+            phone: "",
+            communicationMethod: "звонок",
+          };
+          socialLinksBlock.classList.add("hidden-block");
+        }
+      }
 
-    function initEventListeners() {
-      openButtons.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          openKvisModal();
+      const openButtons = document.querySelectorAll(".open-kvis-btn");
+      const closeButtonModal = document.querySelector(".closeKvis");
+
+      function initEventListeners() {
+        openButtons.forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            openKvisModal();
+          });
         });
-      });
 
-      if (closeButtonModal) {
-        closeButtonModal.addEventListener("click", closeKvisModal);
+        if (closeButtonModal) {
+          closeButtonModal.addEventListener("click", closeKvisModal);
+        }
+
+        window.addEventListener("click", (event) => {
+          if (event.target === kvisModal) {
+            closeKvisModal();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && kvisModal.style.display === "flex") {
+            closeKvisModal();
+          }
+        });
       }
 
-      window.addEventListener("click", (event) => {
-        if (event.target === kvisModal) {
-          closeKvisModal();
-        }
-      });
+      function escapeHtml(str) {
+        if (!str) return "";
+        return str.replace(/[&<>]/g, function (m) {
+          if (m === "&") return "&amp;";
+          if (m === "<") return "&lt;";
+          if (m === ">") return "&gt;";
+          return m;
+        });
+      }
 
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && kvisModal.style.display === "flex") {
-          closeKvisModal();
-        }
-      });
-    }
-
-    function escapeHtml(str) {
-      if (!str) return "";
-      return str.replace(/[&<>]/g, function (m) {
-        if (m === "&") return "&amp;";
-        if (m === "<") return "&lt;";
-        if (m === ">") return "&gt;";
-        return m;
-      });
-    }
-
-    kvisModal.style.display = "none";
-    initEventListeners();
-    isQuizLive = false;
-    quizFinished = false;
-    socialLinksBlock.classList.add("hidden-block");
-    headlineEl.innerText = `Вопрос 1 из ${QUESTIONS_SET.length}`;
-  </script>
+      kvisModal.style.display = "none";
+      initEventListeners();
+      isQuizLive = false;
+      quizFinished = false;
+      socialLinksBlock.classList.add("hidden-block");
+      headlineEl.innerText = `Вопрос 1 из ${QUESTIONS_SET.length}`;
+    </script>
+  </body>
 </html>

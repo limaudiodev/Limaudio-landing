@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="stylesheet" href="./src/styles/swiper-bundle.min.css" />
@@ -93,10 +93,10 @@
       <div class="hero">
         <img src="./src/images/hero-min.webp" alt="hero" />
         <div class="hero__content">
-          <h2 class="headline">
+          <h1 class="headline">
             Каталог акустики KEF <br />
             и AV-компонентов
-          </h2>
+          </h1>
           <p class="content">
             В каталоге представлены акустические системы KEF и совместимые
             AV-компоненты, которые используются в инженерных конфигурациях
@@ -309,22 +309,26 @@
                 autocomplete="tel"
               />
 
-              <div class="consent-group">
+              <div class="consent-wrapper consent-group">
                 <label class="custom-checkbox">
                   <input
                     type="checkbox"
                     id="consentCheckbox"
                     name="personalDataConsent"
                     value="yes"
+                    required
                   />
                   <span class="checkmark"></span>
-                  <span class="consent-text">
-                    Даю согласие на
-                    <a href="#" id="policyLink"
-                      >обработку персональных данных</a
-                    >
-                  </span>
+                  <span class="consent-text">Даю согласие на</span>
                 </label>
+                &ensp;
+                <a
+                  href="/privacy-policy.html"
+                  target="_blank"
+                  class="policy-link"
+                >
+                  обработку персональных данных
+                </a>
               </div>
 
               <button
@@ -459,7 +463,6 @@
       </div>
     </footer>
   </body>
-
   <script src="./src/js/swiper-bundle.min.js"></script>
   <script src="./src/js/main.js"></script>
   <script src="./src/js/slider.js"></script>

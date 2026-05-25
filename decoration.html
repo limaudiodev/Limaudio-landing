@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
 
@@ -426,156 +426,157 @@
         </div>
       </div>
     </footer>
-  </body>
-  <script src="./src/js/main.js"></script>
 
-  <script>
-    /*верхние чекбоксы*/
-    const pickupCheckbox = document.getElementById("pickupCheckbox");
-    const deliveryCheckbox = document.getElementById("deliveryCheckbox");
-    const addressBlock = document.getElementById("addressBlock");
+    <script src="./src/js/main.js"></script>
 
-    function handlePickupChange() {
-      if (pickupCheckbox.checked) {
-        deliveryCheckbox.checked = false;
-        addressBlock.style.display = "none";
-      } else if (!pickupCheckbox.checked && !deliveryCheckbox.checked) {
-        addressBlock.style.display = "none";
-      }
-    }
-
-    function handleDeliveryChange() {
-      if (deliveryCheckbox.checked) {
-        pickupCheckbox.checked = false;
-        addressBlock.style.display = "block";
-      } else if (!pickupCheckbox.checked && !deliveryCheckbox.checked) {
-        addressBlock.style.display = "none";
-      }
-    }
-
-    pickupCheckbox.addEventListener("change", handlePickupChange);
-    deliveryCheckbox.addEventListener("change", handleDeliveryChange);
-
-    addressBlock.style.display = "none";
-
-    /*нижние чекбоксы*/
-    const cardPay = document.getElementById("cardPayCheckbox");
-    const legalPay = document.getElementById("legalPayCheckbox");
-    const installment = document.getElementById("installmentCheckbox");
-
-    const paymentCheckboxes = [cardPay, legalPay, installment];
-
-    function handlePaymentChange(selectedCheckbox) {
-      if (selectedCheckbox.checked) {
-        paymentCheckboxes.forEach((checkbox) => {
-          if (checkbox !== selectedCheckbox) {
-            checkbox.checked = false;
-          }
-        });
-      }
-    }
-
-    cardPay.addEventListener("change", () => handlePaymentChange(cardPay));
-    legalPay.addEventListener("change", () => handlePaymentChange(legalPay));
-    installment.addEventListener("change", () =>
-      handlePaymentChange(installment),
-    );
-
-    /*отправка формы*/
-
-    function collectFormData() {
-      const formData = {
-        name: document.getElementById("name")?.value || "",
-        familie: document.getElementById("familie")?.value || "",
-        tel: document.getElementById("tel")?.value || "",
-        email: document.getElementById("email")?.value || "",
-        address: document.getElementById("address")?.value || "",
-
-        deliveryMethod: null,
-
-        paymentMethod: null,
-      };
-
+    <script>
+      /*верхние чекбоксы*/
       const pickupCheckbox = document.getElementById("pickupCheckbox");
       const deliveryCheckbox = document.getElementById("deliveryCheckbox");
+      const addressBlock = document.getElementById("addressBlock");
 
-      if (pickupCheckbox?.checked) {
-        formData.deliveryMethod = "pickup";
-        formData.deliveryMethodText = "Самовывоз из шоурума";
-      } else if (deliveryCheckbox?.checked) {
-        formData.deliveryMethod = "delivery";
-        formData.deliveryMethodText = "Доставка по адресу";
+      function handlePickupChange() {
+        if (pickupCheckbox.checked) {
+          deliveryCheckbox.checked = false;
+          addressBlock.style.display = "none";
+        } else if (!pickupCheckbox.checked && !deliveryCheckbox.checked) {
+          addressBlock.style.display = "none";
+        }
       }
 
+      function handleDeliveryChange() {
+        if (deliveryCheckbox.checked) {
+          pickupCheckbox.checked = false;
+          addressBlock.style.display = "block";
+        } else if (!pickupCheckbox.checked && !deliveryCheckbox.checked) {
+          addressBlock.style.display = "none";
+        }
+      }
+
+      pickupCheckbox.addEventListener("change", handlePickupChange);
+      deliveryCheckbox.addEventListener("change", handleDeliveryChange);
+
+      addressBlock.style.display = "none";
+
+      /*нижние чекбоксы*/
       const cardPay = document.getElementById("cardPayCheckbox");
       const legalPay = document.getElementById("legalPayCheckbox");
       const installment = document.getElementById("installmentCheckbox");
 
-      if (cardPay?.checked) {
-        formData.paymentMethod = "card";
-        formData.paymentMethodText = "Оплата картой на сайте";
-      } else if (legalPay?.checked) {
-        formData.paymentMethod = "legal";
-        formData.paymentMethodText = "Безналичный расчет (Счет для Юр. Лиц)";
-      } else if (installment?.checked) {
-        formData.paymentMethod = "installment";
-        formData.paymentMethodText = "Оформить рассрочку";
+      const paymentCheckboxes = [cardPay, legalPay, installment];
+
+      function handlePaymentChange(selectedCheckbox) {
+        if (selectedCheckbox.checked) {
+          paymentCheckboxes.forEach((checkbox) => {
+            if (checkbox !== selectedCheckbox) {
+              checkbox.checked = false;
+            }
+          });
+        }
       }
 
-      return formData;
-    }
+      cardPay.addEventListener("change", () => handlePaymentChange(cardPay));
+      legalPay.addEventListener("change", () => handlePaymentChange(legalPay));
+      installment.addEventListener("change", () =>
+        handlePaymentChange(installment),
+      );
 
-    function validateForm(formData) {
-      const errors = [];
+      /*отправка формы*/
 
-      if (!formData.name) errors.push("Имя");
-      if (!formData.familie) errors.push("Фамилия");
-      if (!formData.tel) errors.push("Телефон");
-      if (!formData.deliveryMethod) errors.push("Способ получения");
-      if (!formData.paymentMethod) errors.push("Способ оплаты");
+      function collectFormData() {
+        const formData = {
+          name: document.getElementById("name")?.value || "",
+          familie: document.getElementById("familie")?.value || "",
+          tel: document.getElementById("tel")?.value || "",
+          email: document.getElementById("email")?.value || "",
+          address: document.getElementById("address")?.value || "",
 
-      if (formData.deliveryMethod === "delivery" && !formData.address) {
-        errors.push("Адрес доставки");
+          deliveryMethod: null,
+
+          paymentMethod: null,
+        };
+
+        const pickupCheckbox = document.getElementById("pickupCheckbox");
+        const deliveryCheckbox = document.getElementById("deliveryCheckbox");
+
+        if (pickupCheckbox?.checked) {
+          formData.deliveryMethod = "pickup";
+          formData.deliveryMethodText = "Самовывоз из шоурума";
+        } else if (deliveryCheckbox?.checked) {
+          formData.deliveryMethod = "delivery";
+          formData.deliveryMethodText = "Доставка по адресу";
+        }
+
+        const cardPay = document.getElementById("cardPayCheckbox");
+        const legalPay = document.getElementById("legalPayCheckbox");
+        const installment = document.getElementById("installmentCheckbox");
+
+        if (cardPay?.checked) {
+          formData.paymentMethod = "card";
+          formData.paymentMethodText = "Оплата картой на сайте";
+        } else if (legalPay?.checked) {
+          formData.paymentMethod = "legal";
+          formData.paymentMethodText = "Безналичный расчет (Счет для Юр. Лиц)";
+        } else if (installment?.checked) {
+          formData.paymentMethod = "installment";
+          formData.paymentMethodText = "Оформить рассрочку";
+        }
+
+        return formData;
       }
 
-      return errors;
-    }
+      function validateForm(formData) {
+        const errors = [];
 
-    function logFormData() {
-      const formData = collectFormData();
+        if (!formData.name) errors.push("Имя");
+        if (!formData.familie) errors.push("Фамилия");
+        if (!formData.tel) errors.push("Телефон");
+        if (!formData.deliveryMethod) errors.push("Способ получения");
+        if (!formData.paymentMethod) errors.push("Способ оплаты");
 
-      const validationErrors = validateForm(formData);
+        if (formData.deliveryMethod === "delivery" && !formData.address) {
+          errors.push("Адрес доставки");
+        }
 
-      console.log(formData);
-      return formData;
-    }
-    function getFormDataForServer() {
-      const formData = collectFormData();
-      const serverData = new FormData();
-
-      serverData.append("name", formData.name);
-      serverData.append("familie", formData.familie);
-      serverData.append("tel", formData.tel);
-      serverData.append("email", formData.email);
-      serverData.append("deliveryMethod", formData.deliveryMethod || "");
-      serverData.append("paymentMethod", formData.paymentMethod || "");
-
-      if (formData.address) {
-        serverData.append("address", formData.address);
+        return errors;
       }
 
-      return serverData;
-    }
+      function logFormData() {
+        const formData = collectFormData();
 
-    const form = document.getElementById("basketForm");
+        const validationErrors = validateForm(formData);
 
-    if (form) {
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
+        console.log(formData);
+        return formData;
+      }
+      function getFormDataForServer() {
+        const formData = collectFormData();
+        const serverData = new FormData();
 
-        const collectedData = logFormData();
-        getFormDataForServer();
-      });
-    }
-  </script>
+        serverData.append("name", formData.name);
+        serverData.append("familie", formData.familie);
+        serverData.append("tel", formData.tel);
+        serverData.append("email", formData.email);
+        serverData.append("deliveryMethod", formData.deliveryMethod || "");
+        serverData.append("paymentMethod", formData.paymentMethod || "");
+
+        if (formData.address) {
+          serverData.append("address", formData.address);
+        }
+
+        return serverData;
+      }
+
+      const form = document.getElementById("basketForm");
+
+      if (form) {
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const collectedData = logFormData();
+          getFormDataForServer();
+        });
+      }
+    </script>
+  </body>
 </html>

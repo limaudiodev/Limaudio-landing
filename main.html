@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="stylesheet" href="./src/styles/swiper-bundle.min.css" />
@@ -257,7 +257,7 @@
             <div class="proposal__content">
               <div class="content16">KEF Q Concerto Meta</div>
               <div class="content12 proposal__star">
-                <div class="stars-container" id="starsContainer"></div>
+                <div class="stars-container"></div>
                 <div>(10 отзывов)</div>
               </div>
               <p class="content14">Полочная акустическая система</p>
@@ -336,7 +336,7 @@
             <div class="proposal__content">
               <div class="content16">KEF Q Concerto Meta</div>
               <div class="content12 proposal__star">
-                <div class="stars-container" id="starsContainer"></div>
+                <div class="stars-container"></div>
                 <div>(10 отзывов)</div>
               </div>
               <p class="content14">Полочная акустическая система</p>
@@ -415,7 +415,7 @@
             <div class="proposal__content">
               <div class="content16">KEF Q Concerto Meta</div>
               <div class="content12 proposal__star">
-                <div class="stars-container" id="starsContainer"></div>
+                <div class="stars-container"></div>
                 <div>(10 отзывов)</div>
               </div>
               <p class="content14">Полочная акустическая система</p>
@@ -494,7 +494,7 @@
             <div class="proposal__content">
               <div class="content16">KEF Q Concerto Meta</div>
               <div class="content12 proposal__star">
-                <div class="stars-container" id="starsContainer"></div>
+                <div class="stars-container"></div>
                 <div>(10 отзывов)</div>
               </div>
               <p class="content14">Полочная акустическая система</p>
@@ -573,7 +573,7 @@
             <div class="proposal__content">
               <div class="content16">KEF Q Concerto Meta</div>
               <div class="content12 proposal__star">
-                <div class="stars-container" id="starsContainer"></div>
+                <div class="stars-container"></div>
                 <div>(10 отзывов)</div>
               </div>
               <p class="content14">Полочная акустическая система</p>
@@ -652,7 +652,7 @@
             <div class="proposal__content">
               <div class="content16">KEF Q Concerto Meta</div>
               <div class="content12 proposal__star">
-                <div class="stars-container" id="starsContainer"></div>
+                <div class="stars-container"></div>
                 <div>(10 отзывов)</div>
               </div>
               <p class="content14">Полочная акустическая система</p>
@@ -731,7 +731,7 @@
             <div class="proposal__content">
               <div class="content16">KEF Q Concerto Meta</div>
               <div class="content12 proposal__star">
-                <div class="stars-container" id="starsContainer"></div>
+                <div class="stars-container"></div>
                 <div>(10 отзывов)</div>
               </div>
               <p class="content14">Полочная акустическая система</p>
@@ -810,7 +810,7 @@
             <div class="proposal__content">
               <div class="content16">KEF Q Concerto Meta</div>
               <div class="content12 proposal__star">
-                <div class="stars-container" id="starsContainer"></div>
+                <div class="stars-container"></div>
                 <div>(10 отзывов)</div>
               </div>
               <p class="content14">Полочная акустическая система</p>
@@ -1775,21 +1775,27 @@
               ></textarea>
 
               <div class="consent-group">
-                <label class="custom-checkbox">
-                  <input
-                    type="checkbox"
-                    id="consentCheckbox"
-                    name="personalDataConsent"
-                    value="yes"
-                  />
-                  <span class="checkmark"></span>
-                  <span class="consent-text">
-                    Даю согласие на
-                    <a href="#" id="policyLink"
-                      >обработку персональных данных</a
-                    >
-                  </span>
-                </label>
+                <div class="consent-wrapper">
+                  <label class="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      id="consentCheckbox"
+                      name="personalDataConsent"
+                      value="yes"
+                      required
+                    />
+                    <span class="checkmark"></span>
+                    <span class="consent-text">Даю согласие на</span>
+                  </label>
+                  &ensp;
+                  <a
+                    href="/privacy-policy.html"
+                    target="_blank"
+                    class="policy-link"
+                  >
+                    обработку персональных данных
+                  </a>
+                </div>
               </div>
 
               <button type="submit" class="btn btn-white-bg-black">
@@ -1920,52 +1926,52 @@
         </div>
       </div>
     </footer>
+
+    <script src="./src/js/swiper-bundle.min.js"></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/slider.js"></script>
+    <script src="./src/js/star.js"></script>
+
+    <script>
+      var solutionSwiper = new Swiper(".solutionSlider", {
+        navigation: {
+          nextEl: ".solution-next",
+          prevEl: ".solution-prev",
+        },
+      });
+
+      var accompanySwiper = new Swiper(".accompanySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".accompany-next",
+          prevEl: ".accompany-prev",
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1.13,
+          },
+          425: {
+            slidesPerView: 1.5,
+          },
+          600: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          1280: {
+            slidesPerView: 4,
+          },
+        },
+      });
+
+      var solutionSwiper = new Swiper(".showroomSlider", {
+        navigation: {
+          nextEl: ".showroom-next",
+          prevEl: ".showroom-prev",
+        },
+      });
+    </script>
   </body>
-
-  <script src="./src/js/swiper-bundle.min.js"></script>
-  <script src="./src/js/main.js"></script>
-  <script src="./src/js/slider.js"></script>
-  <script src="./src/js/star.js"></script>
-
-  <script>
-    var solutionSwiper = new Swiper(".solutionSlider", {
-      navigation: {
-        nextEl: ".solution-next",
-        prevEl: ".solution-prev",
-      },
-    });
-
-    var accompanySwiper = new Swiper(".accompanySwiper", {
-      slidesPerView: 4,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: ".accompany-next",
-        prevEl: ".accompany-prev",
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1.13,
-        },
-        425: {
-          slidesPerView: 1.5,
-        },
-        600: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-        1280: {
-          slidesPerView: 4,
-        },
-      },
-    });
-
-    var solutionSwiper = new Swiper(".showroomSlider", {
-      navigation: {
-        nextEl: ".showroom-next",
-        prevEl: ".showroom-prev",
-      },
-    });
-  </script>
 </html>
