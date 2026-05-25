@@ -76,8 +76,8 @@
 }
 
 .proposal__color button img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
 }
 
 .proposal__color button[aria-pressed="true"] {
@@ -213,7 +213,7 @@
 
 @media (max-width: 425px) {
     .proposal__cards {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: 100%;
     }
 
     .star {
@@ -250,10 +250,11 @@
         color: var(--text);
     }
 
+    /*
     .proposal__color {
         display: none;
     }
-
+*/
     .proposal__content {
         margin: 0;
     }
@@ -280,14 +281,9 @@
 }
 
 
-@media (max-width: 360px) {
-    .proposalSwiper>div>div img {
-        width: 98px;
-    }
-}
 
 @media (max-width: 350px) {
     .proposalSwiper>div>div img {
-        width: 100%;
+        width: 80%;
     }
 }

@@ -33,6 +33,8 @@
           <div class="header__contact">
             <a href="tel:+78000000000">
               <svg
+                aria-hidden="true"
+                focusable="false"
                 width="29"
                 height="29"
                 viewBox="0 0 29 29"
@@ -52,6 +54,8 @@
 
           <a href="#" class="header__menu-basket" aria-label="Корзина">
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="39"
               height="32"
               viewBox="0 0 39 32"
@@ -77,12 +81,25 @@
             </svg>
           </a>
 
-          <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
+          <button
+            class="burger-btn"
+            id="burgerBtn"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+            aria-controls="mobileOverlay"
+          >
             <span></span> <span></span> <span></span>
           </button>
         </div>
 
-        <div class="mobile-menu-overlay" id="mobileOverlay">
+        <div
+          class="mobile-menu-overlay"
+          id="mobileOverlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Мобильное меню"
+          hidden
+        >
           <nav aria-label="Главное меню">
             <ul class="mobile-menu" id="mobileMenu">
               <li><a href="/">Каталог</a></li>
@@ -135,10 +152,7 @@
         <div class="product__block">
           <div class="product__slider">
             <div
-              style="
-                --swiper-navigation-color: #fff;
-                --swiper-pagination-color: #fff;
-              "
+              style="--swiper-navigation-color: #fff"
               class="swiper productSwiperMax"
             >
               <div class="swiper-wrapper">
@@ -167,7 +181,11 @@
               </div>
             </div>
 
-            <div class="product-pagination"></div>
+            <div
+              class="product-pagination"
+              aria-label="Пагинация товаров"
+              role="navigation"
+            ></div>
           </div>
           <div class="product__desc">
             <h1 class="headline3">KEF Q750 — напольная акустическая система</h1>
@@ -213,13 +231,13 @@
               <div>(10 отзывов)</div>
             </div>
 
-            <a href="#technical-specs" class="content14 dottet"
+            <a href="#technical-specs" class="content14 dotted"
               >Технические характеристики</a
             >
 
             <div class="content14 product__color">
               Цвет:
-              <div class="product__color" role="group" aria-label="цвет">
+              <div role="group" aria-label="цвет">
                 <button type="button" data-sort="gray" aria-pressed="false">
                   <img src="./src/images/proposal/gray.webp" alt="серый" />
                 </button>
@@ -244,6 +262,8 @@
             <div class="product__btns">
               <button class="btn btn-black">
                 <svg
+                  aria-hidden="true"
+                  focusable="false"
                   width="22"
                   height="18"
                   viewBox="0 0 22 18"
@@ -309,6 +329,8 @@
               </div>
               <button class="btn btn-cat content12">
                 <svg
+                  aria-hidden="true"
+                  focusable="false"
                   width="18"
                   height="16"
                   viewBox="0 0 18 16"
@@ -341,7 +363,7 @@
             </p>
           </div>
           <div class="product__img">
-            <img src="./src/images/productPage/room.webp" alt="компана" />
+            <img src="./src/images/productPage/room.webp" alt="комната" />
           </div>
         </div>
 
@@ -423,6 +445,8 @@
 
               <figcaption class="consultation__author">
                 <svg
+                  aria-hidden="true"
+                  focusable="false"
                   width="37"
                   height="37"
                   viewBox="0 0 37 37"
@@ -460,6 +484,8 @@
           <div class="reviews-nav">
             <button class="sliderBtn reviews-prev sliderBtn_black">
               <svg
+                aria-hidden="true"
+                focusable="false"
                 width="18"
                 height="15"
                 viewBox="0 0 18 15"
@@ -474,6 +500,8 @@
             </button>
             <button class="sliderBtn reviews-next sliderBtn_black">
               <svg
+                aria-hidden="true"
+                focusable="false"
                 width="18"
                 height="15"
                 viewBox="0 0 18 15"
@@ -493,6 +521,8 @@
                 <div class="reviews_headSlider">
                   <div>
                     <svg
+                      aria-hidden="true"
+                      focusable="false"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -508,6 +538,8 @@
                   </div>
                   <div class="reviews_star">
                     <svg
+                      aria-hidden="true"
+                      focusable="false"
                       width="25"
                       height="24"
                       viewBox="0 0 25 24"
@@ -539,12 +571,14 @@
                     alt="фото"
                   />
                 </div>
-                <a class="content12 reviews_expanded">Развернуть</a>
+                <a href="#" class="content12 reviews_expanded">Развернуть</a>
               </div>
               <div class="swiper-slide swiper__reviews">
                 <div class="reviews_headSlider">
                   <div>
                     <svg
+                      aria-hidden="true"
+                      focusable="false"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -560,6 +594,8 @@
                   </div>
                   <div class="reviews_star">
                     <svg
+                      aria-hidden="true"
+                      focusable="false"
                       width="25"
                       height="24"
                       viewBox="0 0 25 24"
@@ -591,12 +627,14 @@
                     alt="фото"
                   />
                 </div>
-                <a class="content12 reviews_expanded">Развернуть</a>
+                <a href="#" class="content12 reviews_expanded">Развернуть</a>
               </div>
               <div class="swiper-slide swiper__reviews">
                 <div class="reviews_headSlider">
                   <div>
                     <svg
+                      aria-hidden="true"
+                      focusable="false"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -612,6 +650,8 @@
                   </div>
                   <div class="reviews_star">
                     <svg
+                      aria-hidden="true"
+                      focusable="false"
                       width="25"
                       height="24"
                       viewBox="0 0 25 24"
@@ -643,12 +683,14 @@
                     alt="фото"
                   />
                 </div>
-                <a class="content12 reviews_expanded">Развернуть</a>
+                <a href="#" class="content12 reviews_expanded">Развернуть</a>
               </div>
               <div class="swiper-slide swiper__reviews">
                 <div class="reviews_headSlider">
                   <div>
                     <svg
+                      aria-hidden="true"
+                      focusable="false"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -664,6 +706,8 @@
                   </div>
                   <div class="reviews_star">
                     <svg
+                      aria-hidden="true"
+                      focusable="false"
                       width="25"
                       height="24"
                       viewBox="0 0 25 24"
@@ -695,7 +739,7 @@
                     alt="фото"
                   />
                 </div>
-                <a class="content12 reviews_expanded">Развернуть</a>
+                <a href="#" class="content12 reviews_expanded">Развернуть</a>
               </div>
             </div>
           </div>
@@ -764,8 +808,13 @@
         </div>
 
         <div class="accompany-nav">
-          <div class="accompany-prev sliderBtn sliderBtn_black">
+          <div
+            class="accompany-prev sliderBtn sliderBtn_black"
+            aria-label="Предыдущий отзыв"
+          >
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="18"
               height="15"
               viewBox="0 0 18 15"
@@ -778,8 +827,13 @@
               />
             </svg>
           </div>
-          <div class="accompany-next sliderBtn sliderBtn_black">
+          <div
+            class="accompany-next sliderBtn sliderBtn_black"
+            aria-label="следующий отзыв"
+          >
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="18"
               height="15"
               viewBox="0 0 18 15"
@@ -803,19 +857,19 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta.webp"
+                    alt="KEF_Q_Concerto_Meta"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta1.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
-                    alt="KEF Q Concerto Meta"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta2.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
@@ -850,6 +904,8 @@
                   >175 000 р. <span class="content14">185 000 р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -882,19 +938,19 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta1.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta2.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
@@ -929,6 +985,8 @@
                   >175 000 р. <span class="content14">185 000 р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -961,19 +1019,19 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta1.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta2.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
@@ -1008,6 +1066,8 @@
                   >175 000 р. <span class="content14">185 000 р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1040,19 +1100,19 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta1.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta2.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
@@ -1087,6 +1147,8 @@
                   >175 000 р. <span class="content14">185 000 р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1119,19 +1181,19 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta1.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta2.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
@@ -1166,6 +1228,8 @@
                   >175 000 р. <span class="content14">185 000 р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1198,19 +1262,19 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta1.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta2.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
@@ -1245,6 +1309,8 @@
                   >175 000 р. <span class="content14">185 000 р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1277,19 +1343,19 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta1.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta2.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
@@ -1324,6 +1390,8 @@
                   >175 000 р. <span class="content14">185 000 р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1356,19 +1424,19 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta1.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta1.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
-                    src="./src/images/proposal/KEF Q Concerto Meta2.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta2.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
@@ -1403,6 +1471,8 @@
                   >175 000 р. <span class="content14">185 000 р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1450,26 +1520,34 @@
         </p>
 
         <form class="consultation-form__form">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Имя"
-            required=""
-            autocomplete="name"
-          />
-          <input
-            type="tel"
-            id="tel"
-            name="tel"
-            placeholder="Телефон"
-            required=""
-            autocomplete="tel"
-          />
+          <div class="form-group">
+            <label for="name" class="form-label"></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Иван Петров"
+              required
+              autocomplete="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="tel" class="form-label"></label>
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              placeholder="Телефон"
+              required=""
+              autocomplete="tel"
+            />
+          </div>
           <input type="file" id="file-upload" style="display: none" />
           <label for="file-upload" class="custom-file-upload">
             <div>
               <svg
+                aria-hidden="true"
+                focusable="false"
                 width="22"
                 height="22"
                 viewBox="0 0 22 22"
@@ -1534,7 +1612,7 @@
               кинотеатров.
             </p>
           </div>
-          <div class="foorter__group">
+          <div class="footer__group">
             <div class="footer__nav footer-nav-block">
               <p class="content">Навигация</p>
               <ul class="content14 footer-ul-style">
@@ -1551,6 +1629,8 @@
               <ul class="content14 footer-ul-style">
                 <li>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="19"
                     height="19"
                     viewBox="0 0 19 19"
@@ -1562,12 +1642,14 @@
                       fill="white"
                     />
                   </svg>
-                  <a class="content" href="tel:+78000000000"
+                  <a class="footer-tel-font" href="tel:+78000000000"
                     >8 (800) 000-00-00</a
                   >
                 </li>
                 <li>
-                  <button class="btn btn-black-bg-black fc-btn">
+                  <button
+                    class="btn btn-black-bg-black fc-btn footer-links-social"
+                  >
                     Получить консультацию
                   </button>
                 </li>
@@ -1586,23 +1668,24 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     style="text-decoration: none"
+                    class="btn btn-black-bg-black fc-btn footer-links-tg"
                   >
-                    <button class="btn btn-black-bg-black fc-btn">
-                      <svg
-                        width="19"
-                        height="16"
-                        viewBox="0 0 19 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.78047 14.209L7.06047 9.97905L14.7405 3.05905C15.0805 2.74905 14.6705 2.59905 14.2205 2.86905L4.74047 8.85905L0.640471 7.55905C-0.239529 7.30905 -0.249529 6.69905 0.840471 6.25905L16.8105 0.0990496C17.5405 -0.23095 18.2405 0.27905 17.9605 1.39905L15.2405 14.209C15.0505 15.119 14.5005 15.3391 13.7405 14.9191L9.60047 11.859L7.61047 13.789C7.38047 14.019 7.19047 14.209 6.78047 14.209Z"
-                          fill="white"
-                        />
-                      </svg>
-                      <span>Перейти в Telegram</span>
-                    </button></a
-                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      width="19"
+                      height="16"
+                      viewBox="0 0 19 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78047 14.209L7.06047 9.97905L14.7405 3.05905C15.0805 2.74905 14.6705 2.59905 14.2205 2.86905L4.74047 8.85905L0.640471 7.55905C-0.239529 7.30905 -0.249529 6.69905 0.840471 6.25905L16.8105 0.0990496C17.5405 -0.23095 18.2405 0.27905 17.9605 1.39905L15.2405 14.209C15.0505 15.119 14.5005 15.3391 13.7405 14.9191L9.60047 11.859L7.61047 13.789C7.38047 14.019 7.19047 14.209 6.78047 14.209Z"
+                        fill="white"
+                      />
+                    </svg>
+                    <span>Перейти в Telegram</span>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -1639,7 +1722,7 @@
             watchSlidesProgress: true,
           },
 
-          1024: {
+          1281: {
             direction: "vertical",
             spaceBetween: 10,
             slidesPerView: 4,
@@ -1836,17 +1919,34 @@
               return;
             }
 
-            textElement.classList.toggle("expanded");
+            const isExpanded = textElement.classList.toggle("expanded");
 
-            if (textElement.classList.contains("expanded")) {
-              this.textContent = "Свернуть";
-            } else {
-              this.textContent = "Развернуть";
+            this.textContent = isExpanded ? "Свернуть" : "Развернуть";
+            this.setAttribute("aria-expanded", isExpanded);
+
+            if (
+              isExpanded &&
+              textElement.getBoundingClientRect().height > window.innerHeight
+            ) {
+              textElement.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+              });
             }
           });
 
+          button.setAttribute("aria-expanded", "false");
+          button.setAttribute("role", "button");
+
           button.dataset.initialized = "true";
         });
+      }
+
+      // Единый вызов при готовности DOM
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initReviewExpanders);
+      } else {
+        initReviewExpanders();
       }
 
       function findRelatedContentSlider(button) {

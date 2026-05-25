@@ -33,6 +33,8 @@
           <div class="header__contact">
             <a href="tel:+78000000000">
               <svg
+                aria-hidden="true"
+                focusable="false"
                 width="29"
                 height="29"
                 viewBox="0 0 29 29"
@@ -52,6 +54,8 @@
 
           <a href="#" class="header__menu-basket" aria-label="Корзина">
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="39"
               height="32"
               viewBox="0 0 39 32"
@@ -77,12 +81,25 @@
             </svg>
           </a>
 
-          <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
+          <button
+            class="burger-btn"
+            id="burgerBtn"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+            aria-controls="mobileOverlay"
+          >
             <span></span> <span></span> <span></span>
           </button>
         </div>
 
-        <div class="mobile-menu-overlay" id="mobileOverlay">
+        <div
+          class="mobile-menu-overlay"
+          id="mobileOverlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Мобильное меню"
+          hidden
+        >
           <nav aria-label="Главное меню">
             <ul class="mobile-menu" id="mobileMenu">
               <li><a href="/">Каталог</a></li>
@@ -286,6 +303,8 @@
 
               <figcaption class="consultation__author">
                 <svg
+                  aria-hidden="true"
+                  focusable="false"
                   width="37"
                   height="37"
                   viewBox="0 0 37 37"
@@ -323,22 +342,28 @@
         </p>
 
         <form class="consultation-form__form">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Имя"
-            required=""
-            autocomplete="name"
-          />
-          <input
-            type="tel"
-            id="tel"
-            name="tel"
-            placeholder="Телефон"
-            required=""
-            autocomplete="tel"
-          />
+          <div class="form-group">
+            <label for="name" class="form-label"></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Иван Петров"
+              required
+              autocomplete="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="tel" class="form-label"></label>
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              placeholder="Телефон"
+              required=""
+              autocomplete="tel"
+            />
+          </div>
 
           <div class="consent-wrapper consent-group">
             <label class="custom-checkbox">
@@ -378,6 +403,8 @@
               aria-controls="swiper-wrapper-9d76b9f2c849d129"
             >
               <svg
+                aria-hidden="true"
+                focusable="false"
                 width="18"
                 height="15"
                 viewBox="0 0 18 15"
@@ -397,6 +424,8 @@
               aria-controls="swiper-wrapper-9d76b9f2c849d129"
             >
               <svg
+                aria-hidden="true"
+                focusable="false"
                 width="18"
                 height="15"
                 viewBox="0 0 18 15"
@@ -605,6 +634,8 @@
                   <span class="content14">185 000&nbsp;р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -711,6 +742,8 @@
                   <span class="content14">185 000&nbsp;р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -817,6 +850,8 @@
                   <span class="content14">185 000&nbsp;р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -923,6 +958,8 @@
                   <span class="content14">185 000&nbsp;р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1029,6 +1066,8 @@
                   <span class="content14">185 000&nbsp;р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1135,6 +1174,8 @@
                   <span class="content14">185 000&nbsp;р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1241,6 +1282,8 @@
                   <span class="content14">185 000&nbsp;р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1347,6 +1390,8 @@
                   <span class="content14">185 000&nbsp;р.</span></span
                 ><button>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="24"
                     height="20"
                     viewBox="0 0 24 20"
@@ -1393,7 +1438,9 @@
                     src="./src/assets/logo-white.svg"
                     alt="логотип limaudio"
                 /></a>
-                <img src="./src/assets/kef.svg" alt="kef" /> by LIMAUDIO
+                <div class="footer__kef">
+                  <img src="./src/assets/kef.svg" alt="kef" /> by LIMAUDIO
+                </div>
               </div>
             </div>
             <div class="content14 footer-diller">
@@ -1405,7 +1452,7 @@
               кинотеатров.
             </p>
           </div>
-          <div class="foorter__group">
+          <div class="footer__group">
             <div class="footer__nav footer-nav-block">
               <p class="content">Навигация</p>
               <ul class="content14 footer-ul-style">
@@ -1422,6 +1469,8 @@
               <ul class="content14 footer-ul-style">
                 <li>
                   <svg
+                    aria-hidden="true"
+                    focusable="false"
                     width="19"
                     height="19"
                     viewBox="0 0 19 19"
@@ -1433,10 +1482,14 @@
                       fill="white"
                     />
                   </svg>
-                  <a href="tel:+78000000000">8 (800) 000-00-00</a>
+                  <a class="footer-tel-font" href="tel:+78000000000"
+                    >8 (800) 000-00-00</a
+                  >
                 </li>
                 <li>
-                  <button class="btn btn-black-bg-black fc-btn">
+                  <button
+                    class="btn btn-black-bg-black fc-btn footer-links-social"
+                  >
                     Получить консультацию
                   </button>
                 </li>
@@ -1455,23 +1508,24 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     style="text-decoration: none"
+                    class="btn btn-black-bg-black fc-btn footer-links-tg"
                   >
-                    <button class="btn btn-black-bg-black fc-btn">
-                      <svg
-                        width="19"
-                        height="16"
-                        viewBox="0 0 19 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.78047 14.209L7.06047 9.97905L14.7405 3.05905C15.0805 2.74905 14.6705 2.59905 14.2205 2.86905L4.74047 8.85905L0.640471 7.55905C-0.239529 7.30905 -0.249529 6.69905 0.840471 6.25905L16.8105 0.0990496C17.5405 -0.23095 18.2405 0.27905 17.9605 1.39905L15.2405 14.209C15.0505 15.119 14.5005 15.3391 13.7405 14.9191L9.60047 11.859L7.61047 13.789C7.38047 14.019 7.19047 14.209 6.78047 14.209Z"
-                          fill="white"
-                        />
-                      </svg>
-                      <span>Перейти в Telegram</span>
-                    </button></a
-                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      width="19"
+                      height="16"
+                      viewBox="0 0 19 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.78047 14.209L7.06047 9.97905L14.7405 3.05905C15.0805 2.74905 14.6705 2.59905 14.2205 2.86905L4.74047 8.85905L0.640471 7.55905C-0.239529 7.30905 -0.249529 6.69905 0.840471 6.25905L16.8105 0.0990496C17.5405 -0.23095 18.2405 0.27905 17.9605 1.39905L15.2405 14.209C15.0505 15.119 14.5005 15.3391 13.7405 14.9191L9.60047 11.859L7.61047 13.789C7.38047 14.019 7.19047 14.209 6.78047 14.209Z"
+                        fill="white"
+                      />
+                    </svg>
+                    <span>Перейти в Telegram</span>
+                  </a>
                 </li>
               </ul>
             </div>

@@ -28,15 +28,18 @@
 }
 
 
-.consultation-form__form>input {
+.consultation-form__form>.form-group>input {
     height: 58px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
-.consultation-form__form>textarea {
+.consultation-form__form>.form-group>textarea {
     height: 116px;
     padding: 20px 0 0 20px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .consent-text>a {
@@ -91,12 +94,6 @@
     background-color: var(--white);
     border-radius: 2px;
 }
-
-.custom-checkbox input:focus-visible~.checkmark {
-    outline: 2px solid var(--white);
-    outline-offset: 2px;
-}
-
 
 .consultation-form__last {
     display: flex;

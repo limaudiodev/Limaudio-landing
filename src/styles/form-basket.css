@@ -57,6 +57,7 @@
 }
 
 
+
 .checkbox-basket:checked+.checkmark {
     background-color: var(--white);
     border-color: var(--text);
