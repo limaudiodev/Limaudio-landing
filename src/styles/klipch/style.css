@@ -88,14 +88,14 @@ p {
 }
 
 
-.headlineH2 {
+.headline-2 {
     font-size: 48px;
     font-weight: 500;
     line-height: 120%;
 }
 
 
-.headlineH3 {
+.headline-3 {
     font-size: 32px;
     font-weight: 600;
     line-height: 120%;
@@ -223,7 +223,7 @@ input {
 
 
 @media (max-width: 1024px) {
-    .headlineH3 {
+    .headline-3 {
         font-size: 28px;
     }
 
@@ -248,7 +248,7 @@ input {
         font-size: 20px;
     }
 
-    .headlineH2 {
+    .headline-2 {
         font-size: 40px;
     }
 
@@ -263,11 +263,11 @@ input {
         font-size: 30px;
     }
 
-    .headlineH2 {
+    .headline-2 {
         font-size: 28px;
     }
 
-    .headlineH3 {
+    .headline-3 {
         font-size: 24px;
     }
 
@@ -321,11 +321,11 @@ input {
         font-size: 24px;
     }
 
-    .headlineH2 {
+    .headline-2 {
         font-size: 24px;
     }
 
-    .headlineH3 {
+    .headline-3 {
         font-size: 16px;
     }
 
@@ -337,7 +337,7 @@ input {
         font-size: 16px;
     }
 
-    .headlineH2 {
+    .headline-2 {
         font-size: 20px;
     }
 

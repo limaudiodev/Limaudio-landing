@@ -209,13 +209,13 @@ button {
   line-height: 120%;
 }
 
-.headline-h2 {
+.headline2 {
   font-weight: 600;
   font-size: 24px;
   line-height: 120%;
 }
 
-.headline-h3 {
+.headline3 {
   font-weight: 700;
   font-size: 36px;
   line-height: 120%;
@@ -505,11 +505,11 @@ input:-ms-input-placeholder {
     font-size: 16px;
   }
 
-  .headline-h2 {
+  .headline2 {
     font-size: 18px;
   }
 
-  .headline-h3 {
+  .headline3 {
     font-size: 30px;
   }
 
@@ -557,11 +557,11 @@ input:-ms-input-placeholder {
     font-size: 24px;
   }
 
-  .headline-h2 {
+  .headline2 {
     font-size: 14px;
   }
 
-  .headline-h3 {
+  .headline3 {
     font-size: 22px;
   }
 

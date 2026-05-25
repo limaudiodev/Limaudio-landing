@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="./src/styles/swiper-bundle.min.css" />
 
     <title>Limaudio</title>
+    <meta name="description" content="Limaudio" />
+    <meta property="og:title" content="Limaudio" />
+    <meta property="og:description" content="Limaudio" />
   </head>
 
   <body style="position: relative">
@@ -16,17 +19,19 @@
         <a href="/"><img src="./src/assets/logo.svg" alt="логотип" /></a>
 
         <div class="header__menu">
-          <ul>
-            <li>Каталог</li>
-            <li>Готовые решения</li>
-            <li>Подбор акустики</li>
-            <li>Шоурум</li>
-            <li>О KEF</li>
-            <li>Контакты</li>
-          </ul>
+          <nav aria-label="Главное меню">
+            <ul>
+              <li><a href="/">Каталог</a></li>
+              <li><a href="/">Готовые решения</a></li>
+              <li><a href="/">Подбор акустики</a></li>
+              <li><a href="/">Шоурум</a></li>
+              <li><a href="/">О KEF</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
 
           <div class="header__contact">
-            <a href="tel:88000000000">
+            <a href="tel:+78000000000">
               <svg
                 width="29"
                 height="29"
@@ -40,12 +45,12 @@
                 /></svg
             ></a>
             <div>
-              <a href="tel:88000000000">8 (800) 000-00-00</a>
+              <a href="tel:+78000000000">8 (800) 000-00-00</a>
               <span>Получить консультацию</span>
             </div>
           </div>
 
-          <button class="header__menu-basket" aria-label="Корзина">
+          <a href="#" class="header__menu-basket" aria-label="Корзина">
             <svg
               width="39"
               height="32"
@@ -70,7 +75,7 @@
                 fill="black"
               />
             </svg>
-          </button>
+          </a>
 
           <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
             <span></span> <span></span> <span></span>
@@ -78,19 +83,20 @@
         </div>
 
         <div class="mobile-menu-overlay" id="mobileOverlay">
-          <ul class="mobile-menu" id="mobileMenu">
-            <li>Каталог</li>
-            <li>Готовые решения</li>
-            <li>Подбор акустики</li>
-            <li>Шоурум</li>
-            <li>О KEF</li>
-            <li>Контакты</li>
-          </ul>
+          <nav aria-label="Главное меню">
+            <ul class="mobile-menu" id="mobileMenu">
+              <li><a href="/">Каталог</a></li>
+              <li><a href="/">Готовые решения</a></li>
+              <li><a href="/">Подбор акустики</a></li>
+              <li><a href="/">Шоурум</a></li>
+              <li><a href="/">О KEF</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
 
           <button class="btn btn-main">Получить консультацию</button>
         </div>
       </header>
-
       <nav aria-label="Навигационная цепочка" class="breadcrumbs-wrapper">
         <ul class="breadcrumbs">
           <li class="breadcrumbs__item">
@@ -127,7 +133,7 @@
       <div class="product product_wrap">
         <div class="scenario">
           <div class="scenario__headline">
-            <h1 class="headline-h3">
+            <h1 class="headline3">
               Технологический баланс — стерео для гостиной
             </h1>
             <p class="scenario__text content14">
@@ -162,7 +168,7 @@
                 <span>Что входит:</span> Акустика, усиление, источник
               </div>
 
-              <div class="scenario__price headline-h2">от 450 000 ₽</div>
+              <div class="scenario__price headline2">от 450 000 ₽</div>
               <span class="content14"
                 >В стоимость базовой конфигурации входит: напольная акустика,
                 интегральный усилитель со встроенным ЦАП и стримингом, кабельная
@@ -179,7 +185,7 @@
         </div>
 
         <div class="scenario__complect">
-          <h3 class="headline-h3">Подробный состав комплекта</h3>
+          <h3 class="headline3">Подробный состав комплекта</h3>
 
           <div class="scenario__block-complect">
             <img
@@ -268,31 +274,37 @@
               Комментарий<br />
               инженера о системе
             </h2>
-            <blockquote class="consultation__quote content">
-              Короткий комментарий от инженера о сильных сторонах этой
-              конфигурации, для какого сценария она особенно удачна и кому
-              подойдет лучше всего.
-              <br /><br />
-              <div>
+            <figure class="consultation__quote">
+              <blockquote class="content">
+                <p>
+                  Короткий комментарий от инженера о сильных сторонах этой
+                  конфигурации, для какого сценария она особенно удачна и кому
+                  подойдет лучше всего.
+                  <br /><br />
+                </p>
+              </blockquote>
+
+              <figcaption class="consultation__author">
                 <svg
                   width="37"
                   height="37"
                   viewBox="0 0 37 37"
                   fill="none"
-                  class="quote-svg"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     d="M37 0.322112L36.1294 6.69709C33.8659 6.52243 32.2118 6.98817 31.1671 8.09433C30.1223 9.20049 29.4839 10.6851 29.2518 12.5481C29.0196 14.4111 28.9616 16.4196 29.0776 18.5737H37V37H22.1129V15.0806C22.1129 9.72446 23.4478 5.70736 26.1176 3.02929C28.8455 0.351223 32.4729 -0.55117 37 0.322112ZM14.8871 0.322112L14.0165 6.69709C11.7529 6.52243 10.0988 6.98817 9.05412 8.09433C8.00941 9.20049 7.37098 10.6851 7.13882 12.5481C6.90666 14.4111 6.84863 16.4196 6.96471 18.5737H14.8871V37H0V15.0806C0 9.72446 1.3349 5.70736 4.00471 3.02929C6.73255 0.351223 10.36 -0.55117 14.8871 0.322112Z"
                     fill="#3C3C3C"
-                  ></path>
+                  />
                 </svg>
                 <div>
-                  <div class="consultation__name">Имя Фамилия</div>
-                  <span class="content14">Главный инженер LIMAUDIO</span>
+                  <div class="consultation__name">Иван Петров</div>
+                  <span class="consultation__role"
+                    >Главный инженер LIMAUDIO</span
+                  >
                 </div>
-              </div>
-            </blockquote>
+              </figcaption>
+            </figure>
           </div>
 
           <div class="product__consultation__images consultation__images">
@@ -416,7 +428,7 @@
                 <img src="./src/images/solutionSlider.webp" alt="комната" />
 
                 <div class="scenario-similar-block">
-                  <h4 class="headline-h2">Музыка и кино в гостиной</h4>
+                  <h4 class="headline2">Музыка и кино в гостиной</h4>
                   <p class="content14">
                     Гостиные и open-space помещения площадью до 25–40 м²
                   </p>
@@ -439,7 +451,7 @@
                 <img src="./src/images/solutionSlider.webp" alt="комната" />
 
                 <div class="scenario-similar-block">
-                  <h4 class="headline-h2">Музыка и кино в гостиной</h4>
+                  <h4 class="headline2">Музыка и кино в гостиной</h4>
                   <p class="content14">
                     Гостиные и open-space помещения площадью до 25–40 м²
                   </p>
@@ -462,7 +474,7 @@
                 <img src="./src/images/solutionSlider.webp" alt="комната" />
 
                 <div class="scenario-similar-block">
-                  <h4 class="headline-h2">Музыка и кино в гостиной</h4>
+                  <h4 class="headline2">Музыка и кино в гостиной</h4>
                   <p class="content14">
                     Гостиные и open-space помещения площадью до 25–40 м²
                   </p>
@@ -485,7 +497,7 @@
                 <img src="./src/images/solutionSlider.webp" alt="комната" />
 
                 <div class="scenario-similar-block">
-                  <h4 class="headline-h2">Музыка и кино в гостиной</h4>
+                  <h4 class="headline2">Музыка и кино в гостиной</h4>
                   <p class="content14">
                     Гостиные и open-space помещения площадью до 25–40 м²
                   </p>
@@ -1421,7 +1433,7 @@
                       fill="white"
                     />
                   </svg>
-                  <a href="tel:88000000000">8 (800) 000-00-00</a>
+                  <a href="tel:+78000000000">8 (800) 000-00-00</a>
                 </li>
                 <li>
                   <button class="btn btn-black-bg-black fc-btn">

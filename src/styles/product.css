@@ -107,14 +107,15 @@
 
 .product__price {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    gap: 10px;
 }
 
-.product__price>.headline-h2>.content16 {
+.product__price>.old-price {
     text-decoration: line-through;
 }
+
 
 .product__btns {
     display: flex;

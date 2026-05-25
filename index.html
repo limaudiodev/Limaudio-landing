@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="./src/styles/swiper-bundle.min.css" />
 
     <title>Limaudio</title>
+    <meta name="description" content="Limaudio" />
+    <meta property="og:title" content="Limaudio" />
+    <meta property="og:description" content="Limaudio" />
   </head>
 
   <body>
@@ -16,17 +19,19 @@
         <a href="/"><img src="./src/assets/logo.svg" alt="логотип" /></a>
 
         <div class="header__menu">
-          <ul>
-            <li>Каталог</li>
-            <li>Готовые решения</li>
-            <li>Подбор акустики</li>
-            <li>Шоурум</li>
-            <li>О KEF</li>
-            <li>Контакты</li>
-          </ul>
+          <nav aria-label="Главное меню">
+            <ul>
+              <li><a href="/">Каталог</a></li>
+              <li><a href="/">Готовые решения</a></li>
+              <li><a href="/">Подбор акустики</a></li>
+              <li><a href="/">Шоурум</a></li>
+              <li><a href="/">О KEF</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
 
           <div class="header__contact">
-            <a href="tel:88000000000">
+            <a href="tel:+78000000000">
               <svg
                 width="29"
                 height="29"
@@ -40,12 +45,12 @@
                 /></svg
             ></a>
             <div>
-              <a href="tel:88000000000">8 (800) 000-00-00</a>
+              <a href="tel:+78000000000">8 (800) 000-00-00</a>
               <span>Получить консультацию</span>
             </div>
           </div>
 
-          <button class="header__menu-basket" aria-label="Корзина">
+          <a href="#" class="header__menu-basket" aria-label="Корзина">
             <svg
               width="39"
               height="32"
@@ -70,7 +75,7 @@
                 fill="black"
               />
             </svg>
-          </button>
+          </a>
 
           <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
             <span></span> <span></span> <span></span>
@@ -78,14 +83,16 @@
         </div>
 
         <div class="mobile-menu-overlay" id="mobileOverlay">
-          <ul class="mobile-menu" id="mobileMenu">
-            <li>Каталог</li>
-            <li>Готовые решения</li>
-            <li>Подбор акустики</li>
-            <li>Шоурум</li>
-            <li>О KEF</li>
-            <li>Контакты</li>
-          </ul>
+          <nav aria-label="Главное меню">
+            <ul class="mobile-menu" id="mobileMenu">
+              <li><a href="/">Каталог</a></li>
+              <li><a href="/">Готовые решения</a></li>
+              <li><a href="/">Подбор акустики</a></li>
+              <li><a href="/">Шоурум</a></li>
+              <li><a href="/">О KEF</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
 
           <button class="btn btn-main">Получить консультацию</button>
         </div>
@@ -146,7 +153,7 @@
                 </div>
               </div>
             </div>
-            <div thumbsSlider="" class="swiper productSwiper">
+            <div class="swiper productSwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img src="./src/images/kef_q750.webp" alt="kef_q750" />
@@ -163,9 +170,7 @@
             <div class="product-pagination"></div>
           </div>
           <div class="product__desc">
-            <h1 class="headline-h3">
-              KEF Q750 — напольная акустическая система
-            </h1>
+            <h1 class="headline3">KEF Q750 — напольная акустическая система</h1>
             <p class="content16">
               2,5-полосная напольная акустическая система для помещений среднего
               размера
@@ -228,10 +233,12 @@
             </div>
 
             <div class="product__price">
-              <span class="headline-h2"
-                >175 000&nbsp;р.
-                <span class="content16">185 000&nbsp;р.</span></span
-              >
+              <div class="headline2 new-price">
+                175 000&nbsp;<span class="currency">₽</span>
+              </div>
+              <div class="content16 old-price">
+                185 000&nbsp;<span class="currency">₽</span>
+              </div>
             </div>
 
             <div class="product__btns">
@@ -251,7 +258,7 @@
                     d="M2.33892 1.13776C3.04334 1.13776 3.66301 1.62061 3.86002 2.30328L6.11419 10.9137C6.42458 12.1069 7.49441 12.9317 8.70625 12.9317H19.8362C20.1466 12.9317 20.3997 12.6764 20.3997 12.3634C20.3997 12.0503 20.1466 11.795 19.8362 11.795L8.70625 11.7939C8.00182 11.7939 7.38215 11.3111 7.18514 10.6284L4.93098 2.01801C4.62058 0.824752 3.55075 0 2.33892 0H0.56354C0.253142 0 0 0.255303 0 0.568324C0 0.881346 0.253154 1.13665 0.56354 1.13665L2.33892 1.13776Z"
                     fill="white"
                   />
-                  <path
+                  <p
                     d="M10.626 14.2169C11.4845 15.0816 11.4845 16.4858 10.626 17.3515C9.76855 18.2162 8.37621 18.2162 7.51889 17.3515C6.66037 16.4857 6.66037 15.0815 7.51889 14.2169C8.37632 13.3511 9.76866 13.3511 10.626 14.2169Z"
                     fill="white"
                   />
@@ -293,7 +300,7 @@
               <img src="./src/images/productPage/expert.webp" alt="эксперт" />
               <div>
                 <p class="content16">Имя Фамилия</p>
-                <a href="tel:88000000000" class="content14"
+                <a href="tel:+78000000000" class="content14"
                   >8 (800) 000-00-00</a
                 >
                 <a href="mailto:mail@mail.com" class="content14"
@@ -322,7 +329,7 @@
 
         <div class="product__block product-top">
           <div class="product__room">
-            <h3 class="headline-h3">Чистота и глубина звучания</h3>
+            <h3 class="headline3">Чистота и глубина звучания</h3>
             <p class="content16">
               KEF Q750 создаёт широкую, точно выстроенную сцену с чёткой
               локализацией каждого инструмента. Звук ощущается масштабно и
@@ -339,7 +346,7 @@
         </div>
 
         <div class="product__specifications" id="technical-specs">
-          <h3 class="headline-h3">Технический паспорт</h3>
+          <h3 class="headline3">Технический паспорт</h3>
 
           <div class="list-container">
             <div class="list-content" id="listContent"></div>
@@ -354,7 +361,7 @@
         </div>
 
         <div class="product__scenarios">
-          <h3 class="headline-h3">Сценарии использования</h3>
+          <h3 class="headline3">Сценарии использования</h3>
           <div class="scenarios__block">
             <h4>Для музыки</h4>
             <p class="content16">
@@ -400,21 +407,26 @@
               Мнение главного<br />
               инженера LIMAUDIO
             </h2>
-            <blockquote class="consultation__quote content">
-              В KEF Q750 сильнее всего ощущается баланс — она сочетает точность,
-              объём и комфортное звучание без перегрузки. Эта модель особенно
-              хорошо подходит для универсальных систем: и для музыки, и для
-              домашнего кино в одной связке. Важно уделить внимание усилителю —
-              лучше выбирать с хорошим контролем баса — и не ставить колонки
-              вплотную к стене, чтобы сохранить чистоту и глубину сцены.
-              <br /><br />
-              <div>
+            <figure class="consultation__quote">
+              <blockquote class="content">
+                <p>
+                  В KEF Q750 сильнее всего ощущается баланс — она сочетает
+                  точность, объём и комфортное звучание без перегрузки. Эта
+                  модель особенно хорошо подходит для универсальных систем: и
+                  для музыки, и для домашнего кино в одной связке. Важно уделить
+                  внимание усилителю — лучше выбирать с хорошим контролем баса —
+                  и не ставить колонки вплотную к стене, чтобы сохранить чистоту
+                  и глубину сцены.
+                  <br /><br />
+                </p>
+              </blockquote>
+
+              <figcaption class="consultation__author">
                 <svg
                   width="37"
                   height="37"
                   viewBox="0 0 37 37"
                   fill="none"
-                  class="quote-svg"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -423,11 +435,13 @@
                   />
                 </svg>
                 <div>
-                  <div class="consultation__name">Имя Фамилия</div>
-                  <span class="content14">Главный инженер LIMAUDIO</span>
+                  <div class="consultation__name">Иван Петров</div>
+                  <span class="consultation__role"
+                    >Главный инженер LIMAUDIO</span
+                  >
                 </div>
-              </div>
-            </blockquote>
+              </figcaption>
+            </figure>
           </div>
 
           <div class="product__consultation__images consultation__images">
@@ -707,7 +721,7 @@
                 />
 
                 <div class="accompany__content">
-                  <h4 class="headline-h2">Персональный менеджер</h4>
+                  <h4 class="headline2">Персональный менеджер</h4>
                   <p class="content">
                     После покупки за клиентом закрепляется персональный менеджер
                     LIMAUDIO, который знает состав системы и остается на связи
@@ -722,7 +736,7 @@
                 />
 
                 <div class="accompany__content">
-                  <h4 class="headline-h2">Консультации по системе</h4>
+                  <h4 class="headline2">Консультации по системе</h4>
                   <p class="content">
                     Помогаем разобраться в эксплуатации оборудования,
                     совместимости компонентов и возможных вариантах развития
@@ -737,7 +751,7 @@
                 />
 
                 <div class="accompany__content">
-                  <h4 class="headline-h2">Подбор дополнительных компонентов</h4>
+                  <h4 class="headline2">Подбор дополнительных компонентов</h4>
                   <p class="content">
                     Если вы захотите усилить систему, добавить сабвуфер,
                     усиление, источник сигнала или другие компоненты, мы
@@ -1548,7 +1562,7 @@
                       fill="white"
                     />
                   </svg>
-                  <a class="content" href="tel:88000000000"
+                  <a class="content" href="tel:+78000000000"
                     >8 (800) 000-00-00</a
                   >
                 </li>

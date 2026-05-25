@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./src/style.css" />
 
     <title>Limaudio</title>
+    <meta name="description" content="Limaudio" />
+    <meta property="og:title" content="Limaudio" />
+    <meta property="og:description" content="Limaudio" />
   </head>
 
   <body style="position: relative">
@@ -15,17 +18,19 @@
         <a href="/"><img src="./src/assets/logo.svg" alt="логотип" /></a>
 
         <div class="header__menu">
-          <ul>
-            <li>Каталог</li>
-            <li>Готовые решения</li>
-            <li>Подбор акустики</li>
-            <li>Шоурум</li>
-            <li>О KEF</li>
-            <li>Контакты</li>
-          </ul>
+          <nav aria-label="Главное меню">
+            <ul>
+              <li><a href="/">Каталог</a></li>
+              <li><a href="/">Готовые решения</a></li>
+              <li><a href="/">Подбор акустики</a></li>
+              <li><a href="/">Шоурум</a></li>
+              <li><a href="/">О KEF</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
 
           <div class="header__contact">
-            <a href="tel:88000000000">
+            <a href="tel:+78000000000">
               <svg
                 width="29"
                 height="29"
@@ -39,12 +44,12 @@
                 /></svg
             ></a>
             <div>
-              <a href="tel:88000000000">8 (800) 000-00-00</a>
+              <a href="tel:+78000000000">8 (800) 000-00-00</a>
               <span>Получить консультацию</span>
             </div>
           </div>
 
-          <button class="header__menu-basket" aria-label="Корзина">
+          <a href="#" class="header__menu-basket" aria-label="Корзина">
             <svg
               width="39"
               height="32"
@@ -69,7 +74,7 @@
                 fill="black"
               />
             </svg>
-          </button>
+          </a>
 
           <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
             <span></span> <span></span> <span></span>
@@ -77,14 +82,16 @@
         </div>
 
         <div class="mobile-menu-overlay" id="mobileOverlay">
-          <ul class="mobile-menu" id="mobileMenu">
-            <li>Каталог</li>
-            <li>Готовые решения</li>
-            <li>Подбор акустики</li>
-            <li>Шоурум</li>
-            <li>О KEF</li>
-            <li>Контакты</li>
-          </ul>
+          <nav aria-label="Главное меню">
+            <ul class="mobile-menu" id="mobileMenu">
+              <li><a href="/">Каталог</a></li>
+              <li><a href="/">Готовые решения</a></li>
+              <li><a href="/">Подбор акустики</a></li>
+              <li><a href="/">Шоурум</a></li>
+              <li><a href="/">О KEF</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
 
           <button class="btn btn-main">Получить консультацию</button>
         </div>
@@ -130,7 +137,7 @@
 
             Назад
           </a>
-          <h3 class="headline-h3">Оформление заказа</h3>
+          <h3 class="headline3">Оформление заказа</h3>
 
           <div>
             <form id="basketForm" action="#" method="post">
@@ -180,7 +187,7 @@
               </div>
 
               <div class="basket__delivery">
-                <h3 class="headline-h2">Способ получения</h3>
+                <h3 class="headline2">Способ получения</h3>
                 <label class="basketCheckbox-wrapper" id="checkboxLabel1">
                   <input
                     type="checkbox"
@@ -218,7 +225,7 @@
               </div>
 
               <div class="basket__delivery">
-                <h3 class="headline-h2">Выбор способа оплаты</h3>
+                <h3 class="headline2">Выбор способа оплаты</h3>
                 <label class="basketCheckbox-wrapper" id="checkboxLabel3">
                   <input
                     type="checkbox"
@@ -368,7 +375,7 @@
                       fill="white"
                     />
                   </svg>
-                  <a href="tel:88000000000">8 (800) 000-00-00</a>
+                  <a href="tel:+78000000000">8 (800) 000-00-00</a>
                 </li>
                 <li>
                   <button class="btn btn-black-bg-black fc-btn">

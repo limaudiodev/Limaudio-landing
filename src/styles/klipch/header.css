@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.header>.headlineH3 {
+.header>.headline-3 {
     text-decoration: none;
     color: var(--text);
 }

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="./src/styles/swiper-bundle.min.css" />
 
     <title>Limaudio</title>
+    <meta name="description" content="Limaudio" />
+    <meta property="og:title" content="Limaudio" />
+    <meta property="og:description" content="Limaudio" />
   </head>
   <body>
     <div class="container">
@@ -15,17 +18,19 @@
         <a href="/"><img src="./src/assets/logo.svg" alt="логотип" /></a>
 
         <div class="header__menu">
-          <ul>
-            <li>Каталог</li>
-            <li>Готовые решения</li>
-            <li>Подбор акустики</li>
-            <li>Шоурум</li>
-            <li>О KEF</li>
-            <li>Контакты</li>
-          </ul>
+          <nav aria-label="Главное меню">
+            <ul>
+              <li><a href="/">Каталог</a></li>
+              <li><a href="/">Готовые решения</a></li>
+              <li><a href="/">Подбор акустики</a></li>
+              <li><a href="/">Шоурум</a></li>
+              <li><a href="/">О KEF</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
 
           <div class="header__contact">
-            <a href="tel:88000000000">
+            <a href="tel:+78000000000">
               <svg
                 width="29"
                 height="29"
@@ -39,12 +44,12 @@
                 /></svg
             ></a>
             <div>
-              <a href="tel:88000000000">8 (800) 000-00-00</a>
+              <a href="tel:+78000000000">8 (800) 000-00-00</a>
               <span>Получить консультацию</span>
             </div>
           </div>
 
-          <button class="header__menu-basket" aria-label="Корзина">
+          <a href="#" class="header__menu-basket" aria-label="Корзина">
             <svg
               width="39"
               height="32"
@@ -69,7 +74,7 @@
                 fill="black"
               />
             </svg>
-          </button>
+          </a>
 
           <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
             <span></span> <span></span> <span></span>
@@ -77,14 +82,16 @@
         </div>
 
         <div class="mobile-menu-overlay" id="mobileOverlay">
-          <ul class="mobile-menu" id="mobileMenu">
-            <li>Каталог</li>
-            <li>Готовые решения</li>
-            <li>Подбор акустики</li>
-            <li>Шоурум</li>
-            <li>О KEF</li>
-            <li>Контакты</li>
-          </ul>
+          <nav aria-label="Главное меню">
+            <ul class="mobile-menu" id="mobileMenu">
+              <li><a href="/">Каталог</a></li>
+              <li><a href="/">Готовые решения</a></li>
+              <li><a href="/">Подбор акустики</a></li>
+              <li><a href="/">Шоурум</a></li>
+              <li><a href="/">О KEF</a></li>
+              <li><a href="/">Контакты</a></li>
+            </ul>
+          </nav>
 
           <button class="btn btn-main">Получить консультацию</button>
         </div>
@@ -115,7 +122,7 @@
         <div class="catalog__assortment">
           <div class="assortment1 assortment-card">
             <div>
-              <h2 class="headline-h2">
+              <h2 class="headline2">
                 Полочная <br />
                 акустика
               </h2>
@@ -127,7 +134,7 @@
           </div>
           <div class="assortment2 assortment-card">
             <div>
-              <h2 class="headline-h2">
+              <h2 class="headline2">
                 Беспроводные<br />
                 системы
               </h2>
@@ -146,14 +153,14 @@
               <img src="./src/images/kef_q750.webp" alt="Полочная акустика" />
             </div>
             <div>
-              <h2 class="headline-h2">Напольная <br />акустика</h2>
+              <h2 class="headline2">Напольная <br />акустика</h2>
               <button class="btn btn-cat">В категорию</button>
             </div>
           </div>
 
           <div class="assortment4 assortment-card assortment-card-last">
             <div>
-              <h2 class="headline-h2">Сабвуферы</h2>
+              <h2 class="headline2">Сабвуферы</h2>
               <button class="btn btn-cat">В категорию</button>
             </div>
             <div class="catalog__img">
@@ -162,7 +169,7 @@
           </div>
           <div class="assortment5 assortment-card">
             <div>
-              <h2 class="headline-h2">
+              <h2 class="headline2">
                 Встраиваемая <br />
                 акустика
               </h2>
@@ -1162,7 +1169,7 @@
               />
 
               <div class="accompany__content">
-                <h4 class="headline-h2">Персональный менеджер</h4>
+                <h4 class="headline2">Персональный менеджер</h4>
                 <p class="content">
                   После покупки за клиентом закрепляется персональный менеджер
                   LIMAUDIO, который знает состав системы и остается на связи по
@@ -1177,7 +1184,7 @@
               />
 
               <div class="accompany__content">
-                <h4 class="headline-h2">Консультации по системе</h4>
+                <h4 class="headline2">Консультации по системе</h4>
                 <p class="content">
                   Помогаем разобраться в эксплуатации оборудования,
                   совместимости компонентов и возможных вариантах развития
@@ -1192,7 +1199,7 @@
               />
 
               <div class="accompany__content">
-                <h4 class="headline-h2">Подбор дополнительных компонентов</h4>
+                <h4 class="headline2">Подбор дополнительных компонентов</h4>
                 <p class="content">
                   Если вы захотите усилить систему, добавить сабвуфер, усиление,
                   источник сигнала или другие компоненты, мы предложим
@@ -1207,7 +1214,7 @@
               />
 
               <div class="accompany__content">
-                <h4 class="headline-h2">Развитие системы со временем</h4>
+                <h4 class="headline2">Развитие системы со временем</h4>
                 <p class="content">
                   По мере изменения потребностей, интерьера или сценария
                   использования мы поможем определить, какие обновления
@@ -1259,7 +1266,7 @@
               проводит главный инженер KEF LIMAUDIO</span
             >
           </h2>
-          <h4 class="headline-h2">Короткий бэкграунд:</h4>
+          <h4 class="headline2">Короткий бэкграунд:</h4>
           <p class="content">
             15 лет занимается аудио- и AV-системами премиального класса.
             Проектирует решения для гостиных, домашних кинотеатров и
@@ -1267,15 +1274,21 @@
             проектов, включая строительство частных high-end кинозалов
           </p>
 
-          <blockquote class="consultation__quote content">
-            Из-за высокой занятости в строительстве частных high-end кинозалов и
-            сложных интеграционных проектах я лично консультирую только
-            ограниченное количество клиентов в месяц. <br /><br />
-            Я беру в работу те случаи, где действительно важно глубоко учесть
-            помещение, акустику и долгосрочный результат. Если ваша задача
-            такого уровня — я рассмотрю возможность провести консультацию лично.
-            <br /><br />
-            <div>
+          <figure class="consultation__quote">
+            <blockquote class="content">
+              <p>
+                Из-за высокой занятости в строительстве частных high-end
+                кинозалов и сложных интеграционных проектах я лично консультирую
+                только ограниченное количество клиентов в месяц. <br /><br />
+                Я беру в работу те случаи, где действительно важно глубоко
+                учесть помещение, акустику и долгосрочный результат. Если ваша
+                задача такого уровня — я рассмотрю возможность провести
+                консультацию лично.
+                <br /><br />
+              </p>
+            </blockquote>
+
+            <figcaption class="consultation__author">
               <svg
                 width="37"
                 height="37"
@@ -1289,11 +1302,11 @@
                 />
               </svg>
               <div>
-                <div class="consultation__name">Имя Фамилия</div>
-                <span class="content14">Главный инженер LIMAUDIO</span>
+                <div class="consultation__name">Иван Петров</div>
+                <span class="consultation__role">Главный инженер LIMAUDIO</span>
               </div>
-            </div>
-          </blockquote>
+            </figcaption>
+          </figure>
         </div>
         <div class="consultation__images">
           <img src="./src/images/engineer.webp" alt="инженер" />
@@ -1866,7 +1879,7 @@
                       fill="white"
                     />
                   </svg>
-                  <a class="content" href="tel:88000000000"
+                  <a class="content" href="tel:+78000000000"
                     >8 (800) 000-00-00</a
                   >
                 </li>
