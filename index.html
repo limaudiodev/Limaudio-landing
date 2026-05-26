@@ -195,38 +195,38 @@
             </p>
 
             <div class="proposal__star">
-              <div class="stars-container">
-                <button
-                  class="star"
+              <div>
+                <div
+                  class="star selected"
                   aria-label="Оценка 1 звезда"
                   data-index="0"
                 >
-                  ★</button
-                ><button
-                  class="star"
+                  ★
+                </div>
+                <div
+                  class="star selected"
                   aria-label="Оценка 2 звезда"
                   data-index="1"
                 >
-                  ★</button
-                ><button
-                  class="star"
+                  ★
+                </div>
+                <div
+                  class="star selected"
                   aria-label="Оценка 3 звезда"
                   data-index="2"
                 >
-                  ★</button
-                ><button
-                  class="star"
+                  ★
+                </div>
+                <div
+                  class="star selected"
                   aria-label="Оценка 4 звезда"
                   data-index="3"
                 >
-                  ★</button
-                ><button
-                  class="star"
-                  aria-label="Оценка 5 звезда"
-                  data-index="4"
-                >
                   ★
-                </button>
+                </div>
+                <div class="star" aria-label="Оценка 5 звезда" data-index="4">
+                  ★
+                </div>
               </div>
               <div>(10 отзывов)</div>
             </div>
@@ -1542,7 +1542,12 @@
               autocomplete="tel"
             />
           </div>
-          <input type="file" id="file-upload" style="display: none" />
+          <input
+            type="file"
+            id="file-upload"
+            style="display: none"
+            accept="image/*,.pdf"
+          />
           <label for="file-upload" class="custom-file-upload">
             <div>
               <svg
@@ -1561,6 +1566,14 @@
               </svg>
               Прикрепить файл <br />
               <span> (не обязательно)</span>
+              <span
+                id="file-size"
+                style="font-size: 0.8em; opacity: 0.7"
+              ></span>
+              <br />
+              <span style="font-size: 0.7em"
+                >(не обязательно, максимум 5MB, только изображения/PDF)</span
+              >
             </div>
           </label>
 
@@ -1842,8 +1855,6 @@
           label: "Конструкция",
           value: "2.5-полосная, фазоинвертор (задний порт), Uni-Q драйвер",
         },
-        { label: "Сопротивление", value: "8 Ом (мин. 3.7 Ом)" },
-        { label: "Сопротивление", value: "8 Ом (мин. 3.7 Ом)" },
       ];
 
       new DynamicList("listContent", sampleItems);
@@ -1996,6 +2007,47 @@
       observer.observe(document.body, {
         childList: true,
         subtree: true,
+      });
+    </script>
+
+    <script>
+      const MAX_SIZE = 5 * 1024 * 1024;
+      const input = document.getElementById("file-upload");
+      const fileNameSpan = document.getElementById("file-name");
+      const fileSizeSpan = document.getElementById("file-size");
+
+      input.addEventListener("change", function () {
+        const file = this.files[0];
+
+        if (!file) {
+          fileNameSpan.textContent = "";
+          fileSizeSpan.textContent = "";
+          return;
+        }
+
+        const isValidType =
+          file.type === "application/pdf" || file.type.startsWith("image/");
+        if (!isValidType) {
+          alert("❌ Можно загружать только изображения и PDF файлы");
+          this.value = "";
+          fileNameSpan.textContent = "";
+          fileSizeSpan.textContent = "";
+          return;
+        }
+
+        if (file.size > MAX_SIZE) {
+          alert(
+            `❌ Файл слишком большой (${(file.size / 1024 / 1024).toFixed(2)}MB). Максимум 5MB`,
+          );
+          this.value = "";
+          fileNameSpan.textContent = "";
+          fileSizeSpan.textContent = "";
+          return;
+        }
+
+        // Успех
+        fileNameSpan.textContent = `📎 ${file.name}`;
+        fileSizeSpan.textContent = `(${(file.size / 1024).toFixed(2)} KB)`;
       });
     </script>
   </body>
