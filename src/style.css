@@ -19,6 +19,7 @@
 @import url("./styles/basket.css");
 @import url("./styles/form-basket.css");
 @import url("./styles/catalog-p.css");
+@import url("./styles/ready.css");
 
 
 
@@ -73,6 +74,7 @@
   --text-gray-e8: #E8E8E8;
   --text-gray-38: #2F3338;
   --text-gray-7E: #7E7E7E;
+  --text-gray-B9: #B9B9B9;
   --text-h: #6E6E6E;
   --white: #FFFFFF;
   --btn: #4C4C4C;

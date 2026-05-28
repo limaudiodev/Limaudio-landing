@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 
-.accompany__card:hover .accompany__content {
+.accompany__card:hover .card-hover {
     color: var(--white);
     background-color: var(--text);
 }

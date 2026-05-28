@@ -9,7 +9,7 @@
 
 .proposalSwiper>div>div img {
     display: block;
-    width: 269px;
+    max-width: 269px;
     object-fit: cover;
     margin: 0 auto;
 }
@@ -114,6 +114,7 @@
     flex-direction: column;
     gap: 6px;
     margin-top: 27px;
+    position: relative;
 }
 
 .proposal__color {
@@ -178,9 +179,45 @@
 }
 
 
+.proposal__btns {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.proposal__btn {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 9px 20px;
+    border-radius: 46px;
+    border: 1px solid var(--text);
+}
+
+.proposal__btn.active {
+    color: #B2B0B0;
+    border: 1px solid #B2B0B0
+}
+
+.proposal__detail {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.proposal__basket {
+    border: 1px solid var(--text);
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
 @media (max-width: 1500px) {
     .proposal__cards {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 }
 
@@ -212,16 +249,13 @@
 
 
 @media (max-width: 425px) {
+    /*
     .proposal__cards {
         grid-template-columns: 100%;
-    }
+    }*/
 
     .star {
         font-size: 9px;
-    }
-
-    .proposalSwiper>div>div img {
-        width: 100%;
     }
 
     .proposal__tabs button {
@@ -277,13 +311,5 @@
 
     .proposal-body {
         display: none;
-    }
-}
-
-
-
-@media (max-width: 350px) {
-    .proposalSwiper>div>div img {
-        width: 80%;
     }
 }

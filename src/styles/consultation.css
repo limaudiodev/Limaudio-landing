@@ -212,7 +212,8 @@
     }
 
     .consultation__quote {
-        padding: 0px 0 0 15px;
+        padding: 0px 15px 0 15px;
+        margin-left: 20px;
     }
 
     .consultation-body-min {
