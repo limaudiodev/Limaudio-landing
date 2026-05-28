@@ -1,9 +1,12 @@
 .hero {
     margin-top: 20px;
-    background-image: url(../images/hero.webp);
     height: 645px;
     background-repeat: no-repeat;
     border-radius: 8px;
+}
+
+.main-bg {
+    background-image: url(../images/hero.webp);
 }
 
 .hero>img {

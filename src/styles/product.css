@@ -322,6 +322,17 @@
     margin-top: 115px;
 }
 
+.product__reviews-block {
+    color: var(--white);
+    display: flex;
+    width: 90%;
+}
+
+.product__reviews-block>p {
+    color: #E5E5E5;
+}
+
+
 .reviews-nav {
     position: absolute;
     top: -25px;
@@ -509,6 +520,8 @@
         display: none !important;
     }
 */
+
+
     .product-pagination {
         display: flex;
         justify-content: center;
