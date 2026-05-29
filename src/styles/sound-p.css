@@ -1,0 +1,41 @@
+.sound-bg {
+    background-image: url(/src/images/sound/hero.webp) !important;
+}
+
+.hero__sound {
+    margin-top: 100px;
+    display: flex;
+    gap: 30px;
+}
+
+.hero__content-sound {
+    padding: 100px 0 0 130px;
+}
+
+.hero__content-sound>p {
+    width: 643px;
+    margin-top: 15px;
+    color: var(--text);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.hero__sound>div {
+    border-radius: 10px;
+    background-color: var(--white);
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    padding: 20px 26px;
+    box-sizing: border-box;
+}
+
+.hero__sound>div>img {
+    width: 59px;
+    height: 60px;
+}
+
+.hero__sound>div>p {
+    font-size: 22px;
+    font-weight: 700;
+}
