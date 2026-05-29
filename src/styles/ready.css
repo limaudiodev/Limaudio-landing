@@ -60,6 +60,15 @@
     .ready__block {
         gap: 16px;
     }
+
+    .ready-text {
+        font-size: 0 !important;
+    }
+
+    .ready-text::before {
+        content: "Задать вопрос";
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 425px) {
