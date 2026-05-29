@@ -88,6 +88,9 @@
     margin-top: 50px;
 }
 
+.catalog-form-width {
+    max-width: 700px;
+}
 
 @media (max-width: 1440px) {
     .cat-content {
@@ -107,7 +110,12 @@
     }
 }
 
+
 @media (max-width: 1024px) {
+    .catalog-form-width {
+        max-width: 500px;
+    }
+
     .cat-block {
         flex-direction: column;
     }
@@ -126,6 +134,9 @@
 }
 
 @media (max-width: 768px) {
+    .catalog-form-width {
+        max-width: 100%;
+    }
 
     .btn-white-bg-black {
         font-size: 0;
@@ -157,6 +168,16 @@
         padding-bottom: 30px;
         margin-top: 50px;
     }
+
+    .form-text {
+        font-size: 0 !important;
+    }
+
+    .form-text::before {
+        content: "Задать вопрос";
+        font-size: 16px;
+    }
+
 }
 
 @media (min-width: 769px) {
