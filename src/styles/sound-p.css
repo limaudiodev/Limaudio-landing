@@ -90,7 +90,7 @@
     border-radius: 10px;
 }
 
-.architecture__content>h5 {
+.architecture__content {
     font-size: 22px;
     font-weight: 700;
     margin: 0;
@@ -194,6 +194,7 @@
         justify-content: start;
         flex-direction: column;
         gap: 10px;
+        background-color: var(--white);
     }
 
     .architecture__img>img {
@@ -206,14 +207,11 @@
 
     .architecture__content {
         padding: 20px;
+        font-size: 14px;
+        border-radius: 0 0 10px 10px;
     }
 
-    .architecture__content>h5 {
-        font-size: 14px;
-    }
-
-    .architecture__content>p {
-        font-size: 14px;
+    .architecture__content>span {
         font-weight: 400;
     }
 
