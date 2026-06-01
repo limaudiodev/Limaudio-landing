@@ -148,10 +148,6 @@
         display: none;
     }
 
-    .consultation__content>h2 {
-        font-size: 30px;
-    }
-
     .consultation>div {
         width: 50%
     }
@@ -176,10 +172,11 @@
 @media (max-width: 768px) {
     .consultation {
         flex-direction: column;
+        gap: 20px;
     }
 
     .consultationTop {
-        margin-top: 60px;
+        margin-top: 20px;
     }
 
     .consultation>div {

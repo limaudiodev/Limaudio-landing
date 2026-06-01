@@ -69,7 +69,7 @@
 .architecture__img {
     display: flex;
     width: 100%;
-    margin-top: 25px;
+    margin: 25px 0 10px 0;
     justify-content: space-between;
     gap: 10px;
 }
@@ -99,6 +99,14 @@
 .architecture__content>p {
     font-size: 22px;
     font-weight: 600;
+}
+
+.sound-wrap {
+    margin-top: 50px;
+}
+
+.sound-mt {
+    margin-top: 100px !important;
 }
 
 @media (max-width: 1100px) {
@@ -172,6 +180,16 @@
     .architecture__content>p {
         font-size: 18px;
     }
+
+    .sound-wrap {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .sound-mt {
+        margin-top: 70px !important;
+    }
 }
 
 @media (max-width: 700px) {
@@ -186,13 +204,14 @@
 @media (max-width: 500px) {
     .architecture {
         margin-top: 30px;
-        padding: 20px 0;
+        padding: 20px 0 0 0;
         background-image: none
     }
 
     .architecture__img {
         justify-content: start;
         flex-direction: column;
+        margin: 20px 0 0 0;
         gap: 10px;
         background-color: var(--white);
     }
@@ -213,6 +232,10 @@
 
     .architecture__content>span {
         font-weight: 400;
+    }
+
+    .sound-mt {
+        margin-top: 30px !important;
     }
 
 
