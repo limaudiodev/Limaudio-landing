@@ -24,8 +24,13 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+}
+
+.consultation-form__form-w {
     max-width: 587px;
 }
+
 
 
 .consultation-form__form>.form-group>input {
@@ -42,8 +47,13 @@
     width: 100%;
 }
 
+.consent-text {
+    font-size: 14px;
+}
+
 .consent-text>a {
     color: var(--white);
+
 }
 
 .custom-checkbox {
@@ -176,9 +186,11 @@
         align-items: center;
     }
 
-    .consultation-form__form {
+
+    .consultation-form__form-w {
         max-width: 100%;
     }
+
 
     .consultation-form__block {
         display: flex;
@@ -201,6 +213,10 @@
     .consultation-form__last>img {
         width: 200px;
         margin: 30px auto 0 auto;
+    }
+
+    .consultation-form__form>.form-group>input {
+        height: 55px;
     }
 
 }

@@ -335,10 +335,10 @@ blockquote {
 input,
 textarea {
   border-radius: 5px;
-  background: #2F3338;
+
   border: none;
   padding-left: 20px;
-  color: var(--white);
+
   font-size: 16px;
   font-weight: 400;
 }
@@ -346,8 +346,26 @@ textarea {
 input::placeholder {
   font-size: 16px;
   font-weight: 400;
+}
+
+.input-black {
+  background: #2F3338;
   color: var(--white);
 }
+
+.input-black::placeholder {
+  color: var(--white);
+}
+
+.input-white {
+  background: var(--white);
+  color: var(--text);
+}
+
+.input-white::placeholder {
+  color: #595959;
+}
+
 
 input::-moz-placeholder {
   font-size: 16px;
@@ -397,6 +415,7 @@ input:-ms-input-placeholder {
 
 .consent-wrapper>a {
   color: var(--white);
+  font-size: 14px;
 }
 
 .custom-file-upload {

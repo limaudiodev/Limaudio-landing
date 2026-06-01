@@ -56,7 +56,6 @@
 .architecture {
     margin-top: 45px;
     padding: 50px 0;
-
     background-image: url(../../src/images/consultation-form-bg.webp);
 }
 
@@ -109,6 +108,91 @@
     margin-top: 100px !important;
 }
 
+.sound-form {
+    width: 100%;
+    padding-top: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sound-form::before {
+    content: '';
+    position: absolute;
+    bottom: 65px;
+    left: 47%;
+    width: 982px;
+    height: 962px;
+    background-image: url(/src/images/sound/sound-bg-ring.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.sound-form-block-bg {
+    background: url(../images/sound/sound-bg.webp);
+    background-repeat: no-repeat;
+}
+
+.sound-white-black {
+    color: var(--text);
+}
+
+.sound-form__last {
+    display: flex;
+    align-items: center;
+}
+
+.sound-form__last>img {
+    margin-top: -10px;
+}
+
+.sound-form__first>p {
+    margin: 40px 0 35px 0;
+    padding-right: 5px;
+}
+
+
+.sound-form-mt {
+    margin-top: 60px;
+}
+
+.sound-form__form-w {
+    max-width: 587px;
+}
+
+.sound-consept-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.sound-consept-wrapper>a {
+    color: var(--text);
+    font-size: 14px;
+}
+
+
+@media (max-width: 1440px) {
+    .sound-form::before {
+        left: 44%;
+        bottom: 0px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .sound-form__last>img {
+        width: 520px;
+    }
+
+    .sound-form::before {
+        left: 42%;
+        bottom: 101px;
+        height: 711px;
+        width: 905px;
+    }
+}
+
+
 @media (max-width: 1100px) {
     .hero__sound-max {
         display: none;
@@ -153,12 +237,42 @@
     .hero__sound>div>p {
         font-size: 16px;
     }
-}
 
+    .sound-form::before {
+        left: 39%;
+        bottom: 178px;
+        height: 590px;
+        width: 809px;
+    }
+}
 
 @media (max-width: 1024px) {
     .architecture__content {
         padding: 40px;
+    }
+
+    .sound-form {
+        padding-top: 80px;
+    }
+
+    .sound-form__last>img {
+        width: 450px;
+        margin-right: -100px;
+    }
+
+    .sound-form::before {
+        left: 45%;
+        bottom: 101px;
+        height: 590px;
+        width: 809px;
+    }
+
+
+}
+
+@media (max-width: 900px) {
+    .sound-mt {
+        margin-top: 70px !important;
     }
 }
 
@@ -184,13 +298,47 @@
     .sound-wrap {
         margin-top: 20px;
     }
-}
 
-@media (max-width: 900px) {
-    .sound-mt {
-        margin-top: 70px !important;
+    .consultation-form__block {
+        display: flex;
+        justify-content: right;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sound-form__last>img {
+        margin: 20px auto 0 auto;
+        width: 320px;
+    }
+
+    .sound-form__first>p {
+        margin: 20px 0 15px 0;
+        padding-right: 0px;
+        font-size: 14px;
+    }
+
+    .sound-form__form-w {
+        max-width: 100%;
+    }
+
+    .sound-form {
+        padding-top: 30px;
+    }
+
+    .sound-form::before {
+        bottom: 0;
+        width: 540px;
+        height: 545px;
+        background-image: url(/src/images/sound/sound-bg-ring-min.webp);
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        background-size: contain;
+        background-position: center;
     }
 }
+
+
 
 @media (max-width: 700px) {
     .hero__sound {
@@ -238,5 +386,25 @@
         margin-top: 30px !important;
     }
 
+    .sound-form__last>img {
+        margin: 20px auto 0 auto;
+        width: 320px;
+    }
 
+    .sound-form__last>img {
+        width: 240px;
+    }
+
+    .sound-form::before {
+        bottom: 3px;
+        width: 428px;
+        height: 412px;
+    }
+}
+
+@media (max-width: 375px) {
+    .sound-form::before {
+        width: 338px;
+        height: 445px;
+    }
 }
