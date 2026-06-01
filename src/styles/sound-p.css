@@ -68,15 +68,15 @@
 
 .architecture__img {
     display: flex;
-    justify-content: space-between;
     width: 100%;
     margin-top: 25px;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-.architecture__img>img {
+.architecture__img picture>img {
     border-radius: 10px;
-    width: 49.3%;
-    height: auto;
+    width: 100%;
 }
 
 .architecture>div>h3 {
@@ -85,7 +85,6 @@
 
 .architecture__content {
     background: var(--white);
-
     margin-top: 20px;
     padding: 40px 105px 50px 60px;
     border-radius: 10px;
@@ -184,7 +183,26 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 500px) {
+    .architecture {
+        margin-top: 30px;
+        padding: 20px 0;
+        background-image: none
+    }
+
+    .architecture__img {
+        justify-content: start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .architecture__img>img {
+        width: 100%;
+    }
+
+    .architecture>div>h3 {
+        color: var(--text);
+    }
 
     .architecture__content {
         padding: 20px;
@@ -198,4 +216,6 @@
         font-size: 14px;
         font-weight: 400;
     }
+
+
 }

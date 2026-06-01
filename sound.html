@@ -186,8 +186,21 @@
         <h3 class="headline">Сценарии и Архитектура</h3>
 
         <div class="architecture__img">
-          <img src="./src/images/sound/architecture.webp" alt="" />
-          <img src="./src/images/sound/architecture2.webp" alt="" />
+          <picture>
+            <source
+              media="(max-width: 500px)"
+              srcset="./src/images/sound/architecture-min.webp"
+            />
+            <img src="./src/images/sound/architecture.webp" alt="колонки" />
+          </picture>
+
+          <picture>
+            <source
+              media="(max-width: 500px)"
+              srcset="./src/images/sound/architecture2-min.webp"
+            />
+            <img src="./src/images/sound/architecture2.webp" alt="колонки" />
+          </picture>
         </div>
 
         <div class="architecture__content">

@@ -126,6 +126,10 @@ li {
   padding-left: 0px;
 }
 
+picture {
+  line-height: 0;
+}
+
 button {
   cursor: pointer;
   border: none;
