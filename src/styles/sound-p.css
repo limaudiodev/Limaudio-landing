@@ -5,11 +5,7 @@
 .hero__sound {
     margin-top: 100px;
     display: flex;
-    gap: 30px;
-}
-
-.hero__content-sound {
-    padding: 100px 0 0 130px;
+    gap: 40px;
 }
 
 .hero__content-sound>p {
@@ -24,10 +20,22 @@
     border-radius: 10px;
     background-color: var(--white);
     display: flex;
-    gap: 35px;
+    gap: 30px;
     align-items: center;
     padding: 20px 26px;
     box-sizing: border-box;
+}
+
+.hero__sound>div:first-child {
+    width: 299px;
+}
+
+.hero__sound>div:nth-child(2) {
+    width: 296px;
+}
+
+.hero__sound>div:nth-child(3) {
+    width: 333px;
 }
 
 .hero__sound>div>img {
@@ -38,4 +46,156 @@
 .hero__sound>div>p {
     font-size: 22px;
     font-weight: 700;
+}
+
+.hero__sound-min {
+    display: none;
+}
+
+
+.architecture {
+    margin-top: 45px;
+    padding: 50px 0;
+
+    background-image: url(../../src/images/consultation-form-bg.webp);
+}
+
+.architecture__wrapper {
+    max-width: 1292px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.architecture__img {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.architecture__img>img {
+    border-radius: 10px;
+    width: 49.3%;
+    height: auto;
+}
+
+.architecture>div>h3 {
+    color: var(--white);
+}
+
+.architecture__content {
+    background: var(--white);
+
+    margin-top: 20px;
+    padding: 40px 105px 50px 60px;
+    border-radius: 10px;
+}
+
+.architecture__content>h5 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.architecture__content>p {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+    .hero__sound-max {
+        display: none;
+    }
+
+    .hero__sound-min {
+        display: flex;
+    }
+
+    .hero__sound {
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    .hero__sound>div>img {
+        width: 29px;
+        height: 29px;
+    }
+
+    .hero__sound {
+        justify-content: space-between;
+    }
+
+    .hero__sound>div {
+        border-radius: 10px;
+        gap: 10px;
+        padding: 15px 15px;
+    }
+
+    .hero__sound>div:first-child {
+        width: auto;
+    }
+
+    .hero__sound>div:nth-child(2) {
+        width: auto;
+    }
+
+    .hero__sound>div:nth-child(3) {
+        width: auto;
+    }
+
+    .hero__sound>div>p {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .architecture__content {
+        padding: 40px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero__content-sound>p {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .architecture__content {
+        padding: 30px;
+    }
+
+    .architecture__content>h5 {
+        font-size: 18px;
+    }
+
+    .architecture__content>p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero__sound {
+        margin-top: 20px;
+        gap: 10px;
+        justify-content: start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .architecture__content {
+        padding: 20px;
+    }
+
+    .architecture__content>h5 {
+        font-size: 14px;
+    }
+
+    .architecture__content>p {
+        font-size: 14px;
+        font-weight: 400;
+    }
 }

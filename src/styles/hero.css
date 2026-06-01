@@ -71,11 +71,6 @@
         background-color: var(--text-gray-e8);
     }
 
-    .hero__content>h1 {
-        font-size: 40px;
-    }
-
-
     .hero__content>h3 {
         display: none;
     }
