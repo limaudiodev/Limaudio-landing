@@ -573,9 +573,6 @@ input:-ms-input-placeholder {
 }
 
 
-
-
-
 @media (max-width: 425px) {
   .btn-main {
     font-size: 14px;
