@@ -22,7 +22,10 @@
 @import url("./styles/ready.css");
 @import url("./styles/sound-p.css");
 @import url("./styles/kef.css");
-
+@import url("./styles/legend.css");
+@import url("./styles/physic.css");
+@import url("./styles/touch.css");
+@import url("./styles/contacts.css");
 
 
 @font-face {
@@ -129,6 +132,7 @@ li {
 
 picture {
   line-height: 0;
+  display: block;
 }
 
 button {
