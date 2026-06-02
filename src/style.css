@@ -21,6 +21,7 @@
 @import url("./styles/catalog-p.css");
 @import url("./styles/ready.css");
 @import url("./styles/sound-p.css");
+@import url("./styles/kef.css");
 
 
 
@@ -567,10 +568,7 @@ input:-ms-input-placeholder {
   }
 
   .inner-wrapper {
-    max-width: 1480px;
     padding: 0px 20px 40px 20px;
-    box-sizing: border-box;
-    margin: 0 auto;
   }
 }
 

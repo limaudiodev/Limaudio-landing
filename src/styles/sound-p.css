@@ -149,7 +149,7 @@
 
 .sound-form__first>p {
     margin: 40px 0 35px 0;
-    padding-right: 5px;
+    max-width: 600px;
 }
 
 
@@ -171,6 +171,22 @@
     font-size: 14px;
 }
 
+.checkbox-white input:checked~.checkmark {
+    background-color: transparent;
+    border: 1px solid var(--text);
+}
+
+.checkbox-white input:checked~.checkmark::before {
+    background-color: var(--text);
+
+}
+
+.sound-inner-wrapper {
+    max-width: 1480px;
+    padding: 40px 20px 67px 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
 
 @media (max-width: 1440px) {
     .sound-form::before {
@@ -335,6 +351,10 @@
         right: auto;
         background-size: contain;
         background-position: center;
+    }
+
+    .sound-inner-wrapper {
+        padding: 0px 20px 20px 20px;
     }
 }
 
