@@ -51,7 +51,7 @@
 
    @media (max-width: 550px) {
        .breadcrumbs {
-           font-size: 0.85rem;
+           font-size: 12px;
        }
 
        .breadcrumbs__separator {
@@ -61,6 +61,6 @@
 
        .breadcrumbs__item--current {
            padding: 0.2rem 0.6rem;
-           font-size: 0.85rem;
+           font-size: 12px;
        }
    }

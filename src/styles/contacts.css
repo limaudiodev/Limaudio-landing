@@ -1,1 +1,165 @@
-.contacts {}
+.contacts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -15px;
+    padding-right: 50px;
+    gap: 10px;
+}
+
+.contacts__block {
+    width: 495px;
+    border-radius: 10px;
+    background-color: var(--white);
+    padding: 20px 20px 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+    box-sizing: border-box;
+}
+
+.contacts__block>div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contacts__info {
+    width: 50%;
+    padding: 60px 0 0 130px;
+    box-sizing: border-box;
+}
+
+.contacts__block>div>img {
+    width: 28px;
+}
+
+.map-container {
+    max-width: 660px;
+    height: 564px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+#map {
+    width: 100%;
+    height: 564px;
+    display: block;
+    background-color: #e2e9ef;
+}
+
+.ymaps-2-1-79-map-copyrights-promo {
+    display: none;
+}
+
+.footer-contacts {
+    margin-top: 65px;
+}
+
+.contacts-links {
+    display: flex;
+    gap: 5px;
+    margin-top: 85px;
+}
+
+.contacts-link {
+    width: 45px;
+    height: 42px;
+    background: url('./../images/contacts/social-spline.webp');
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.icon-1 {
+    background-position: 0 0;
+}
+
+.icon-2 {
+    background-position: -52px 0;
+}
+
+.icon-3 {
+    background-position: -104px 0;
+}
+
+.icon-4 {
+    background-position: -157px 0;
+}
+
+@media (max-width: 1440px) {
+    .contacts {
+        padding-right: 0px;
+    }
+
+    .contacts__info {
+        padding: 60px 0 0 0;
+    }
+
+    .contacts__block {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .map-container {
+        max-width: 450px;
+    }
+
+    .contacts-links {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts {
+        justify-content: start;
+        flex-direction: column;
+        background-color: transparent;
+        padding-bottom: 30px;
+    }
+
+    .contacts__block {
+        padding: 0px 0px 0px 0px;
+    }
+
+    .contacts__info {
+        width: 100%;
+        padding: 0 20px 0 0;
+    }
+
+    .map-container {
+        max-width: 100%;
+        border-radius: 0px;
+        margin-top: 20px;
+    }
+
+    .contacts__block {
+        background-color: transparent;
+    }
+
+    .contacts-link {
+        width: 32px;
+        height: 30px;
+        background-size: 147px;
+    }
+
+    .icon-2 {
+        background-position: -39px 0;
+    }
+
+    .icon-3 {
+        background-position: -78px 0;
+    }
+
+    .icon-4 {
+        background-position: -116px 0;
+    }
+
+    .footer-contacts {
+        margin-top: 0
+    }
+
+}
