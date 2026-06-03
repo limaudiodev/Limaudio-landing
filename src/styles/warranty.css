@@ -1,15 +1,40 @@
 .warranty {
-    background-color: var(--white);
     border-radius: 5px;
     padding: 40px 40px 40px 40px;
     display: flex;
-    justify-content: space-between;
     gap: 20px;
 }
 
+.container3 {
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.warranty-white {
+    background-color: var(--white);
+    justify-content: space-between;
+}
+
+.warranty-black {
+    background-color: transparent;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.warranty__content {
+    border-radius: 5px;
+}
 
 .warranty__content>p {
     margin: 10px 0 10px 0;
+}
+
+.warranty__content>h3 {
+    max-width: 583px;
+}
+
+.warranty__style {
     max-width: 390px;
 }
 
@@ -40,9 +65,31 @@
     border-radius: 10px;
 }
 
+
+.warranty__logistic {
+    margin: 20px 0;
+    background-image: url(./../images/warranty/warranty-bg.webp);
+}
+
+.logistic__style>h3 {
+    color: var(--white);
+}
+
+.logistic__style>p {
+    color: var(--white);
+    max-width: 583px;
+    font-weight: 500 !important;
+}
+
+
+.footer-warranty {
+    margin-top: 20px;
+}
+
 @media (max-width: 1000px) {
-    .warranty {
+    .warranty-white {
         flex-direction: column-reverse;
+        background-color: transparent;
     }
 
     .warranty__img {
@@ -52,13 +99,39 @@
     .warranty__list {
         max-width: 100%;
     }
+
+    .warranty-black {
+        flex-direction: column-reverse;
+    }
+
+    .warranty {
+        padding: 0;
+        gap: 10px;
+    }
+
+    .container3 {
+        padding: 20px;
+    }
+
+    .warranty__content {
+        padding: 20px;
+        background-color: var(--white);
+    }
+
+    .logistic__style {
+        background-color: var(--white);
+    }
+
+    .logistic__style>h3 {
+        color: var(--text);
+    }
+
+    .logistic__style>p {
+        color: var(--text-desc);
+    }
 }
 
 @media (max-width: 425px) {
-    .warranty {
-        padding: 20px 20px 20px 20px;
-    }
-
     .warranty__list>div>img {
         width: 30px;
         height: 30px;
@@ -67,4 +140,7 @@
     .warranty__list>div>p {
         font-size: 12px !important;
     }
+
+
+
 }
