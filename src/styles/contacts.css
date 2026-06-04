@@ -57,13 +57,15 @@
     background-color: #e2e9ef;
 }
 
-.ymaps-2-1-79-map-copyrights-promo {
-    display: none;
+.ymaps-2-1-79-gototech {
+    display: none !important;
 }
 
 .footer-contacts {
     margin-top: 65px;
 }
+
+
 
 .contacts-links {
     display: flex;
