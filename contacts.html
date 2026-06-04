@@ -337,7 +337,7 @@
 
         // Координаты Бухарская улица, 32к2
         const centerCoordinates = [55.774897, 49.20451];
-
+        const address = "Бухарская улица, 32к2";
         const myMap = new ymaps.Map("map", {
           center: centerCoordinates,
           zoom: 14,
@@ -345,20 +345,20 @@
         });
 
         const placemark = new ymaps.Placemark(
-          [55.751574, 37.573856],
+          centerCoordinates,
           {
-            hintContent: "Бухарская улица, 32к2",
-            balloonContent: "<strong>Бухарская улица, 32к2</strong>",
+            hintContent: address,
+            balloonContent: `<strong>${address}</strong><br>г. Казань`,
           },
           {
             preset: "islands#redDotIconWithCaption",
-            iconCaption: "Москва",
+            iconCaption: address,
           },
         );
 
         myMap.geoObjects.add(placemark);
+        placemark.balloon.open();
 
-        // Адаптация при изменении размера окна
         window.addEventListener("resize", function () {
           if (myMap && myMap.container) {
             myMap.container.fitToViewport();
