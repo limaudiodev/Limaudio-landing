@@ -314,7 +314,7 @@
   </body>
   <script src="./src/js/main.js"></script>
   <script
-    src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=0b5b7b1a-7c8d-4f1a-9e3c-8f2a1d9e7c5b"
+    src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=a"
     defer
   ></script>
   <script>
@@ -337,27 +337,37 @@
 
         // Координаты Бухарская улица, 32к2
         const centerCoordinates = [55.774897, 49.20451];
-        const address = "Бухарская улица, 32к2";
         const myMap = new ymaps.Map("map", {
           center: centerCoordinates,
           zoom: 14,
           controls: ["zoomControl"],
         });
 
+        const PlacemarkLayout = ymaps.templateLayoutFactory.createClass(
+          '<div class="map-placemark">' +
+            '<div class="map-placemark__circle">' +
+              '<img src="./src/images/contacts/map-logo.png" alt="" class="map-placemark__icon" />' +
+            "</div>" +
+          "</div>",
+        );
+
         const placemark = new ymaps.Placemark(
           centerCoordinates,
+          {},
           {
-            hintContent: address,
-            balloonContent: `<strong>${address}</strong><br>г. Казань`,
-          },
-          {
-            preset: "islands#redDotIconWithCaption",
-            iconCaption: address,
+            iconLayout: PlacemarkLayout,
+            iconOffset: [-24, -48],
+            iconShape: {
+              type: "Circle",
+              coordinates: [24, 24],
+              radius: 24,
+            },
+            hasBalloon: false,
+            hasHint: false,
           },
         );
 
         myMap.geoObjects.add(placemark);
-        placemark.balloon.open();
 
         window.addEventListener("resize", function () {
           if (myMap && myMap.container) {

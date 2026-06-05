@@ -61,6 +61,23 @@
     display: none !important;
 }
 
+.map-placemark__circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.map-placemark__icon {
+    width: 27px;
+    height: 20px;
+    object-fit: contain;
+}
+
 .footer-contacts {
     margin-top: 65px;
 }
