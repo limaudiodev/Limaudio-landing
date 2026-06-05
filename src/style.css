@@ -215,6 +215,12 @@ button {
 }
 
 
+
+.btn-cat:hover svg path {
+  fill: var(--white);
+}
+
+
 .headline {
   font-weight: 700;
   font-size: 52px;
