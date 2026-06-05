@@ -27,7 +27,7 @@ footer {
 
 .footer__logos>div {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 10px;
 }
 
@@ -76,7 +76,6 @@ footer {
 .footer-nav-block {
     color: var(--white);
 }
-
 
 
 .footer__contacts {
@@ -230,7 +229,14 @@ footer {
     .footer__footer>div {
         flex-direction: column;
         gap: 0px;
+    }
 
+    .footer__contacts>p {
+        display: none;
+    }
+
+    .footer__social {
+        margin-top: 15px;
     }
 }
 

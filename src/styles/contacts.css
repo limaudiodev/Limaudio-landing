@@ -82,12 +82,11 @@
     margin-top: 65px;
 }
 
-
-
 .contacts-links {
     display: flex;
     gap: 5px;
     margin-top: 85px;
+    padding-left: 15px;
 }
 
 .contacts-link {
@@ -123,6 +122,11 @@
         padding: 60px 0 0 0;
     }
 
+    .contacts__info>h1 {
+        padding-left: 20px;
+    }
+
+
     .contacts__block {
         width: 100%;
     }
@@ -144,6 +148,12 @@
         flex-direction: column;
         background-color: transparent;
         padding-bottom: 30px;
+        gap: 30px;
+        margin-top: 0px;
+    }
+
+    .contacts-links {
+        padding-left: 0px;
     }
 
     .contacts__block {
@@ -158,7 +168,6 @@
     .map-container {
         max-width: 100%;
         border-radius: 0px;
-        margin-top: 20px;
     }
 
     .contacts__block {
