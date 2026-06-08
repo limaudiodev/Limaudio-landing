@@ -115,6 +115,9 @@
     gap: 10px;
 }
 
+.catalog__filters>.btn-white-bg-black {
+    margin-top: 20px
+}
 
 .filters-text {
     text-transform: uppercase;

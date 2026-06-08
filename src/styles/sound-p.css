@@ -1,5 +1,6 @@
 .sound-bg {
     background-image: url(../images/sound/hero.webp) !important;
+    border-radius: 8px
 }
 
 .hero__sound {

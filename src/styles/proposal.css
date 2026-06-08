@@ -214,6 +214,16 @@
     right: 0;
 }
 
+.proposal__basket:hover {
+    border-radius: 5px;
+    background: var(--text);
+    padding: 0;
+}
+
+.proposal__basket:hover>svg>path {
+    fill: var(--white);
+}
+
 
 @media (max-width: 1500px) {
     .proposal__cards {
