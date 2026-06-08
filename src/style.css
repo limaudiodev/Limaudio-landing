@@ -122,6 +122,13 @@ p {
   margin: 0 auto;
 }
 
+.container4 {
+  max-width: 1480px;
+  padding: 0 20px 0 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
 ul {
   list-style-type: disc;
   padding-left: 20px;
@@ -539,9 +546,10 @@ input:-ms-input-placeholder {
   display: none;
 }
 
-
-
 @media (max-width: 1100px) {
+  .container4 {
+    padding: 0 0 0 20px;
+  }
 
   .content {
     font-size: 16px;
@@ -617,6 +625,14 @@ input:-ms-input-placeholder {
 
   .controls__tabs button {
     font-size: 10px;
+  }
+
+  .star {
+    font-size: 9px;
+  }
+
+  .custom-scrollbar {
+    display: none;
   }
 }
 

@@ -20,6 +20,12 @@
     gap: 10px;
 }
 
+.proposal__cards2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+    gap: 10px;
+}
+
 .proposal__card {
     border-radius: 5px;
     background: var(--white);
@@ -224,13 +230,60 @@
     fill: var(--white);
 }
 
-
 @media (max-width: 1500px) {
     .proposal__cards {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, auto);
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(200px, 1fr);
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .proposal__cards2 {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+
+    .proposal__cards .proposal__card {
+        width: 100%;
+        min-width: 150px;
+        box-sizing: border-box;
+    }
+
+    .proposal__cards2 .proposal__card {
+        width: 100%;
+        min-width: 150px;
+        box-sizing: border-box;
+    }
+
+    .proposal__cards2 .proposalSwiper>div>div img {
+        max-width: 100%;
+    }
+
+    .proposal__card2 {
+        padding: 15px;
+    }
+
+    .proposal__cards .proposalSwiper>div>div img {
+        max-width: 100%;
+    }
+
+    .proposal__card {
+        padding: 15px;
     }
 }
 
+
+@media (max-width: 1100px) {
+    .proposal__show {
+        width: calc(100% - 20px);
+    }
+}
 
 @media (max-width: 1140px) {
     .proposal__sort {
@@ -256,16 +309,32 @@
 }
 
 
-
+@media (max-width: 1024px) {
+    .proposal__content .content {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+    }
+}
 
 @media (max-width: 425px) {
-    /*
     .proposal__cards {
-        grid-template-columns: 100%;
-    }*/
+        grid-auto-columns: minmax(150px, 1fr);
+    }
 
-    .star {
-        font-size: 9px;
+    .proposal__cards2 {
+        grid-auto-columns: minmax(150px, 1fr);
+    }
+
+
+    .custom-scrollbar {
+        display: none !important;
+    }
+
+
+    .proposal__color {
+        display: none;
     }
 
     .proposal__tabs button {
@@ -294,11 +363,6 @@
         color: var(--text);
     }
 
-    /*
-    .proposal__color {
-        display: none;
-    }
-*/
     .proposal__content {
         margin: 0;
     }
@@ -317,6 +381,10 @@
         display: flex;
         flex-direction: column-reverse;
         margin-bottom: 10px;
+    }
+
+    .proposal__content .content14 {
+        font-size: 12px !important;
     }
 
     .proposal-body {
