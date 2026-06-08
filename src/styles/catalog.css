@@ -72,8 +72,12 @@
 
 .catalog__googs {
     display: grid;
-    grid-template-columns: 305px 1fr;
+    grid-template-columns: 305px minmax(0, 1fr);
     gap: 10px;
+}
+
+.catalog__googs > div:not(.catalog__filters) {
+    min-width: 0;
 }
 
 .catalog__filters {

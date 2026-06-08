@@ -14,12 +14,7 @@
     margin: 0 auto;
 }
 
-.proposal__cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
-    gap: 10px;
-}
-
+.proposal__cards,
 .proposal__cards2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
@@ -245,8 +240,29 @@
     }
 
     .proposal__cards2 {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, auto);
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(350px, 1fr);
+        gap: 10px;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
     }
+
+    .proposal__cards2::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .proposal__cards2::-webkit-scrollbar-thumb {
+        background: #78909C;
+        border-radius: 3px;
+    }
+
 
 
     .proposal__cards .proposal__card {
@@ -255,9 +271,9 @@
         box-sizing: border-box;
     }
 
-    .proposal__cards2 .proposal__card {
+    .proposal__cards2 .proposalSwiper {
         width: 100%;
-        min-width: 150px;
+        max-width: 100%;
         box-sizing: border-box;
     }
 
@@ -319,22 +335,14 @@
 }
 
 @media (max-width: 425px) {
-    .proposal__cards {
-        grid-auto-columns: minmax(150px, 1fr);
-    }
 
+    .proposal__cards,
     .proposal__cards2 {
-        grid-auto-columns: minmax(150px, 1fr);
+        grid-auto-columns: minmax(150px, 1fr) !important;
     }
-
 
     .custom-scrollbar {
         display: none !important;
-    }
-
-
-    .proposal__color {
-        display: none;
     }
 
     .proposal__tabs button {
@@ -389,5 +397,22 @@
 
     .proposal-body {
         display: none;
+    }
+
+    .proposal__basket {
+        display: none;
+    }
+
+    .proposal__btn {
+        font-size: 8px;
+        padding: 2px 5px;
+    }
+
+    .proposal__detail {
+        font-size: 12px;
+    }
+
+    .proposal__color {
+        gap: 2px;
     }
 }
