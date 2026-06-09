@@ -57,6 +57,11 @@
 }
 
 @media (max-width: 1100px) {
+    .hero {
+        background: none;
+        height: auto;
+    }
+
     .ready-bg {
         background: none;
         height: auto;

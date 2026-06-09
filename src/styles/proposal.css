@@ -373,10 +373,6 @@
         color: var(--text);
     }
 
-    .proposal__content {
-        margin: 0;
-    }
-
     .proposal__price {
         align-items: flex-start;
 
@@ -387,14 +383,18 @@
         height: auto;
     }
 
+    .proposal__content {
+        margin: 0;
+    }
+
     .proposal__content .content {
         display: flex;
         flex-direction: column-reverse;
-        margin-bottom: 10px;
+        margin: 0 0 10px 0;
     }
 
     .proposal__content .content14 {
-        font-size: 12px !important;
+        font-size: 11px !important;
     }
 
     .proposal-body {
@@ -415,6 +415,6 @@
     }
 
     .proposal__color {
-        gap: 2px;
+        display: none;
     }
 }
