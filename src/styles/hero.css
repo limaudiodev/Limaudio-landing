@@ -48,7 +48,11 @@
     }
 
     .hero__content {
-        padding: 130px 0 0 20px;
+        padding: 45px 0 0 20px;
+    }
+
+    .hero__content>p {
+        width: 480px;
     }
 }
 
@@ -91,7 +95,7 @@
 
 @media (max-width: 425px) {
     .hero {
-        border-radius: 8px 8px 0 0px;
+        border-radius: 8px;
     }
 
     .hero__content>h1 {
