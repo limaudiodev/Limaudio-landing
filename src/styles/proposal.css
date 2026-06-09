@@ -14,7 +14,12 @@
     margin: 0 auto;
 }
 
-.proposal__cards,
+.proposal__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+    gap: 10px;
+}
+
 .proposal__cards2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
@@ -240,34 +245,22 @@
     }
 
     .proposal__cards2 {
-        grid-template-columns: none;
-        grid-template-rows: repeat(2, auto);
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(350px, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         width: 100%;
         min-width: 0;
         max-width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
+        overflow: visible;
     }
-
-    .proposal__cards2::-webkit-scrollbar {
-        height: 6px;
-    }
-
-    .proposal__cards2::-webkit-scrollbar-thumb {
-        background: #78909C;
-        border-radius: 3px;
-    }
-
-
 
     .proposal__cards .proposal__card {
         width: 100%;
         min-width: 150px;
+        box-sizing: border-box;
+    }
+
+    .proposal__cards2 .proposal__card {
+        width: 100%;
+        min-width: 0;
         box-sizing: border-box;
     }
 
@@ -332,14 +325,26 @@
         flex-direction: column;
         font-weight: 700;
     }
+
+    .proposal__cards2 {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
 
 
 
-@media (max-width: 425px) {
-
-    .proposal__cards,
+@media (max-width: 768px) {
     .proposal__cards2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .proposal__cards2 .proposalSwiper .swiper-slide {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .proposal__cards {
         grid-auto-columns: minmax(150px, 1fr) !important;
     }
 
@@ -373,15 +378,28 @@
         color: var(--text);
     }
 
+    .proposal__price>button>svg {
+        width: 14px;
+        height: auto;
+    }
+
+    .proposal__price>button:hover {
+        border-radius: 5px;
+        background: transparent;
+        padding: 0;
+        border-radius: 37px;
+    }
+
+    .proposal__price>button:hover>svg>path {
+        fill: var(--text);
+    }
+
     .proposal__price {
         align-items: flex-start;
 
     }
 
-    .proposal__price>button>svg {
-        width: 14px;
-        height: auto;
-    }
+
 
     .proposal__content {
         margin: 0;

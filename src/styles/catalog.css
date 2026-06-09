@@ -76,8 +76,106 @@
     gap: 10px;
 }
 
-.catalog__googs>div:not(.catalog__filters) {
+.catalog__googs>div:not(.catalog__filters-slot) {
     min-width: 0;
+}
+
+.catalog-p .proposal__sort .controls-btn {
+    display: none;
+}
+
+.catalog-filters-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.catalog-filters-modal[hidden] {
+    display: none;
+}
+
+.catalog-filters-modal--open {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.catalog-filters-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.catalog-filters-modal--open .catalog-filters-modal__overlay {
+    opacity: 1;
+}
+
+.catalog-filters-modal__dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: min(100%, 500px);
+    height: 100%;
+    height: 100dvh;
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
+}
+
+.catalog-filters-modal--open .catalog-filters-modal__dialog {
+    transform: translateX(0);
+}
+
+.catalog-filters-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 20px 10px;
+    flex-shrink: 0;
+}
+
+.catalog-filters-modal__header .headline3 {
+    margin: 0;
+}
+
+.catalog-filters-modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.catalog-filters-modal__close:hover {
+    background: var(--text);
+    color: var(--white);
+}
+
+.catalog-filters-modal__body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 0 20px 24px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.catalog-filters-modal__body .catalog__filters {
+    padding-right: 0;
 }
 
 .catalog__filters {
@@ -251,7 +349,15 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+    .catalog-p .proposal__sort .controls-btn {
+        display: flex;
+    }
+
+    .catalog__filters-slot {
+        display: none;
+    }
+
     .catalog__filters {
         padding-right: 20px;
     }
