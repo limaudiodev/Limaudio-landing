@@ -19,6 +19,7 @@
     box-sizing: border-box;
 }
 
+
 .consultation__content>h2 {
     margin-top: 85px;
     max-width: 575px;
@@ -108,19 +109,28 @@
         box-sizing: border-box;
     }
 
+    .consultation__content {
+        padding: 0 0 0 65px;
+        width: calc(100% - 50%);
+    }
+
+    .consultation__content2 {
+        padding: 0 0 0 0 !important;
+    }
 
     .consultation__content>h2 {
         margin-top: 30px;
+    }
+
+    .consultation__content2>h2 {
+        margin-top: 0 !important;
     }
 
     .consultation__content>h4 {
         margin: 15px 0 10px 0;
     }
 
-    .consultation__content {
-        padding: 0 0 0 65px;
-        width: calc(100% - 50%);
-    }
+
 
     .consultation__quote {
         margin-top: 10px;
@@ -130,8 +140,6 @@
         width: 40%;
     }
 }
-
-
 
 @media (max-width: 1100px) {
     .consultation-body {
@@ -204,13 +212,27 @@
         margin: 20px 0 0 20px;
     }
 
+    .consultation__content2>h2 {
+        margin: 20px 0 0 0 !important;
+    }
+
+
     .consultation__content>.content {
         margin: 10px 20px 0 20px;
+    }
+
+    .consultation__content2>.content {
+        margin: 10px 0 0 0 !important;
     }
 
     .consultation__quote {
         padding: 0px 15px 0 15px;
         margin-left: 20px;
+    }
+
+    .consultation__quote2 {
+        padding: 0px 0 0 15px;
+        margin-left: 0px !important;
     }
 
     .consultation-body-min {
@@ -221,6 +243,10 @@
 
     .consultation-body {
         display: none;
+    }
+
+    .consultation__name {
+        font-size: 16px;
     }
 }
 
