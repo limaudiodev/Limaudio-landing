@@ -12,7 +12,6 @@
 
 .solutionSlider {
     margin-top: 20px;
-    margin-bottom: 40px;
     padding-bottom: 70px;
     overflow: hidden;
 }
@@ -21,6 +20,7 @@
     background-color: var(--white);
 }
 
+.solutionSlider,
 .solutionSlider1,
 .solutionSlider2 {
     margin-bottom: 40px;
@@ -113,6 +113,20 @@
     right: 0px;
 }
 
+
+@media (max-width: 1400px) {
+    .solution__price {
+        flex-direction: column;
+        gap: 5px;
+        margin: 10px 0 10px 0;
+        align-items: stretch;
+    }
+
+    .solution__slider {
+        padding: 40px 40px 60px 40px;
+    }
+}
+
 @media (max-width: 1280px) {
     .solution__slider {
         gap: 30px;
@@ -130,13 +144,6 @@
     .solution__block>h3 {
         font-size: 34px;
     }
-
-    .solution__price {
-        flex-direction: column;
-        align-items: baseline;
-        gap: 10px;
-        margin: 10px 0 32px 0;
-    }
 }
 
 
@@ -145,6 +152,21 @@
         font-size: 30px;
         margin: 10px 0 10px 0;
     }
+
+    .solution__slider {
+        padding: 40px;
+    }
+
+    .solution-nav-reverse,
+    .solution-nav {
+        position: relative;
+        bottom: 20px;
+        right: 0px;
+        left: 0px;
+        margin: 0 auto;
+        width: fit-content;
+    }
+
 }
 
 @media (max-width: 900px) {
@@ -165,13 +187,6 @@
         font-size: 20px;
     }
 
-    .solution-nav {
-        position: relative;
-        bottom: 20px;
-        right: 0px;
-        margin: 0 auto;
-        width: fit-content;
-    }
 
     .solutions-body-min {
         display: block;
@@ -208,5 +223,15 @@
 
     .solution__block>h3 {
         font-size: 22px;
+    }
+
+    .solution__btn {
+        font-size: 0 !important;
+        width: 100%;
+    }
+
+    .solution__btn::before {
+        content: "Подробнее";
+        font-size: 16px;
     }
 }

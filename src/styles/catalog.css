@@ -123,6 +123,12 @@
     margin-top: 20px
 }
 
+.catalog__filters-btn {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0 0 0
+}
+
 .filters-text {
     text-transform: uppercase;
     font-weight: 700;
@@ -318,9 +324,11 @@
         flex-wrap: wrap;
         gap: 10px;
     }
+
+    .catalog__filters-btn {
+        margin: 10px 0 15px 0;
+    }
 }
-
-
 
 @media (max-width: 500px) {
     .assortment-card {
