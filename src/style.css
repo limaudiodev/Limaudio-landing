@@ -388,40 +388,53 @@ textarea {
 }
 
 
+input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Manrope', sans-serif;
+}
+
 input::-moz-placeholder {
   font-size: 16px;
   font-weight: 400;
   opacity: 1;
+  font-family: 'Manrope', sans-serif;
 }
 
 input:-ms-input-placeholder {
   font-size: 16px;
   font-weight: 400;
+  font-family: 'Manrope', sans-serif;
 }
 
 textarea::-webkit-input-placeholder {
   font-size: 16px;
   font-weight: 400;
+  font-family: 'Manrope', sans-serif;
 }
 
 textarea::-moz-placeholder {
   font-size: 16px;
   font-weight: 400;
+  font-family: 'Manrope', sans-serif;
 }
 
 textarea::-moz-placeholder {
   font-size: 16px;
   font-weight: 400;
+  font-family: 'Manrope', sans-serif;
 }
 
 textarea:-ms-input-placeholder {
   font-size: 16px;
   font-weight: 400;
+  font-family: 'Manrope', sans-serif;
 }
 
 textarea::placeholder {
   font-size: 16px;
   font-weight: 400;
+  font-family: 'Manrope', sans-serif;
 }
 
 .consent-group {
