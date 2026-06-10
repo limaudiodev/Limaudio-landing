@@ -42,7 +42,7 @@
           "click",
           (function (idx) {
             return function () {
-              onStarClick(idx);
+              //    onStarClick(idx);
             };
           })(i),
         );
@@ -56,7 +56,6 @@
     buildStars();
   }
 
-  // Находим все контейнеры и инициализируем каждый
   const containers = document.querySelectorAll(".stars-container");
   containers.forEach((container) => initRating(container));
 })();
