@@ -501,6 +501,7 @@ textarea::placeholder {
 .proposal__star {
   display: flex;
   gap: 5px;
+  color: var(--text);
 }
 
 .sliderBtn {
