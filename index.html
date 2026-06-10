@@ -194,42 +194,44 @@
               размера
             </p>
 
-            <div class="proposal__star">
-              <div>
-                <div
-                  class="star selected"
-                  aria-label="Оценка 1 звезда"
-                  data-index="0"
-                >
-                  ★
+            <a href="#reviews-section">
+              <div class="proposal__star">
+                <div>
+                  <div
+                    class="star selected"
+                    aria-label="Оценка 1 звезда"
+                    data-index="0"
+                  >
+                    ★
+                  </div>
+                  <div
+                    class="star selected"
+                    aria-label="Оценка 2 звезда"
+                    data-index="1"
+                  >
+                    ★
+                  </div>
+                  <div
+                    class="star selected"
+                    aria-label="Оценка 3 звезда"
+                    data-index="2"
+                  >
+                    ★
+                  </div>
+                  <div
+                    class="star selected"
+                    aria-label="Оценка 4 звезда"
+                    data-index="3"
+                  >
+                    ★
+                  </div>
+                  <div class="star" aria-label="Оценка 5 звезда" data-index="4">
+                    ★
+                  </div>
                 </div>
-                <div
-                  class="star selected"
-                  aria-label="Оценка 2 звезда"
-                  data-index="1"
-                >
-                  ★
-                </div>
-                <div
-                  class="star selected"
-                  aria-label="Оценка 3 звезда"
-                  data-index="2"
-                >
-                  ★
-                </div>
-                <div
-                  class="star selected"
-                  aria-label="Оценка 4 звезда"
-                  data-index="3"
-                >
-                  ★
-                </div>
-                <div class="star" aria-label="Оценка 5 звезда" data-index="4">
-                  ★
-                </div>
-              </div>
-              <div>(10 отзывов)</div>
-            </div>
+                <div>(10 отзывов)</div>
+              </div></a
+            >
 
             <a href="#technical-specs" class="content14 dotted"
               >Технические характеристики</a
@@ -474,7 +476,7 @@
         </div>
       </div>
 
-      <div class="product__reviews">
+      <div class="product__reviews" id="reviews-section">
         <h2 class="headline">
           KEF Q750<br />
           в реальных интерьерах
@@ -2031,14 +2033,14 @@
     <div class="modal-overlay" id="reviewModal">
       <div class="modal-container">
         <div class="modal-header">
-          <h3 class="headline2">Написать отзыв</h3>
+          <h3>Написать отзыв</h3>
           <button class="close-modal" id="closeModalBtn" aria-label="Закрыть">
             ✕
           </button>
         </div>
         <div class="review-form">
           <div class="rating-field">
-            <div class="rating-label">Ваша оценка *</div>
+            <div class="content14">Ваша оценка*</div>
             <div class="stars-wrapper" id="starsContainer">
               <span data-value="1" class="star-big">☆</span>
               <span data-value="2" class="star-big">☆</span>
@@ -2053,7 +2055,7 @@
             <input
               type="text"
               id="userName"
-              placeholder="Ваше имя"
+              placeholder="Ваше имя *"
               autocomplete="off"
             />
           </div>

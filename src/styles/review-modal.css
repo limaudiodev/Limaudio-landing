@@ -32,29 +32,30 @@
  }
 
  .modal-header {
-     padding: 20px 20px 10px 20px;
+     padding: 30px 30px 10px 30px;
      display: flex;
      justify-content: space-between;
      align-items: center;
+     font-size: 24px;
  }
 
  .close-modal {
      border: none;
      font-size: 20px;
      cursor: pointer;
-     width: 36px;
-     height: 36px;
  }
 
  .review-form {
-     padding: 5px 20px 20px 20px;
+     padding: 5px 30px 30px 30px;
+     display: flex;
+     flex-direction: column;
+     gap: 10px
  }
 
  .rating-field {
      display: flex;
      gap: 10px;
      align-items: center;
-     margin-bottom: 10px;
  }
 
  .star-big {
@@ -71,16 +72,6 @@
 
  .star-big.selected {
      color: var(--text);
- }
-
- .rating-label {
-     font-weight: 600;
-     color: #1e293b;
-     display: block;
- }
-
- .input-rewiev {
-     margin-bottom: 10px;
  }
 
  .input-rewiev>input {
@@ -156,7 +147,6 @@
      display: flex;
      justify-content: flex-end;
      gap: 12px;
-     margin-top: 20px;
  }
 
  .toast-msg {
@@ -167,8 +157,7 @@
      background: var(--text);
      color: var(--white);
      padding: 12px 24px;
-     border-radius: 60px;
-     font-size: 12px;
+     font-size: 20px;
      font-weight: 500;
      opacity: 0;
      transition: opacity 0.2s, transform 0.2s;
@@ -180,4 +169,16 @@
  .toast-msg.show {
      opacity: 1;
      transform: translateX(-50%) scale(1);
+ }
+
+ @media (max-width: 500px) {
+     .form-actions {
+         flex-direction: column-reverse;
+     }
+ }
+
+ @media (max-width: 375px) {
+     .modal-header {
+         font-size: 20px;
+     }
  }

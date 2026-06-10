@@ -229,6 +229,10 @@ button {
   fill: var(--white);
 }
 
+a[href^="#reviews-section"] {
+  text-decoration: none;
+}
+
 
 .headline {
   font-weight: 700;
@@ -353,25 +357,17 @@ blockquote {
   margin: 0;
 }
 
-textarea {
-  resize: none;
-}
 
 input,
 textarea {
   border-radius: 5px;
-
+  resize: none;
   border: none;
   padding-left: 20px;
-
   font-size: 16px;
   font-weight: 400;
 }
 
-input::placeholder {
-  font-size: 16px;
-  font-weight: 400;
-}
 
 .input-black {
   background: #2F3338;
@@ -403,27 +399,27 @@ input:-ms-input-placeholder {
   font-weight: 400;
 }
 
-.custom-textarea::-webkit-input-placeholder {
+textarea::-webkit-input-placeholder {
   font-size: 16px;
   font-weight: 400;
 }
 
-.custom-textarea:-moz-placeholder {
+textarea::-moz-placeholder {
   font-size: 16px;
   font-weight: 400;
 }
 
-.custom-textarea::-moz-placeholder {
+textarea::-moz-placeholder {
   font-size: 16px;
   font-weight: 400;
 }
 
-.custom-textarea:-ms-input-placeholder {
+textarea:-ms-input-placeholder {
   font-size: 16px;
   font-weight: 400;
 }
 
-.custom-textarea::placeholder {
+textarea::placeholder {
   font-size: 16px;
   font-weight: 400;
 }
