@@ -2040,11 +2040,11 @@
           <div class="rating-field">
             <div class="rating-label">Ваша оценка *</div>
             <div class="stars-wrapper" id="starsContainer">
-              <span data-value="1" class="star">☆</span>
-              <span data-value="2" class="star">☆</span>
-              <span data-value="3" class="star">☆</span>
-              <span data-value="4" class="star">☆</span>
-              <span data-value="5" class="star">☆</span>
+              <span data-value="1" class="star-big">☆</span>
+              <span data-value="2" class="star-big">☆</span>
+              <span data-value="3" class="star-big">☆</span>
+              <span data-value="4" class="star-big">☆</span>
+              <span data-value="5" class="star-big">☆</span>
             </div>
             <input type="hidden" id="ratingValue" value="0" />
           </div>
@@ -2431,7 +2431,9 @@
       const cancelModalBtn = document.getElementById("cancelModalBtn");
       const submitBtn = document.getElementById("submitReviewBtn");
 
-      const starsElements = document.querySelectorAll("#starsContainer .star");
+      const starsElements = document.querySelectorAll(
+        "#starsContainer .star-big",
+      );
       const ratingHidden = document.getElementById("ratingValue");
       const userNameInput = document.getElementById("userName");
       const reviewTextarea = document.getElementById("reviewText");

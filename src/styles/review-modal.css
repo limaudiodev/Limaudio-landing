@@ -25,10 +25,6 @@
      width: 90%;
      max-width: 540px;
      border-radius: 8px;
-     box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.4);
-     overflow: hidden;
-     transform: scale(0.96);
-     transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
  }
 
  .modal-overlay.active .modal-container {
@@ -45,22 +41,9 @@
  .close-modal {
      border: none;
      font-size: 20px;
-     line-height: 1;
      cursor: pointer;
      width: 36px;
      height: 36px;
-     border-radius: 50%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     transition: all 0.2s;
-     color: #334155;
- }
-
- .close-modal:hover {
-     background: #e2e8f0;
-     color: #0f172a;
-     transform: rotate(90deg);
  }
 
  .review-form {
@@ -69,15 +52,31 @@
 
  .rating-field {
      display: flex;
-     gap: 10px
+     gap: 10px;
+     align-items: center;
+     margin-bottom: 10px;
+ }
+
+ .star-big {
+     font-size: 25px;
+     cursor: pointer;
+     background: none;
+     border: none;
+     padding: 0;
+     line-height: 1;
+     color: #D9D9D9;
+     transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1), filter 0.1s;
+     display: inline-block;
+ }
+
+ .star-big.selected {
+     color: var(--text);
  }
 
  .rating-label {
      font-weight: 600;
      color: #1e293b;
-     margin-bottom: 10px;
      display: block;
-     font-size: 0.95rem;
  }
 
  .input-rewiev {
