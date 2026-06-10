@@ -2031,17 +2031,15 @@
     <div class="modal-overlay" id="reviewModal">
       <div class="modal-container">
         <div class="modal-header">
-          <h3>Написать отзыв</h3>
+          <h3 class="headline2">Написать отзыв</h3>
           <button class="close-modal" id="closeModalBtn" aria-label="Закрыть">
             ✕
           </button>
         </div>
         <div class="review-form">
-          <!-- Рейтинг звёздами -->
           <div class="rating-field">
-            <div class="rating-label">Ваша оценка</div>
+            <div class="rating-label">Ваша оценка *</div>
             <div class="stars-wrapper" id="starsContainer">
-              <!-- 5 звезд, заполняются js -->
               <span data-value="1" class="star">☆</span>
               <span data-value="2" class="star">☆</span>
               <span data-value="3" class="star">☆</span>
@@ -2051,30 +2049,25 @@
             <input type="hidden" id="ratingValue" value="0" />
           </div>
 
-          <!-- Имя -->
-          <div class="input-group">
-            <label>Ваше имя *</label>
+          <div class="input-rewiev">
             <input
               type="text"
               id="userName"
-              placeholder="Анна, Дмитрий..."
+              placeholder="Ваше имя"
               autocomplete="off"
             />
           </div>
 
-          <!-- Текст отзыва -->
-          <div class="input-group">
-            <label>Текст отзыва *</label>
-            <textarea
-              id="reviewText"
-              placeholder="Расскажите о своём опыте..."
-            ></textarea>
+          <div class="input-rewiev">
+            <textarea id="reviewText" placeholder="Текст отзыва *"></textarea>
           </div>
 
           <div class="photo-upload">
-            <label class="photo-label">Прикрепить фото</label>
             <div class="upload-area" id="uploadArea">
-              <span>⬆ Нажмите или перетащите файлы</span>
+              <span class="content14"
+                >Нажмите или перетащите файлы, одно фото, форматы
+                JPG/PNG/WEBP</span
+              >
               <span class="file-name" id="fileInfo"></span>
               <input
                 type="file"
@@ -2085,14 +2078,17 @@
               />
             </div>
             <div id="previewContainer" class="photo-preview"></div>
-            <small>1 фото, форматы JPG/PNG/WEBP</small>
           </div>
 
           <div class="form-actions">
-            <button type="button" class="btn-cancel" id="cancelModalBtn">
+            <button type="button" class="btn btn-cancel" id="cancelModalBtn">
               Отмена
             </button>
-            <button type="button" class="btn-submit" id="submitReviewBtn">
+            <button
+              type="button"
+              class="btn btn-black btn-submit"
+              id="submitReviewBtn"
+            >
               Отправить отзыв
             </button>
           </div>
@@ -2164,7 +2160,6 @@
     </script>
 
     <script>
-      /*тех характеристики */
       class DynamicList {
         constructor(containerId, items) {
           this.container = document.getElementById(containerId);
@@ -2456,10 +2451,10 @@
           const starValue = parseInt(star.getAttribute("data-value"));
           if (starValue <= rating) {
             star.textContent = "★";
-            star.classList.add("active");
+            star.classList.add("selected");
           } else {
             star.textContent = "☆";
-            star.classList.remove("active");
+            star.classList.remove("selected");
           }
         });
       }

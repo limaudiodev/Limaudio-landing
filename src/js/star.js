@@ -1,4 +1,4 @@
-(function () {
+/*(function () {
   const STAR_COUNT = 5;
 
   function initRating(container) {
@@ -59,3 +59,4 @@
   const containers = document.querySelectorAll(".stars-container");
   containers.forEach((container) => initRating(container));
 })();
+*/
