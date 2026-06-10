@@ -744,7 +744,9 @@
             </div>
           </div>
           <div class="reviews__empty">
-            <button class="btn btn-black">Оставить отзыв</button>
+            <button class="btn btn-black" id="openReviewBtn">
+              Оставить отзыв
+            </button>
           </div>
         </div>
       </div>
@@ -2026,6 +2028,80 @@
       </div>
     </footer>
 
+    <div class="modal-overlay" id="reviewModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h3>Написать отзыв</h3>
+          <button class="close-modal" id="closeModalBtn" aria-label="Закрыть">
+            ✕
+          </button>
+        </div>
+        <div class="review-form">
+          <!-- Рейтинг звёздами -->
+          <div class="rating-field">
+            <div class="rating-label">Ваша оценка</div>
+            <div class="stars-wrapper" id="starsContainer">
+              <!-- 5 звезд, заполняются js -->
+              <span data-value="1" class="star">☆</span>
+              <span data-value="2" class="star">☆</span>
+              <span data-value="3" class="star">☆</span>
+              <span data-value="4" class="star">☆</span>
+              <span data-value="5" class="star">☆</span>
+            </div>
+            <input type="hidden" id="ratingValue" value="0" />
+          </div>
+
+          <!-- Имя -->
+          <div class="input-group">
+            <label>Ваше имя *</label>
+            <input
+              type="text"
+              id="userName"
+              placeholder="Анна, Дмитрий..."
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- Текст отзыва -->
+          <div class="input-group">
+            <label>Текст отзыва *</label>
+            <textarea
+              id="reviewText"
+              placeholder="Расскажите о своём опыте..."
+            ></textarea>
+          </div>
+
+          <div class="photo-upload">
+            <label class="photo-label">Прикрепить фото</label>
+            <div class="upload-area" id="uploadArea">
+              <span>⬆ Нажмите или перетащите файлы</span>
+              <span class="file-name" id="fileInfo"></span>
+              <input
+                type="file"
+                id="photoInput"
+                multiple
+                accept="image/jpeg,image/png,image/webp,image/jpg"
+                style="display: none"
+              />
+            </div>
+            <div id="previewContainer" class="photo-preview"></div>
+            <small>1 фото, форматы JPG/PNG/WEBP</small>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-cancel" id="cancelModalBtn">
+              Отмена
+            </button>
+            <button type="button" class="btn-submit" id="submitReviewBtn">
+              Отправить отзыв
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastMessage" class="toast-msg">✨ Спасибо за отзыв!</div>
+
     <script src="./src/js/swiper-bundle.min.js"></script>
     <script src="./src/js/main.js"></script>
     <script src="./src/js/slider.js"></script>
@@ -2351,6 +2427,286 @@
         fileNameSpan.textContent = `📎 ${file.name}`;
         fileSizeSpan.textContent = `(${(file.size / 1024).toFixed(2)} KB)`;
       });
+    </script>
+
+    <script>
+      const modalOverlay = document.getElementById("reviewModal");
+      const openBtn = document.getElementById("openReviewBtn");
+      const closeModalBtn = document.getElementById("closeModalBtn");
+      const cancelModalBtn = document.getElementById("cancelModalBtn");
+      const submitBtn = document.getElementById("submitReviewBtn");
+
+      const starsElements = document.querySelectorAll("#starsContainer .star");
+      const ratingHidden = document.getElementById("ratingValue");
+      const userNameInput = document.getElementById("userName");
+      const reviewTextarea = document.getElementById("reviewText");
+      const photoInput = document.getElementById("photoInput");
+      const uploadArea = document.getElementById("uploadArea");
+      const previewContainer = document.getElementById("previewContainer");
+      const fileInfoSpan = document.getElementById("fileInfo");
+
+      let currentRating = 0; // 0-5
+      let currentPhotoFile = null;
+      let currentPreviewUrl = null;
+
+      function setRating(rating) {
+        currentRating = rating;
+        ratingHidden.value = rating;
+        starsElements.forEach((star, idx) => {
+          const starValue = parseInt(star.getAttribute("data-value"));
+          if (starValue <= rating) {
+            star.textContent = "★";
+            star.classList.add("active");
+          } else {
+            star.textContent = "☆";
+            star.classList.remove("active");
+          }
+        });
+      }
+
+      starsElements.forEach((star) => {
+        star.addEventListener("click", (e) => {
+          const value = parseInt(star.getAttribute("data-value"));
+          setRating(value);
+        });
+        star.addEventListener("mouseenter", (e) => {
+          const hoverValue = parseInt(star.getAttribute("data-value"));
+          starsElements.forEach((s) => {
+            const sVal = parseInt(s.getAttribute("data-value"));
+            s.textContent = sVal <= hoverValue ? "★" : "☆";
+          });
+        });
+        star.addEventListener("mouseleave", () => {
+          starsElements.forEach((s) => {
+            const sVal = parseInt(s.getAttribute("data-value"));
+            s.textContent = sVal <= currentRating ? "★" : "☆";
+          });
+        });
+      });
+
+      function isValidImageType(file) {
+        const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
+        const ext = file.name.split(".").pop().toLowerCase();
+        const allowedExt = ["jpg", "jpeg", "png", "webp"];
+        return allowedTypes.includes(file.type) && allowedExt.includes(ext);
+      }
+
+      function clearPhotoPreview() {
+        if (currentPreviewUrl) {
+          URL.revokeObjectURL(currentPreviewUrl);
+          currentPreviewUrl = null;
+        }
+        previewContainer.innerHTML = "";
+        previewContainer.style.display = "none";
+        fileInfoSpan.textContent = "";
+        currentPhotoFile = null;
+        if (photoInput) photoInput.value = ""; // очищаем input
+      }
+
+      function displayPhotoPreview(file) {
+        clearPhotoPreview();
+
+        if (!file) return;
+
+        if (!isValidImageType(file)) {
+          showToast(
+            "❌ Недопустимый формат. Разрешены только JPG, PNG, WEBP.",
+            3000,
+          );
+          if (photoInput) photoInput.value = "";
+          return false;
+        }
+
+        currentPhotoFile = file;
+        const objectUrl = URL.createObjectURL(file);
+        currentPreviewUrl = objectUrl;
+
+        previewContainer.style.display = "flex";
+        previewContainer.innerHTML = ""; // чистим
+
+        const img = document.createElement("img");
+        img.src = objectUrl;
+        img.alt = "preview";
+        img.className = "preview-img";
+
+        const infoDiv = document.createElement("div");
+        infoDiv.className = "photo-info";
+
+        const fileNameSpan = document.createElement("span");
+        fileNameSpan.className = "photo-filename";
+        // ограничим длину имени для красоты
+        let fileName = file.name;
+        if (fileName.length > 35)
+          fileName = fileName.slice(0, 30) + "…" + fileName.slice(-8);
+        fileNameSpan.textContent = `📎 ${fileName} (${(file.size / 1024).toFixed(1)} KB)`;
+
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "🗑 Удалить фото";
+        removeBtn.className = "remove-photo-btn";
+        removeBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          clearPhotoPreview();
+          if (photoInput) photoInput.value = "";
+          showToast("Фото удалено", 1500);
+        });
+
+        infoDiv.appendChild(fileNameSpan);
+        infoDiv.appendChild(removeBtn);
+        previewContainer.appendChild(img);
+        previewContainer.appendChild(infoDiv);
+
+        fileInfoSpan.textContent = `✓ ${file.name}`;
+        return true;
+      }
+
+      function handleFileSelection(file) {
+        if (!file) return;
+        if (currentPhotoFile) {
+          clearPhotoPreview();
+        }
+        const success = displayPhotoPreview(file);
+        if (!success && photoInput) {
+          photoInput.value = "";
+        }
+      }
+
+      uploadArea.addEventListener("click", () => {
+        photoInput.click();
+      });
+
+      photoInput.addEventListener("change", (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+          const file = e.target.files[0];
+          handleFileSelection(file);
+        } else {
+        }
+        if (currentPhotoFile === null) {
+          photoInput.value = "";
+        } else {
+          setTimeout(() => {
+            if (photoInput) photoInput.value = "";
+          }, 100);
+        }
+      });
+
+      uploadArea.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        uploadArea.style.backgroundColor = "#eef2ff";
+        uploadArea.style.borderColor = "#3b82f6";
+      });
+      uploadArea.addEventListener("dragleave", () => {
+        uploadArea.style.backgroundColor = "#fafcff";
+        uploadArea.style.borderColor = "#cbd5e1";
+      });
+      uploadArea.addEventListener("drop", (e) => {
+        e.preventDefault();
+        uploadArea.style.backgroundColor = "#fafcff";
+        uploadArea.style.borderColor = "#cbd5e1";
+        const dt = e.dataTransfer;
+        if (dt.files && dt.files.length > 0) {
+          const file = dt.files[0];
+          handleFileSelection(file);
+          // сбросим инпут для согласованности
+          if (photoInput) photoInput.value = "";
+        }
+      });
+
+      function showToast(message, duration = 2700) {
+        const toast = document.getElementById("toastMessage");
+        toast.textContent = message;
+        toast.classList.add("show");
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, duration);
+      }
+
+      function resetFormCompletely() {
+        setRating(0);
+        userNameInput.value = "";
+        reviewTextarea.value = "";
+        clearPhotoPreview();
+        if (photoInput) photoInput.value = "";
+        fileInfoSpan.textContent = "";
+        previewContainer.style.display = "none";
+      }
+
+      function closeModal() {
+        modalOverlay.classList.remove("active");
+        resetFormCompletely();
+      }
+
+      function openModal() {
+        resetFormCompletely();
+        modalOverlay.classList.add("active");
+      }
+
+      submitBtn.addEventListener("click", () => {
+        const rating = currentRating;
+        const name = userNameInput.value.trim();
+        const text = reviewTextarea.value.trim();
+
+        if (rating === 0) {
+          showToast("⭐ Пожалуйста, поставьте оценку звёздами", 2500);
+          return;
+        }
+        if (name === "") {
+          showToast("✏️ Введите ваше имя", 2000);
+          userNameInput.focus();
+          return;
+        }
+        if (text === "") {
+          showToast("📝 Напишите текст отзыва", 2000);
+          reviewTextarea.focus();
+          return;
+        }
+
+        let photoInfo = null;
+        if (currentPhotoFile) {
+          photoInfo = {
+            name: currentPhotoFile.name,
+            size: currentPhotoFile.size,
+            type: currentPhotoFile.type,
+            lastModified: currentPhotoFile.lastModified,
+          };
+        }
+
+        const reviewData = {
+          rating: rating,
+          author: name,
+          comment: text,
+          photo: photoInfo ? photoInfo : null,
+          timestamp: new Date().toISOString(),
+        };
+
+        console.log(reviewData);
+        let photoMessage = "";
+        if (photoInfo) {
+          photoMessage = `, фото "${photoInfo.name}" приложено`;
+        } else {
+          photoMessage = ", фото не приложено";
+        }
+        showToast(
+          `Спасибо, ${name}! Ваша оценка ${rating} ★${photoMessage}.`,
+          3500,
+        );
+
+        closeModal();
+      });
+
+      openBtn.addEventListener("click", openModal);
+      closeModalBtn.addEventListener("click", closeModal);
+      cancelModalBtn.addEventListener("click", closeModal);
+
+      modalOverlay.addEventListener("click", (e) => {
+        if (e.target === modalOverlay) closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modalOverlay.classList.contains("active"))
+          closeModal();
+      });
+
+      setRating(0);
     </script>
   </body>
 </html>

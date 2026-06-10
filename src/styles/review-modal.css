@@ -1,0 +1,346 @@
+ .demo-card {
+     background: white;
+     max-width: 500px;
+     width: 100%;
+     border-radius: 32px;
+     box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.02);
+     padding: 2rem 1.8rem;
+     text-align: center;
+     transition: all 0.2s ease;
+ }
+
+ .demo-card h2 {
+     font-size: 1.8rem;
+     font-weight: 600;
+     margin-bottom: 0.5rem;
+     color: #1e2a3e;
+ }
+
+ .demo-card p {
+     color: #4b5c6e;
+     margin-bottom: 2rem;
+     font-size: 1rem;
+ }
+
+ /* Чёрная кнопка как в задании */
+ .btn-black {
+     background: #111214;
+     border: none;
+     padding: 12px 28px;
+     font-size: 1rem;
+     font-weight: 500;
+     border-radius: 60px;
+     color: white;
+     cursor: pointer;
+     transition: all 0.25s ease;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     display: inline-flex;
+     align-items: center;
+     gap: 8px;
+ }
+
+ .btn-black:hover {
+     background: #2c2f36;
+     transform: scale(0.97);
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ }
+
+ .btn-black:active {
+     transform: scale(0.96);
+ }
+
+ /* ----- Модальное окно (overlay) ----- */
+ .modal-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.65);
+     backdrop-filter: blur(5px);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 1000;
+     visibility: hidden;
+     opacity: 0;
+     transition: visibility 0.2s, opacity 0.2s ease;
+ }
+
+ .modal-overlay.active {
+     visibility: visible;
+     opacity: 1;
+ }
+
+ /* контейнер модалки */
+ .modal-container {
+     background: #ffffff;
+     width: 90%;
+     max-width: 540px;
+     border-radius: 32px;
+     box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.4);
+     overflow: hidden;
+     transform: scale(0.96);
+     transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+ }
+
+ .modal-overlay.active .modal-container {
+     transform: scale(1);
+ }
+
+ /* заголовок */
+ .modal-header {
+     padding: 1.5rem 1.8rem 0.5rem 1.8rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border-bottom: 1px solid #edf2f7;
+ }
+
+ .modal-header h3 {
+     font-size: 1.6rem;
+     font-weight: 600;
+     color: #0f172a;
+     letter-spacing: -0.3px;
+ }
+
+ .close-modal {
+     background: #f1f5f9;
+     border: none;
+     font-size: 1.7rem;
+     line-height: 1;
+     cursor: pointer;
+     width: 36px;
+     height: 36px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: all 0.2s;
+     color: #334155;
+ }
+
+ .close-modal:hover {
+     background: #e2e8f0;
+     color: #0f172a;
+     transform: rotate(90deg);
+ }
+
+ /* форма */
+ .review-form {
+     padding: 1.5rem 1.8rem 2rem 1.8rem;
+ }
+
+ /* поле рейтинга звёзды */
+ .rating-field {
+     margin-bottom: 1.6rem;
+ }
+
+ .rating-label {
+     font-weight: 600;
+     color: #1e293b;
+     margin-bottom: 10px;
+     display: block;
+     font-size: 0.95rem;
+ }
+
+ .stars-wrapper {
+     display: flex;
+     gap: 10px;
+     direction: ltr;
+ }
+
+ .star {
+     font-size: 2rem;
+     cursor: pointer;
+     color: #cbd5e1;
+     transition: color 0.15s, transform 0.1s;
+     user-select: none;
+ }
+
+ .star.active {
+     color: #fbbf24;
+     text-shadow: 0 0 3px rgba(251, 191, 36, 0.3);
+ }
+
+ .star:hover {
+     transform: scale(1.12);
+     color: #f59e0b;
+ }
+
+ /* общие поля */
+ .input-group {
+     margin-bottom: 1.5rem;
+ }
+
+ .input-group label {
+     display: block;
+     font-weight: 500;
+     margin-bottom: 8px;
+     color: #1e293b;
+     font-size: 0.9rem;
+ }
+
+ .input-group input,
+ .input-group textarea {
+     width: 100%;
+     padding: 12px 16px;
+     border: 1.5px solid #e2e8f0;
+     border-radius: 20px;
+     font-size: 0.95rem;
+     transition: all 0.2s;
+     background: #fefefe;
+     outline: none;
+     font-family: inherit;
+ }
+
+ .input-group input:focus,
+ .input-group textarea:focus {
+     border-color: #3b82f6;
+     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+ }
+
+ .input-group textarea {
+     resize: vertical;
+     min-height: 90px;
+ }
+
+ /* фото-загрузка */
+ .photo-upload {
+     margin-bottom: 1.8rem;
+ }
+
+ .photo-label {
+     font-weight: 500;
+     margin-bottom: 10px;
+     display: block;
+     color: #1e293b;
+ }
+
+ .upload-area {
+     border: 2px dashed #cbd5e1;
+     border-radius: 20px;
+     padding: 12px 16px;
+     background: #fafcff;
+     transition: background 0.2s, border-color 0.2s;
+     cursor: pointer;
+     text-align: center;
+ }
+
+ .upload-area:hover {
+     border-color: #3b82f6;
+     background: #f0f9ff;
+ }
+
+ .upload-area span {
+     font-size: 0.85rem;
+     color: #475569;
+     display: block;
+ }
+
+ .upload-area .file-name {
+     font-weight: 500;
+     color: #0f3b6f;
+     margin-top: 5px;
+     word-break: break-all;
+ }
+
+ .photo-preview {
+     margin-top: 12px;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 10px;
+ }
+
+ .preview-img {
+     width: 70px;
+     height: 70px;
+     object-fit: cover;
+     border-radius: 14px;
+     border: 1px solid #e2e8f0;
+     background: #f8fafc;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+ }
+
+ .remove-photo-btn {
+     background: #fee2e2;
+     border: none;
+     font-size: 0.7rem;
+     padding: 4px 8px;
+     border-radius: 40px;
+     cursor: pointer;
+     margin-top: 5px;
+     color: #b91c1c;
+     transition: 0.1s;
+ }
+
+ /* действия */
+ .form-actions {
+     display: flex;
+     justify-content: flex-end;
+     gap: 12px;
+     margin-top: 20px;
+ }
+
+ .btn-submit {
+     background: #111214;
+     color: white;
+     border: none;
+     padding: 10px 24px;
+     border-radius: 40px;
+     font-weight: 500;
+     cursor: pointer;
+     transition: 0.2s;
+ }
+
+ .btn-submit:hover {
+     background: #2d3748;
+ }
+
+ .btn-cancel {
+     background: #f1f5f9;
+     border: none;
+     padding: 10px 22px;
+     border-radius: 40px;
+     font-weight: 500;
+     cursor: pointer;
+     transition: 0.2s;
+ }
+
+ .btn-cancel:hover {
+     background: #e2e8f0;
+ }
+
+ .toast-msg {
+     position: fixed;
+     bottom: 25px;
+     left: 50%;
+     transform: translateX(-50%) scale(0.9);
+     background: #1e293b;
+     color: white;
+     padding: 12px 24px;
+     border-radius: 60px;
+     font-size: 0.9rem;
+     font-weight: 500;
+     opacity: 0;
+     transition: opacity 0.2s, transform 0.2s;
+     pointer-events: none;
+     z-index: 1100;
+     backdrop-filter: blur(4px);
+     background: #0f172ad9;
+ }
+
+ .toast-msg.show {
+     opacity: 1;
+     transform: translateX(-50%) scale(1);
+ }
+
+ hr {
+     margin: 5px 0 15px;
+     border-color: #edf2f7;
+ }
+
+ small {
+     color: #5b6e8c;
+     font-size: 0.7rem;
+ }
