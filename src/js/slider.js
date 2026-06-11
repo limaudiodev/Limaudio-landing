@@ -155,7 +155,6 @@ function initProposalColorSwitchers() {
 
     if (!colorButtons.length || !proposalSwiper) return;
 
-    // Данные изображений для каждого цвета
     const colorImages = {
       gray: [
         "./src/images/proposal/KEF_Q_Concerto_ Meta3.webp",
@@ -173,6 +172,46 @@ function initProposalColorSwitchers() {
         "./src/images/kef_ci3160.webp",
       ],
     };
+
+    // Состояние автоплей для этой карточки
+    let isHovering = false;
+    let timeoutId = null;
+    let pauseTimeoutId = null;
+
+    const startAutoplay = () => {
+      const swiper = proposalSwiper.swiper;
+      if (isHovering && swiper && swiper.autoplay && !swiper.autoplay.running) {
+        swiper.autoplay.start();
+      }
+    };
+
+    const stopAutoplay = () => {
+      const swiper = proposalSwiper.swiper;
+      if (swiper && swiper.autoplay && swiper.autoplay.running) {
+        swiper.autoplay.stop();
+      }
+    };
+
+    // Функция для привязки обработчиков событий к слайдам
+    const attachSlideEventListeners = () => {
+      const slides = proposalSwiper.querySelectorAll(".swiper-slide");
+      slides.forEach((slide) => {
+        slide.addEventListener("mouseenter", () => {
+          isHovering = true;
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(startAutoplay, 100);
+        });
+
+        slide.addEventListener("mouseleave", () => {
+          isHovering = false;
+          clearTimeout(timeoutId);
+          stopAutoplay();
+        });
+      });
+    };
+
+    // Привязываем обработчики при инициализации
+    attachSlideEventListeners();
 
     function updateColorSelection(selectedColor) {
       // Обновляем состояние кнопок
@@ -200,6 +239,9 @@ function initProposalColorSwitchers() {
       });
 
       swiper.update();
+
+      // Перепривязываем обработчики событий к новым слайдам
+      attachSlideEventListeners();
 
       // Небольшая задержка для корректного переключения слайда
       setTimeout(() => {
