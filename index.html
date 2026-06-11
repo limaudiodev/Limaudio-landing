@@ -2165,29 +2165,25 @@
       const productSwiper = document.querySelector(".productSwiperMax");
       const productSwiperThumbs = document.querySelector(".productSwiper");
 
-      // Данные изображений для каждого цвета (используем gray как базовый)
       const colorImages = {
         gray: [
           "./src/images/proposal/KEF_Q_Concerto_ Meta3.webp",
           "./src/images/proposal/gray.webp",
-
           "./src/images/proposal/KEF_Q_Concerto_ Meta4.webp",
         ],
         white: [
           "./src/images/proposal/white.webp",
           "./src/images/acoustics.webp",
-          "./src/images/proposal/white.webp",
-          "./src/images/proposal/white.webp",
+          "./src/images/ready/ready-min.webp",
         ],
         black: [
+          "./src/images/kef_kc_62.webp",
           "./src/images/proposal/black.webp",
-          "./src/images/proposal/black.webp",
-          "./src/images/proposal/black.webp",
+          "./src/images/kef_ci3160.webp",
         ],
       };
 
       function updateColorSelection(selectedColor) {
-        // Обновляем состояние кнопок
         colorButtons.forEach((btn) => {
           const isPressed = btn.dataset.sort === selectedColor;
           btn.setAttribute("aria-pressed", isPressed);
