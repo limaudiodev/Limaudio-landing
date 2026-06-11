@@ -157,26 +157,26 @@
             >
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <img src="./src/images/kef_q750.webp" alt="kef_q750" />
+                  <img src="./src/images/proposal/gray.webp" alt="серый" />
                 </div>
                 <div class="swiper-slide">
-                  <img src="./src/images/kef_q750.webp" alt="kef_q750" />
+                  <img src="./src/images/proposal/gray.webp" alt="серый" />
                 </div>
                 <div class="swiper-slide">
-                  <img src="./src/images/kef_q750.webp" alt="kef_q750" />
+                  <img src="./src/images/proposal/gray.webp" alt="серый" />
                 </div>
               </div>
             </div>
             <div class="swiper productSwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <img src="./src/images/kef_q750.webp" alt="kef_q750" />
+                  <img src="./src/images/proposal/gray.webp" alt="серый" />
                 </div>
                 <div class="swiper-slide">
-                  <img src="./src/images/kef_q750.webp" alt="kef_q750" />
+                  <img src="./src/images/proposal/gray.webp" alt="серый" />
                 </div>
                 <div class="swiper-slide">
-                  <img src="./src/images/kef_q750.webp" alt="kef_q750" />
+                  <img src="./src/images/proposal/gray.webp" alt="серый" />
                 </div>
               </div>
             </div>
@@ -240,10 +240,10 @@
             <div class="content14 product__color">
               Цвет:
               <div role="group" aria-label="цвет">
-                <button type="button" data-sort="gray" aria-pressed="false">
+                <button type="button" data-sort="gray" aria-pressed="true">
                   <img src="./src/images/proposal/gray.webp" alt="серый" />
                 </button>
-                <button type="button" data-sort="white" aria-pressed="true">
+                <button type="button" data-sort="white" aria-pressed="false">
                   <img src="./src/images/proposal/white.webp" alt="белый" />
                 </button>
                 <button type="button" data-sort="black" aria-pressed="false">
@@ -2157,6 +2157,88 @@
         thumbs: {
           swiper: swiper,
         },
+      });
+    </script>
+
+    <script>
+      const colorButtons = document.querySelectorAll(".product__color button");
+      const productSwiper = document.querySelector(".productSwiperMax");
+      const productSwiperThumbs = document.querySelector(".productSwiper");
+
+      // Данные изображений для каждого цвета (используем gray как базовый)
+      const colorImages = {
+        gray: [
+          "./src/images/proposal/KEF_Q_Concerto_ Meta3.webp",
+          "./src/images/proposal/gray.webp",
+
+          "./src/images/proposal/KEF_Q_Concerto_ Meta4.webp",
+        ],
+        white: [
+          "./src/images/proposal/white.webp",
+          "./src/images/acoustics.webp",
+          "./src/images/proposal/white.webp",
+          "./src/images/proposal/white.webp",
+        ],
+        black: [
+          "./src/images/proposal/black.webp",
+          "./src/images/proposal/black.webp",
+          "./src/images/proposal/black.webp",
+        ],
+      };
+
+      function updateColorSelection(selectedColor) {
+        // Обновляем состояние кнопок
+        colorButtons.forEach((btn) => {
+          const isPressed = btn.dataset.sort === selectedColor;
+          btn.setAttribute("aria-pressed", isPressed);
+        });
+
+        // Обновляем слайдер
+        if (swiper2 && colorImages[selectedColor]) {
+          const newSlides = colorImages[selectedColor]
+            .map(
+              (src) =>
+                `<div class="swiper-slide"><img src="${src}" alt="${selectedColor}" /></div>`,
+            )
+            .join("");
+
+          productSwiper.querySelector(".swiper-wrapper").innerHTML = newSlides;
+          productSwiperThumbs.querySelector(".swiper-wrapper").innerHTML =
+            newSlides;
+
+          // Убираем класс активности со всех слайдов
+          productSwiperThumbs
+            .querySelectorAll(".swiper-slide")
+            .forEach((slide) => {
+              slide.classList.remove("swiper-slide-thumb-active");
+            });
+
+          swiper2.update();
+          swiper.update();
+
+          // Небольшая задержка для корректного переключения слайда
+          setTimeout(() => {
+            swiper2.slideTo(0);
+            swiper.slideTo(0);
+
+            // Вручную добавляем класс активного слайда
+            const firstSlide =
+              productSwiperThumbs.querySelector(".swiper-slide");
+            if (firstSlide) {
+              firstSlide.classList.add("swiper-slide-thumb-active");
+            }
+          }, 50);
+        }
+      }
+
+      // Устанавливаем серый цвет по умолчанию
+      updateColorSelection("gray");
+
+      colorButtons.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const color = this.dataset.sort;
+          updateColorSelection(color);
+        });
       });
     </script>
 
