@@ -145,6 +145,101 @@ function initProposalSwipers() {
   });
 }
 
+// Инициализация переключения цветов для proposal__card
+function initProposalColorSwitchers() {
+  const proposalCards = document.querySelectorAll(".proposal__card");
+
+  proposalCards.forEach((card) => {
+    const colorButtons = card.querySelectorAll(".proposal__color button");
+    const proposalSwiper = card.querySelector(".proposalSwiper");
+
+    if (!colorButtons.length || !proposalSwiper) return;
+
+    // Данные изображений для каждого цвета
+    const colorImages = {
+      gray: [
+        "./src/images/proposal/KEF_Q_Concerto_ Meta3.webp",
+        "./src/images/proposal/gray.webp",
+        "./src/images/proposal/KEF_Q_Concerto_ Meta4.webp",
+      ],
+      white: [
+        "./src/images/proposal/white.webp",
+        "./src/images/acoustics.webp",
+        "./src/images/ready/ready-min.webp",
+      ],
+      black: [
+        "./src/images/kef_kc_62.webp",
+        "./src/images/proposal/black.webp",
+        "./src/images/kef_ci3160.webp",
+      ],
+    };
+
+    function updateColorSelection(selectedColor) {
+      // Обновляем состояние кнопок
+      colorButtons.forEach((btn) => {
+        const isPressed = btn.dataset.sort === selectedColor;
+        btn.setAttribute("aria-pressed", isPressed);
+      });
+
+      // Получаем swiper instance
+      const swiper = proposalSwiper.swiper;
+      if (!swiper || !colorImages[selectedColor]) return;
+
+      const newSlides = colorImages[selectedColor]
+        .map(
+          (src) =>
+            `<div class="swiper-slide"><img src="${src}" alt="${selectedColor}" /></div>`,
+        )
+        .join("");
+
+      proposalSwiper.querySelector(".swiper-wrapper").innerHTML = newSlides;
+
+      // Убираем класс активности со всех слайдов
+      proposalSwiper.querySelectorAll(".swiper-slide").forEach((slide) => {
+        slide.classList.remove("swiper-slide-thumb-active");
+      });
+
+      swiper.update();
+
+      // Небольшая задержка для корректного переключения слайда
+      setTimeout(() => {
+        swiper.slideToLoop(0);
+
+        // Вручную добавляем класс активного слайда
+        const firstSlide = proposalSwiper.querySelector(".swiper-slide");
+        if (firstSlide) {
+          firstSlide.classList.add("swiper-slide-thumb-active");
+        }
+      }, 50);
+    }
+
+    // Устанавливаем серый цвет по умолчанию
+    updateColorSelection("gray");
+
+    colorButtons.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const color = this.dataset.sort;
+        updateColorSelection(color);
+      });
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    initProposalSwipers();
+    // Небольшая задержка, чтобы слайдеры успели инициализироваться
+    setTimeout(() => {
+      initProposalColorSwitchers();
+    }, 100);
+  });
+} else {
+  initProposalSwipers();
+  setTimeout(() => {
+    initProposalColorSwitchers();
+  }, 100);
+}
+
 const style = document.createElement("style");
 style.textContent = `
   @media (prefers-reduced-motion: reduce) {
@@ -154,7 +249,7 @@ style.textContent = `
       transition: none !important;
     }
   }
-  
+
   /* Улучшенные стили для доступности */
   .custom-scrollbar {
     display: flex;
@@ -186,9 +281,3 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initProposalSwipers);
-} else {
-  initProposalSwipers();
-}
