@@ -26,6 +26,11 @@
     margin: 23px 0 0 0;
 }
 
+.footer__list>li>a {
+    text-decoration: none;
+    color: var(--text);
+}
+
 .footer__btns {
     display: flex;
     flex-direction: column;

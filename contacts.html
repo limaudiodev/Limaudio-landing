@@ -10,6 +10,7 @@
     <meta name="description" content="Limaudio" />
     <meta property="og:title" content="Limaudio" />
     <meta property="og:description" content="Limaudio" />
+    <link rel="canonical" href="https://limaudio.ru/contacts" />
   </head>
   <body>
     <div class="container">
@@ -113,9 +114,9 @@
         </div>
       </header>
 
-      <div class="nav-contact-bg">
+      <main class="nav-contact-bg">
         <nav aria-label="Навигационная цепочка" class="breadcrumbs-wrapper">
-          <ul class="breadcrumbs">
+          <ol class="breadcrumbs">
             <li class="breadcrumbs__item">
               <a
                 href="#"
@@ -132,9 +133,9 @@
             >
               <span>Контакты</span>
             </li>
-          </ul>
+          </ol>
         </nav>
-      </div>
+      </main>
 
       <div class="contacts">
         <div class="contacts__info">
@@ -142,7 +143,11 @@
 
           <div class="contacts__block">
             <div>
-              <img src="./src/images/contacts/tel.svg" alt="телефон" />
+              <img
+                src="./src/images/contacts/tel.svg"
+                alt="телефон"
+                role="presentation"
+              />
               <p class="content16">
                 <strong>Телефон:</strong>
                 <a href="tel:88000000000">8 (800) 000-00-00</a>
@@ -168,10 +173,10 @@
             </div>
             <div>
               <img src="./src/images/contacts/map.svg" alt="адрес" />
-              <p class="content16">
+              <address class="content16">
                 <strong>Адрес шоурума:</strong> г. Казань, ул. Бухарская, д. 32
                 к2.
-              </p>
+              </address>
             </div>
             <span class="content16"
               ><strong
@@ -186,21 +191,29 @@
               href="https://t.me/ваш"
               class="contacts-link icon-1"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
             ></a>
             <a
               href="https://wa.me/79001234567"
               class="contacts-link icon-2"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
             ></a>
             <a
               href="https://www.youtube.com/c/ыфвфы"
               class="contacts-link icon-3"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
             ></a>
             <a
               href="https://vk.com/ывывid"
               class="contacts-link icon-4"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="ВКонтакте"
             ></a>
           </div>
         </div>
@@ -239,12 +252,12 @@
             <div class="footer__nav footer-nav-block">
               <p class="content">Навигация</p>
               <ul class="content14 footer-ul-style">
-                <li>Каталог</li>
-                <li>Готовые решения</li>
-                <li>Подбор акустики</li>
-                <li>Шоурум</li>
-                <li>О KEF</li>
-                <li>Контакты</li>
+                <li><a href="/catalog">Каталог</a></li>
+                <li><a href="/catalog">Готовые решения</a></li>
+                <li><a href="/catalog">Подбор акустики</a></li>
+                <li><a href="/catalog">Шоурум</a></li>
+                <li><a href="/catalog">О KEF</a></li>
+                <li><a href="/catalog">Контакты</a></li>
               </ul>
             </div>
             <div class="footer__contacts footer-nav-block">
