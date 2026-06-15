@@ -1133,7 +1133,7 @@
                   style="width: 313px"
                 >
                   <img
-                    src="./src/images/proposal/KKEF_Q_Concerto_Meta1.webp"
+                    src="./src/images/proposal/KEF_Q_Concerto_Meta1.webp"
                     alt="KEF Q Concerto Meta"
                   />
                 </div>
@@ -2254,42 +2254,42 @@
         </div>
       </div>
     </footer>
+
+    <script src="./src/js/swiper-bundle.min.js"></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/slider.js"></script>
+    <script>
+      var catalogSwiper = new Swiper(".catalogSwiper", {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        navigation: { nextEl: ".catalog-next", prevEl: ".catalog-prev" },
+        breakpoints: {
+          320: { slidesPerView: 1 },
+          600: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+
+      var solutionSwiper = new Swiper(".solutionSlider", {
+        navigation: {
+          nextEl: ".solution-next",
+          prevEl: ".solution-prev",
+        },
+      });
+
+      var solutionSwiper = new Swiper(".solutionSlider1", {
+        navigation: {
+          nextEl: ".solution-next1",
+          prevEl: ".solution-prev1",
+        },
+      });
+
+      var solutionSwiper = new Swiper(".solutionSlider2", {
+        navigation: {
+          nextEl: ".solution-next2",
+          prevEl: ".solution-prev2",
+        },
+      });
+    </script>
   </body>
-  <script src="./src/js/swiper-bundle.min.js"></script>
-  <script src="./src/js/main.js"></script>
-  <script src="./src/js/slider.js"></script>
-
-  <script>
-    var catalogSwiper = new Swiper(".catalogSwiper", {
-      slidesPerView: 3,
-      spaceBetween: 20,
-      navigation: { nextEl: ".catalog-next", prevEl: ".catalog-prev" },
-      breakpoints: {
-        320: { slidesPerView: 1 },
-        600: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-      },
-    });
-
-    var solutionSwiper = new Swiper(".solutionSlider", {
-      navigation: {
-        nextEl: ".solution-next",
-        prevEl: ".solution-prev",
-      },
-    });
-
-    var solutionSwiper = new Swiper(".solutionSlider1", {
-      navigation: {
-        nextEl: ".solution-next1",
-        prevEl: ".solution-prev1",
-      },
-    });
-
-    var solutionSwiper = new Swiper(".solutionSlider2", {
-      navigation: {
-        nextEl: ".solution-next2",
-        prevEl: ".solution-prev2",
-      },
-    });
-  </script>
 </html>
