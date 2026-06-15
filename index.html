@@ -280,7 +280,7 @@
                     d="M2.33892 1.13776C3.04334 1.13776 3.66301 1.62061 3.86002 2.30328L6.11419 10.9137C6.42458 12.1069 7.49441 12.9317 8.70625 12.9317H19.8362C20.1466 12.9317 20.3997 12.6764 20.3997 12.3634C20.3997 12.0503 20.1466 11.795 19.8362 11.795L8.70625 11.7939C8.00182 11.7939 7.38215 11.3111 7.18514 10.6284L4.93098 2.01801C4.62058 0.824752 3.55075 0 2.33892 0H0.56354C0.253142 0 0 0.255303 0 0.568324C0 0.881346 0.253154 1.13665 0.56354 1.13665L2.33892 1.13776Z"
                     fill="white"
                   />
-                  <p
+                  <path
                     d="M10.626 14.2169C11.4845 15.0816 11.4845 16.4858 10.626 17.3515C9.76855 18.2162 8.37621 18.2162 7.51889 17.3515C6.66037 16.4857 6.66037 15.0815 7.51889 14.2169C8.37632 13.3511 9.76866 13.3511 10.626 14.2169Z"
                     fill="white"
                   />
@@ -484,7 +484,10 @@
 
         <div class="swiper-container">
           <div class="reviews-nav">
-            <button class="sliderBtn reviews-prev sliderBtn_black">
+            <button
+              class="sliderBtn reviews-prev sliderBtn_black"
+              aria-label="предыдущий отзыв"
+            >
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -500,7 +503,10 @@
                 ></path>
               </svg>
             </button>
-            <button class="sliderBtn reviews-next sliderBtn_black">
+            <button
+              class="sliderBtn reviews-next sliderBtn_black"
+              aria-label="следующий отзыв"
+            >
               <svg
                 aria-hidden="true"
                 focusable="false"

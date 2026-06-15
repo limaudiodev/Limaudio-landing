@@ -12,7 +12,7 @@
     <meta property="og:description" content="Limaudio" />
   </head>
 
-  <body style="position: relative">
+  <body class="basket-body">
     <div class="container">
       <header>
         <a href="/"><img src="./src/assets/logo.svg" alt="логотип" /></a>
@@ -115,7 +115,7 @@
       </header>
 
       <nav aria-label="Навигационная цепочка" class="breadcrumbs-wrapper">
-        <ol class="breadcrumbs">
+        <ul class="breadcrumbs">
           <li class="breadcrumbs__item">
             <a
               href="#"
@@ -133,7 +133,7 @@
           >
             <span>Корзина</span>
           </li>
-        </ol>
+        </ul>
       </nav>
 
       <div class="basket">
@@ -209,9 +209,9 @@
                 <h3 class="headline2">Способ получения</h3>
                 <label class="basketCheckbox-wrapper" id="checkboxLabel1">
                   <input
-                    type="checkbox"
+                    type="radio"
                     id="pickupCheckbox"
-                    name="pickupCheckbox"
+                    name="deliveryMethod"
                     class="checkbox-basket"
                     value="pickup"
                   />
@@ -221,9 +221,9 @@
 
                 <label class="basketCheckbox-wrapper" id="checkboxLabel2">
                   <input
-                    type="checkbox"
+                    type="radio"
                     id="deliveryCheckbox"
-                    name="deliveryCheckbox"
+                    name="deliveryMethod"
                     class="checkbox-basket"
                     value="delivery"
                   />
@@ -238,7 +238,7 @@
                     id="address"
                     name="address"
                     placeholder="Адрес"
-                    autocomplete="off"
+                    autocomplete="street-address"
                   />
                 </div>
               </div>
@@ -247,7 +247,7 @@
                 <h3 class="headline2">Выбор способа оплаты</h3>
                 <label class="basketCheckbox-wrapper" id="checkboxLabel3">
                   <input
-                    type="checkbox"
+                    type="radio"
                     id="cardPayCheckbox"
                     name="paymentMethod"
                     class="checkbox-basket"
@@ -259,7 +259,7 @@
 
                 <label class="basketCheckbox-wrapper" id="checkboxLabel4">
                   <input
-                    type="checkbox"
+                    type="radio"
                     id="legalPayCheckbox"
                     name="paymentMethod"
                     class="checkbox-basket"
@@ -273,7 +273,7 @@
 
                 <label class="basketCheckbox-wrapper" id="checkboxLabel5">
                   <input
-                    type="checkbox"
+                    type="radio"
                     id="installmentCheckbox"
                     name="paymentMethod"
                     class="checkbox-basket"
@@ -373,12 +373,12 @@
             <div class="footer__nav footer-nav-block">
               <p class="content">Навигация</p>
               <ul class="content14 footer-ul-style">
-                <li><a href="/catalog">Каталог</a></li>
-                <li><a href="/catalog">Готовые решения</a></li>
-                <li><a href="/catalog">Подбор акустики</a></li>
-                <li><a href="/catalog">Шоурум</a></li>
-                <li><a href="/catalog">О KEF</a></li>
-                <li><a href="/catalog">Контакты</a></li>
+                <li>Каталог</li>
+                <li>Готовые решения</li>
+                <li>Подбор акустики</li>
+                <li>Шоурум</li>
+                <li>О KEF</li>
+                <li>Контакты</li>
               </ul>
             </div>
             <div class="footer__contacts footer-nav-block">
@@ -466,58 +466,18 @@
     <script src="./src/js/main.js"></script>
 
     <script>
-      /*верхние чекбоксы*/
-      const pickupCheckbox = document.getElementById("pickupCheckbox");
-      const deliveryCheckbox = document.getElementById("deliveryCheckbox");
+      const pickupRadio = document.getElementById("pickupCheckbox");
+      const deliveryRadio = document.getElementById("deliveryCheckbox");
       const addressBlock = document.getElementById("addressBlock");
 
-      function handlePickupChange() {
-        if (pickupCheckbox.checked) {
-          deliveryCheckbox.checked = false;
-          addressBlock.style.display = "none";
-        } else if (!pickupCheckbox.checked && !deliveryCheckbox.checked) {
-          addressBlock.style.display = "none";
-        }
+      function toggleAddressBlock() {
+        addressBlock.style.display = deliveryRadio.checked ? "block" : "none";
       }
 
-      function handleDeliveryChange() {
-        if (deliveryCheckbox.checked) {
-          pickupCheckbox.checked = false;
-          addressBlock.style.display = "block";
-        } else if (!pickupCheckbox.checked && !deliveryCheckbox.checked) {
-          addressBlock.style.display = "none";
-        }
-      }
-
-      pickupCheckbox.addEventListener("change", handlePickupChange);
-      deliveryCheckbox.addEventListener("change", handleDeliveryChange);
+      pickupRadio.addEventListener("change", toggleAddressBlock);
+      deliveryRadio.addEventListener("change", toggleAddressBlock);
 
       addressBlock.style.display = "none";
-
-      /*нижние чекбоксы*/
-      const cardPay = document.getElementById("cardPayCheckbox");
-      const legalPay = document.getElementById("legalPayCheckbox");
-      const installment = document.getElementById("installmentCheckbox");
-
-      const paymentCheckboxes = [cardPay, legalPay, installment];
-
-      function handlePaymentChange(selectedCheckbox) {
-        if (selectedCheckbox.checked) {
-          paymentCheckboxes.forEach((checkbox) => {
-            if (checkbox !== selectedCheckbox) {
-              checkbox.checked = false;
-            }
-          });
-        }
-      }
-
-      cardPay.addEventListener("change", () => handlePaymentChange(cardPay));
-      legalPay.addEventListener("change", () => handlePaymentChange(legalPay));
-      installment.addEventListener("change", () =>
-        handlePaymentChange(installment),
-      );
-
-      /*отправка формы*/
 
       function collectFormData() {
         const formData = {
@@ -526,36 +486,29 @@
           tel: document.getElementById("tel")?.value || "",
           email: document.getElementById("email")?.value || "",
           address: document.getElementById("address")?.value || "",
-
           deliveryMethod: null,
-
+          deliveryMethodText: null,
           paymentMethod: null,
+          paymentMethodText: null,
         };
 
-        const pickupCheckbox = document.getElementById("pickupCheckbox");
-        const deliveryCheckbox = document.getElementById("deliveryCheckbox");
-
-        if (pickupCheckbox?.checked) {
-          formData.deliveryMethod = "pickup";
-          formData.deliveryMethodText = "Самовывоз из шоурума";
-        } else if (deliveryCheckbox?.checked) {
-          formData.deliveryMethod = "delivery";
-          formData.deliveryMethodText = "Доставка по адресу";
+        const selectedDelivery = document.querySelector(
+          'input[name="deliveryMethod"]:checked',
+        );
+        if (selectedDelivery) {
+          formData.deliveryMethod = selectedDelivery.value;
+          formData.deliveryMethodText =
+            selectedDelivery.nextElementSibling.textContent.trim();
         }
 
-        const cardPay = document.getElementById("cardPayCheckbox");
-        const legalPay = document.getElementById("legalPayCheckbox");
-        const installment = document.getElementById("installmentCheckbox");
-
-        if (cardPay?.checked) {
-          formData.paymentMethod = "card";
-          formData.paymentMethodText = "Оплата картой на сайте";
-        } else if (legalPay?.checked) {
-          formData.paymentMethod = "legal";
-          formData.paymentMethodText = "Безналичный расчет (Счет для Юр. Лиц)";
-        } else if (installment?.checked) {
-          formData.paymentMethod = "installment";
-          formData.paymentMethodText = "Оформить рассрочку";
+        // Способ оплаты (radio с одинаковым name)
+        const selectedPayment = document.querySelector(
+          'input[name="paymentMethod"]:checked',
+        );
+        if (selectedPayment) {
+          formData.paymentMethod = selectedPayment.value;
+          formData.paymentMethodText =
+            selectedPayment.nextElementSibling.textContent.trim();
         }
 
         return formData;
@@ -565,7 +518,6 @@
         const errors = [];
 
         if (!formData.name) errors.push("Имя");
-        if (!formData.familie) errors.push("Фамилия");
         if (!formData.tel) errors.push("Телефон");
         if (!formData.deliveryMethod) errors.push("Способ получения");
         if (!formData.paymentMethod) errors.push("Способ оплаты");
@@ -577,13 +529,6 @@
         return errors;
       }
 
-      function logFormData() {
-        const formData = collectFormData();
-
-        const validationErrors = validateForm(formData);
-
-        return formData;
-      }
       function getFormDataForServer() {
         const formData = collectFormData();
         const serverData = new FormData();
@@ -608,8 +553,17 @@
         form.addEventListener("submit", function (event) {
           event.preventDefault();
 
-          const collectedData = logFormData();
-          getFormDataForServer();
+          const validationErrors = validateForm(collectFormData());
+
+          if (validationErrors.length > 0) {
+            alert(
+              "Заполните обязательные поля:\n" + validationErrors.join("\n"),
+            );
+            return;
+          }
+
+          const serverData = getFormDataForServer();
+          console.log("Данные формы:", Object.fromEntries(serverData));
         });
       }
     </script>
