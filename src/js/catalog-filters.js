@@ -7,16 +7,21 @@
   const slot = document.getElementById("catalogFiltersSlot");
   const modalBody = document.getElementById("catalogFiltersModalBody");
   const filters = document.getElementById("catalogFilters");
-  const dialog = modal?.querySelector(".catalog-filters-modal__dialog");
 
-  if (!openBtn || !modal || !slot || !modalBody || !filters || !dialog) {
+  if (!openBtn || !modal || !slot || !modalBody || !filters) {
     return;
   }
 
   const closeTriggers = modal.querySelectorAll("[data-filters-close]");
   const applyBtn = filters.querySelector(".btn-black-bg-black");
+  const focusableElements = modal.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+  );
+  const firstFocusable = focusableElements[0];
+  const lastFocusable = focusableElements[focusableElements.length - 1];
 
   let closeTimer = null;
+  let resizeDebounceTimer = null;
 
   function isMobile() {
     return MOBILE_MQ.matches;
@@ -48,10 +53,8 @@
       return;
     }
 
-    if (closeTimer) {
-      clearTimeout(closeTimer);
-      closeTimer = null;
-    }
+    clearTimeout(closeTimer);
+    closeTimer = null;
 
     modal.hidden = false;
     document.body.style.overflow = "hidden";
@@ -60,12 +63,20 @@
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         modal.classList.add("catalog-filters-modal--open");
+        firstFocusable?.focus();
       });
     });
   }
 
+  function clearCloseTimer() {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+  }
+
   function closeModal(instant) {
-    if (modal.hidden && !isModalOpen()) {
+    if (!isModalOpen()) {
       return;
     }
 
@@ -75,41 +86,52 @@
 
     const finishClose = () => {
       modal.hidden = true;
-
       if (openBtn.offsetParent !== null) {
         openBtn.focus();
       }
     };
 
     if (instant) {
-      if (closeTimer) {
-        clearTimeout(closeTimer);
-        closeTimer = null;
-      }
+      clearCloseTimer();
       finishClose();
       return;
     }
 
-    if (closeTimer) {
-      clearTimeout(closeTimer);
-    }
-
+    clearCloseTimer();
     closeTimer = window.setTimeout(() => {
       closeTimer = null;
       finishClose();
     }, MODAL_TRANSITION_MS);
   }
 
-  openBtn.addEventListener("click", () => {
-    if (!isMobile()) {
+  function handleKeydown(event) {
+    if (!isModalOpen()) return;
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeModal();
       return;
     }
 
-    if (isModalOpen()) {
-      closeModal();
-    } else {
-      openModal();
+    if (event.key === "Tab") {
+      if (event.shiftKey && document.activeElement === firstFocusable) {
+        event.preventDefault();
+        lastFocusable?.focus();
+      } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+        event.preventDefault();
+        firstFocusable?.focus();
+      }
     }
+  }
+
+  function handleResize() {
+    clearTimeout(resizeDebounceTimer);
+    resizeDebounceTimer = setTimeout(placeFilters, 100);
+  }
+
+  openBtn.addEventListener("click", () => {
+    if (!isMobile()) return;
+    isModalOpen() ? closeModal() : openModal();
   });
 
   closeTriggers.forEach((trigger) => {
@@ -120,12 +142,8 @@
     applyBtn.addEventListener("click", () => closeModal());
   }
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && isModalOpen()) {
-      closeModal();
-    }
-  });
+  document.addEventListener("keydown", handleKeydown);
+  MOBILE_MQ.addEventListener("change", handleResize);
 
-  MOBILE_MQ.addEventListener("change", placeFilters);
   placeFilters();
 })();
