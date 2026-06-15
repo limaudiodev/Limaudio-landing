@@ -65,7 +65,7 @@ function initProposalSwipers() {
       }
 
       swiper.on("slideChange", function () {
-        const activeIndex = swiper.realIndex; // realIndex игнорирует клоны
+        const activeIndex = swiper.realIndex;
         const ticks = scrollbarContainer.querySelectorAll(".tick");
         ticks.forEach((tick, idx) => {
           if (idx === activeIndex) {
@@ -127,12 +127,11 @@ function initProposalSwipers() {
         if (isHovering) startAutoplay();
       });
 
-      // Клик по tick - пауза на 3 секунды
       scrollbarContainer.querySelectorAll(".tick").forEach((tick) => {
         tick.addEventListener("click", () => {
           if (isHovering) {
             stopAutoplay();
-            clearTimeout(pauseTimeoutId); // ✅ ИСПРАВЛЕНО: очищаем предыдущий таймаут
+            clearTimeout(pauseTimeoutId);
             pauseTimeoutId = setTimeout(() => {
               if (isHovering) startAutoplay();
             }, 3000);
@@ -145,7 +144,6 @@ function initProposalSwipers() {
   });
 }
 
-// Инициализация переключения цветов для proposal__card
 function initProposalColorSwitchers() {
   const proposalCards = document.querySelectorAll(".proposal__card");
 
@@ -173,7 +171,6 @@ function initProposalColorSwitchers() {
       ],
     };
 
-    // Состояние автоплей для этой карточки
     let isHovering = false;
     let timeoutId = null;
     let pauseTimeoutId = null;
@@ -192,7 +189,6 @@ function initProposalColorSwitchers() {
       }
     };
 
-    // Функция для привязки обработчиков событий к слайдам
     const attachSlideEventListeners = () => {
       const slides = proposalSwiper.querySelectorAll(".swiper-slide");
       slides.forEach((slide) => {
@@ -210,17 +206,14 @@ function initProposalColorSwitchers() {
       });
     };
 
-    // Привязываем обработчики при инициализации
     attachSlideEventListeners();
 
     function updateColorSelection(selectedColor) {
-      // Обновляем состояние кнопок
       colorButtons.forEach((btn) => {
         const isPressed = btn.dataset.sort === selectedColor;
         btn.setAttribute("aria-pressed", isPressed);
       });
 
-      // Получаем swiper instance
       const swiper = proposalSwiper.swiper;
       if (!swiper || !colorImages[selectedColor]) return;
 
@@ -233,21 +226,15 @@ function initProposalColorSwitchers() {
 
       proposalSwiper.querySelector(".swiper-wrapper").innerHTML = newSlides;
 
-      // Убираем класс активности со всех слайдов
       proposalSwiper.querySelectorAll(".swiper-slide").forEach((slide) => {
         slide.classList.remove("swiper-slide-thumb-active");
       });
 
       swiper.update();
-
-      // Перепривязываем обработчики событий к новым слайдам
       attachSlideEventListeners();
-
-      // Небольшая задержка для корректного переключения слайда
       setTimeout(() => {
         swiper.slideToLoop(0);
 
-        // Вручную добавляем класс активного слайда
         const firstSlide = proposalSwiper.querySelector(".swiper-slide");
         if (firstSlide) {
           firstSlide.classList.add("swiper-slide-thumb-active");
@@ -255,7 +242,6 @@ function initProposalColorSwitchers() {
       }, 50);
     }
 
-    // Устанавливаем серый цвет по умолчанию
     updateColorSelection("gray");
 
     colorButtons.forEach((btn) => {
@@ -270,7 +256,6 @@ function initProposalColorSwitchers() {
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     initProposalSwipers();
-    // Небольшая задержка, чтобы слайдеры успели инициализироваться
     setTimeout(() => {
       initProposalColorSwitchers();
     }, 100);
@@ -292,7 +277,6 @@ style.textContent = `
     }
   }
 
-  /* Улучшенные стили для доступности */
   .custom-scrollbar {
     display: flex;
     gap: 8px;
