@@ -213,7 +213,7 @@ button {
 }
 
 
-.btn-cat {
+.btn-white {
   background: transparent;
   color: var(--text);
   border: 1px solid var(--text);
@@ -222,14 +222,14 @@ button {
   max-width: 134px;
 }
 
-.btn-cat:hover {
+.btn-white:hover {
   background: var(--text);
   color: var(--white);
   border: 1px solid var(--text);
 }
 
 
-.btn-cat:hover svg path {
+.btn-white:hover svg path {
   fill: var(--white);
 }
 
@@ -644,7 +644,7 @@ textarea::placeholder {
     margin-top: 78px;
   }
 
-  .btn-cat {
+  .btn-white {
     padding: 8px 10px;
     width: 100%;
   }
@@ -668,7 +668,7 @@ textarea::placeholder {
 }
 
 @media (max-width: 330px) {
-  .btn-cat {
+  .btn-white {
     padding: 8px 4px;
   }
 

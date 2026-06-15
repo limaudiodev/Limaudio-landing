@@ -136,7 +136,7 @@
     font-weight: 800;
 }
 
-.product__btns>.btn-cat {
+.product__btns>.btn-white {
     max-width: none;
     padding: 16px 20px;
 }
@@ -193,7 +193,7 @@
     text-decoration: none;
 }
 
-.product__expert>.btn-cat {
+.product__expert>.btn-white {
     max-width: none;
     display: flex;
     align-items: center;
@@ -478,7 +478,7 @@
         flex-wrap: wrap;
     }
 
-    .product__expert>.btn-cat {
+    .product__expert>.btn-white {
         margin: 0 auto;
     }
 }
